@@ -105,4 +105,4 @@ api/users
 
 **POWERED BY**  
 
-![Laravel](public/images/logos/logo-laravel-title.png)
+![Laravel](public/images/readme/logo-laravel-title.png)
