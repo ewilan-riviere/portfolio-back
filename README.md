@@ -83,10 +83,11 @@ yarn run dev
 APP_ENV=production
 APP_DEBUG=false
 ```
+---
 
 ## **3. Documentation**
 
-This is a [**Laravel**](https://laravel.com/) web app, check out the [**Wiki**](#https://github.com/ewilan-riviere/ewilan-riviere-portfolio-back/wiki) to learn more about documentation.
+This is a [**Laravel**](https://laravel.com/) web app, check out the [**Wiki**](https://github.com/ewilan-riviere/ewilan-riviere-portfolio-back/wiki) to learn more about documentation.
 
 ### ***a. Admin account***
 **E-mail:** *ewilan@admin.com*  
