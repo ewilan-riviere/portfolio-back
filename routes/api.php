@@ -14,3 +14,4 @@ use Illuminate\Http\Request;
 */
 
 Route::get('/users', 'API\ApiController@users')->name('api-users');
+Route::get('/technologies', 'API\ApiController@technologies')->name('api-technologies');
