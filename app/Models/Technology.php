@@ -12,7 +12,7 @@ class Technology extends Model
     protected $fillable = [
         "name",
         "display_name",
-        "details",
+        "displaying",
         "logo"
     ];
     protected $guarded = [

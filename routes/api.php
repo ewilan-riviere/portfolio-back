@@ -15,3 +15,7 @@ use Illuminate\Http\Request;
 
 Route::get('/users', 'API\ApiController@users')->name('api-users');
 Route::get('/technologies', 'API\ApiController@technologies')->name('api-technologies');
+Route::get('/skills', 'API\ApiController@skills')->name('api-skills');
+Route::get('/projects', 'API\ApiController@projects')->name('api-projects');
+Route::get('/formations', 'API\ApiController@formations')->name('api-formations');
+Route::get('/informations', 'API\ApiController@informations')->name('api-informations');

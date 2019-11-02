@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 
+use App\Models\User;
+
 class UsersTableSeeder extends Seeder
 {
     /**
@@ -11,7 +13,7 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('users')->insert([
+        User::insert([
             [
                 'name' => 'Admin',
                 'email' => config('app.admin_mail'),

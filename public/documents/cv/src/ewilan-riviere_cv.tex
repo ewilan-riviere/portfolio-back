@@ -1,0 +1,153 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+\documentclass[12pt,a4paper]{moderncv}
+\moderncvtheme[green]{classic}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[inline]{enumitem}
+
+\usepackage{fontspec}
+\usepackage{xltxtra,fontspec,xunicode}
+\setromanfont[]{Morpheus}
+
+% PDF Bookmark Package
+\usepackage[colorlinks=true,linkcolor=black,urlcolor=black,bookmarksopen=true]{hyperref}
+\usepackage{bookmark}
+
+\usepackage{fontawesome}
+\moderncvicons{awesome}
+
+\usepackage[frenchb]{babel}
+
+% Font Package
+\usepackage{newcent}
+% List Package
+\usepackage{enumitem}
+% Images Package
+\usepackage{graphicx}
+
+\usepackage{float}
+\usepackage{ragged2e}
+
+% PDF Package
+\usepackage{pdfpages}
+
+\usepackage{color}
+
+\moderncvstyle{classic}
+\moderncvcolor{blue}
+\usepackage{changepage}
+\usepackage[scale=0.80]{geometry}
+
+\makeatletter
+% commands for oldstyle letter
+\newlength{\textwidthdelta}
+\renewcommand*{\recomputeletterlengths}{
+    \recomputecvlengths
+    \setlength{\parskip}{6\p@}
+    \leftskip=0pt
+    \setlength{\marginparwidth}{\hintscolumnwidth}
+    \setlength{\marginparsep}{2\separatorcolumnwidth}
+    \changepage{}{-\marginparwidth-\marginparsep}{}{}{}{}{}{}{}
+}
+
+\renewcommand*{\makelettertitle}{
+    \recomputeletterlengths
+    {
+        \addressfont
+    {
+        \bfseries\upshape\@recipientname}\\
+        \@recipientaddress}\\[1em]
+    % date
+    \@date\\[2em]%
+    % opening
+    \@opening\\[1.5em]%
+    % sender contact info
+    \hspace{0pt}%
+    \marginpar{%
+    \addressfont\textcolor{color2}{%
+      {\bfseries\@firstname~\@lastname}\@firstdetailselementfalse%
+      \ifthenelse{\isundefined{\@addressstreet}}{}{\makenewline\addresssymbol\@addressstreet%
+        \ifthenelse{\equal{\@addresscity}{}}{}{\makenewline\@addresscity}% if \addresstreet is defined, \addresscity and \addresscountry will always be defined but could be empty
+        \ifthenelse{\equal{\@addresscountry}{}}{}{\makenewline\@addresscountry}}%
+      \collectionloop{phones}{% the key holds the phone type (=symbol command prefix), the item holds the number
+        \makenewline\csname\collectionloopkey phonesymbol\endcsname\collectionloopitem}%
+      \ifthenelse{\isundefined{\@email}}{}{\makenewline\emailsymbol\emaillink{\@email}}%
+      \ifthenelse{\isundefined{\@homepage}}{}{\makenewline\homepagesymbol\httplink{\@homepage}}%
+      \collectionloop{socials}{% the key holds the social type (=symbol command prefix), the item holds the link
+        \makenewline\csname\collectionloopkey socialsymbol\endcsname\collectionloopitem}%
+      \ifthenelse{\isundefined{\@extrainfo}}{}{\makenewline\@extrainfo}}}%
+  % ensure no extra spacing after \makelettertitle due to a possible blank line
+%  \ignorespacesafterend% not working
+  \par\vspace{-\baselineskip}\vspace{-\parskip}}
+
+\renewcommand*{\makeletterclosing}{
+  \@closing\\[3em]%
+  {\bfseries\@firstname~\@lastname}%
+  \ifthenelse{\isundefined{\@enclosure}}{}{%
+    \\%
+    \vfill%
+    {\color{color2}\itshape\enclname: \@enclosure}}}
+\makeatother
+
+% Default Police
+\renewcommand{\familydefault}{lmss}
+% Default Space Between Paragraph
+\setlength{\parskip}{0.5cm plus 4mm minus 3mm}
+
+\title{
+    ./play.it
+}
+\author{
+    Ewilan Rivière
+}
+\date{
+    Mai 2019
+} 
+
+% Marge aux 4 coins de la page, ici elles sont réduites pour gagner de la place
+% \usepackage{geometry}
+\usepackage{blindtext}
+% Largeur de la colonne de gauche pour les dates
+\setlength{\hintscolumnwidth}{2.7cm}
+% personal data
+% \name{John}{Doe}
+\firstname{\rmfamily Ewilan}
+\familyname{\rmfamily Rivière}
+\title{Développeuse web, web mobile}
+\address{14 La Boutonnerie}{Liffré}
+\phone[mobile]{06 73 15 47 25}
+% \phone[fixed]{+2~(345)~678~901}
+\email{ewilan@dotslashplay.it}
+\homepage{ewilan-riviere.herokuapp.com}
+\social[linkedin]{ewilan-riviere}
+\social[github]{ewilan-riviere}
+\extrainfo{26 ans}
+\photo[120pt][0pt]{img/ewilan.png} % '64pt' is the height, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+\quote{Orientée back-end (PHP ou Java)\\Recherche une formation en alternance ou un CDI}
+
+\begin{document}
+\maketitle
+
+\section{Développement}
+\cvitem{\faLinux\enspace \textbf{OS}}{Debian, Ubuntu, Windows}
+\cvitem{\faCode\enspace \textbf{Langages}}{HTML 5, CSS 3 \& SASS, JavaScript, PHP 7, MySQL, Java 8, Shell, Laravel 5, Bootstrap 4, \LaTeX, bases de VueJS, de Wordpress et de SEO}
+\cvitem{\faCogs\enspace \textbf{Techs}}{Git, GitKraken, Photoshop CS6, GIMP, Office, Visual Studio Code, phpMyAdmin, Discord, Conky}
+\cvitem{\faArchive\enspace \textbf{Matériel}}{Monter un ordinateur}
+\cvlanguage{\faGlobe\enspace \textbf{Langues}}{Français (\textit{natale}), Anglais (\textit{B2})}{}
+
+\section{Diplômes}
+\cventry{2019-...}{POEC Java}{ENI}{Chartres-de-Bretagne}{}{}
+\cventry{2018-2019}{Développeur web, web mobile}{Code Académie}{Rennes}{}{}
+\cventry{2011-2014}{Licence de psychologie}{Université de Rennes 2}{Rennes}{\textit{Mention assez bien et rédaction d'un TER sur la cyberviolence}}{}
+
+\section{Projets (à voir sur le portfolio)}
+\cvitem{\textbf{./play.it}}{Site web du projet ./play.it permettant de jouer facilement sous Linux}
+\cvitem{\textbf{Hackathon}}{Challenge en équipes organisé à l'Épitha pour la domotique}
+\cvitem{\textbf{Promo \#3}}{Site de la promo \#3 de la Code Académie}
+\cvitem{\textbf{Et aussi...}}{Quizz Académie, Pomodoro, Memory, Quizz}
+
+\section{Centres d'intérêt}
+\cvitem{\faBook\enspace \textbf{Lecture}}{{Heroic-fantasy, science-fiction, gender studies, sociologie}}
+\cvitem{\faPaintBrush\enspace \textbf{Passions}}{Peinture (Warhammers), fictions sonores (sagas mp3 et podcasts), cinéma \& séries, traitement du son, modding de jeux vidéo}
+\end{document}
