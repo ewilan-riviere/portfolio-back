@@ -8,17 +8,23 @@ use Illuminate\Http\Request;
 use App\Models\Category;
 use App\Models\Formation;
 use App\Models\Information;
+use App\Models\Media;
 use App\Models\Project;
 use App\Models\Skill;
+use App\Models\Social;
 use App\Models\Technology;
+use App\Models\Text;
 use App\Models\User;
 
 use App\Transformers\CategoryTransformer;
 use App\Transformers\FormationTransformer;
 use App\Transformers\InformationTransformer;
+use App\Transformers\MediaTransformer;
 use App\Transformers\ProjectTransformer;
 use App\Transformers\SkillTransformer;
+use App\Transformers\SocialTransformer;
 use App\Transformers\TechnologyTransformer;
+use App\Transformers\TextTransformer;
 
 class ApiController extends Controller
 {
@@ -91,15 +97,41 @@ class ApiController extends Controller
 
     /**
      *
-     *  Display informations
+     *  Display texts
      *
      * @return JSON
      *
      */
-    public function informations() {
-        $informations = Information::all();
+    public function texts() {
+        $texts = Text::all();
 
-        return fractal($informations, new InformationTransformer());
+        return fractal($texts, new TextTransformer());
+    }
+
+    /**
+     *
+     *  Display medias
+     *
+     * @return JSON
+     *
+     */
+    public function medias() {
+        $medias = Media::all();
+
+        return fractal($medias, new MediaTransformer());
+    }
+
+    /**
+     *
+     *  Display socials
+     *
+     * @return JSON
+     *
+     */
+    public function socials() {
+        $socials = Social::all();
+
+        return fractal($socials, new SocialTransformer());
     }
 
 }
