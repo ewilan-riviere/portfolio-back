@@ -23,6 +23,14 @@ class ProjectTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
+        if ($project->image == null) {
+            $attributes['image'] = url('storage').'/'.'projects/no-image.png';
+        }
+
+        if ($project->image != null) {
+            $attributes['image'] = url('storage').'/'.$project->image;
+        }
+
         return $attributes;
     }
 }

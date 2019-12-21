@@ -28,8 +28,16 @@ class TextsTableSeeder extends Seeder
             ],
             [
                 'slug' => 'dev_spec',
-                'text' => 'Orientée back-end: PHP'
-            ]
+                'text' => 'Orientée full-stack : VueJS (JavaScript/TypeScript) & Laravel (PHP)'
+            ],
+            [
+                'slug' => 'dev_level',
+                'text' => 'Bac +2'
+            ],
+            [
+                'slug' => 'dev_professional',
+                'text' => 'En alternance à <a href="https://www.useweb.fr/" target="_blank">UseWeb</a> avec l\'<a href="https://www.eni-ecole.fr/" target="_blank">ENI</a> pour bac +4'
+            ],
         ]);
     }
 }
