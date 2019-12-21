@@ -9433,8 +9433,8 @@ input[type=range]::-ms-thumb {
 
 .parallax {
   /* The image used */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(/images/logo.png?c8a11ec46f4a5fd548216544effa0855);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/logo.png?c8a11ec46f4a5fd548216544effa0855);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(/images/laravel.svg?d52287738b55788ea70175d566102073);
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/laravel.svg?d52287738b55788ea70175d566102073);
   /* Full height */
   height: 100%;
   /* Create the parallax scrolling effect */
