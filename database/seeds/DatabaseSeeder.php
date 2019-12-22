@@ -34,6 +34,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->directoryToStorage('documents');
         $this->directoryToStorage('projects');
+        $this->directoryToStorage('icons');
         $this->call(UsersTableSeeder::class);
         $this->call(TechnologiesTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);
