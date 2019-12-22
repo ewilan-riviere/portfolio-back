@@ -4,7 +4,7 @@ return [
     'welcome' => 'Accueil',
     'router' => 'Routes',
     'about' => 'À propos',
-    'home' => 'Tableau de board',
+    'home' => 'Tableau de bord',
     'account' => 'Mon compte',
     'login' => 'Connexion',
     'logout' => 'Déconnexion',

@@ -28,7 +28,7 @@ class TextsTableSeeder extends Seeder
             ],
             [
                 'slug' => 'dev_spec',
-                'text' => 'Orientée full-stack : VueJS (JavaScript/TypeScript) & Laravel (PHP)'
+                'text' => 'Orientée full-stack :<br />VueJS (JavaScript/TypeScript) & Laravel (PHP)'
             ],
             [
                 'slug' => 'dev_level',

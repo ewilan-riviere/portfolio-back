@@ -15,21 +15,10 @@
             </a>
 
             <ul class="right hide-on-med-and-down">
-                @foreach ($navbar as $item)
-                    @php
-                        $activeForeach = ($route == $item->link) ? 'active' : '' ;
-                    @endphp
-                    <li class="{{$activeForeach}}">
-                        <a href="{{ route($item->link) }}">
-                            <i class="material-icons left">{{$item->icon}}</i>
-                            {{ __('navigation.'.$item->title) }}
-                        </a>
-                    </li>
-                @endforeach
                 @if (Route::has('login'))
                     <li>
                         <a class="dropdown-trigger {{($route == 'home') ? 'active' : ''}} {{($route == 'login') ? 'active' : ''}} {{($route == 'register') ? 'active' : ''}}"
-                            data-target="auth-dropdown"
+                            data-target="auth-lg-dropdown"
                         >
                             <i class="material-icons left">account_circle</i>
                                 @if (Auth::check())
@@ -67,17 +56,22 @@
                 </a>
             </div>
         </li>
-        @foreach ($navbar as $item => $value)
-            @php
-                $active = ($route == $value->link) ? 'active' : '' ;
-            @endphp
-            <li class="{{$active}}">
-                <a href="{{ route($value->link) }}">
-                    <i class="material-icons left">{{$value->icon}}</i>
-                    {{$value->title}}
-                </a>
-            </li>
-        @endforeach
-        @include('layouts.navbar-auth-module')
+        <li>
+            @if (Route::has('login'))
+                <li>
+                    <a class="dropdown-trigger {{($route == 'home') ? 'active' : ''}} {{($route == 'login') ? 'active' : ''}} {{($route == 'register') ? 'active' : ''}}"
+                        data-target="auth-dropdown"
+                    >
+                        <i class="material-icons left">account_circle</i>
+                            @if (Auth::check())
+                                {{ Auth::user()->name }}
+                            @else
+                                {{ __('navigation.account') }}
+                            @endif
+                        <i class="material-icons right">arrow_drop_down</i>
+                    </a>
+                </li>
+            @endif
+        </li>
     </ul>
 </div>
