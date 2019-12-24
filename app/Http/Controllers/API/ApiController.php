@@ -77,7 +77,7 @@ class ApiController extends Controller
      *
      */
     public function projects() {
-        $projects = Project::all();
+        $projects = Project::orderBy('title')->get();
 
         return fractal($projects, new ProjectTransformer());
     }

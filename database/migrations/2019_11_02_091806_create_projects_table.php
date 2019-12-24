@@ -17,6 +17,7 @@ class CreateProjectsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('image')->nullable();
+            $table->string('image-title')->nullable();
             $table->text('resume')->nullable();
             $table->string('github_link')->nullable();
             $table->string('try_it')->nullable();

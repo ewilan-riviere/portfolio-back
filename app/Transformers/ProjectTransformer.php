@@ -23,6 +23,12 @@ class ProjectTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
+        $imageTitle = storage_path('app/public/'.$project->image);
+        $imageTitleNoExtension = basename($imageTitle, '.png');
+        if (file_exists(storage_path('app/public/projects/'.$imageTitleNoExtension.'-title.png'))) {
+            $attributes['image-title'] = url('storage').'/'.$imageTitleNoExtension.'-title.png';
+        }
+
         if ($project->image == null) {
             $attributes['image'] = url('storage').'/'.'projects/no-image.png';
         }
