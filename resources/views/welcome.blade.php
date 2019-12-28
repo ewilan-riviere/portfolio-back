@@ -10,8 +10,8 @@
 
 @section('javascript')
     <script>
-        let title = document.getElementById('title')
-        let titleContent = title.textContent;
-        title.innerHTML = titleContent+'<br>API'
+        // let title = document.getElementById('title')
+        // let titleContent = title.textContent;
+        // title.innerHTML = titleContent+'<br>API'
     </script>
 @endsection

@@ -9433,8 +9433,6 @@ input[type=range]::-ms-thumb {
 
 .parallax {
   /* The image used */
-  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.5))), url(/images/laravel.svg?d52287738b55788ea70175d566102073);
-  background-image: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), url(/images/laravel.svg?d52287738b55788ea70175d566102073);
   /* Full height */
   height: 100%;
   /* Create the parallax scrolling effect */
@@ -9448,6 +9446,7 @@ input[type=range]::-ms-thumb {
   position: absolute;
   width: 100vw;
   color: black !important;
+  box-shadow: 0.2rem 0rem 0.2rem lightgray;
 }
 
 #navbar .brand-logo {
