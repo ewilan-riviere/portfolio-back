@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Social;
 use App\Http\Requests\SocialRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
@@ -55,6 +56,7 @@ class SocialCrudController extends CrudController
 
         // TODO: remove setFromDb() and manually define Fields
         // $this->crud->setFromDb();
+
         $this->crud->addField([
             'name'         => 'name',
             'label'        => 'Nom',
@@ -63,33 +65,40 @@ class SocialCrudController extends CrudController
                 'placeholder' => 'Nom du lien'
             ],
         ]);
+
         // $this->crud->addField([
-        //     'name'         => 'link',
-        //     'label'        => 'Lien',
-        //     'type'         => 'url',
-        //     'attributes' => [
-        //         'placeholder' => 'Hyperlien ou téléversement d\'un fichier'
-        //     ],
+        //     'label'     => 'Type',
+        //     'name'      => 'type',
+        //     'type'      => 'radio',
+        //     'options'   => Social::getType(),
+        //     'hide_when' => Social::getHideAttributes(),
+        //     'default'   => 'link',
+        //     'inline'    => true
         // ]);
-        $this->crud->addField([   // Upload
-            'name' => 'link',
-            'label' => 'Lien',
+
+        $this->crud->addField([
+            'label' => 'Type',
+            'name' => 'type', // can be a real db field, or unique name
+            'type' => 'toggle',
+            'options' => Social::getType(),
+            'hide_when' => Social::getHideAttributes(),
+            'default' => 0, // which option to select by default
+            'inline' => true
+        ]);
+
+        $this->crud->addField([
+            'name' => 'file',
+            'label' => 'Fichier',
             'type' => 'upload',
             'upload' => true,
-            // 'disk' => 'uploads', // if you store files in the /public folder, please ommit this; if you store them in /storage or S3, please specify it;
-            // optional:
-            // 'temporary' => 10 // if using a service, such as S3, that requires you to make temporary URL's this will make a URL that is valid for the number of minutes specified
         ]);
-        // $this->crud->addField([
-        //     'label'        => 'Image',
-        //     'name'         => 'image',
-        //     'filename'     => 'image',
-        //     'upload'       => true,
-        //     'type'         => 'image',
-        //     'aspect_ratio' => 1,
-        //     'crop'         => true,
-        //     'prefix' => 'storage/'
-        // ], 'both');
+
+        $this->crud->addField([
+            'name' => 'link',
+            'label' => 'Lien',
+            'type' => 'text',
+        ]);
+
         $this->crud->addField([
             'name'         => 'icon',
             'label'        => 'Logo',

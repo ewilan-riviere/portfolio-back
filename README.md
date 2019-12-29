@@ -63,7 +63,8 @@ php artisan key:generate
 php artisan migrate:fresh --seed
 # Link storage
 php artisan storage:link
-
+# Backpack
+php artisan backpack:install
 # Launch server
 php artisan serve
 ```
