@@ -23,13 +23,20 @@ class SkillCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Skill');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/skill');
-        $this->crud->setEntityNameStrings('Skill', 's_kills');
+        $this->crud->setEntityNameStrings('une compétence', 'Compétences');
     }
 
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumns([
+            [
+                'name'  => 'title',
+                'label' => 'Nom',
+                'type'  => 'text'
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -37,7 +44,15 @@ class SkillCrudController extends CrudController
         $this->crud->setValidation(SkillRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addField([
+            'name'         => 'title',
+            'label'        => 'Nom',
+            'type'         => 'text',
+            'attributes' => [
+                'placeholder' => 'Nom de cette compétence'
+            ],
+        ]);
     }
 
     protected function setupUpdateOperation()

@@ -24,13 +24,11 @@ class SocialCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Social');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/social');
-        $this->crud->setEntityNameStrings('social', 'socials');
+        $this->crud->setEntityNameStrings('un réseau social', 'Réseaux sociaux');
     }
 
     protected function setupListOperation()
     {
-        // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        // $this->crud->setFromDb();
         $this->crud->addColumns([
             [
                 'name'  => 'name',
@@ -40,6 +38,11 @@ class SocialCrudController extends CrudController
             [
                 'name'  => 'link',
                 'label' => 'Lien',
+                'type'  => 'text'
+            ],
+            [
+                'name'  => 'file',
+                'label' => 'Fichier',
                 'type'  => 'text'
             ],
             [
@@ -54,9 +57,6 @@ class SocialCrudController extends CrudController
     {
         $this->crud->setValidation(SocialRequest::class);
 
-        // TODO: remove setFromDb() and manually define Fields
-        // $this->crud->setFromDb();
-
         $this->crud->addField([
             'name'         => 'name',
             'label'        => 'Nom',
@@ -66,22 +66,18 @@ class SocialCrudController extends CrudController
             ],
         ]);
 
-        // $this->crud->addField([
-        //     'label'     => 'Type',
-        //     'name'      => 'type',
-        //     'type'      => 'radio',
-        //     'options'   => Social::getType(),
-        //     'hide_when' => Social::getHideAttributes(),
-        //     'default'   => 'link',
-        //     'inline'    => true
-        // ]);
-
         $this->crud->addField([
             'label' => 'Type',
             'name' => 'type', // can be a real db field, or unique name
             'type' => 'toggle',
-            'options' => Social::getType(),
-            'hide_when' => Social::getHideAttributes(),
+            'options' => [
+                0 => 'Lien',
+                1 => 'Fichier',
+            ],
+            'hide_when' => [ // these fields hide (by name) when the key matches the radio value
+                0 => ['file'],
+                1 => ['link']
+            ],
             'default' => 0, // which option to select by default
             'inline' => true
         ]);
