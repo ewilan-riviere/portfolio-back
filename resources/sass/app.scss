@@ -1,137 +1,3 @@
-// Variables
-@import 'variables';
-
-// Fonts
-@font-face {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: 400;
-    src: url(../fonts/material-icons.woff2);
-}
-
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: 'liga';
-}
-
-// Materialize
-@import '~materialize-css/sass/materialize.scss';
-
-@font-face {
-    font-family: "Muli-Regular";
-    src: url("../fonts/Muli-Regular.ttf");
-}
-
-.white-bg {
-    padding: 5rem;
-    background-color: white;
-    border-radius: 0.5rem;
-    box-shadow: 0.5rem 0.5rem 1rem rgb(95, 94, 94);
-}
-.collection-title {
-    margin-bottom: 2rem;
-}
-.no-shadows {
-    box-shadow: none!important;
-}
-
-.logo-shadowed {
-    filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0,0,0,0.5));
-    &:hover {
-        filter: drop-shadow(0.2rem 0.2rem 0.2rem rgba(0,0,0,0.8));
-    }
-}
-
-.parallax {
-    /* The image used */
-    // background-image:
-    //     linear-gradient(rgba(255, 255, 255, 0.5),
-    //         rgba(255, 255, 255, 0.5)),
-    //     url('laravel.svg');
-
-    /* Full height */
-    height: 100%;
-
-    /* Create the parallax scrolling effect */
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 50%;
-}
-
-#navbar {
-    position: absolute;
-    width: 100vw;
-    color: black !important;
-    box-shadow: 0.2rem 0rem 0.2rem lightgray;
-    .brand-logo {
-        display: flex;
-        width: 5vw;
-        height: 100%;
-        z-index: 1;
-        .navbar-logo {
-            margin: auto;
-            width: 3rem;
-            height: 3rem;
-        }
-    }
-    .sidenav-trigger {
-        color: black;
-    }
-    .sidenav {
-        li {
-            position: relative;
-            z-index: 1;
-            &:hover {
-                background-color: rgba(0, 0, 0, 0.05) !important;
-            }
-        }
-    }
-    .active {
-        background-color: rgba(0, 0, 0, 0.1);
-    }
-    nav li a {
-        color: black !important;
-        position: relative;
-        z-index: 1;
-    }
-}
-#login {
-    .container {
-        max-width: 80vw !important;
-        width: 80vw !important;
-        border-radius: 0.5rem;
-        padding: 1rem;
-    }
-    .btn-login {
-        margin-top: 1rem;
-    }
-    .password-request {
-        margin-top: 1rem;
-    }
-}
-
 /**
 *
 *   Laravel
@@ -178,12 +44,12 @@ html, body {
 
 .links > a {
     color: #636b6f;
-    padding: 0 25px;
-    font-size: 13px;
+    // padding: 0 25px;
+    // font-size: 13px;
     font-weight: 600;
-    letter-spacing: .1rem;
+    // letter-spacing: .1rem;
     text-decoration: none;
-    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 .m-b-md {

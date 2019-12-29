@@ -25,12 +25,17 @@
     <link rel="stylesheet" href="{{ asset('css/laravel.css') }}">
 </head>
 <body class="parallax">
-    <div id="app">
-        @include('layouts.navbar')
-        <div class="flex-center position-ref full-height">
-            <main class="content">
-                @yield('content')
-            </main>
+    <div class="flex-center position-ref full-height">
+        @if (Route::has('login'))
+            <div class="top-right links">
+                <a href="{{ url('/admin') }}">
+                    @lang('navigation.home')
+                </a>
+            </div>
+        @endif
+
+        <div class="content">
+            @yield('content')
         </div>
     </div>
 </body>

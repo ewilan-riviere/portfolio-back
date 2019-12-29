@@ -3,8 +3,16 @@
 @section('title','')
 
 @section('content')
-    <div id="title" class="title m-b-md">
-        {{config('app.name')}}
+    <img src="{{ asset('images/logo.png') }}" width="250">
+    <div class="title m-b-md">
+        {{-- {{ config('app.name') }} --}}
+    </div>
+
+    <div class="links">
+        @lang('navigation.api-of')
+        <a href="https://portfolio.ewilan-riviere.com/">
+            portfolio.ewilan-riviere.com
+        </a>
     </div>
 @endsection
 

@@ -12,5 +12,6 @@ return [
     'email' => 'E-mail',
     'password' => 'Mot de passe',
     'remember' => 'Se rappeler de moi',
-    'forgot-your-password' => 'Oubli du mot de passe ?'
+    'forgot-your-password' => 'Oubli du mot de passe ?',
+    'api-of' => 'API de '
 ];
