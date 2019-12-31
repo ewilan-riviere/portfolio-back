@@ -24,6 +24,7 @@ class ProjectCrudController extends CrudController
         $this->crud->setModel('App\Models\Project');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/project');
         $this->crud->setEntityNameStrings('un projet', 'Projets');
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()

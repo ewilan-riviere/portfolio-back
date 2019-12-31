@@ -18,11 +18,6 @@ class CreateSkillsTable extends Migration
             $table->string('title');
             $table->timestamps();
         });
-
-        Schema::table("skills", function (Blueprint $table) {
-            $table->integer("category_id")->unsigned()->index();
-            $table->foreign("category_id")->references("id")->on("categories")->onDelete("cascade");
-        });
     }
 
     /**

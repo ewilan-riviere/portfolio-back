@@ -23,7 +23,11 @@ class MediaCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Media');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/media');
-        $this->crud->setEntityNameStrings('media', 'media');
+        $this->crud->setEntityNameStrings(
+            'un média',
+            'Médias'
+        );
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()

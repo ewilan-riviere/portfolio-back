@@ -43,14 +43,6 @@ class Social extends Model {
         ];
     }
 
-    public static function getHideAttributes()
-    {
-        return [
-            'link'   => ['file'],
-            'file' => ['link'],
-        ];
-    }
-
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
@@ -85,18 +77,60 @@ class Social extends Model {
 
     public function setFileAttribute($value)
     {
-        $attribute_name = "file";
+        $attribute_type = "type";
+        $attribute_file = "file";
+        $attribute_link = "link";
         $disk = "public";
         $destination_path = "documents";
 
-        if (strlen($this->link) > 0) {
-            $filename = str_replace('storage/'.$destination_path.'/','',$this->link);
-            $valid = Storage::disk('public')->delete($destination_path.'/'.$filename);
+        if ($this->attributes[$attribute_type] = 'file') {
+
+            // clear link record
+            $this->attributes[$attribute_link] = null;
+            if ($value !== null) {
+                if (strlen($this->file) > 0) {
+                    // get file name from database
+                    $filename = str_replace('storage/'.$destination_path.'/','',$this->file);
+                    // remove current file
+                    $valid = Storage::disk('public')->delete($destination_path.'/'.$filename);
+                }
+                $title = str_slug("Laravel 5 Framework", "-");
+                $filename = $value->getClientOriginalName();
+                $extension = $value->getClientOriginalExtension();
+
+                // save file as
+                $path = Storage::disk($disk)->putFileAs($destination_path, $value, $filename);
+
+                // update database record
+                $this->attributes[$attribute_file] = 'storage/'.$path;
+            }
         }
+    }
 
-        $this->uploadFileToDisk($value, $attribute_name, $disk, $destination_path);
+    public function setLinkAttribute($value)
+    {
+        $attribute_type = "type";
+        $attribute_file = "file";
+        $attribute_link = "link";
+        $disk = "public";
+        $destination_path = "documents";
 
-        $this->attributes[$attribute_name] = 'storage/'.$this->attributes[$attribute_name];
+        if ($this->attributes[$attribute_type] = 'link') {
+
+            // clear link record
+            $this->attributes[$attribute_file] = null;
+            if (strlen($value) > 0) {
+                if (strlen($this->file) > 0) {
+                    // get file name from database
+                    $filename = str_replace('storage/'.$destination_path.'/','',$this->file);
+                    // remove current file
+                    $valid = Storage::disk('public')->delete($destination_path.'/'.$filename);
+                }
+
+                $this->attributes[$attribute_file] = null;
+                $this->attributes[$attribute_link] = $value;
+            }
+        }
     }
 }
 

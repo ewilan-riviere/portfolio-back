@@ -18,28 +18,28 @@ class SocialsTableSeeder extends Seeder
                 'name' => 'GitHub',
                 'link' => 'https://github.com/ewilan-riviere',
                 'file' => null,
-                'icon' => 'github-circle',
+                'icon' => 'fab fa-github',
                 'type' => 'link'
             ],
             [
                 'name' => 'GitLab',
                 'link' => 'https://gitlab.com/EwieFairy',
                 'file' => null,
-                'icon' => 'gitlab',
+                'icon' => 'fab fa-gitlab',
                 'type' => 'link'
             ],
             [
                 'name' => 'LinkedIn',
                 'link' => 'https://www.linkedin.com/in/ewilan-riviere/',
                 'file' => null,
-                'icon' => 'linkedin-box',
+                'icon' => 'fab fa-linkedin',
                 'type' => 'link'
             ],
             [
                 'name' => 'E-mail',
                 'link' => 'ewilan@dotslashplay.it',
                 'file' => null,
-                'icon' => 'email',
+                'icon' => 'fas fa-envelope',
                 'type' => 'link'
             ],
             [

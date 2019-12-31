@@ -1,3 +1,6 @@
+// @import '~@fortawesome/fontawesome-free/css/all.css';
+// @import '../../node_modules/line-awesome/dist/line-awesome/css/line-awesome.css';
+
 .note-editing-area {
     .note-editable {
         height: 10rem !important;
@@ -9,4 +12,11 @@
 
 .radio-inline {
     margin-right: 2rem;
+}
+
+.nav-dropdown-items {
+    .nav-item {
+        margin-left: 1rem;
+        background-color: #2f353a;
+    }
 }

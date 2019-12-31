@@ -23,8 +23,13 @@ class SocialCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Social');
+        // $this->crud->setDefaultPageLength(20);
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/social');
-        $this->crud->setEntityNameStrings('un réseau social', 'Réseaux sociaux');
+        $this->crud->setEntityNameStrings(
+            'un réseau social',
+            'Réseaux sociaux'
+        );
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()
@@ -36,6 +41,11 @@ class SocialCrudController extends CrudController
                 'type'  => 'text'
             ],
             [
+                'name'  => 'type',
+                'label' => 'Type',
+                'type'  => 'text'
+            ],
+            [
                 'name'  => 'link',
                 'label' => 'Lien',
                 'type'  => 'text'
@@ -43,11 +53,6 @@ class SocialCrudController extends CrudController
             [
                 'name'  => 'file',
                 'label' => 'Fichier',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'name',
-                'label' => 'Nom',
                 'type'  => 'text'
             ],
         ]);
@@ -71,14 +76,14 @@ class SocialCrudController extends CrudController
             'name' => 'type', // can be a real db field, or unique name
             'type' => 'toggle',
             'options' => [
-                0 => 'Lien',
-                1 => 'Fichier',
+                'link' => 'Lien',
+                'file' => 'Fichier',
             ],
             'hide_when' => [ // these fields hide (by name) when the key matches the radio value
-                0 => ['file'],
-                1 => ['link']
+                'link' => ['file'],
+                'file' => ['link']
             ],
-            'default' => 0, // which option to select by default
+            'default' => 0,
             'inline' => true
         ]);
 
@@ -90,6 +95,7 @@ class SocialCrudController extends CrudController
         ]);
 
         $this->crud->addField([
+            'id' => 'link',
             'name' => 'link',
             'label' => 'Lien',
             'type' => 'text',

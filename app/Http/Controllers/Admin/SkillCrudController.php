@@ -24,6 +24,8 @@ class SkillCrudController extends CrudController
         $this->crud->setModel('App\Models\Skill');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/skill');
         $this->crud->setEntityNameStrings('une compétence', 'Compétences');
+        $this->crud->enableDetailsRow();
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()
@@ -36,6 +38,14 @@ class SkillCrudController extends CrudController
                 'label' => 'Nom',
                 'type'  => 'text'
             ],
+            [
+                'label' => "Catégorie", // Table column heading
+                'type' => "select",
+                'name' => 'category_id', // the column that contains the ID of that connected entity;
+                'entity' => 'category', // the method that defines the relationship in your Model
+                'attribute' => "category", // foreign key attribute that is shown to user
+                'model' => "App\Models\Category", // foreign key model
+             ],
         ]);
     }
 
@@ -53,6 +63,16 @@ class SkillCrudController extends CrudController
                 'placeholder' => 'Nom de cette compétence'
             ],
         ]);
+
+        $this->crud->addField([
+            'label' => 'Categorie',
+            'type' => 'select2',
+            'name' => 'category_id', // the db column for the foreign key
+            'entity' => 'category', // the method that defines the relationship in your Model
+            'attribute' => 'category', // foreign key attribute that is shown to user
+            'model' => 'App\Models\Category', // foreign key model
+            'hint' => 'La catégorie dans laquelle se situe cette compétence',
+		]);
     }
 
     protected function setupUpdateOperation()

@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
     {
         User::insert([
             [
-                'name' => 'Admin',
+                'name' => 'Ewilan',
                 'email' => config('app.admin_mail'),
                 'password' => Hash::make(config('app.admin_password'))
             ]

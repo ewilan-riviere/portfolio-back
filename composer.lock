@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1bedad7ea4154e72032e1dfb13870e8d",
+    "content-hash": "388f8c8131f609fde4f39be2876e1893",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -144,6 +144,80 @@
                 "update"
             ],
             "time": "2019-12-20T09:10:48+00:00"
+        },
+        {
+            "name": "backpack/langfilemanager",
+            "version": "2.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laravel-Backpack/LangFileManager.git",
+                "reference": "c728abec7cc5b227dac2a6253cd4380bd797925d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laravel-Backpack/LangFileManager/zipball/c728abec7cc5b227dac2a6253cd4380bd797925d",
+                "reference": "c728abec7cc5b227dac2a6253cd4380bd797925d",
+                "shasum": ""
+            },
+            "require": {
+                "backpack/crud": "^4.0.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "4.*",
+                "scrutinizer/ocular": "~1.1"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0-dev"
+                },
+                "laravel": {
+                    "providers": [
+                        "Backpack\\LangFileManager\\LangFileManagerServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Backpack\\LangFileManager\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Alin Ghitu",
+                    "email": "alin@updivision.com",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Cristian Tabacitu",
+                    "email": "hello@tabacitu.ro",
+                    "homepage": "http://www.tabacitu.ro",
+                    "role": "Contributor"
+                }
+            ],
+            "description": "An interface to edit language files, for Laravel Backpack.",
+            "homepage": "https://github.com/laravel-backpack/langfilemanager",
+            "keywords": [
+                "admin panel",
+                "backpack",
+                "dick",
+                "dick admin",
+                "dick translationmanager",
+                "dickadmin",
+                "lang file manager",
+                "lang files",
+                "language",
+                "laravel",
+                "laravel backpack",
+                "tabacitu",
+                "translationmanager",
+                "updivision"
+            ],
+            "time": "2019-10-19T05:03:57+00:00"
         },
         {
             "name": "barryvdh/elfinder-flysystem-driver",

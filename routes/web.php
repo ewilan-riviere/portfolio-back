@@ -12,9 +12,9 @@
 */
 
 Route::get('/', 'NavigationController@welcome')->name('welcome');
-Route::get('/about', 'NavigationController@about')->name('about');
-Route::get('/router', 'NavigationController@router')->name('router');
+// Route::get('/about', 'NavigationController@about')->name('about');
+// Route::get('/router', 'NavigationController@router')->name('router');
 
-Auth::routes();
+// Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');

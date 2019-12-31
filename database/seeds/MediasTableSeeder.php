@@ -14,10 +14,10 @@ class MediasTableSeeder extends Seeder
     public function run()
     {
         Media::insert([
-            [
-                'slug' => '',
-                'media' => ''
-            ]
+            // [
+            //     'slug' => '',
+            //     'media' => ''
+            // ]
         ]);
     }
 }

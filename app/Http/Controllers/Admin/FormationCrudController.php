@@ -23,7 +23,8 @@ class FormationCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Formation');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/formation');
-        $this->crud->setEntityNameStrings('formation', 'formations');
+        $this->crud->setEntityNameStrings('une formation', 'Formations');
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()

@@ -1,1 +1,17 @@
-.note-editing-area .note-editable{height:10rem !important}.modal-backdrop{display:none}.radio-inline{margin-right:2rem}/*# sourceMappingURL=backpack.css.map */
+.note-editing-area .note-editable {
+  height: 10rem !important;
+}
+
+.modal-backdrop {
+  display: none;
+}
+
+.radio-inline {
+  margin-right: 2rem;
+}
+
+.nav-dropdown-items .nav-item {
+  margin-left: 1rem;
+  background-color: #2f353a;
+}
+

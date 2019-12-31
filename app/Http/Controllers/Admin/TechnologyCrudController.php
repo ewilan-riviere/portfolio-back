@@ -23,7 +23,8 @@ class TechnologyCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Technology');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/technology');
-        $this->crud->setEntityNameStrings('technology', 'technologies');
+        $this->crud->setEntityNameStrings('une technologie', 'Technologies');
+        $this->crud->denyAccess(['show']);
     }
 
     protected function setupListOperation()

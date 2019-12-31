@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 
 use App\Models\Project;
 
@@ -21,6 +22,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !',
                 'github_link' => 'https://github.com/ewilan-riviere/zergling-evolution',
                 'try_it' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Overwatch Memory',
@@ -29,6 +32,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\'univers d\'Overwatch, battez des records pour retrouver toutes les cartes !',
                 'github_link' => 'https://github.com/ewilan-riviere/overwatch-memory',
                 'try_it' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Pomodoro',
@@ -37,6 +42,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur.',
                 'github_link' => 'https://github.com/ewilan-riviere/pomodoro',
                 'try_it' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Quizz Pokémon',
@@ -45,6 +52,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes.',
                 'github_link' => 'https://github.com/ewilan-riviere/quizz-pokemon',
                 'try_it' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Fantasy Battle',
@@ -53,6 +62,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Combattez avec les personnages tirés de célèbres licences de jeu vidéo.',
                 'github_link' => 'https://github.com/ewilan-riviere/fantasy-battle',
                 'try_it' => null,
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => './play.it',
@@ -61,6 +72,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
                 'github_link' => 'https://forge.dotslashplay.it/play.it/website',
                 'try_it' => 'https://forge.dotslashplay.it/play.it/website',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Promo #03 · Code Académie',
@@ -69,6 +82,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Création du site de la promo #03 de la Code Académie avec une équipe de passionnés.',
                 'github_link' => 'https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3',
                 'try_it' => 'http://promo03.code-academie.fr/',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
             [
                 'title' => 'Portfolio',
@@ -77,6 +92,8 @@ class ProjectsTableSeeder extends Seeder
                 'resume' => 'Réalisation de mon portfolio.',
                 'github_link' => 'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
                 'try_it' => 'https://ewilan-riviere.tech/',
+                'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
+                'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
         ]);
     }

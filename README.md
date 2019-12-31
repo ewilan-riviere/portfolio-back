@@ -75,6 +75,8 @@ php artisan serve
 yarn install
 # Run mix
 yarn run dev
+
+yarn watch
 ```
 
 ### ***b. Production deployment***

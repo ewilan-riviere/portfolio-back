@@ -14,7 +14,6 @@ Route::group([
     Route::crud('technology', 'TechnologyCrudController');
     Route::crud('category', 'CategoryCrudController');
     Route::crud('formation', 'FormationCrudController');
-    Route::crud('information', 'InformationCrudController');
     Route::crud('media', 'MediaCrudController');
     Route::crud('project', 'ProjectCrudController');
     Route::crud('skill', 'SkillCrudController');
