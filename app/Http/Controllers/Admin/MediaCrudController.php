@@ -32,16 +32,39 @@ class MediaCrudController extends CrudController
 
     protected function setupListOperation()
     {
-        // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        $this->crud->addColumns([
+            [
+                'name'  => 'slug',
+                'label' => 'Identifiant',
+                'type'  => 'text'
+            ],
+            [
+                'name'  => 'media',
+                'label' => 'Média',
+                'type'  => 'image'
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()
     {
         $this->crud->setValidation(MediaRequest::class);
 
-        // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        $this->crud->addField([
+            'name'         => 'slug',
+            'label'        => 'Identifiant',
+            'type'         => 'text',
+            'hint'  => 'Ne pas mettre d\'espace ou de majuscule',
+            'attributes' => [
+                'placeholder' => 'Slug permettant d\'identifier ce texte'
+            ],
+        ]);
+        $this->crud->addField([
+            'name'         => 'media',
+            'label'        => 'Média',
+            'type'         => 'browse',
+            // 'hint'  => 'Some hint text',
+        ]);
     }
 
     protected function setupUpdateOperation()

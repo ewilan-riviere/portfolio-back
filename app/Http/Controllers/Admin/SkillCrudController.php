@@ -24,7 +24,6 @@ class SkillCrudController extends CrudController
         $this->crud->setModel('App\Models\Skill');
         $this->crud->setRoute(config('backpack.base.route_prefix') . '/skill');
         $this->crud->setEntityNameStrings('une compétence', 'Compétences');
-        $this->crud->enableDetailsRow();
         $this->crud->denyAccess(['show']);
     }
 

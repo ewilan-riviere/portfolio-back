@@ -26,13 +26,11 @@
 </head>
 <body class="parallax">
     <div class="flex-center position-ref full-height">
-        @if (Route::has('login'))
-            <div class="top-right links">
-                <a href="{{ url('/admin') }}">
-                    @lang('navigation.home')
-                </a>
-            </div>
-        @endif
+        <div class="top-right links">
+            <a href="{{ url('/admin') }}">
+                @lang('navigation.home')
+            </a>
+        </div>
 
         <div class="content">
             @yield('content')

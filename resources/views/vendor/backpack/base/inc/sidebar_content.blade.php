@@ -4,6 +4,7 @@ use App\Helpers\DashboardItem;
 
 $skills = [
     new DashboardItem('skill','fa fa-book','Compétences',false,null),
+    new DashboardItem('technology','fa fa-code','Technologies',false,null),
     new DashboardItem('category','fa fa-tags','Catégories',false,null),
     new DashboardItem('formation','fa fa-graduation-cap','Formations',false,null),
 ];

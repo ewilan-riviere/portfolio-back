@@ -15,6 +15,7 @@
         "barryvdh/laravel-debugbar": "^3.2",
         "barryvdh/laravel-elfinder": "^0.4.4",
         "fideloper/proxy": "^4.0",
+        "iatstuti/laravel-nullable-fields": "^2.0",
         "laravel/framework": "^6.2",
         "laravel/tinker": "^1.0",
         "spatie/laravel-fractal": "^5.6"

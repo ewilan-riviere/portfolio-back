@@ -28,7 +28,7 @@ class TextsTableSeeder extends Seeder
             ],
             [
                 'slug' => 'dev_spec',
-                'text' => 'Orientée full-stack :<br />VueJS (JavaScript/TypeScript) & Laravel (PHP)'
+                'text' => 'Orientée full-stack : VueJS (JS/TS) & Laravel (PHP)'
             ],
             [
                 'slug' => 'dev_level',
@@ -36,7 +36,7 @@ class TextsTableSeeder extends Seeder
             ],
             [
                 'slug' => 'dev_professional',
-                'text' => 'En alternance à <a href="https://www.useweb.fr/" target="_blank">UseWeb</a> avec l\'<a href="https://www.eni-ecole.fr/" target="_blank">ENI</a> pour bac +4'
+                'text' => 'En alternance à <a href="https://www.useweb.fr/" target="_blank">UseWeb</a> avec l\'<a href="https://www.eni-ecole.fr/" target="_blank">ENI</a> pour le <span class="font-weight-bold">bac +4</span>'
             ],
         ]);
     }

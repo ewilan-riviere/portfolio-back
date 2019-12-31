@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "388f8c8131f609fde4f39be2876e1893",
+    "content-hash": "4412a844f6c45a0dfb2d1def74f1ea8b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1328,6 +1328,48 @@
                 "url"
             ],
             "time": "2019-07-01T23:21:34+00:00"
+        },
+        {
+            "name": "iatstuti/laravel-nullable-fields",
+            "version": "2.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/michaeldyrynda/laravel-nullable-fields.git",
+                "reference": "b3899adeb7d2cf68801f3c06e0ba923cb0239bcb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/michaeldyrynda/laravel-nullable-fields/zipball/b3899adeb7d2cf68801f3c06e0ba923cb0239bcb",
+                "reference": "b3899adeb7d2cf68801f3c06e0ba923cb0239bcb",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/database": "^6.0",
+                "illuminate/events": "^6.0",
+                "php": "^7.2"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^8.3"
+            },
+            "type": "utility",
+            "autoload": {
+                "psr-4": {
+                    "Iatstuti\\Database\\Support\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michael Dyrynda",
+                    "email": "michael@dyrynda.com.au",
+                    "homepage": "https://dyrynda.com.au"
+                }
+            ],
+            "description": "This trait allows you to easily flag attributes that should be set as null when being persisted to the database using the Laravel PHP Framework.",
+            "time": "2019-09-06T05:38:20+00:00"
         },
         {
             "name": "intervention/image",

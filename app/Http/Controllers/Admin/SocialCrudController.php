@@ -105,7 +105,7 @@ class SocialCrudController extends CrudController
             'name'         => 'icon',
             'label'        => 'Logo',
             'type'         => 'icon_picker',
-            'iconset' => 'fontawesome' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign
+            'iconset' => 'materialdesign' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign
         ]);
     }
 

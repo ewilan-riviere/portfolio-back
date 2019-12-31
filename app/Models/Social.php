@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Iatstuti\Database\Support\NullableFields;
 
 class Social extends Model {
 
     use CrudTrait;
+    use NullableFields;
 
     /*
     |--------------------------------------------------------------------------
@@ -22,6 +24,7 @@ class Social extends Model {
     protected $guarded = ['id'];
     protected $fillable = [
         'name',
+        'type',
         'link',
         'file',
         'icon'
@@ -75,61 +78,62 @@ class Social extends Model {
         });
     }
 
+    const attribute_type = "type";
+    const attribute_file = "file";
+    const attribute_link = "link";
+    const disk = "public";
+    const destination_path = "documents";
+
+    public function setTypeAttribute($value)
+    {
+
+        $this->attributes[self::attribute_type] = $value;
+
+    }
+
     public function setFileAttribute($value)
     {
-        $attribute_type = "type";
-        $attribute_file = "file";
-        $attribute_link = "link";
-        $disk = "public";
-        $destination_path = "documents";
+        if ($this->attributes[self::attribute_type] === 'file') {
 
-        if ($this->attributes[$attribute_type] = 'file') {
-
-            // clear link record
-            $this->attributes[$attribute_link] = null;
-            if ($value !== null) {
+            if ($value !== null || $value !== ' ') {
                 if (strlen($this->file) > 0) {
                     // get file name from database
-                    $filename = str_replace('storage/'.$destination_path.'/','',$this->file);
+                    $filename = str_replace('storage/'.self::destination_path.'/','',$this->file);
                     // remove current file
-                    $valid = Storage::disk('public')->delete($destination_path.'/'.$filename);
+                    $valid = Storage::disk('public')->delete(self::destination_path.'/'.$filename);
                 }
-                $title = str_slug("Laravel 5 Framework", "-");
                 $filename = $value->getClientOriginalName();
-                $extension = $value->getClientOriginalExtension();
+                $filename = str_slug($filename, "-");
+                // $extension = $value->getClientOriginalExtension();
 
                 // save file as
-                $path = Storage::disk($disk)->putFileAs($destination_path, $value, $filename);
+                $path = Storage::disk(self::disk)->putFileAs(self::destination_path, $value, $filename);
 
                 // update database record
-                $this->attributes[$attribute_file] = 'storage/'.$path;
+                $this->attributes[self::attribute_file] = 'storage/'.$path;
+
+                // clear old record
+                $this->attributes[self::attribute_link] = ' ';
             }
         }
     }
 
     public function setLinkAttribute($value)
     {
-        $attribute_type = "type";
-        $attribute_file = "file";
-        $attribute_link = "link";
-        $disk = "public";
-        $destination_path = "documents";
+        if ($this->attributes[self::attribute_type] === 'link') {
 
-        if ($this->attributes[$attribute_type] = 'link') {
-
-            // clear link record
-            $this->attributes[$attribute_file] = null;
-            if (strlen($value) > 0) {
-                if (strlen($this->file) > 0) {
-                    // get file name from database
-                    $filename = str_replace('storage/'.$destination_path.'/','',$this->file);
-                    // remove current file
-                    $valid = Storage::disk('public')->delete($destination_path.'/'.$filename);
-                }
-
-                $this->attributes[$attribute_file] = null;
-                $this->attributes[$attribute_link] = $value;
+            if (strlen($this->file) > 0) {
+                // get file name from database
+                $filename = str_replace('storage/'.self::destination_path.'/','',$this->file);
+                // remove current file
+                $valid = Storage::disk('public')->delete(self::destination_path.'/'.$filename);
             }
+
+            // update database record
+            $this->attributes[self::attribute_link] = $value;
+
+            // clear old record
+            $this->attributes[self::attribute_file] = ' ';
         }
     }
 }

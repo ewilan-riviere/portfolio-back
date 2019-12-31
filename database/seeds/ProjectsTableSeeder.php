@@ -91,7 +91,7 @@ class ProjectsTableSeeder extends Seeder
                 'image-title' => null,
                 'resume' => 'Réalisation de mon portfolio.',
                 'github_link' => 'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
-                'try_it' => 'https://ewilan-riviere.tech/',
+                'try_it' => 'https://portfolio.ewilan-riviere.com/',
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
