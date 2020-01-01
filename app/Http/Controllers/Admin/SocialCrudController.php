@@ -95,18 +95,24 @@ class SocialCrudController extends CrudController
         ]);
 
         $this->crud->addField([
-            'id' => 'link',
             'name' => 'link',
             'label' => 'Lien',
             'type' => 'text',
         ]);
 
         $this->crud->addField([
-            'name'         => 'icon',
-            'label'        => 'Logo',
-            'type'         => 'icon_picker',
-            'iconset' => 'materialdesign' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign
+            'name' => 'icon',
+            'label' => 'Logo',
+            'type' => 'text',
+            'hint' => 'Icônes provenant de <a href="https://materialdesignicons.com/" target="_blank">MaterialDesignIcons</a>'
         ]);
+
+        // $this->crud->addField([
+        //     'name'         => 'icon',
+        //     'label'        => 'Logo',
+        //     'type'         => 'icon_picker',
+        //     'iconset' => 'fontawesome' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign
+        // ]);
     }
 
     protected function setupUpdateOperation()

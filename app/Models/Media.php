@@ -55,5 +55,12 @@ class Media extends Model {
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+    public function setSlugAttribute($value)
+    {
+        $value = str_slug($value, "-");
+
+        $this->attributes['slug'] = $value;
+    }
 }
 

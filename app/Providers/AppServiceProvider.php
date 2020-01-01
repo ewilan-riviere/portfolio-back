@@ -59,8 +59,8 @@ class Navbar extends Model
     var $link;
     var $icon;
 
-    public function __construct($title, $link, $icon) 
-    { 
+    public function __construct($title, $link, $icon)
+    {
         $this->title = $title;
         $this->link = $link;
         $this->icon = $icon;

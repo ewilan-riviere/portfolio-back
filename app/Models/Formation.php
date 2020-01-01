@@ -21,17 +21,25 @@ class Formation extends Model {
     protected $guarded = ['id'];
     protected $fillable = [
         'title',
-        'title_link',
+        'certificate',
         'logo',
+        'resume',
+        'formation_type',
         'place',
         'place_link',
+        'vocational_title',
+        'vocational_link',
         'promo',
         'promo_link',
         'level',
         'date_begin',
         'date_end',
-        'project',
-        'project_link'
+        'project_title',
+        'project_resume',
+        'project_type',
+        'project_link',
+        'project_file',
+        'status'
     ];
     // protected $hidden = [];
     // protected $dates = [];

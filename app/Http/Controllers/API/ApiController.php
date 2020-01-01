@@ -63,10 +63,13 @@ class ApiController extends Controller
      *
      */
     public function skills() {
-        $skills = Skill::with('category')
-                    ->get();
+        $skills = Category::all();
+        $skills->load(['skills' => function($query)
+        {
+            $query->orderBy('title');
+        }]);
 
-        return fractal($skills, new SkillTransformer());
+        return fractal($skills, new CategoryTransformer());
     }
 
     /**
@@ -90,7 +93,7 @@ class ApiController extends Controller
      *
      */
     public function formations() {
-        $formations = Formation::all();
+        $formations = Formation::orderBy('date_end','desc')->get();
 
         return fractal($formations, new FormationTransformer());
     }

@@ -16,17 +16,25 @@ class CreateFormationsTable extends Migration
         Schema::create('formations', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title')->nullable();
-            $table->string('title_link')->nullable();
+            $table->string('certificate')->nullable();
             $table->string('logo')->nullable();
+            $table->string('resume')->nullable();
+            $table->string('type')->nullable();
             $table->string('place')->nullable();
             $table->string('place_link')->nullable();
+            $table->string('vocational_title')->nullable();
+            $table->string('vocational_link')->nullable();
             $table->string('promo')->nullable();
             $table->string('promo_link')->nullable();
-            $table->integer('level')->nullable();
-            $table->year('date_begin')->nullable();
-            $table->year('date_end')->nullable();
-            $table->string('project')->nullable();
+            $table->string('level')->nullable();
+            $table->date('date_begin')->nullable();
+            $table->date('date_end')->nullable();
+            $table->string('project_title')->nullable();
+            $table->string('project_resume')->nullable();
+            $table->string('project_type')->nullable();
             $table->string('project_link')->nullable();
+            $table->string('project_file')->nullable();
+            $table->boolean('finished')->default(true);
             $table->timestamps();
         });
     }
