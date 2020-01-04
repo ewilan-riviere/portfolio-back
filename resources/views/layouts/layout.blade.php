@@ -28,7 +28,7 @@
     <div class="flex-center position-ref full-height">
         <div class="top-right links">
             <a href="{{ url('/admin') }}">
-                @lang('navigation.home')
+                @lang('navigation.login')
             </a>
         </div>
 

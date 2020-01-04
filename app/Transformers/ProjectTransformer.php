@@ -34,7 +34,7 @@ class ProjectTransformer extends TransformerAbstract
         }
 
         if ($project->image != null) {
-            $attributes['image'] = url('storage').'/'.$project->image;
+            $attributes['image'] = config('app.url').'/'.$project->image;
         }
 
         return $attributes;
