@@ -44,6 +44,20 @@ class ApiController extends Controller
 
     /**
      *
+     *  Display login user
+     *
+     * @return JSON
+     *
+     */
+    public function login() {
+        $login = User::where('email','=','ewilan@dotslashplay.it')->firstOrFail();
+
+        $json = $login;
+        return response()->json($json);
+    }
+
+    /**
+     *
      *  Display technologies
      *
      * @return JSON
