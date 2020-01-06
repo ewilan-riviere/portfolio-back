@@ -25,7 +25,8 @@ class Project extends Model {
         'image',
         'resume',
         'github_link',
-        'try_it'
+        'try_it',
+        'font'
     ];
     // protected $hidden = [];
     // protected $dates = [];

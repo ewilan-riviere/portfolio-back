@@ -2,53 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c07aaf23-7390-4e35-9470-e8faca1a588b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/portfolio-back.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/portfolio-back.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/DashboardItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/DashboardItem.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CategoryCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FormationCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/InformationCrudController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/MediaCrudController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProjectCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/SocialCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/SocialCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TechnologyCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TechnologyCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TextCrudController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TextCrudController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/InformationRequest.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Information.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Social.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Social.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/backpack/base.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/backpack/base.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/elfinder.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/elfinder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_02_092218_create_skills_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_02_092218_create_skills_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_02_155323_create_informations_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/MediasTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/MediasTableSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Project.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Project.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Transformers/ProjectTransformer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Transformers/ProjectTransformer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_11_02_091806_create_projects_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_11_02_091806_create_projects_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/ProjectsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/ProjectsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/SocialsTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/SocialsTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/UsersTableSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/backpack.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/backpack.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/backpack.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/backpack.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/sidebar_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/topbar_left_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/topbar_left_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/topbar_right_content.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/base/inc/topbar_right_content.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/delete.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/delete.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/update.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/buttons/update.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/select2_grouped_from_array.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/select2_grouped_from_array.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/toggle.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/fields/toggle.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/inc/filters_navbar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/crud/inc/filters_navbar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/vendor/backpack/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/backpack/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/backpack/custom.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/backpack/custom.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +21,29 @@
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
   </component>
   <component name="FileEditorManager">
-    <leaf />
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Console/Commands/init.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="474">
+              <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+              <folding>
+                <element signature="e#40#71#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Style/SymfonyStyle.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="333" column="20" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="20" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -70,6 +53,7 @@
       <list>
         <option value="$PROJECT_DIR$/app/Models/Social.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Admin/SkillCrudController.php" />
+        <option value="$PROJECT_DIR$/app/Console/Commands/init.php" />
       </list>
     </option>
   </component>
@@ -192,6 +176,7 @@
       <path value="$PROJECT_DIR$/vendor/laravel/tinker" />
       <path value="$PROJECT_DIR$/vendor/laravel/helpers" />
       <path value="$PROJECT_DIR$/vendor/backpack/langfilemanager" />
+      <path value="$PROJECT_DIR$/vendor/iatstuti/laravel-nullable-fields" />
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
@@ -205,6 +190,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -212,11 +198,28 @@
               <item name="portfolio-back" type="b2602c69:ProjectViewProjectNode" />
               <item name="portfolio-back" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="portfolio-back" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio-back" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio-back" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio-back" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="portfolio-back" type="b2602c69:ProjectViewProjectNode" />
+              <item name="portfolio-back" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Console" type="462c0819:PsiDirectoryNode" />
+              <item name="Commands" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -257,16 +260,18 @@
       <workItem from="1577645604616" duration="38000" />
       <workItem from="1577736383496" duration="279000" />
       <workItem from="1577738606499" duration="188000" />
+      <workItem from="1578334627241" duration="1580000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3344000" />
+    <option name="totallyTimeSpent" value="4924000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="46" width="1922" height="1035" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18890075" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19103523" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -369,6 +374,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1197">
           <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Console/Command.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="512" column="20" selection-start-line="512" selection-start-column="20" selection-end-line="512" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Console/Commands/init.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="474">
+          <caret line="55" column="43" selection-start-line="55" selection-start-column="43" selection-end-line="55" selection-end-column="43" />
+          <folding>
+            <element signature="e#40#71#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/symfony/console/Style/SymfonyStyle.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="333" column="20" selection-start-line="333" selection-start-column="20" selection-end-line="333" selection-end-column="20" />
         </state>
       </provider>
     </entry>

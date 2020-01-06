@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('resume')->nullable();
             $table->string('github_link')->nullable();
             $table->string('try_it')->nullable();
+            $table->string('font')->nullable();
             $table->timestamps();
         });
     }

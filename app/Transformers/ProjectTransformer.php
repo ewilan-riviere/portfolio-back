@@ -37,6 +37,10 @@ class ProjectTransformer extends TransformerAbstract
             $attributes['image'] = config('app.url').'/'.$project->image;
         }
 
+        if ($project->font != null) {
+            $attributes['font'] = config('app.url').'/'.$project->font;
+        }
+
         return $attributes;
     }
 }

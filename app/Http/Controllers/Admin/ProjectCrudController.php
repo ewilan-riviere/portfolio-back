@@ -140,6 +140,15 @@ class ProjectCrudController extends CrudController
                 'placeholder' => 'Nom du projet'
             ],
         ]);
+
+        $this->crud->addField([
+            'name'         => 'font',
+            'label'        => 'Police utilisée',
+            'type'         => 'browse',
+            'attributes' => [
+                'placeholder' => 'Nom du projet'
+            ],
+        ]);
     }
 
     protected function setupUpdateOperation()
