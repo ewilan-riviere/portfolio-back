@@ -1,3 +1,17 @@
+.navbar {
+    display: flex;
+    a {
+        text-decoration: none;
+        padding: 1rem 2rem;
+        color: #636b6f;
+        &:hover {
+            color: black;
+            background-color: lightgray;
+        }
+    }
+}
+
+
 /**
 *
 *   Laravel

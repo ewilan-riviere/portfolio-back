@@ -12,7 +12,7 @@
 */
 
 Route::get('/', 'NavigationController@welcome')->name('welcome');
-// Route::get('/about', 'NavigationController@about')->name('about');
+Route::get('/about', 'NavigationController@about')->name('about');
 // Route::get('/router', 'NavigationController@router')->name('router');
 
 // Auth::routes();

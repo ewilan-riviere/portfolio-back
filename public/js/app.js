@@ -4988,6 +4988,17 @@ if (link[0] !== undefined) {
 
 /***/ }),
 
+/***/ "./resources/sass/_fonts.scss":
+/*!************************************!*\
+  !*** ./resources/sass/_fonts.scss ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
+
+/***/ }),
+
 /***/ "./resources/sass/app.scss":
 /*!*********************************!*\
   !*** ./resources/sass/app.scss ***!
@@ -5011,15 +5022,16 @@ if (link[0] !== undefined) {
 /***/ }),
 
 /***/ 0:
-/*!********************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/backpack.scss ***!
-  \********************************************************************************************/
+/*!*************************************************************************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/backpack.scss ./resources/sass/_fonts.scss ***!
+  \*************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(/*! /var/www/portfolio-back/resources/js/app.js */"./resources/js/app.js");
 __webpack_require__(/*! /var/www/portfolio-back/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /var/www/portfolio-back/resources/sass/backpack.scss */"./resources/sass/backpack.scss");
+__webpack_require__(/*! /var/www/portfolio-back/resources/sass/backpack.scss */"./resources/sass/backpack.scss");
+module.exports = __webpack_require__(/*! /var/www/portfolio-back/resources/sass/_fonts.scss */"./resources/sass/_fonts.scss");
 
 
 /***/ })

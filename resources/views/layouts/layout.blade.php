@@ -26,10 +26,17 @@
 </head>
 <body class="parallax">
     <div class="flex-center position-ref full-height">
-        <div class="top-right links">
-            <a href="{{ url('/admin') }}">
-                @lang('navigation.login')
-            </a>
+        <div class="top-right navbar">
+            <div class="link">
+                <a href="{{ route('about') }}">
+                    @lang('navigation.about')
+                </a>
+            </div>
+            <div class="link">
+                <a href="{{ url('/admin') }}">
+                    @lang('navigation.login')
+                </a>
+            </div>
         </div>
 
         <div class="content">
