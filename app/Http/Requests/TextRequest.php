@@ -26,7 +26,8 @@ class TextRequest extends FormRequest
     public function rules()
     {
         return [
-            'slug' => 'required|min:5|max:255|unique'
+            'slug' => 'required|min:5|max:255',
+            'text' => 'nullable'
         ];
     }
 
