@@ -10,49 +10,56 @@ return [
     | allowedOrigins, allowedHeaders and allowedMethods can be set to array('*')
     | to accept any value.
     |
+    * You can easily create your own cors profile.
+    * More info: https://github.com/spatie/laravel-cors/#creating-your-own-cors-profile
     */
+    'cors_profile' => Spatie\Cors\CorsProfile\DefaultProfile::class,
 
     /*
-     * You can enable CORS for 1 or multiple paths.
-     * Example: ['api/*']
-     */
-    'paths' => ['*'],
-
-    /*
-    * Matches the request method. `[*]` allows all methods.
+    * This configuration is used by `DefaultProfile`.
     */
-    'allowed_methods' => ['*'],
+    'default_profile' => [
 
-    /*
-     * Matches the request origin. `[*]` allows all origins.
-     */
-    'allowed_origins' => ['*'],
+        'allow_credentials' => true,
 
-    /*
-     * Matches the request origin with, similar to `Request::is()`
-     */
-    'allowed_origins_patterns' => ['*'],
+        'allow_origins' => [
+            '*',
+        ],
 
-    /*
-     * Sets the Access-Control-Allow-Headers response header. `[*]` allows all headers.
-     */
-    'allowed_headers' => ['*'],
+        'allow_methods' => [
+            'POST',
+            'GET',
+            'OPTIONS',
+            'PUT',
+            'PATCH',
+            'DELETE',
+        ],
 
-    'access_control_allow_origin' => ['*'],
+        'allow_headers' => [
+            'Content-Type',
+            'X-Auth-Token',
+            'Origin',
+            'Authorization',
+        ],
 
-    /*
-     * Sets the Access-Control-Expose-Headers response header.
-     */
-    'exposed_headers' => true,
+        'expose_headers' => [
+            'Cache-Control',
+            'Content-Language',
+            'Content-Type',
+            'Expires',
+            'Last-Modified',
+            'Pragma',
+        ],
 
-    /*
-     * Sets the Access-Control-Max-Age response header.
-     */
-    'max_age' => true,
+        'forbidden_response' => [
+            'message' => 'Forbidden (cors).',
+            'status' => 403,
+        ],
 
-    /*
-     * Sets the Access-Control-Allow-Credentials header.
-     */
-    'supports_credentials' => true,
+        /*
+         * Preflight request will respond with value for the max age header.
+         */
+        'max_age' => 60 * 60 * 24,
+    ],
 
 ];
