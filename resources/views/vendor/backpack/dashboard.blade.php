@@ -8,15 +8,67 @@
     $lastProjectDaysAgo = \Carbon\Carbon::parse($lastProject->date)->diffInDays(\Carbon\Carbon::today());
 
     $widgets['before_content'][] = [
+        'type'         => 'alert',
+        'class'        => 'alert alert-warning mb-2',
+        'heading'      => 'Back-office en développement',
+        'content'      => "Les données actuelles sont susceptibles d'êtres remise à zéro avec les seeders, changer les informations ici n'est conseillé qu'en cas de testing. Si vous souhaitez insérer des données sans risque qu'elles soient effacées, il est préférable de modifier les seeders du projet.",
+        'close_button' => true, // show close button or not
+    ];
+    $widgets['before_content'][] = 
+    [
+        'type' => 'div',
+        'class' => 'row',
+        'content' => 
+        [ // widgets
+            [
+                'type' => 'card',
+                // 'wrapperClass' => 'col-sm-6 col-md-4', // optional
+                // 'class' => 'card bg-dark text-white', // optional
+                'content' => [
+                    'header' => '<i class="fa fa-share-alt mr-2"></i> <b>Portfolio</b>', // optional
+                    'body' =>
+                        "<div>
+                            Partie front du
+                            <a
+                                href='https://portfolio.ewilan-riviere.com'
+                                target='_blank'
+                                class='font-weight-bold invisible-link'
+                            >
+                                portfolio <i class='fas fa-external-link-alt'></i>
+                            </a>
+                            d'Ewilan Rivière, réalisé en NuxtJS
+                        </div>",
+                ]
+            ],
+            [
+                'type' => 'card',
+                // 'wrapperClass' => 'col-sm-6 col-md-4', // optional
+                // 'class' => 'card bg-dark text-white', // optional
+                'content' => [
+                    'header' => '<i class="fa fa-seedling mr-2"></i> <b>Monstera</b>', // optional
+                    'body' => 
+                    "<div>
+                        Partie front du
+                        <a
+                            href='https://monstera.ewilan-riviere.com'
+                            target='_blank'
+                            class='font-weight-bold invisible-link'
+                        >
+                            projet Monstera <i class='fas fa-external-link-alt'></i>
+                        </a>
+                        de la <i>Waffle Team</i>, réalisé en ReactJS
+                    </div>",
+                ]
+            ],
+        ]
+	];
+    $widgets['before_content'][] = [
         'type'        => 'jumbotron',
         'wrapperClass'=> 'shadow-xs',
         // 'heading'     => trans('backpack::base.welcome'),
         // 'content'     => trans('backpack::base.use_sidebar'),
-        'heading' => '<div class="font-weight-bold">Back-office de ewilan-riviere.com</div>',
-        'content' => '
-            <div class="pb-5">
-                Allez voir le rendu sur le <a href="https://portfolio.ewilan-riviere.com" target="_blank" class="font-weight-bold">portfolio <i class="fas fa-external-link-alt"></i></a>
-            </div>',
+        'heading' => '',
+        'content' => '<img src="/images/async-data-with-nuxtjs.png" width="350" height="100%"/>',
         'button_link' => backpack_url('logout'),
         'button_text' => trans('backpack::base.logout'),
     ];
@@ -60,39 +112,6 @@
                 'progress'    => 100, // integer
                 'progressClass' => 'progress-bar '.($lastProjectDaysAgo>5?'bg-warning':'bg-success'),
                 'hint'        => 'Post an article every 3-4 days.',
-            ],
-        ]
-	];
-    $widgets['after_content'][] = [
-        'type' => 'div',
-        'class' => 'row',
-        'content' => [ // widgets
-            [
-                'type' => 'card',
-                // 'wrapperClass' => 'col-sm-6 col-md-4', // optional
-                // 'class' => 'card bg-dark text-white', // optional
-                'content' => [
-                    'header' => 'Some card title', // optional
-                    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non mi nec orci euismod venenatis. Integer quis sapien et diam facilisis facilisis ultricies quis justo. Phasellus sem <b>turpis</b>, ornare quis aliquet ut, volutpat et lectus. Aliquam a egestas elit. <i>Nulla posuere</i>, sem et porttitor mollis, massa nibh sagittis nibh, id porttitor nibh turpis sed arcu.',
-                ]
-                ],
-                [
-                'type' => 'card',
-                // 'wrapperClass' => 'col-sm-6 col-md-4', // optional
-                // 'class' => 'card bg-dark text-white', // optional
-                'content' => [
-                    'header' => 'Another card title', // optional
-                    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non mi nec orci euismod venenatis. Integer quis sapien et diam facilisis facilisis ultricies quis justo. Phasellus sem <b>turpis</b>, ornare quis aliquet ut, volutpat et lectus. Aliquam a egestas elit. <i>Nulla posuere</i>, sem et porttitor mollis, massa nibh sagittis nibh, id porttitor nibh turpis sed arcu.',
-                ]
-                ],
-                [
-                'type' => 'card',
-                // 'wrapperClass' => 'col-sm-6 col-md-4', // optional
-                // 'class' => 'card bg-dark text-white', // optional
-                'content' => [
-                    'header' => 'Yet another card title', // optional
-                    'body' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non mi nec orci euismod venenatis. Integer quis sapien et diam facilisis facilisis ultricies quis justo. Phasellus sem <b>turpis</b>, ornare quis aliquet ut, volutpat et lectus. Aliquam a egestas elit. <i>Nulla posuere</i>, sem et porttitor mollis, massa nibh sagittis nibh, id porttitor nibh turpis sed arcu.',
-                ]
             ],
         ]
 	];

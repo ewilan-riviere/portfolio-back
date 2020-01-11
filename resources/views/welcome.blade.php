@@ -1,25 +1,14 @@
-@extends('layouts.layout')
+@extends('vendor.backpack.base.layouts.plain')
 
 @section('title','')
 
 @section('content')
-    <img src="{{ asset('images/logo.png') }}" width="250">
-    <div class="title m-b-md">
-        {{-- {{ config('app.name') }} --}}
+<div class="row justify-content-center">
+    <div>
+        <img src="{{ asset('images/logos/logo-er-laravel-trans.png') }}" width="250">
+        <div class="title m-b-md">
+            {{-- {{ config('app.name') }} --}}
+        </div>
     </div>
-
-    <div class="links">
-        @lang('navigation.api-of')
-        <a href="https://portfolio.ewilan-riviere.com/">
-            portfolio.ewilan-riviere.com
-        </a>
-    </div>
-@endsection
-
-@section('javascript')
-    <script>
-        // let title = document.getElementById('title')
-        // let titleContent = title.textContent;
-        // title.innerHTML = titleContent+'<br>API'
-    </script>
+</div>
 @endsection

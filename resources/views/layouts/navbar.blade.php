@@ -42,7 +42,7 @@
 
                 </div>
                 <a href="#user">
-                    <img class="circle" src="{{asset('logo.png')}}">
+                    <img class="circle" src="{{asset('logo-er-trans.png')}}">
                 </a>
                 <a class="black-text">
                     <span class="name">

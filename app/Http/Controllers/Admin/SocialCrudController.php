@@ -107,6 +107,13 @@ class SocialCrudController extends CrudController
             'hint' => 'Icônes provenant de <a href="https://materialdesignicons.com/" target="_blank">MaterialDesignIcons</a>'
         ]);
 
+        $this->crud->addField([
+            'label' => "icon_picker",
+            'name' => 'icon_picker',
+            'type' => 'icon_picker',
+            'iconset' => 'fontawesome' // options: fontawesome, glyphicon, ionicon, weathericon, mapicon, octicon, typicon, elusiveicon, materialdesign
+        ]);
+
         // $this->crud->addField([
         //     'name'         => 'icon',
         //     'label'        => 'Logo',

@@ -6,7 +6,7 @@
     <div class="row justify-content-center">
         <div class="col-12 col-md-8 col-lg-4">
             <h3 class="text-center mb-4">
-                <img src="{{ asset('images/logos/logo.png') }}" width="150">
+                Back-office
             </h3>
             <div class="card">
                 <div class="card-body">

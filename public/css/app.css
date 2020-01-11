@@ -1,17 +1,95 @@
+.app {
+  position: relative;
+  overflow: hidden;
+}
+
 .navbar {
+  width: 100%;
+}
+
+.navbar-top-left {
+  width: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: start;
+          justify-content: start;
+}
+
+.navbar-top-left a {
+  text-decoration: none !important;
+  margin: 1rem 1rem;
+  color: #636b6f;
+}
+
+.navbar-top-left a:hover {
+  color: black;
+  background-color: inherit;
+}
+
+.navbar-top-right {
+  width: 100%;
   display: -webkit-box;
   display: flex;
 }
 
-.navbar a {
-  text-decoration: none;
-  padding: 1rem 2rem;
+.navbar-top-right a {
+  text-decoration: none !important;
+  padding: 0.5rem;
   color: #636b6f;
 }
 
-.navbar a:hover {
+.navbar-top-right a:hover {
   color: black;
   background-color: lightgray;
+}
+
+footer {
+  display: none !important;
+}
+
+@media screen and (min-width: 520px) {
+  .navbar-top-left a {
+    margin: 1rem 0 1rem 2rem;
+  }
+
+  .navbar-top-right {
+    -webkit-box-pack: end;
+            justify-content: end;
+  }
+
+  .navbar-top-right a {
+    padding: 1rem 2rem;
+  }
+
+  footer {
+    display: -webkit-box !important;
+    display: flex !important;
+  }
+}
+
+.top-right {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  z-index: 5;
+}
+
+.top-left {
+  position: absolute;
+  right: 10px;
+  top: 18px;
+  z-index: 1;
+}
+
+.navbar {
+  position: absolute !important;
+  z-index: 1;
+  display: -webkit-box;
+  display: flex;
+  top: 0 !important;
+  right: 0 !important;
+  padding: 1rem 0 !important;
+  flex-wrap: inherit !important;
 }
 
 /**
@@ -27,7 +105,6 @@ body {
   color: #090910;
   font-family: "Muli-Regular", sans-serif;
   font-weight: 800;
-  height: 100vh;
   margin: 0;
 }
 
@@ -46,12 +123,6 @@ body {
 
 .position-ref {
   position: relative;
-}
-
-.top-right {
-  position: absolute;
-  right: 10px;
-  top: 18px;
 }
 
 .content {

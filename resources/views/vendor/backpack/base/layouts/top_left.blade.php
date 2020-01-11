@@ -3,7 +3,7 @@
 <html lang="{{ app()->getLocale() }}" dir="{{ config('backpack.base.html_direction') }}">
 
 <head>
-    <link rel="shortcut icon" href="{{ asset('images/logo.png') }}" type="image/x-icon">
+
   @include(backpack_view('inc.head'))
 
 </head>
