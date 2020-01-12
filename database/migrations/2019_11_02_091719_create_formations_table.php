@@ -18,11 +18,11 @@ class CreateFormationsTable extends Migration
             $table->string('title')->nullable();
             $table->string('certificate')->nullable();
             $table->string('logo')->nullable();
-            $table->string('resume')->nullable();
+            $table->text('resume')->nullable();
             $table->string('type')->nullable();
             $table->string('place')->nullable();
             $table->string('place_link')->nullable();
-            $table->string('vocational_title')->nullable();
+            $table->string('vocational')->nullable();
             $table->string('vocational_link')->nullable();
             $table->string('promo')->nullable();
             $table->string('promo_link')->nullable();
@@ -30,7 +30,8 @@ class CreateFormationsTable extends Migration
             $table->date('date_begin')->nullable();
             $table->date('date_end')->nullable();
             $table->string('project_title')->nullable();
-            $table->string('project_resume')->nullable();
+            $table->text('project_resume')->nullable();
+            $table->string('project_image')->nullable();
             $table->string('project_type')->nullable();
             $table->string('project_link')->nullable();
             $table->string('project_file')->nullable();

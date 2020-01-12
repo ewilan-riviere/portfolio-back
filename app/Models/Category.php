@@ -20,7 +20,8 @@ class Category extends Model {
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
-        'category'
+        'category',
+        'display'
     ];
     // protected $hidden = [];
     // protected $dates = [];

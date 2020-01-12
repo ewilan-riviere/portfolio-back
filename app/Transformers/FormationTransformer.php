@@ -38,6 +38,10 @@ class FormationTransformer extends TransformerAbstract
             $attributes['logo'] = config('app.url').'/'.$formation->logo;
         }
 
+        if ($formation->project_image != null) {
+            $attributes['project_image'] = config('app.url').'/'.$formation->project_image;
+        }
+
         if ($formation->project_file != null) {
             $attributes['project_file'] = config('app.url').'/'.$formation->project_file;
         }

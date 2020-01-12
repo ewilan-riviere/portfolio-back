@@ -16,11 +16,11 @@ $contents = [
 ];
 
 $dashboard = [
-    new DashboardItem('dashboard','fa fa-columns',trans('backpack::base.dashboard'),false,null),
+    new DashboardItem('dashboard','fa fa-columns','Tableau de bord',false,null),
 ];
 
 $fileManager = [
-    new DashboardItem('elfinder','fa fa-folder-open',trans('backpack::crud.file_manager'),false,null),
+    new DashboardItem('elfinder','fa fa-folder-open','Fichiers',false,null),
 ];
 
 $body = [
@@ -56,7 +56,7 @@ $body = [
 @endforeach
 
 <li class="nav-title mt-3">
-    <i class='fa fa-globe-africa mr-2'></i> Global
+    <i class='fa fab fa-firefox mr-2'></i> Global
 </li>
 
 <li class='nav-item'>
@@ -64,7 +64,7 @@ $body = [
         class='nav-link'
         href='#'
     >
-        <i class='nav-icon fab fa-firefox'></i>
+        <i class='nav-icon fa fa-align-left'></i>
         En attente
     </a>
 </li>

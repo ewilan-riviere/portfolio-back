@@ -13,7 +13,7 @@
         <div class="navbar-top-left">
             <div class="navbar-link">
                 <a href="{{ route('welcome') }}">
-                    <img src="{{ asset('images/logos/logo-er-laravel-trans.png') }}" alt="" width="50" height="50">
+                    <img src="{{ asset('images/async-data-with-nuxtjs.png') }}" alt="" width="75" height="100%">
                 </a>
             </div>
         </div>

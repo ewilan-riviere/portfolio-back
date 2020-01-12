@@ -5,6 +5,7 @@
 
 .navbar {
   width: 100%;
+  padding: 0 !important;
 }
 
 .navbar-top-left {
@@ -88,7 +89,6 @@ footer {
   display: flex;
   top: 0 !important;
   right: 0 !important;
-  padding: 1rem 0 !important;
   flex-wrap: inherit !important;
 }
 

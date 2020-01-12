@@ -21,6 +21,9 @@ class Skill extends Model {
     protected $guarded = ['id'];
     protected $fillable = [
         'title',
+        'subtitle',
+        'details',
+        'favorite'
     ];
     // protected $hidden = [];
     // protected $dates = [];
