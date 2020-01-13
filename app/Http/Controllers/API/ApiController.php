@@ -10,6 +10,7 @@ use App\Models\Formation;
 use App\Models\Information;
 use App\Models\Media;
 use App\Models\Project;
+use App\Models\Passion;
 use App\Models\Skill;
 use App\Models\Social;
 use App\Models\Technology;
@@ -21,6 +22,7 @@ use App\Transformers\FormationTransformer;
 use App\Transformers\InformationTransformer;
 use App\Transformers\MediaTransformer;
 use App\Transformers\ProjectTransformer;
+use App\Transformers\PassionTransformer;
 use App\Transformers\SkillTransformer;
 use App\Transformers\SocialTransformer;
 use App\Transformers\TechnologyTransformer;
@@ -94,7 +96,7 @@ class ApiController extends Controller
      *
      */
     public function projects() {
-        $projects = Project::orderBy('title')->get();
+        $projects = Project::with('skills')->orderBy('order')->get();
 
         return fractal($projects, new ProjectTransformer());
     }
@@ -110,6 +112,19 @@ class ApiController extends Controller
         $formations = Formation::orderBy('date_end','desc')->get();
 
         return fractal($formations, new FormationTransformer());
+    }
+
+    /**
+     *
+     *  Display passions
+     *
+     * @return JSON
+     *
+     */
+    public function passions() {
+        $passions = Passion::all();
+
+        return fractal($passions, new PassionTransformer());
     }
 
     /**

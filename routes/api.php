@@ -19,6 +19,7 @@ Route::get('/technologies', 'API\ApiController@technologies')->name('api-technol
 Route::get('/skills', 'API\ApiController@skills')->name('api-skills');
 Route::get('/projects', 'API\ApiController@projects')->name('api-projects');
 Route::get('/formations', 'API\ApiController@formations')->name('api-formations');
+Route::get('/passions', 'API\ApiController@passions')->name('api-passions');
 Route::get('/texts', 'API\ApiController@texts')->name('api-texts');
 Route::get('/medias', 'API\ApiController@medias')->name('api-medias');
 Route::get('/socials', 'API\ApiController@socials')->name('api-socials');

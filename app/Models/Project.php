@@ -22,6 +22,7 @@ class Project extends Model {
     protected $guarded = ['id'];
     protected $fillable = [
         'title',
+        'order',
         'image',
         'resume',
         'github_link',
@@ -42,6 +43,11 @@ class Project extends Model {
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function skills()
+    {
+        return $this->belongsToMany(Skill::class);
+    }
 
     /*
     |--------------------------------------------------------------------------

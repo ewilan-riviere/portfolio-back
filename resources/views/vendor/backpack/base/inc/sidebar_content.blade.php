@@ -7,6 +7,7 @@ $skills = [
     new DashboardItem('technology','fa fa-code','Technologies',false,null),
     new DashboardItem('category','fa fa-tags','Catégories',false,null),
     new DashboardItem('formation','fa fa-graduation-cap','Formations',false,null),
+    new DashboardItem('passion','fa fa-heart','Passions',false,null),
 ];
 
 $contents = [

@@ -2,11 +2,11 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Database\Eloquent\Model;
 
-class Skill extends Model {
-
+class Passion extends Model
+{
     use CrudTrait;
 
     /*
@@ -15,15 +15,14 @@ class Skill extends Model {
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'skills';
+    protected $table = 'passions';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
-        'title',
-        'subtitle',
-        'details',
-        'favorite'
+        'name',
+        'icon',
+        'text'
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -40,16 +39,6 @@ class Skill extends Model {
     |--------------------------------------------------------------------------
     */
 
-    public function projects()
-    {
-        return $this->belongsToMany(Project::class);
-    }
-
-    public function category()
-    {
-        return $this->belongsTo(Category::class, "category_id");
-    }
-
     /*
     |--------------------------------------------------------------------------
     | SCOPES
@@ -58,7 +47,7 @@ class Skill extends Model {
 
     /*
     |--------------------------------------------------------------------------
-    | ACCESORS
+    | ACCESSORS
     |--------------------------------------------------------------------------
     */
 
@@ -68,4 +57,3 @@ class Skill extends Model {
     |--------------------------------------------------------------------------
     */
 }
-

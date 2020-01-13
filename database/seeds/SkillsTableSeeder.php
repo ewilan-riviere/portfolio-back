@@ -22,18 +22,18 @@ class SkillsTableSeeder extends Seeder
                 'category_id' => 1,
             ],
             [
-                'title' => 'HTML 5',
+                'title' => 'HTML 5 / CSS 3',
                 'subtitle' => '',
-                'details' => "La base du développement web mais encore faut-il utiliser les tag de manière efficience pour le SEO",
+                'details' => "La base du développement web mais encore faut-il utiliser les tag de manière efficience pour le SEO / À travers SASS, c'est un des constituant de base dans le développement front",
                 'favorite' => false,
                 'category_id' => 1,
             ],
             [
-                'title' => 'CSS 3',
-                'subtitle' => '',
-                'details' => "À travers SASS, c'est un des constituant de base dans le développement front",
-                'favorite' => false,
-                'category_id' => 1,
+                'title' => 'Apache2 / NGINX',
+                'subtitle' => 'Serveur HTTP',
+                'details' => "Pour la mise en production, les VirtualHosts... la pierre angulaire d'Internet",
+                'favorite' => true,
+                'category_id' => 3,
             ],
             [
                 'title' => 'SASS / SCSS',
@@ -237,6 +237,20 @@ class SkillsTableSeeder extends Seeder
                 'details' => 'Des bases du lycée comme tout le monde : <i>¿ cómo está usted ?</i>',
                 'favorite' => false,
                 'category_id' => 4,
+            ],
+            [
+                'title' => 'NodeJS / NPM / Yarn',
+                'subtitle' => '',
+                'details' => "",
+                'favorite' => true,
+                'category_id' => 3,
+            ],
+            [
+                'title' => 'Composer',
+                'subtitle' => '',
+                'details' => "",
+                'favorite' => true,
+                'category_id' => 3,
             ],
         ]);
     }

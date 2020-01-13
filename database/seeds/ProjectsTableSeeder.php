@@ -17,6 +17,7 @@ class ProjectsTableSeeder extends Seeder
         Project::insert([
             [
                 'title' => 'Zergling Evolution',
+                'order' => 8,
                 'image' => 'storage/projects/zergling-evolution.png',
                 'image-title' => 'storage/projects/zergling-evolution-title.png',
                 'resume' => 'Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !',
@@ -28,6 +29,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Overwatch Memory',
+                'order' => 4,
                 'image' => 'storage/projects/overwatch-memory.png',
                 'image-title' => 'storage/projects/overwatch-memory-title.png',
                 'resume' => 'Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\'univers d\'Overwatch, battez des records pour retrouver toutes les cartes !',
@@ -39,6 +41,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Pomodoro',
+                'order' => 6,
                 'image' => 'storage/projects/pomodoro.png',
                 'image-title' => 'storage/projects/pomodoro-title.png',
                 'resume' => 'Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur.',
@@ -50,6 +53,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Quizz Pokémon',
+                'order' => 5,
                 'image' => 'storage/projects/quizz-pokemon.png',
                 'image-title' => 'storage/projects/quizz-pokemon-title.png',
                 'resume' => 'Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes.',
@@ -61,6 +65,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Fantasy Battle',
+                'order' => 7,
                 'image' => 'storage/projects/fantasy-battle.png',
                 'image-title' => 'storage/projects/fantasy-battle-title.png',
                 'resume' => 'Combattez avec les personnages tirés de célèbres licences de jeu vidéo.',
@@ -72,6 +77,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => './play.it',
+                'order' => 2,
                 'image' => 'storage/projects/play.it.png',
                 'image-title' => null,
                 'resume' => 'Refonte du sstorage/fonts/ite de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
@@ -83,6 +89,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Promo #03 · Code Académie',
+                'order' => 3,
                 'image' => 'storage/projects/code-academie.png',
                 'image-title' => null,
                 'resume' => 'Création du site de la promo #03 de la Code Académie avec une équipe de passionnés.',
@@ -94,6 +101,7 @@ class ProjectsTableSeeder extends Seeder
             ],
             [
                 'title' => 'Portfolio',
+                'order' => 1,
                 'image' => 'storage/projects/portfolio.png',
                 'image-title' => null,
                 'resume' => 'Réalisation de mon portfolio.',
