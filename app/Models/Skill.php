@@ -23,7 +23,8 @@ class Skill extends Model {
         'title',
         'subtitle',
         'details',
-        'favorite'
+        'favorite',
+        'image'
     ];
     // protected $hidden = [];
     // protected $dates = [];

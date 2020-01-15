@@ -23,6 +23,10 @@ class SkillTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
+        if ($skill->image != null) {
+            $attributes['image'] = config('app.url').'/'.$skill->image;
+        }
+
         return $attributes;
     }
 }

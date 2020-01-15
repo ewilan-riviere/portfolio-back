@@ -19,6 +19,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Un de mes langages préférés, il revient de loin mais il a su se mettre à jour avec les années. Il est moins permissif que le JavaScript mais il reste très pratique pour la partie back d'une application",
                 'favorite' => true,
+                'image' => 'storage/skills/php.png',
                 'category_id' => 1,
             ],
             [
@@ -26,6 +27,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "La base du développement web mais encore faut-il utiliser les tag de manière efficience pour le SEO / À travers SASS, c'est un des constituant de base dans le développement front",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -33,6 +35,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Serveur HTTP',
                 'details' => "Pour la mise en production, les VirtualHosts... la pierre angulaire d'Internet",
                 'favorite' => true,
+                'image' => 'storage/skills/apache-nginx.png',
                 'category_id' => 3,
             ],
             [
@@ -40,6 +43,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Vital pour développer du CSS avec de l'héritage et des variables",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -47,6 +51,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "La base aujourd'hui dans le développement web, s'utilise partout et sous toutes les formes. Tout développement front-end passe forcément par ce langage",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -54,6 +59,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Le renouveau du JavaScript même si l'ecmascript moderne est déjà bien pratique à utiliser",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -61,6 +67,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Un langage efficace pour gérer ses bases de données, simple et efficace",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -68,6 +75,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Des bases mais je préfère l'open-source",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -75,6 +83,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Un langage côté serveur historique qui fait encore ses preuves aujourd'hui autant pour le web que pour les clients lourds",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -82,6 +91,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Indispensable pour développer sous Linux, la connaissance du Shell permet d'utiliser le terminal et de réaliser une mise en prod rapidement",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -89,6 +99,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => "Très élégant pour réaliser des dossiers ou des livres, LaTeX offre des possibilités intéressantes pour réaliser un rendu de qualité",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 1,
             ],
             [
@@ -96,6 +107,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Framework PHP',
                 'details' => "Mon framework préféré, la puissance d'Eloquent permet d'avoir un ORM très efficace et agréable à utiliser, les migrations permettent de réaliser une base de données simplement et effiacement... de quoi avoir rapidement une API fonctionnelle. Blade permet aussi de faire quelques petits sites web qui n'ont pas besoin d'une partie front avec un framework JS",
                 'favorite' => true,
+                'image' => 'storage/skills/laravel.png',
                 'category_id' => 2,
             ],
             [
@@ -103,6 +115,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Librairie PHP pour back-office',
                 'details' => "Couplé à Laravel, cela permet de gérer un back-office rapidement et efficacement sans perdre de temps, efficace pour la plupart des sites web",
                 'favorite' => true,
+                'image' => 'storage/skills/backpack.png',
                 'category_id' => 2,
             ],
             [
@@ -110,6 +123,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Librairie CSS',
                 'details' => "Un peu classique et plus vraiment à la mode pour le design mais ses classes utilitaires sont agréables en développement",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
@@ -117,6 +131,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Librairie CSS',
                 'details' => "Très agréable, autant en développement que visuellement",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
@@ -124,6 +139,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Librairie  JS',
                 'details' => "Une librairie JS un peu lourde qui simplifie le code au prix d'une dépendance. Si je peux m'en passer, je le fais",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
@@ -131,6 +147,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Framework JS',
                 'details' => 'Une vraie petite merveille pour le côté front-end et développer en composants, la syntaxe des extensions vue est très agréable',
                 'favorite' => true,
+                'image' => 'storage/skills/vue-nuxt.png',
                 'category_id' => 2,
             ],
             [
@@ -138,6 +155,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Framework TS',
                 'details' => 'Notions de bases, je trouve ce framework un peu lourd',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
@@ -145,6 +163,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Framework JS',
                 'details' => 'Notions de bases, je lui préfère VueJS qui est plus instinctif à utiliser',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
@@ -152,13 +171,15 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'CMS',
                 'details' => 'Un CMS, ça peut toujours être utile',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 2,
             ],
             [
-                'title' => 'GIT',
+                'title' => 'git',
                 'subtitle' => 'Logiciel de versions',
                 'details' => 'Vital pour développer efficacement entre plusieurs utilisateurs ou même pour soi-même afin de pouvoir revenir à des versions plus anciennes ou forker son projet',
                 'favorite' => true,
+                'image' => 'storage/skills/git.png',
                 'category_id' => 3,
             ],
             [
@@ -166,6 +187,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'IDE',
                 'details' => "Un IDE pratique et léger avec des extensions efficaces, très cool pour développer du front !",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -173,6 +195,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'IDE',
                 'details' => "Un IDE puissant pour développer du back-end avec des frameworks comme Laravel",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -180,6 +203,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Interface graphique pour git',
                 'details' => "Gérer ses repos comme une pro !",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -187,6 +211,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Interface graphique pour les bases de données',
                 'details' => "Un très bon outil pour gérer ses bases de données, c'est plus agréable qu'en ligne de commande",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -194,6 +219,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => "Logiciel de retouche d'images",
                 'details' => "Si j'ai une licence disponible sinon GIMP fonctionne très bien",
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -201,6 +227,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => "Logiciel de retouche d'images",
                 'details' => 'Quand il faut retravailler les images de la maquette',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -208,6 +235,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => 'Bureautique',
                 'details' => 'Pour écrire des rapport',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -215,6 +243,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => "Logiciel de VoIP",
                 'details' => "En milieu professionnel, c'est aussi bien que Slack pour s'échanger des messages ou du code... et le markdown si agréable à utiliser",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
@@ -222,6 +251,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => 'Langue natale',
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 4,
             ],
             [
@@ -229,6 +259,7 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => 'Avec les séries et les jeux vidéo, un niveau suffisant pour comprendre les posts de StackOverflow',
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 4,
             ],
             [
@@ -236,21 +267,52 @@ class SkillsTableSeeder extends Seeder
                 'subtitle' => '',
                 'details' => 'Des bases du lycée comme tout le monde : <i>¿ cómo está usted ?</i>',
                 'favorite' => false,
+                'image' => null,
                 'category_id' => 4,
             ],
             [
-                'title' => 'NodeJS / NPM / Yarn',
-                'subtitle' => '',
-                'details' => "",
+                'title' => 'NodeJS',
+                'subtitle' => 'Plateforme logicielle',
+                'details' => 
+                "<blockquote>
+                    <p>“<i>Par mes actions, je t'honore. V8.</i>”</p>
+                    <footer>—Slit, <cite>un DevBoy émérite</cite></footer>
+                </blockquote>",
+                'favorite' => false,
+                'image' => null,
+                'category_id' => 3,
+            ],
+            [
+                'title' => 'npm / yarn',
+                'subtitle' => 'Gestionnaire de paquets',
+                'details' => 
+                "<blockquote>
+                    <p>“<i>Mraaoouuw ?</i>”</p>
+                    <footer>—mon chat devant yarn en action</footer>
+                </blockquote>",
                 'favorite' => true,
+                'image' => null,
                 'category_id' => 3,
             ],
             [
                 'title' => 'Composer',
-                'subtitle' => '',
-                'details' => "",
+                'subtitle' => 'Gestionnaire de paquets',
+                'details' => 
+                "<blockquote>
+                    <p>“<i>Le plus nécessaire et le plus difficile dans les dépendances c'est la stabilité.</i>”</p>
+                    <footer>—Wolfgang Amadeus Symfony, <cite>un développeur d'harmonies</cite></footer>
+                </blockquote>",
                 'favorite' => true,
+                'image' => 'storage/skills/composer.png',
                 'category_id' => 3,
+            ],
+            [
+                'title' => 'Symfony',
+                'subtitle' => 'Framework PHP',
+                'details' => "Notions de bases, je l'ai peu expérimenté et de fait, lui préfère Laravel",
+                'favorite' => false,
+                'image' => null,
+                'category_id' => 2,
             ],
         ]);
     }

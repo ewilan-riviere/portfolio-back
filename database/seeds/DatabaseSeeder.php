@@ -37,6 +37,7 @@ class DatabaseSeeder extends Seeder
         $this->directoryToStorage('icons');
         $this->directoryToStorage('formations');
         $this->directoryToStorage('fonts');
+        $this->directoryToStorage('skills');
         $this->call(UsersTableSeeder::class);
         $this->call(TechnologiesTableSeeder::class);
         $this->call(CategoriesTableSeeder::class);

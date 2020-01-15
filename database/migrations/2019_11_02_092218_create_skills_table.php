@@ -19,6 +19,7 @@ class CreateSkillsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->text('details')->nullable();
             $table->boolean('favorite')->default(0);
+            $table->string('image')->nullable();
             $table->timestamps();
         });
     }
