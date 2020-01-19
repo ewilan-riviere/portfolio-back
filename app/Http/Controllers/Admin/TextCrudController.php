@@ -22,7 +22,7 @@ class TextCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Text');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/text');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/texts');
         $this->crud->setEntityNameStrings(
             'un texte',
             'Textes'

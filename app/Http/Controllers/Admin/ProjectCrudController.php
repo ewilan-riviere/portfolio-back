@@ -22,7 +22,7 @@ class ProjectCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Project');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/project');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/projects');
         $this->crud->setEntityNameStrings('un projet', 'Projets');
         $this->crud->denyAccess(['show']);
     }
@@ -45,29 +45,8 @@ class ProjectCrudController extends CrudController
         ]);
         $this->crud->addColumns([
             [
-                'name'  => 'image-title',
-                'label' => 'Image avec titre',
-                'type'  => 'image'
-            ],
-        ]);
-        $this->crud->addColumns([
-            [
                 'name'  => 'resume',
                 'label' => 'Résumé',
-                'type'  => 'text'
-            ],
-        ]);
-        $this->crud->addColumns([
-            [
-                'name'  => 'github_link',
-                'label' => 'Lien du GitHub',
-                'type'  => 'text'
-            ],
-        ]);
-        $this->crud->addColumns([
-            [
-                'name'  => 'try_it',
-                'label' => 'Lien pour l\'essayer',
                 'type'  => 'text'
             ],
         ]);

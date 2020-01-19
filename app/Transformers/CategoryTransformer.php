@@ -8,6 +8,10 @@ use App\Models\Category;
 
 class CategoryTransformer extends TransformerAbstract
 {
+    protected $availableIncludes = [
+        'skills'
+    ];
+
     /**
      * A Fractal transformer.
      *
@@ -23,6 +27,15 @@ class CategoryTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
+        // return [
+        //     'id' => $category->id,
+        // ];
+
         return $attributes;
+    }
+
+    public function includeSkills(Category $category)
+    {
+        return $this->collection($category->skills, new SkillTransformer());
     }
 }

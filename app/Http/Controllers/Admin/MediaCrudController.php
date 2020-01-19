@@ -22,7 +22,7 @@ class MediaCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Media');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/media');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/medias');
         $this->crud->setEntityNameStrings(
             'un média',
             'Médias'

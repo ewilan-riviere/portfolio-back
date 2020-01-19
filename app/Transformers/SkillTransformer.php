@@ -13,6 +13,32 @@ class SkillTransformer extends TransformerAbstract
      *
      * @return array
      */
+    // public function transform(Skill $skill)
+    // {
+    //     $attributes = $skill->toArray();
+
+    //     unset(
+    //         $attributes['id'],
+    //         $attributes['created_at'],
+    //         $attributes['updated_at']
+    //     );
+
+    //     if ($skill->image != null) {
+    //         $attributes['image'] = config('app.url').'/'.$skill->image;
+    //     }
+
+    //     return $attributes;
+    // }
+
+    protected $availableIncludes = [
+        'category'
+    ];
+
+    /**
+     * A Fractal transformer.
+     *
+     * @return array
+     */
     public function transform(Skill $skill)
     {
         $attributes = $skill->toArray();
@@ -28,5 +54,10 @@ class SkillTransformer extends TransformerAbstract
         }
 
         return $attributes;
+    }
+
+    public function includeCategory(Skill $skill)
+    {
+        return $this->item($skill->category, new CategoryTransformer());
     }
 }

@@ -22,7 +22,7 @@ class FormationCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Formation');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/formation');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/formations');
         $this->crud->setEntityNameStrings('une formation', 'Formations');
         $this->crud->denyAccess(['show']);
     }
@@ -36,38 +36,13 @@ class FormationCrudController extends CrudController
                 'type'  => 'text'
             ],
             [
-                'name'  => 'certificate',
-                'label' => 'Certificat',
-                'type'  => 'image'
-            ],
-            [
                 'name'  => 'logo',
                 'label' => 'Logo de l\'organisme',
                 'type'  => 'image'
             ],
             [
-                'name'  => 'resume',
-                'label' => 'Résumé de la formation',
-                'type'  => 'text'
-            ],
-            [
                 'name'  => 'place',
                 'label' => 'Lieu de la formation',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'place_link',
-                'label' => 'Site web de la formation',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'promo',
-                'label' => 'Nom de la promotion',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'promo_link',
-                'label' => 'Site web de la promotion',
                 'type'  => 'text'
             ],
             [
@@ -78,36 +53,6 @@ class FormationCrudController extends CrudController
             [
                 'name'  => 'date_begin',
                 'label' => 'Début de la formation',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'date_end',
-                'label' => 'Fin de la formation',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'project_title',
-                'label' => 'Projet · titre',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'project_resume',
-                'label' => 'Projet · résumé',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'project_type',
-                'label' => 'Projet · type',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'project_link',
-                'label' => 'Projet · lien',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'project_file',
-                'label' => 'Projet · fichier',
                 'type'  => 'text'
             ],
         ]);

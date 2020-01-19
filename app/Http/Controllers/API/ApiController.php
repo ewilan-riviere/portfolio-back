@@ -60,15 +60,27 @@ class ApiController extends Controller
 
     /**
      *
-     *  Display technologies
+     *  Display categories with skills
      *
      * @return JSON
      *
      */
-    public function technologies() {
-        $technologies = Technology::all();
+    public function categories() {
+        // $skills = Category::all();
+        // $skills->load(['skills' => function($query)
+        // {
+        //     $query->orderBy('title');
+        // }]);
 
-        return fractal($technologies, new TechnologyTransformer());
+        // return fractal($skills, new CategoryTransformer())
+        //     ->includeSkills(['skills']);
+        $categories = Category::all();
+        $categories->load(['skills' => function($query)
+        {
+            $query->orderBy('title');
+        }]);
+        return fractal($categories, new CategoryTransformer())
+            ->includeSkills(['skills']);
     }
 
     /**
@@ -79,13 +91,17 @@ class ApiController extends Controller
      *
      */
     public function skills() {
-        $skills = Category::all();
-        $skills->load(['skills' => function($query)
-        {
-            $query->orderBy('title');
-        }]);
+        // $skills = Category::all();
+        // $skills->load(['skills' => function($query)
+        // {
+        //     $query->orderBy('title');
+        // }]);
 
-        return fractal($skills, new CategoryTransformer());
+        // return fractal($skills, new CategoryTransformer())
+        //     ->includeSkills(['skills']);
+        $skills = Skill::with('category')->orderBy('title')->get();
+        return fractal($skills, new SkillTransformer())
+            ->includeCategory(['category']);
     }
 
     /**

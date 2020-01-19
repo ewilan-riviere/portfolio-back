@@ -20,7 +20,7 @@ class Category extends Model {
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
-        'category',
+        'slug',
         'display'
     ];
     // protected $hidden = [];
@@ -60,4 +60,12 @@ class Category extends Model {
     | MUTATORS
     |--------------------------------------------------------------------------
     */
+
+    public function setDisplayAttribute($value)
+    {
+        $slug = str_slug($value, "-");
+
+        $this->attributes['slug'] = $slug;
+        $this->attributes['display'] = $value;
+    }
 }

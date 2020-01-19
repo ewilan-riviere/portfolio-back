@@ -24,7 +24,7 @@ class SocialCrudController extends CrudController
     {
         $this->crud->setModel('App\Models\Social');
         // $this->crud->setDefaultPageLength(20);
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/social');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/socials');
         $this->crud->setEntityNameStrings(
             'un réseau social',
             'Réseaux sociaux'
@@ -43,17 +43,11 @@ class SocialCrudController extends CrudController
             [
                 'name'  => 'type',
                 'label' => 'Type',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'link',
-                'label' => 'Lien',
-                'type'  => 'text'
-            ],
-            [
-                'name'  => 'file',
-                'label' => 'Fichier',
-                'type'  => 'text'
+                'type'  => 'radio',
+                'options' => [
+                    'file' => 'Fichier',
+                    'link' => 'Lien'
+                ]
             ],
         ]);
     }

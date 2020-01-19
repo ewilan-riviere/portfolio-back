@@ -22,8 +22,8 @@ class PassionCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Passion');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/passion');
-        $this->crud->setEntityNameStrings('passion', 'passions');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/passions');
+        $this->crud->setEntityNameStrings('une passion', 'passions');
     }
 
     protected function setupListOperation()

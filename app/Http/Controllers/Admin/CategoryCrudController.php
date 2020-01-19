@@ -22,7 +22,7 @@ class CategoryCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Category');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/category');
+        $this->crud->setRoute(config('backpack.base.route_prefix') . '/categories');
         $this->crud->setEntityNameStrings('une catégorie', 'Catégories');
         $this->crud->denyAccess(['show']);
     }
@@ -30,7 +30,14 @@ class CategoryCrudController extends CrudController
     protected function setupListOperation()
     {
         // TODO: remove setFromDb() and manually define Columns, maybe Filters
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addColumns([
+            [
+                'name'  => 'display',
+                'label' => 'Nom',
+                'type'  => 'text'
+            ],
+        ]);
     }
 
     protected function setupCreateOperation()
@@ -38,7 +45,15 @@ class CategoryCrudController extends CrudController
         $this->crud->setValidation(CategoryRequest::class);
 
         // TODO: remove setFromDb() and manually define Fields
-        $this->crud->setFromDb();
+        // $this->crud->setFromDb();
+        $this->crud->addField([
+            'name'         => 'display',
+            'label'        => 'Nom',
+            'type'         => 'text',
+            'attributes' => [
+                'placeholder' => 'Nom de cette catégorie'
+            ],
+        ]);
     }
 
     protected function setupUpdateOperation()

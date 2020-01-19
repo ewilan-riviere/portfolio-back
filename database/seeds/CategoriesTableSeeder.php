@@ -15,19 +15,19 @@ class CategoriesTableSeeder extends Seeder
     {
         Category::insert([
             [
-                'category' => 'Language',
+                'slug' => 'langages-de-developpement',
                 'display' => 'Langages de développement'
             ],
             [
-                'category' => 'Framework',
+                'slug' => 'frameworks-&-librairies',
                 'display' => 'Frameworks & librairies'
             ],
             [
-                'category' => 'Technologie',
+                'slug' => 'technologies-&-logiciels',
                 'display' => 'Technologies & logiciels'
             ],
             [
-                'category' => 'Langue',
+                'slug' => 'langues',
                 'display' => 'Langues'
             ]
         ]);

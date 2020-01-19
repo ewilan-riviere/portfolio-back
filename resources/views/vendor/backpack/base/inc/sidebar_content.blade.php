@@ -3,17 +3,16 @@
 use App\Helpers\DashboardItem;
 
 $skills = [
-    new DashboardItem('skill','fa fa-book','Compétences',false,null),
-    new DashboardItem('technology','fa fa-code','Technologies',false,null),
-    new DashboardItem('category','fa fa-tags','Catégories',false,null),
-    new DashboardItem('formation','fa fa-graduation-cap','Formations',false,null),
-    new DashboardItem('passion','fa fa-heart','Passions',false,null),
+    new DashboardItem('skills','fa fa-code','Compétences',false,null),
+    new DashboardItem('categories','fa fa-tags','Catégories',false,null),
+    new DashboardItem('formations','fa fa-graduation-cap','Formations',false,null),
+    new DashboardItem('passions','fa fa-heart','Passions',false,null),
 ];
 
 $contents = [
-    new DashboardItem('social','fa fa-share-alt','Réseaux sociaux',false,null),
-    new DashboardItem('text','fa fa-align-left','Textes',false,null),
-    new DashboardItem('media','fa fa-photo-video','Médias',false,null),
+    new DashboardItem('socials','fa fa-share-alt','Réseaux sociaux',false,null),
+    new DashboardItem('texts','fa fa-align-left','Textes',false,null),
+    new DashboardItem('medias','fa fa-photo-video','Médias',false,null),
 ];
 
 $dashboard = [
@@ -25,7 +24,7 @@ $fileManager = [
 ];
 
 $body = [
-    new DashboardItem('project','fa fa-folder','Projets',false,null),
+    new DashboardItem('projects','fa fa-folder','Projets',false,null),
     new DashboardItem(null,'fa fa-book','Connaissances',true,$skills),
     new DashboardItem(null,'fa fa-clone','Contenus',true,$contents)
 ];
