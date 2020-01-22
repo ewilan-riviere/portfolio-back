@@ -38,5 +38,21 @@ class ForeignKeys extends Migration
             $table->integer("skill_id")->unsigned()->index();
             $table->foreign("skill_id")->references("id")->on("skills")->onDelete("cascade");
         });
+
+        /**
+        * Projects <=> Skills: Many to Many
+        *
+        * @return void
+        */
+        Schema::create('project_project_member', function (Blueprint $table) {
+            $table->unsignedInteger('id')->nullable();
+            $table->timestamps();
+        });
+        Schema::table("project_project_member", function (Blueprint $table) {
+            $table->integer("project_id")->unsigned()->index();
+            $table->foreign("project_id")->references("id")->on("projects")->onDelete("cascade");
+            $table->integer("project_member_id")->unsigned()->index();
+            $table->foreign("project_member_id")->references("id")->on("projects_members")->onDelete("cascade");
+        });
     }
 }

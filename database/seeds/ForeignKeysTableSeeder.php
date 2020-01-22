@@ -121,5 +121,12 @@ class ForeignKeysTableSeeder extends Seeder
                 'skill_id' => 17
             ],
         ]);
+
+        DB::table('project_project_member')->insert([
+            [
+                'project_id' => 6,
+                'project_member_id' => 2
+            ]
+        ]);
     }
 }

@@ -43,4 +43,14 @@ class ProjectTransformer extends TransformerAbstract
 
         return $attributes;
     }
+
+    public function includeSkills(Project $project)
+    {
+        return $this->item($project->skills, new SkillTransformer());
+    }
+
+    public function includeProjectsMembers(Project $project)
+    {
+        return $this->item($project->projectsMembers, new ProjectMemberTransformer());
+    }
 }

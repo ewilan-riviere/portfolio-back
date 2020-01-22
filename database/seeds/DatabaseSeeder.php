@@ -47,6 +47,7 @@ class DatabaseSeeder extends Seeder
         $this->call(TextsTableSeeder::class);
         $this->call(MediasTableSeeder::class);
         $this->call(PassionsTableSeeder::class);
+        $this->call(ProjectsMembersTableSeeder::class);
         $this->call(ForeignKeysTableSeeder::class);
     }
 }

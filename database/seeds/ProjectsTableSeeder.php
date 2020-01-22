@@ -24,6 +24,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/zergling-evolution',
                 'try_it' => null,
                 'font' => 'storage/fonts/starcraft-normal.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -36,6 +37,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/overwatch-memory',
                 'try_it' => null,
                 'font' => 'storage/fonts/big-noodle-titling.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -48,6 +50,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/pomodoro',
                 'try_it' => null,
                 'font' => 'storage/fonts/permanent-marker-regular.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -60,6 +63,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/quizz-pokemon',
                 'try_it' => null,
                 'font' => 'storage/fonts/pokemon-solid.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -72,6 +76,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/fantasy-battle',
                 'try_it' => null,
                 'font' => 'storage/fonts/triforce.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -84,6 +89,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://forge.dotslashplay.it/play.it/website',
                 'try_it' => 'https://dev.website.dotslashplay.it/',
                 'font' => 'storage/fonts/source-code-pro-regular.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -96,6 +102,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3',
                 'try_it' => 'http://promo03.code-academie.fr/',
                 'font' => 'storage/fonts/kraftstoff-regular.otf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],
@@ -108,6 +115,7 @@ class ProjectsTableSeeder extends Seeder
                 'github_link' => 'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
                 'try_it' => 'https://portfolio.ewilan-riviere.com/',
                 'font' => 'storage/fonts/morpheus.ttf',
+                'is_collective' => false,
                 'created_at' => Carbon::now()->format('Y-m-d H:i:s'),
                 'updated_at' => Carbon::now()->format('Y-m-d H:i:s')
             ],

@@ -13,13 +13,20 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::get('/users', 'API\ApiController@users')->name('api-users');
-Route::get('/login', 'API\ApiController@login')->name('api-login');
-Route::get('/skills', 'API\ApiController@skills')->name('api-skills');
-Route::get('/categories', 'API\ApiController@categories')->name('api-categories');
-Route::get('/projects', 'API\ApiController@projects')->name('api-projects');
-Route::get('/formations', 'API\ApiController@formations')->name('api-formations');
-Route::get('/passions', 'API\ApiController@passions')->name('api-passions');
-Route::get('/texts', 'API\ApiController@texts')->name('api-texts');
-Route::get('/medias', 'API\ApiController@medias')->name('api-medias');
-Route::get('/socials', 'API\ApiController@socials')->name('api-socials');
+Route::group([
+    'namespace'  => 'Api',
+    'middleware' => 'api',
+], function () {
+    // Route::get('agencies', 'AgencyController@index')->name('agencies.index');
+
+    Route::get('/users', 'ApiController@users')->name('users');
+    Route::get('/login', 'ApiController@login')->name('login');
+    Route::get('/skills', 'ApiController@skills')->name('skills');
+    Route::get('/categories', 'ApiController@categories')->name('categories');
+    Route::get('/projects', 'ApiController@projects')->name('projects');
+    Route::get('/formations', 'ApiController@formations')->name('formations');
+    Route::get('/passions', 'ApiController@passions')->name('passions');
+    Route::get('/texts', 'ApiController@texts')->name('texts');
+    Route::get('/medias', 'ApiController@medias')->name('medias');
+    Route::get('/socials', 'ApiController@socials')->name('socials');
+});

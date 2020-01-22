@@ -10,6 +10,7 @@ use App\Models\Formation;
 use App\Models\Information;
 use App\Models\Media;
 use App\Models\Project;
+use App\Models\ProjectMember;
 use App\Models\Passion;
 use App\Models\Skill;
 use App\Models\Social;
@@ -22,6 +23,7 @@ use App\Transformers\FormationTransformer;
 use App\Transformers\InformationTransformer;
 use App\Transformers\MediaTransformer;
 use App\Transformers\ProjectTransformer;
+use App\Transformers\ProjectMemberTransformer;
 use App\Transformers\PassionTransformer;
 use App\Transformers\SkillTransformer;
 use App\Transformers\SocialTransformer;
@@ -112,9 +114,11 @@ class ApiController extends Controller
      *
      */
     public function projects() {
-        $projects = Project::with('skills')->orderBy('order')->get();
-
-        return fractal($projects, new ProjectTransformer());
+        $projects = Project::with('skills','projectsMembers')->orderBy('order')->get();
+        
+        return fractal($projects, new ProjectTransformer())
+            ->includeSkills(['skills'])
+            ->includeProjectsMembers(['projectsMembers']);
     }
 
     /**

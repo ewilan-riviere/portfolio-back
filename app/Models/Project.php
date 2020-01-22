@@ -49,6 +49,11 @@ class Project extends Model {
         return $this->belongsToMany(Skill::class);
     }
 
+    public function projectsMembers()
+    {
+        return $this->belongsToMany(ProjectMember::class);
+    }
+
     /*
     |--------------------------------------------------------------------------
     | SCOPES

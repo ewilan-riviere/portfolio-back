@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('github_link')->nullable();
             $table->string('try_it')->nullable();
             $table->string('font')->nullable();
+            $table->boolean('is_collective')->default(0);
             $table->timestamps();
         });
     }
