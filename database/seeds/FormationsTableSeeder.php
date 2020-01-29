@@ -19,6 +19,8 @@ class FormationsTableSeeder extends Seeder
                 'title' => 'Licence de Psychologie',
                 'certificate' => null,
                 'logo' => 'storage/formations/rennes-2.svg',
+                'color' => '#000000',
+                'color_text_white' => true,
                 'resume' => 
                 "Une formation en psychologie orientée vers le développement de l'enfant et de l'adolescent.",
                 'type' => 'school',
@@ -32,7 +34,8 @@ class FormationsTableSeeder extends Seeder
                 'date_begin' => Carbon::parse('2011-09'),
                 'date_end' => Carbon::parse('2014-06'),
                 'project_title' => 'TER sur la cyberviolence',
-                'project_resume' => null,
+                'project_resume' => 
+                "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
                 'project_image' => null,
                 'project_type' => 'file',
                 'project_link' => null,
@@ -43,12 +46,14 @@ class FormationsTableSeeder extends Seeder
                 'title' => 'Développeuse web, web mobile',
                 'certificate' => null,
                 'logo' => 'storage/formations/code-academie.png',
+                'color' => '#3e979b',
+                'color_text_white' => true,
                 'resume' => 
-                "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web. Donne l'équivalent de bac +2 lors de l'obtention du titre, idéal dans le cas d'une réorientation professionnelle.
-                <br/>
+                "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web. Donne l'équivalent de bac +2 lors de l'obtention du titre, idéal dans le cas d'une réorientation professionn elle.
+                <br/><br/>
                 Basée sur l'apprentissage en auto-didacte mais guidée par des formateurs compétents qui donnent les clés pour savoir quoi rechercher pour trouver nos propres solutions. L'aspect du travail en équipe et de l'entraide est un des points les plus importants durant cette formation.",
                 'type' => 'school',
-                'place' => 'Code Académie (FACE Rennes)',
+                'place' => 'Code Académie',
                 'place_link' => 'http://code-academie.fr/',
                 'vocational' => null,
                 'vocational_link' => null,
@@ -72,8 +77,10 @@ class FormationsTableSeeder extends Seeder
                 'title' => 'POEC Java',
                 'certificate' => null,
                 'logo' => 'storage/formations/eni.svg',
+                'color' => '#004982',
+                'color_text_white' => true,
                 'resume' => 
-                "Une préparation officiel à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs.",
+                "Une préparation officielle à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs.",
                 'type' => 'school',
                 'place' => 'ENI Ecole Informatique',
                 'place_link' => 'https://www.eni-ecole.fr/',
@@ -96,13 +103,19 @@ class FormationsTableSeeder extends Seeder
                 'title' => 'Conceptrice Développeuse d\'Applications',
                 'certificate' => null,
                 'logo' => 'storage/formations/alternance.png',
+                'color' => '#4981be',
+                'color_text_white' => true,
                 'resume' => 
-                "Une formation en alternance pour le titre de CDA.",
+                "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb.
+                <br/><br/>
+                Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS (VueJS) et un back-end en Laravel. Mon rôle est généralement de travailler sur la partie front-end mais il m'arrive de devoir travailler également sur le back-end, ou de réaliser une application entièrement. Le plus souvent je travaille en équipe restreinte de trois personnes, je suis suivie par mon équipe pour les questions techniques et le manager pour les questions d'entreprise.
+                <br/><br/>
+                L'école me forme sur plusieurs technologies : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android. Des évaluations sont faites sur mes compétences pour obtenir le titre de conceptrice développeuse d'applications (bac+4).",
                 'type' => 'vocational',
-                'place' => 'ENI Ecole Informatique',
-                'place_link' => 'https://www.eni-ecole.fr/',
-                'vocational' => 'UseWeb',
-                'vocational_link' => 'https://www.useweb.fr/',
+                'place' => 'UseWeb',
+                'place_link' => 'https://www.useweb.fr/',
+                'vocational' => 'ENI Ecole Informatique',
+                'vocational_link' => 'https://www.eni-ecole.fr/',
                 'promo' => null,
                 'promo_link' => null,
                 'level' => 'Bac +4',

@@ -31,6 +31,7 @@ class Skill extends Model {
         'subtitle',
         'details',
         'is_favorite',
+        'rating',
         'image',
         'blockquote_text',
         'blockquote_who'

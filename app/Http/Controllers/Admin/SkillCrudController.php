@@ -106,7 +106,7 @@ class SkillCrudController extends CrudController
             'entity' => 'category', // the method that defines the relationship in your Model
             'attribute' => 'display', // foreign key attribute that is shown to user
             'model' => 'App\Models\Category', // foreign key model
-            'hint' => 'La catégorie dans laquelle se situe cette compétence',
+            'hint' => '<i>La catégorie dans laquelle se situe cette compétence</i>',
 		]);
 
         $this->crud->addField([
@@ -152,7 +152,7 @@ class SkillCrudController extends CrudController
             'label'        => 'Thème',
             'type' => 'color',
             'default' => '#000000',
-            'hint' => "Couleur liée au thème du logo"
+            'hint' => "<i>Couleur liée au thème du logo</i>"
         ]);
 
         $this->crud->addField([
@@ -186,6 +186,18 @@ class SkillCrudController extends CrudController
             ],
             'hint' => '<i>Définir cette compétence comme favorite</i>',
             'inline'      => true,
+        ]);
+
+        $this->crud->addField([
+            'name'         => 'rating',
+            'label'        => 'Note',
+            'type'         => 'number',
+            'attributes' => [
+                "step" => "any",
+                "max" => 5,
+                "min" => 0
+            ],
+            'hint' => "<i>Une note entre 0 et 5, les chiffres à virgule sont autorisés comme 4,6</i>"
         ]);
 
         $this->crud->addField([

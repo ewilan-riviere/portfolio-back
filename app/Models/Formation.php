@@ -23,6 +23,8 @@ class Formation extends Model {
         'title',
         'certificate',
         'logo',
+        'color',
+        'color_text_white',
         'resume',
         'formation_type',
         'place',

@@ -114,11 +114,11 @@ class ApiController extends Controller
      *
      */
     public function projects() {
-        $projects = Project::with('skills','projectsMembers')->orderBy('order')->get();
-        
+        $projects = Project::with('skills')->orderBy('order')->get();
+
         return fractal($projects, new ProjectTransformer())
-            ->includeSkills(['skills'])
-            ->includeProjectsMembers(['projectsMembers']);
+            ->includeSkills(['skills']);
+            // ->includeProjectsMembers(['projectsMembers']);
     }
 
     /**

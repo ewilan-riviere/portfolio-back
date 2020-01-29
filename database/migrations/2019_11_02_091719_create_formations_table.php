@@ -18,6 +18,8 @@ class CreateFormationsTable extends Migration
             $table->string('title')->nullable();
             $table->string('certificate')->nullable();
             $table->string('logo')->nullable();
+            $table->string('color')->default('#000000');
+            $table->boolean('color_text_white')->default(false);
             $table->text('resume')->nullable();
             $table->string('type')->nullable();
             $table->string('place')->nullable();

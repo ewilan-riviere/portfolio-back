@@ -51,6 +51,8 @@ class SkillTransformer extends TransformerAbstract
 
         if ($skill->image != null) {
             $attributes['image'] = config('app.url').'/'.$skill->image;
+        } else {
+            $attributes['image'] = config('app.url').'/storage/skills/default.png';
         }
 
         return $attributes;

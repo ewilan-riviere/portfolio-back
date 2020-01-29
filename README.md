@@ -1,16 +1,17 @@
 # **Ewilan Rivière Portfolio · Back-end**
 
-[![Laravel 6.2](https://img.shields.io/badge/Laravel-6.2-red)](https://laravel.com)
-[![PHP 7.2](https://img.shields.io/badge/PHP-7.2-blue)](https://www.php.net)
-[![Composer 1.8](https://img.shields.io/badge/Composer-1.8-green)](https://getcomposer.org)
+[![PHP 7.3](https://img.shields.io/badge/PHP-7.3-blue)](https://www.php.net)
+[![Composer 1.8](https://img.shields.io/badge/Composer-1.8-green)](https://getcomposer.org)  
 
-*Only local depolyment*
+[![Laravel 6.1](https://img.shields.io/badge/Laravel-6.1-red)](https://laravel.com/docs/6.x)
+[![Backpack 4.0](https://img.shields.io/badge/Backpack-4.0-blueviolet)](https://backpackforlaravel.com/docs/4.0)
+[![Swagger 6.0.3](https://img.shields.io/badge/Swagger-6.0.3-85ea2d)](https://swagger.io/)   
 
 [![NodeJS 11.15](https://img.shields.io/badge/NodeJS-11.15-green)](https://nodejs.org/en)
-[![Yarn 1.19](https://img.shields.io/badge/Yarn-1.19-blue)](https://nodejs.org/en)  
+[![Yarn 1.19](https://img.shields.io/badge/Yarn-1.19-blue)](https://yarnpkg.com/lang/en/)
 
-**Front-end : [Ewilan Rivière Portfolio · Front-end](https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front)**  
-**Deploy on : [api.ewilan-riviere.tech](http://api.ewilan-riviere.tech)**
+**Front-end : [Ewilan Rivière Portfolio · Front-end](https://github.com/ewilan-riviere/portfolio-front)**  
+**Deploy on : [api.ewilan-riviere.com](http://api.ewilan-riviere.com)**
 
 ---
 
