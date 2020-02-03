@@ -110,7 +110,7 @@ api/users
 ## Generator
 
 ```
-php artisan make:migration:schema create_projects_members --model=0 --schema="name:string:unique"
+php artisan make:migration:schema create_projects_members_table --model=0 --schema="name:string:unique"
 php artisan backpack:crud projectMember
 php artisan make:seeder ProjectsMembersTableSeeder
 ```

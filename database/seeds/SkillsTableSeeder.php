@@ -187,7 +187,7 @@ class SkillsTableSeeder extends Seeder
                 'version' => '',
                 'link' => null,
                 'is_free_app' => true,
-                'color' => '#000000',
+                'color' => '#ffffff',
                 'color_text_dark' => false,
                 'subtitle' => 'Système de composition de documents',
                 'details' => "Très élégant pour réaliser des dossiers ou des livres, LaTeX offre des possibilités intéressantes pour réaliser un rendu de qualité",

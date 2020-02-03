@@ -9,7 +9,7 @@
 
     $widgets['before_content'][] = [
         'type'         => 'alert',
-        'class'        => 'alert alert-warning text-dark mb-2',
+        'class'        => 'alert alert-info text-dark mb-2',
         'heading'      => 'Back-office en développement',
         'content'      => "Les données actuelles sont susceptibles d'êtres remise à zéro avec les seeders, changer les informations ici n'est conseillé qu'en cas de testing. Si vous souhaitez insérer des données sans risque qu'elles soient effacées, il est préférable de modifier les seeders du projet.",
         'close_button' => true, // show close button or not
@@ -26,17 +26,15 @@
                 // 'class' => 'card bg-dark text-white', // optional
                 'content' => [
                     'header' => 
-                        "<a
-                            href='https://portfolio.ewilan-riviere.com'
-                            target='_blank'
-                            class='font-weight-bold invisible-link'
-                        >
-                            <i class='fa fa-share-alt mr-2'></i> <b>Portfolio</b>
-                        </a>", // optional
+                        "<i class='fa fa-share-alt mr-2'></i> <b>Portfolio</b>", // optional
                     'body' =>
                         "<div>
                             Partie front du portfolio d'Ewilan Rivière, réalisé en NuxtJS.
                         </div>",
+                    'link' => [
+                        'name' => 'portfolio.ewilan-riviere.com',
+                        'url' => 'https://portfolio.ewilan-riviere.com'
+                    ]
                 ]
             ],
             [
@@ -45,17 +43,15 @@
                 // 'class' => 'card bg-dark text-white', // optional
                 'content' => [
                     'header' => 
-                        "<a
-                            href='https://monstera.ewilan-riviere.com'
-                            target='_blank'
-                            class='font-weight-bold invisible-link'
-                        >
-                            <i class='fa fa-seedling mr-2'></i> <b>Projet Monstera</b>
-                        </a>", // optional
+                        "<i class='fa fa-seedling mr-2'></i> <b>Projet Monstera</b>", // optional
                     'body' => 
                     "<div>
                         Partie front du projet Monstera de la <i>Waffle Team</i>, réalisé en ReactJS.
                     </div>",
+                    'link' => [
+                        'name' => 'monstera.ewilan-riviere.com',
+                        'url' => 'https://monstera.ewilan-riviere.com'
+                    ]
                 ]
             ],
         ]

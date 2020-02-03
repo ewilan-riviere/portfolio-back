@@ -5,7 +5,7 @@ namespace App\Models;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
 
-class ProjectMember extends Model
+class Snippet extends Model
 {
     use CrudTrait;
 
@@ -15,15 +15,13 @@ class ProjectMember extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'projects_members';
+    protected $table = 'snippets';
     // protected $primaryKey = 'id';
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
-        'name',
-        'github',
-        'portfolio',
-        'linkedin'
+        'slug',
+        'snippet'
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -39,11 +37,6 @@ class ProjectMember extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
-
-    public function projects()
-    {
-        return $this->belongsToMany(Project::class);
-    }
 
     /*
     |--------------------------------------------------------------------------

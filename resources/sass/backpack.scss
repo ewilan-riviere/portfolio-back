@@ -25,3 +25,9 @@
     color: inherit !important;
     text-decoration: none !important;
 }
+
+a {
+    &:hover, &:active, &:focus {
+        outline: 0;
+    }
+}
