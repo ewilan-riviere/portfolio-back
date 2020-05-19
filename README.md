@@ -1,4 +1,4 @@
-# **Portfolio - Back**
+# **Portfolio · Back**
 
 ![alt](public/css/logo.png)
 
