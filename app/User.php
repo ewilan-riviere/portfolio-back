@@ -2,12 +2,16 @@
 
 namespace App;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
-use Illuminate\Foundation\Auth\User as Authenticatable;
+use Alert;
+use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
+use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable
 {
+    use HasRoles;
+    use CrudTrait;
     use Notifiable;
 
     /**
@@ -28,12 +32,16 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+    public function save(array $options = [])
+    {
+        if ('production' == app('env') &&
+            ! app()->runningInConsole() &&
+            ! app()->runningUnitTests()) {
+            Alert::warning('User editing is disabled in the demo.');
+
+            return true;
+        }
+
+        return parent::save($options);
+    }
 }

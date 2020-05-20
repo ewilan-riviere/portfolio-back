@@ -18,7 +18,7 @@ class SocialsTableSeeder extends Seeder
                 'name' => 'GitHub',
                 'link' => 'https://github.com/ewilan-riviere',
                 'file' => null,
-                'icon' => 'github-circle',
+                'icon' => 'github',
                 'type' => 'link'
             ],
             [
@@ -32,7 +32,7 @@ class SocialsTableSeeder extends Seeder
                 'name' => 'LinkedIn',
                 'link' => 'https://www.linkedin.com/in/ewilan-riviere/',
                 'file' => null,
-                'icon' => 'linkedin-box',
+                'icon' => 'linkedin',
                 'type' => 'link'
             ],
             [
@@ -46,7 +46,7 @@ class SocialsTableSeeder extends Seeder
                 'name' => 'CV',
                 'link' => null,
                 'file' => 'storage/documents/cv.pdf',
-                'icon' => 'account-card-details',
+                'icon' => 'address-card',
                 'type' => 'file'
             ]
         ]);

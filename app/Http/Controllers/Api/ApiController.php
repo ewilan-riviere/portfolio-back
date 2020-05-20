@@ -16,7 +16,7 @@ use App\Models\Skill;
 use App\Models\Social;
 use App\Models\Technology;
 use App\Models\Text;
-use App\Models\User;
+use App\User;
 
 use App\Transformers\CategoryTransformer;
 use App\Transformers\FormationTransformer;
