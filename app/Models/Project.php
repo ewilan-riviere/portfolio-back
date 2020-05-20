@@ -6,6 +6,42 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Support\Str;
 
+/**
+ * App\Models\Project
+ *
+ * @property int $id
+ * @property string $title
+ * @property int $order
+ * @property string|null $image
+ * @property string|null $image-title
+ * @property string|null $resume
+ * @property string|null $github_link
+ * @property string|null $try_it
+ * @property string|null $font
+ * @property int $is_collective
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectMember[] $projectsMembers
+ * @property-read int|null $projects_members_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[] $skills
+ * @property-read int|null $skills_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereFont($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereGithubLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereImageTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereIsCollective($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereResume($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereTryIt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Project extends Model {
 
     use CrudTrait;

@@ -8,6 +8,51 @@ use Illuminate\Support\Str;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
+/**
+ * App\Models\Skill
+ *
+ * @property int $id
+ * @property string $title
+ * @property string|null $version
+ * @property string|null $link
+ * @property int $is_free_app
+ * @property string|null $color
+ * @property int $color_text_dark
+ * @property string|null $subtitle
+ * @property string|null $details
+ * @property int $is_favorite
+ * @property float $rating
+ * @property string|null $image
+ * @property string|null $blockquote_text
+ * @property string|null $blockquote_who
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property int $category_id
+ * @property-read \App\Models\Category $category
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property-read int|null $projects_count
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereBlockquoteText($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereBlockquoteWho($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereCategoryId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereColor($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereColorTextDark($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereDetails($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereImage($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereIsFavorite($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereIsFreeApp($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereRating($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereSubtitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereVersion($value)
+ * @mixin \Eloquent
+ */
 class Skill extends Model {
 
     use CrudTrait;

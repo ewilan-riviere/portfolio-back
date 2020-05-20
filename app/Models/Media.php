@@ -5,6 +5,24 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
+/**
+ * App\Models\Media
+ *
+ * @property int $id
+ * @property string $slug
+ * @property string $media
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereMedia($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereUpdatedAt($value)
+ * @mixin \Eloquent
+ */
 class Media extends Model {
 
     use CrudTrait;
