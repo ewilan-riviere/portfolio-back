@@ -34,7 +34,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property int                             $finished
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation query()

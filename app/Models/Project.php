@@ -25,7 +25,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property int|null                                                             $projects_members_count
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[]         $skills
  * @property int|null                                                             $skills_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project query()

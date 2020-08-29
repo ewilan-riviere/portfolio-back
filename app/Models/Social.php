@@ -17,7 +17,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property string|null                     $icon
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social query()

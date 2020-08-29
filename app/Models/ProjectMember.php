@@ -17,7 +17,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property \Illuminate\Support\Carbon|null                                $updated_at
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember query()

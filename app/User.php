@@ -24,7 +24,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property int|null                                                                                                  $permissions_count
  * @property \Illuminate\Database\Eloquent\Collection|\Spatie\Permission\Models\Role[]                                 $roles
  * @property int|null                                                                                                  $roles_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\User permission($permissions)

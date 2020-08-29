@@ -30,7 +30,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property \App\Models\Category                                           $category
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill query()

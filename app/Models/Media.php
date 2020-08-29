@@ -13,7 +13,6 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @property string                          $media
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media query()
