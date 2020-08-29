@@ -2,9 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Social;
+use League\Fractal\TransformerAbstract;
 
 class SocialTransformer extends TransformerAbstract
 {
@@ -23,7 +22,7 @@ class SocialTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
-        if ($social->type == 'document') {
+        if ('document' == $social->type) {
             $attributes['link'] = url('storage').'/'.$social->link;
         }
 

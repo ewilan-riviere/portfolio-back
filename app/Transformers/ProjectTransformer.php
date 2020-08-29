@@ -2,9 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Project;
+use League\Fractal\TransformerAbstract;
 
 class ProjectTransformer extends TransformerAbstract
 {
@@ -29,15 +28,15 @@ class ProjectTransformer extends TransformerAbstract
             $attributes['image-title'] = url('storage').'/'.$imageTitleNoExtension.'-title.png';
         }
 
-        if ($project->image == null) {
+        if (null == $project->image) {
             $attributes['image'] = url('storage').'/'.'projects/no-image.png';
         }
 
-        if ($project->image != null) {
+        if (null != $project->image) {
             $attributes['image'] = config('app.url').'/'.$project->image;
         }
 
-        if ($project->font != null) {
+        if (null != $project->font) {
             $attributes['font'] = config('app.url').'/'.$project->font;
         }
 

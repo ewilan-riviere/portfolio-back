@@ -2,21 +2,22 @@
 
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\ProjectMember
+ * App\Models\ProjectMember.
  *
- * @property int $id
- * @property string $name
- * @property string $github
- * @property string $portfolio
- * @property string $linkedin
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
- * @property-read int|null $projects_count
+ * @property int                                                            $id
+ * @property string                                                         $name
+ * @property string                                                         $github
+ * @property string                                                         $portfolio
+ * @property string                                                         $linkedin
+ * @property \Illuminate\Support\Carbon|null                                $created_at
+ * @property \Illuminate\Support\Carbon|null                                $updated_at
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property int|null                                                       $projects_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember query()
@@ -47,7 +48,7 @@ class ProjectMember extends Model
         'name',
         'github',
         'portfolio',
-        'linkedin'
+        'linkedin',
     ];
     // protected $hidden = [];
     // protected $dates = [];

@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Category;
+use Illuminate\Database\Seeder;
 
 class CategoriesTableSeeder extends Seeder
 {
@@ -15,21 +14,21 @@ class CategoriesTableSeeder extends Seeder
     {
         Category::insert([
             [
-                'slug' => 'langages-de-developpement',
-                'display' => 'Langages de développement'
+                'slug'    => 'langages-de-developpement',
+                'display' => 'Langages de développement',
             ],
             [
-                'slug' => 'frameworks-&-librairies',
-                'display' => 'Frameworks & librairies'
+                'slug'    => 'frameworks-&-librairies',
+                'display' => 'Frameworks & librairies',
             ],
             [
-                'slug' => 'technologies-&-logiciels',
-                'display' => 'Technologies & logiciels'
+                'slug'    => 'technologies-&-logiciels',
+                'display' => 'Technologies & logiciels',
             ],
             [
-                'slug' => 'langues',
-                'display' => 'Langues'
-            ]
+                'slug'    => 'langues',
+                'display' => 'Langues',
+            ],
         ]);
     }
 }

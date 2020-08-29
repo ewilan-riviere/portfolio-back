@@ -2,9 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Media;
+use League\Fractal\TransformerAbstract;
 
 class MediaTransformer extends TransformerAbstract
 {
@@ -23,7 +22,7 @@ class MediaTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
-        if ($media->media != null) {
+        if (null != $media->media) {
             $attributes['media'] = url('storage').'/'.$media->media;
         }
 

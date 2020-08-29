@@ -6,13 +6,14 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Media
+ * App\Models\Media.
  *
- * @property int $id
- * @property string $slug
- * @property string $media
+ * @property int                             $id
+ * @property string                          $slug
+ * @property string                          $media
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media query()
@@ -23,8 +24,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Media whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Media extends Model {
-
+class Media extends Model
+{
     use CrudTrait;
 
     /*
@@ -39,7 +40,7 @@ class Media extends Model {
     protected $guarded = ['id'];
     protected $fillable = [
         'slug',
-        'media'
+        'media',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -76,9 +77,8 @@ class Media extends Model {
 
     public function setSlugAttribute($value)
     {
-        $value = str_slug($value, "-");
+        $value = str_slug($value, '-');
 
         $this->attributes['slug'] = $value;
     }
 }
-

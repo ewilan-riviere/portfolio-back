@@ -2,35 +2,35 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Support\Str;
-use Illuminate\Http\File;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Skill
+ * App\Models\Skill.
  *
- * @property int $id
- * @property string $title
- * @property string|null $version
- * @property string|null $link
- * @property int $is_free_app
- * @property string|null $color
- * @property int $color_text_dark
- * @property string|null $subtitle
- * @property string|null $details
- * @property int $is_favorite
- * @property float $rating
- * @property string|null $image
- * @property string|null $blockquote_text
- * @property string|null $blockquote_who
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property int $category_id
- * @property-read \App\Models\Category $category
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
- * @property-read int|null $projects_count
+ * @property int                                                            $id
+ * @property string                                                         $title
+ * @property string|null                                                    $version
+ * @property string|null                                                    $link
+ * @property int                                                            $is_free_app
+ * @property string|null                                                    $color
+ * @property int                                                            $color_text_dark
+ * @property string|null                                                    $subtitle
+ * @property string|null                                                    $details
+ * @property int                                                            $is_favorite
+ * @property float                                                          $rating
+ * @property string|null                                                    $image
+ * @property string|null                                                    $blockquote_text
+ * @property string|null                                                    $blockquote_who
+ * @property \Illuminate\Support\Carbon|null                                $created_at
+ * @property \Illuminate\Support\Carbon|null                                $updated_at
+ * @property int                                                            $category_id
+ * @property \App\Models\Category                                           $category
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property int|null                                                       $projects_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill query()
@@ -53,8 +53,8 @@ use Illuminate\Support\Facades\Storage;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereVersion($value)
  * @mixin \Eloquent
  */
-class Skill extends Model {
-
+class Skill extends Model
+{
     use CrudTrait;
 
     /*
@@ -79,7 +79,7 @@ class Skill extends Model {
         'rating',
         'image',
         'blockquote_text',
-        'blockquote_who'
+        'blockquote_who',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -103,7 +103,7 @@ class Skill extends Model {
 
     public function category()
     {
-        return $this->belongsTo(Category::class, "category_id");
+        return $this->belongsTo(Category::class, 'category_id');
     }
 
     /*
@@ -127,21 +127,22 @@ class Skill extends Model {
     public static function boot()
     {
         parent::boot();
-        static::deleting(function($obj) {
+        static::deleting(function ($obj) {
             \Storage::disk('public')->delete($obj->image);
         });
     }
+
     public function setImageAttribute($value)
     {
-        $attribute_name = "image";
+        $attribute_name = 'image';
         // $disk = config('backpack.base.root_disk_name'); // or use your own disk, defined in config/filesystems.php
         $disk = 'public';
-        $destination_path = "skills"; // path relative to the disk above
+        $destination_path = 'skills'; // path relative to the disk above
 
-        $existing_file = storage_path(Str::replaceFirst('storage/','','app/public/'.$this->attributes[$attribute_name]));
-        
+        $existing_file = storage_path(Str::replaceFirst('storage/', '', 'app/public/'.$this->attributes[$attribute_name]));
+
         // if the image was erased
-        if ($value===null) {
+        if (null === $value) {
             // delete the image from disk
             // \Storage::disk($disk)->delete($this->{$attribute_name});
             try {
@@ -157,8 +158,7 @@ class Skill extends Model {
         }
 
         // if a base64 was sent, store it in the db
-        if (starts_with($value, 'data:image'))
-        {
+        if (starts_with($value, 'data:image')) {
             try {
                 $valid = unlink(
                     $existing_file
@@ -167,7 +167,7 @@ class Skill extends Model {
                 //throw $th;
             }
 
-            $slug = str_slug($this->attributes['title'], "-");
+            $slug = str_slug($this->attributes['title'], '-');
 
             // 0. Make the image
             $image = \Image::make($value)->encode('png', 90);
@@ -181,6 +181,5 @@ class Skill extends Model {
             $public_destination_path = Str::replaceFirst('public/', '', $destination_path);
             $this->attributes[$attribute_name] = 'storage/'.$public_destination_path.'/'.$filename;
         }
-	}
+    }
 }
-

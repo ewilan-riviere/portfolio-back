@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Social;
+use Illuminate\Database\Seeder;
 
 class SocialsTableSeeder extends Seeder
 {
@@ -19,36 +18,36 @@ class SocialsTableSeeder extends Seeder
                 'link' => 'https://github.com/ewilan-riviere',
                 'file' => null,
                 'icon' => 'github',
-                'type' => 'link'
+                'type' => 'link',
             ],
             [
                 'name' => 'GitLab',
                 'link' => 'https://gitlab.com/EwieFairy',
                 'file' => null,
                 'icon' => 'gitlab',
-                'type' => 'link'
+                'type' => 'link',
             ],
             [
                 'name' => 'LinkedIn',
                 'link' => 'https://www.linkedin.com/in/ewilan-riviere/',
                 'file' => null,
                 'icon' => 'linkedin',
-                'type' => 'link'
+                'type' => 'link',
             ],
             [
                 'name' => 'E-mail',
                 'link' => 'mailto:ewilan@dotslashplay.it',
                 'file' => null,
                 'icon' => 'email',
-                'type' => 'link'
+                'type' => 'link',
             ],
             [
                 'name' => 'CV',
                 'link' => null,
                 'file' => 'storage/documents/cv.pdf',
                 'icon' => 'address-card',
-                'type' => 'file'
-            ]
+                'type' => 'file',
+            ],
         ]);
     }
 }

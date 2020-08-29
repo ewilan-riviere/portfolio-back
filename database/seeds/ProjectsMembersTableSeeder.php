@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\ProjectMember;
+use Illuminate\Database\Seeder;
 
 class ProjectsMembersTableSeeder extends Seeder
 {
@@ -15,29 +14,29 @@ class ProjectsMembersTableSeeder extends Seeder
     {
         ProjectMember::insert([
             [
-                'name' => 'Nora Hennebert',
-                'github' => '',
+                'name'      => 'Nora Hennebert',
+                'github'    => '',
                 'portfolio' => '',
-                'linkedin' => ''
+                'linkedin'  => '',
             ],
             [
-                'name' => 'Antoine Le Gonidec',
-                'github' => '',
+                'name'      => 'Antoine Le Gonidec',
+                'github'    => '',
                 'portfolio' => '',
-                'linkedin' => ''
+                'linkedin'  => '',
             ],
             [
-                'name' => 'Hugo Schindelman',
-                'github' => '',
+                'name'      => 'Hugo Schindelman',
+                'github'    => '',
                 'portfolio' => '',
-                'linkedin' => ''
+                'linkedin'  => '',
             ],
             [
-                'name' => 'Delphine Brunetière',
-                'github' => '',
+                'name'      => 'Delphine Brunetière',
+                'github'    => '',
                 'portfolio' => '',
-                'linkedin' => ''
-            ]
+                'linkedin'  => '',
+            ],
         ]);
     }
 }

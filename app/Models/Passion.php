@@ -2,18 +2,19 @@
 
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Passion
+ * App\Models\Passion.
  *
- * @property int $id
- * @property string $name
- * @property string|null $icon
- * @property string|null $text
+ * @property int                             $id
+ * @property string                          $name
+ * @property string|null                     $icon
+ * @property string|null                     $text
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion query()
@@ -42,7 +43,7 @@ class Passion extends Model
     protected $fillable = [
         'name',
         'icon',
-        'text'
+        'text',
     ];
     // protected $hidden = [];
     // protected $dates = [];

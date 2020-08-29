@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\ProjectRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class ProjectCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class ProjectCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class ProjectCrudController extends CrudController
 {
@@ -22,7 +21,7 @@ class ProjectCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Project');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/projects');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/projects');
         $this->crud->setEntityNameStrings('un projet', 'Projets');
         $this->crud->denyAccess(['show']);
     }
@@ -33,21 +32,21 @@ class ProjectCrudController extends CrudController
             [
                 'name'  => 'title',
                 'label' => 'Nom',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
         ]);
         $this->crud->addColumns([
             [
                 'name'  => 'image',
                 'label' => 'Image',
-                'type'  => 'image'
+                'type'  => 'image',
             ],
         ]);
         $this->crud->addColumns([
             [
                 'name'  => 'resume',
                 'label' => 'Résumé',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
         ]);
     }
@@ -60,8 +59,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'title',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -79,8 +78,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'image-title',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -88,8 +87,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'resume',
             'label'        => 'Nom',
             'type'         => 'textarea',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -97,8 +96,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'title',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -106,8 +105,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'github_link',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -115,8 +114,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'try_it',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
 
@@ -124,8 +123,8 @@ class ProjectCrudController extends CrudController
             'name'         => 'font',
             'label'        => 'Police utilisée',
             'type'         => 'browse',
-            'attributes' => [
-                'placeholder' => 'Nom du projet'
+            'attributes'   => [
+                'placeholder' => 'Nom du projet',
             ],
         ]);
     }

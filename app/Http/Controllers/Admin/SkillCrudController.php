@@ -2,16 +2,15 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Category;
 use App\Http\Requests\SkillRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
-use App\Models\Category;
-
 /**
- * Class SkillCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class SkillCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class SkillCrudController extends CrudController
 {
@@ -24,7 +23,7 @@ class SkillCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Skill');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/skills');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/skills');
         $this->crud->setEntityNameStrings('une compétence', 'Compétences');
         $this->crud->setDefaultPageLength(50);
         $this->crud->denyAccess(['show']);
@@ -52,12 +51,12 @@ class SkillCrudController extends CrudController
             [
                 'name'  => 'title',
                 'label' => 'Nom',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'subtitle',
                 'label' => 'Sous-titre',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'image',
@@ -65,22 +64,22 @@ class SkillCrudController extends CrudController
                 'type'  => 'image',
             ],
             [
-                'label' => "Catégorie", // Table column heading
-                'type' => "select",
-                'name' => 'category_id', // the column that contains the ID of that connected entity;
-                'entity' => 'category', // the method that defines the relationship in your Model
-                'attribute' => "display", // foreign key attribute that is shown to user
-                'model' => "App\Models\Category", // foreign key model
+                'label'     => 'Catégorie', // Table column heading
+                'type'      => 'select',
+                'name'      => 'category_id', // the column that contains the ID of that connected entity;
+                'entity'    => 'category', // the method that defines the relationship in your Model
+                'attribute' => 'display', // foreign key attribute that is shown to user
+                'model'     => "App\Models\Category", // foreign key model
             ],
             [
                 'name'     => 'is_favorite',
                 'label'    => 'Favorite',
                 'type'     => 'boolean',
-                'options' => [
+                'options'  => [
                     1 => '<i class="cil-check"></i>',
-                    0 => ''
-                ]
-            ]
+                    0 => '',
+                ],
+            ],
         ]);
     }
 
@@ -94,27 +93,27 @@ class SkillCrudController extends CrudController
             'name'         => 'title',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom de cette compétence'
+            'attributes'   => [
+                'placeholder' => 'Nom de cette compétence',
             ],
         ]);
 
         $this->crud->addField([
-            'label' => 'Categorie',
-            'type' => 'select2',
-            'name' => 'category_id', // the db column for the foreign key
-            'entity' => 'category', // the method that defines the relationship in your Model
+            'label'     => 'Categorie',
+            'type'      => 'select2',
+            'name'      => 'category_id', // the db column for the foreign key
+            'entity'    => 'category', // the method that defines the relationship in your Model
             'attribute' => 'display', // foreign key attribute that is shown to user
-            'model' => 'App\Models\Category', // foreign key model
-            'hint' => '<i>La catégorie dans laquelle se situe cette compétence</i>',
-		]);
+            'model'     => 'App\Models\Category', // foreign key model
+            'hint'      => '<i>La catégorie dans laquelle se situe cette compétence</i>',
+        ]);
 
         $this->crud->addField([
             'name'         => 'version',
             'label'        => 'Version',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Numéro de version actuellement utilisée'
+            'attributes'   => [
+                'placeholder' => 'Numéro de version actuellement utilisée',
             ],
         ]);
 
@@ -122,18 +121,18 @@ class SkillCrudController extends CrudController
             'name'         => 'subtitle',
             'label'        => 'Sous-titre',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Rapide description'
+            'attributes'   => [
+                'placeholder' => 'Rapide description',
             ],
         ]);
-        
+
         $this->crud->addField([
             'name'        => 'is_free_app',
             'label'       => 'Application gratuite',
             'type'        => 'radio',
             'options'     => [
-                1 => "Oui",
-                0 => "Non"
+                1 => 'Oui',
+                0 => 'Non',
             ],
             'inline'      => true,
         ]);
@@ -142,17 +141,17 @@ class SkillCrudController extends CrudController
             'name'         => 'link',
             'label'        => 'Lien',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Lien vers le site web'
+            'attributes'   => [
+                'placeholder' => 'Lien vers le site web',
             ],
         ]);
 
         $this->crud->addField([
             'name'         => 'color',
             'label'        => 'Thème',
-            'type' => 'color',
-            'default' => '#000000',
-            'hint' => "<i>Couleur liée au thème du logo</i>"
+            'type'         => 'color',
+            'default'      => '#000000',
+            'hint'         => '<i>Couleur liée au thème du logo</i>',
         ]);
 
         $this->crud->addField([
@@ -160,10 +159,10 @@ class SkillCrudController extends CrudController
             'label'       => 'Inverser la couleur du texte',
             'type'        => 'radio',
             'options'     => [
-                1 => "Oui",
-                0 => "Non"
+                1 => 'Oui',
+                0 => 'Non',
             ],
-            'hint' => '<i>Si le thème est trop clair, le texte blanc par défaut peut être difficilement lisible, choisissez ici d\'activer la version sombre</i>',
+            'hint'        => '<i>Si le thème est trop clair, le texte blanc par défaut peut être difficilement lisible, choisissez ici d\'activer la version sombre</i>',
             'inline'      => true,
         ]);
 
@@ -171,8 +170,8 @@ class SkillCrudController extends CrudController
             'name'         => 'details',
             'label'        => 'Détails',
             'type'         => 'textarea',
-            'attributes' => [
-                'placeholder' => 'Description plus détaillée'
+            'attributes'   => [
+                'placeholder' => 'Description plus détaillée',
             ],
         ]);
 
@@ -181,10 +180,10 @@ class SkillCrudController extends CrudController
             'label'       => 'Favorite',
             'type'        => 'radio',
             'options'     => [
-                1 => "Oui",
-                0 => "Non"
+                1 => 'Oui',
+                0 => 'Non',
             ],
-            'hint' => '<i>Définir cette compétence comme favorite</i>',
+            'hint'        => '<i>Définir cette compétence comme favorite</i>',
             'inline'      => true,
         ]);
 
@@ -192,20 +191,20 @@ class SkillCrudController extends CrudController
             'name'         => 'rating',
             'label'        => 'Note',
             'type'         => 'number',
-            'attributes' => [
-                "step" => "any",
-                "max" => 5,
-                "min" => 0
+            'attributes'   => [
+                'step' => 'any',
+                'max'  => 5,
+                'min'  => 0,
             ],
-            'hint' => "<i>Une note entre 0 et 5, les chiffres à virgule sont autorisés comme 4,6</i>"
+            'hint' => '<i>Une note entre 0 et 5, les chiffres à virgule sont autorisés comme 4,6</i>',
         ]);
 
         $this->crud->addField([
             'name'         => 'blockquote_text',
             'label'        => 'Citation : texte',
             'type'         => 'textarea',
-            'attributes' => [
-                'placeholder' => 'Citation illustrant cette compétence'
+            'attributes'   => [
+                'placeholder' => 'Citation illustrant cette compétence',
             ],
         ]);
 
@@ -213,8 +212,8 @@ class SkillCrudController extends CrudController
             'name'         => 'blockquote_who',
             'label'        => 'Citation : auteur·ice',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Auteur·ice de la citation'
+            'attributes'   => [
+                'placeholder' => 'Auteur·ice de la citation',
             ],
         ]);
 

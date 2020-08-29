@@ -2,17 +2,18 @@
 
 namespace App\Models;
 
-use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Database\Eloquent\Model;
+use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Snippet
+ * App\Models\Snippet.
  *
- * @property int $id
- * @property string $slug
- * @property string|null $snippet
+ * @property int                             $id
+ * @property string                          $slug
+ * @property string|null                     $snippet
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Snippet newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Snippet newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Snippet query()
@@ -39,7 +40,7 @@ class Snippet extends Model
     protected $guarded = ['id'];
     protected $fillable = [
         'slug',
-        'snippet'
+        'snippet',
     ];
     // protected $hidden = [];
     // protected $dates = [];

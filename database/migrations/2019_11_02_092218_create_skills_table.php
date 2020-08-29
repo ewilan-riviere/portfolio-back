@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreateSkillsTable extends Migration
 {
@@ -24,7 +24,7 @@ class CreateSkillsTable extends Migration
             $table->string('subtitle')->nullable();
             $table->text('details')->nullable();
             $table->boolean('is_favorite')->default(0);
-            $table->float('rating',2,1)->default(0);
+            $table->float('rating', 2, 1)->default(0);
             $table->string('image')->nullable();
             $table->text('blockquote_text')->nullable();
             $table->string('blockquote_who')->nullable();

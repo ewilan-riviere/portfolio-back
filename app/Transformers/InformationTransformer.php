@@ -2,9 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Information;
+use League\Fractal\TransformerAbstract;
 
 class InformationTransformer extends TransformerAbstract
 {
@@ -23,7 +22,7 @@ class InformationTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
-        if ($information->image != null) {
+        if (null != $information->image) {
             $attributes['image'] = url('storage').'/'.$information->image;
         }
 

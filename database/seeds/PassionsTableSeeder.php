@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Passion;
+use Illuminate\Database\Seeder;
 
 class PassionsTableSeeder extends Seeder
 {
@@ -22,38 +21,38 @@ class PassionsTableSeeder extends Seeder
             [
                 'name' => 'Lecture',
                 'icon' => '',
-                'text' => 'La lecture'
+                'text' => 'La lecture',
             ],
             [
                 'name' => 'Les jeux vidéo et leurs mods',
                 'icon' => '',
-                'text' => 'Modder les jeux vidéo'
+                'text' => 'Modder les jeux vidéo',
             ],
             [
                 'name' => 'Développer',
                 'icon' => '',
-                'text' => 'Des projets personnels ou avec des ami·es'
+                'text' => 'Des projets personnels ou avec des ami·es',
             ],
             [
                 'name' => 'Des séries',
                 'icon' => '',
-                'text' => 'Chiller au coin du feu avec un chat, du thé et une bonne série'
+                'text' => 'Chiller au coin du feu avec un chat, du thé et une bonne série',
             ],
             [
                 'name' => 'Les warhammers',
                 'icon' => '',
-                'text' => ''
+                'text' => '',
             ],
             [
                 'name' => 'Les jeux de rôles',
                 'icon' => '',
-                'text' => ''
+                'text' => '',
             ],
             [
                 'name' => 'Les podcasts & sagas mp3',
                 'icon' => '',
-                'text' => ''
-            ]
+                'text' => '',
+            ],
         ]);
     }
 }

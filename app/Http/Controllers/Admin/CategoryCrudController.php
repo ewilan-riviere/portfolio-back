@@ -7,9 +7,9 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class CategoryCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class CategoryCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class CategoryCrudController extends CrudController
 {
@@ -22,7 +22,7 @@ class CategoryCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Category');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/categories');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/categories');
         $this->crud->setEntityNameStrings('une catégorie', 'Catégories');
         $this->crud->denyAccess(['show']);
     }
@@ -35,7 +35,7 @@ class CategoryCrudController extends CrudController
             [
                 'name'  => 'display',
                 'label' => 'Nom',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
         ]);
     }
@@ -50,8 +50,8 @@ class CategoryCrudController extends CrudController
             'name'         => 'display',
             'label'        => 'Nom',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Nom de cette catégorie'
+            'attributes'   => [
+                'placeholder' => 'Nom de cette catégorie',
             ],
         ]);
     }

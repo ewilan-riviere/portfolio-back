@@ -6,34 +6,35 @@ use Illuminate\Database\Eloquent\Model;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Formation
+ * App\Models\Formation.
  *
- * @property int $id
- * @property string|null $title
- * @property string|null $certificate
- * @property string|null $logo
- * @property string $color
- * @property int $color_text_white
- * @property string|null $resume
- * @property string|null $type
- * @property string|null $place
- * @property string|null $place_link
- * @property string|null $vocational
- * @property string|null $vocational_link
- * @property string|null $promo
- * @property string|null $promo_link
- * @property string|null $level
- * @property string|null $date_begin
- * @property string|null $date_end
- * @property string|null $project_title
- * @property string|null $project_resume
- * @property string|null $project_image
- * @property string|null $project_type
- * @property string|null $project_link
- * @property string|null $project_file
- * @property int $finished
+ * @property int                             $id
+ * @property string|null                     $title
+ * @property string|null                     $certificate
+ * @property string|null                     $logo
+ * @property string                          $color
+ * @property int                             $color_text_white
+ * @property string|null                     $resume
+ * @property string|null                     $type
+ * @property string|null                     $place
+ * @property string|null                     $place_link
+ * @property string|null                     $vocational
+ * @property string|null                     $vocational_link
+ * @property string|null                     $promo
+ * @property string|null                     $promo_link
+ * @property string|null                     $level
+ * @property string|null                     $date_begin
+ * @property string|null                     $date_end
+ * @property string|null                     $project_title
+ * @property string|null                     $project_resume
+ * @property string|null                     $project_image
+ * @property string|null                     $project_type
+ * @property string|null                     $project_link
+ * @property string|null                     $project_file
+ * @property int                             $finished
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation query()
@@ -65,8 +66,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocationalLink($value)
  * @mixin \Eloquent
  */
-class Formation extends Model {
-
+class Formation extends Model
+{
     use CrudTrait;
 
     /*
@@ -102,7 +103,7 @@ class Formation extends Model {
         'project_type',
         'project_link',
         'project_file',
-        'status'
+        'status',
     ];
     // protected $hidden = [];
     // protected $dates = [];

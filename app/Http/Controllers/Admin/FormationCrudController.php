@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\FormationRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class FormationCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class FormationCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class FormationCrudController extends CrudController
 {
@@ -22,7 +21,7 @@ class FormationCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Formation');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/formations');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/formations');
         $this->crud->setEntityNameStrings('une formation', 'Formations');
         $this->crud->denyAccess(['show']);
     }
@@ -33,27 +32,27 @@ class FormationCrudController extends CrudController
             [
                 'name'  => 'title',
                 'label' => 'Titre',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'logo',
                 'label' => 'Logo de l\'organisme',
-                'type'  => 'image'
+                'type'  => 'image',
             ],
             [
                 'name'  => 'place',
                 'label' => 'Lieu de la formation',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'level',
                 'label' => 'Niveau de la formation',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'date_begin',
                 'label' => 'Début de la formation',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
         ]);
     }
@@ -70,15 +69,15 @@ class FormationCrudController extends CrudController
         $this->crud->addField([
             'name'         => 'certificate',
             'label'        => 'Scan du certificat',
-            'type' => 'upload',
-            'upload' => true,
+            'type'         => 'upload',
+            'upload'       => true,
         ]);
         $this->crud->addField([
             'name'         => 'logo',
             'label'        => 'Logo de l\'organisme',
-            'type' => 'image',
-            'upload' => true,
-            'crop' => true,
+            'type'         => 'image',
+            'upload'       => true,
+            'crop'         => true,
             'aspect_ratio' => 1,
         ]);
         $this->crud->addField([

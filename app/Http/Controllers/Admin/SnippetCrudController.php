@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\SnippetRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class SnippetCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
+ * Class SnippetCrudController.
+ *
+ * @property \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
 class SnippetCrudController extends CrudController
 {
@@ -22,7 +21,7 @@ class SnippetCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Snippet');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/snippets');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/snippets');
         $this->crud->setEntityNameStrings('un snippet', 'snippets');
         $this->crud->denyAccess(['show']);
     }
@@ -33,13 +32,13 @@ class SnippetCrudController extends CrudController
             [
                 'name'  => 'slug',
                 'label' => 'Identifiant',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'snippet',
                 'label' => 'Snippet',
-                'type'  => 'markdown'
-            ]
+                'type'  => 'markdown',
+            ],
         ]);
     }
 
@@ -51,16 +50,16 @@ class SnippetCrudController extends CrudController
             'name'         => 'slug',
             'label'        => 'Slug',
             'type'         => 'text',
-            'attributes' => [
-                'placeholder' => 'Identifiant pour ce snippet'
+            'attributes'   => [
+                'placeholder' => 'Identifiant pour ce snippet',
             ],
         ]);
         $this->crud->addField([
             'name'         => 'snippet',
             'label'        => 'Snippet',
             'type'         => 'simplemde',
-            'attributes' => [
-                'placeholder' => 'Votre snippet'
+            'attributes'   => [
+                'placeholder' => 'Votre snippet',
             ],
         ]);
     }

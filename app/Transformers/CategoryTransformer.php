@@ -2,14 +2,13 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Category;
+use League\Fractal\TransformerAbstract;
 
 class CategoryTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
-        'skills'
+        'skills',
     ];
 
     /**

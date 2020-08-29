@@ -7,9 +7,9 @@ use Backpack\CRUD\app\Http\Controllers\CrudController;
 use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class TextCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class TextCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class TextCrudController extends CrudController
 {
@@ -22,7 +22,7 @@ class TextCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Text');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/texts');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/texts');
         $this->crud->setEntityNameStrings(
             'un texte',
             'Textes'
@@ -38,12 +38,12 @@ class TextCrudController extends CrudController
             [
                 'name'  => 'slug',
                 'label' => 'Identifiant',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'text',
                 'label' => 'Texte',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
         ]);
     }
@@ -58,9 +58,9 @@ class TextCrudController extends CrudController
             'name'         => 'slug',
             'label'        => 'Identifiant',
             'type'         => 'text',
-            'hint'  => 'Ne pas mettre d\'espace ou de majuscule',
-            'attributes' => [
-                'placeholder' => 'Slug permettant d\'identifier ce texte'
+            'hint'         => 'Ne pas mettre d\'espace ou de majuscule',
+            'attributes'   => [
+                'placeholder' => 'Slug permettant d\'identifier ce texte',
             ],
         ]);
         $this->crud->addField([

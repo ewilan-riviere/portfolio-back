@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\MediaRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class MediaCrudController
- * @package App\Http\Controllers\Admin
- * @property-read CrudPanel $crud
+ * Class MediaCrudController.
+ *
+ * @property CrudPanel $crud
  */
 class MediaCrudController extends CrudController
 {
@@ -22,7 +21,7 @@ class MediaCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Media');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/medias');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/medias');
         $this->crud->setEntityNameStrings(
             'un média',
             'Médias'
@@ -36,12 +35,12 @@ class MediaCrudController extends CrudController
             [
                 'name'  => 'slug',
                 'label' => 'Identifiant',
-                'type'  => 'text'
+                'type'  => 'text',
             ],
             [
                 'name'  => 'media',
                 'label' => 'Média',
-                'type'  => 'image'
+                'type'  => 'image',
             ],
         ]);
     }
@@ -54,9 +53,9 @@ class MediaCrudController extends CrudController
             'name'         => 'slug',
             'label'        => 'Identifiant',
             'type'         => 'text',
-            'hint'  => 'Ne pas mettre d\'espace ou de majuscule',
-            'attributes' => [
-                'placeholder' => 'Slug permettant d\'identifier ce texte'
+            'hint'         => 'Ne pas mettre d\'espace ou de majuscule',
+            'attributes'   => [
+                'placeholder' => 'Slug permettant d\'identifier ce texte',
             ],
         ]);
         $this->crud->addField([

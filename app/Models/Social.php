@@ -7,16 +7,17 @@ use Illuminate\Support\Facades\Storage;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 
 /**
- * App\Models\Social
+ * App\Models\Social.
  *
- * @property int $id
- * @property string $name
- * @property string|null $type
- * @property string|null $file
- * @property string|null $link
- * @property string|null $icon
+ * @property int                             $id
+ * @property string                          $name
+ * @property string|null                     $type
+ * @property string|null                     $file
+ * @property string|null                     $link
+ * @property string|null                     $icon
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social query()
@@ -30,8 +31,8 @@ use Backpack\CRUD\app\Models\Traits\CrudTrait;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Social whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Social extends Model {
-
+class Social extends Model
+{
     use CrudTrait;
 
     /*
@@ -49,7 +50,7 @@ class Social extends Model {
         'type',
         'link',
         'file',
-        'icon'
+        'icon',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -64,7 +65,7 @@ class Social extends Model {
     {
         return [
             'link'   => 'Lien',
-            'file' => 'Fichier',
+            'file'   => 'Fichier',
         ];
     }
 
@@ -95,37 +96,34 @@ class Social extends Model {
     public static function boot()
     {
         parent::boot();
-        static::deleting(function($obj) {
+        static::deleting(function ($obj) {
             Storage::disk('public')->delete($obj->image);
         });
     }
 
-    const attribute_type = "type";
-    const attribute_file = "file";
-    const attribute_link = "link";
-    const disk = "public";
-    const destination_path = "documents";
+    const attribute_type = 'type';
+    const attribute_file = 'file';
+    const attribute_link = 'link';
+    const disk = 'public';
+    const destination_path = 'documents';
 
     public function setTypeAttribute($value)
     {
-
         $this->attributes[self::attribute_type] = $value;
-
     }
 
     public function setFileAttribute($value)
     {
-        if ($this->attributes[self::attribute_type] === 'file') {
-
-            if ($value !== null || $value !== ' ') {
+        if ('file' === $this->attributes[self::attribute_type]) {
+            if (null !== $value || ' ' !== $value) {
                 if (strlen($this->file) > 0) {
                     // get file name from database
-                    $filename = str_replace('storage/'.self::destination_path.'/','',$this->file);
+                    $filename = str_replace('storage/'.self::destination_path.'/', '', $this->file);
                     // remove current file
                     $valid = Storage::disk('public')->delete(self::destination_path.'/'.$filename);
                 }
                 $filename = $value->getClientOriginalName();
-                $filename = str_slug($filename, "-");
+                $filename = str_slug($filename, '-');
                 // $extension = $value->getClientOriginalExtension();
 
                 // save file as
@@ -142,11 +140,10 @@ class Social extends Model {
 
     public function setLinkAttribute($value)
     {
-        if ($this->attributes[self::attribute_type] === 'link') {
-
+        if ('link' === $this->attributes[self::attribute_type]) {
             if (strlen($this->file) > 0) {
                 // get file name from database
-                $filename = str_replace('storage/'.self::destination_path.'/','',$this->file);
+                $filename = str_replace('storage/'.self::destination_path.'/', '', $this->file);
                 // remove current file
                 $valid = Storage::disk('public')->delete(self::destination_path.'/'.$filename);
             }
@@ -159,4 +156,3 @@ class Social extends Model {
         }
     }
 }
-

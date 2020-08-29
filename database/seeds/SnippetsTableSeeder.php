@@ -1,8 +1,7 @@
 <?php
 
-use Illuminate\Database\Seeder;
-
 use App\Models\Snippet;
+use Illuminate\Database\Seeder;
 
 class SnippetsTableSeeder extends Seeder
 {
@@ -15,14 +14,13 @@ class SnippetsTableSeeder extends Seeder
     {
         Snippet::insert([
             [
-                'slug' => 'example',
-                'snippet' => 
-                '```php
+                'slug'    => 'example',
+                'snippet' => '```php
 <?php
 
 $hello = \'bouh\';
-```'
-            ]
+```',
+            ],
         ]);
     }
 }

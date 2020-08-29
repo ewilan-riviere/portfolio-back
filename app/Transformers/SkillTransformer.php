@@ -2,9 +2,8 @@
 
 namespace App\Transformers;
 
-use League\Fractal\TransformerAbstract;
-
 use App\Models\Skill;
+use League\Fractal\TransformerAbstract;
 
 class SkillTransformer extends TransformerAbstract
 {
@@ -31,7 +30,7 @@ class SkillTransformer extends TransformerAbstract
     // }
 
     protected $availableIncludes = [
-        'category'
+        'category',
     ];
 
     /**
@@ -49,7 +48,7 @@ class SkillTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
-        if ($skill->image != null) {
+        if (null != $skill->image) {
             $attributes['image'] = config('app.url').'/'.$skill->image;
         } else {
             $attributes['image'] = config('app.url').'/storage/skills/default.png';

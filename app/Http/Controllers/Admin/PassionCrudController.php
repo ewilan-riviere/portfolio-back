@@ -4,12 +4,11 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\PassionRequest;
 use Backpack\CRUD\app\Http\Controllers\CrudController;
-use Backpack\CRUD\app\Library\CrudPanel\CrudPanelFacade as CRUD;
 
 /**
- * Class PassionCrudController
- * @package App\Http\Controllers\Admin
- * @property-read \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
+ * Class PassionCrudController.
+ *
+ * @property \Backpack\CRUD\app\Library\CrudPanel\CrudPanel $crud
  */
 class PassionCrudController extends CrudController
 {
@@ -22,7 +21,7 @@ class PassionCrudController extends CrudController
     public function setup()
     {
         $this->crud->setModel('App\Models\Passion');
-        $this->crud->setRoute(config('backpack.base.route_prefix') . '/passions');
+        $this->crud->setRoute(config('backpack.base.route_prefix').'/passions');
         $this->crud->setEntityNameStrings('une passion', 'passions');
     }
 
