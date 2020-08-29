@@ -17,7 +17,7 @@ Route::group([
     'namespace'  => 'Api',
     'middleware' => 'api',
 ], function () {
-    // Route::get('agencies', 'AgencyController@index')->name('agencies.index');
+    Route::get('/global/uploads', 'UploadsListController@index')->name('uploads.index');
 
     Route::get('/users', 'ApiController@users')->name('users');
     Route::get('/login', 'ApiController@login')->name('login');
@@ -29,4 +29,5 @@ Route::group([
     Route::get('/texts', 'ApiController@texts')->name('texts');
     Route::get('/medias', 'ApiController@medias')->name('medias');
     Route::get('/socials', 'ApiController@socials')->name('socials');
+
 });
