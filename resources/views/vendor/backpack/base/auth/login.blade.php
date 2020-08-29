@@ -15,7 +15,7 @@
                             <div>
                                 <input type="text" class="form-control{{ $errors->has($username) ? ' is-invalid' : '' }}" name="{{ $username }}" id="{{ $username }}"
                                     @if(config('app.env') === 'local')
-                                        value="{{ config('app.admin_mail') }}"
+                                        value="{{ config('app.backpack_admin_mail') }}"
                                     @endif
                                 >
 
@@ -33,7 +33,7 @@
                             <div>
                                 <input type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" id="password"
                                     @if(config('app.env') === 'local')
-                                        value="{{ config('app.admin_password') }}"
+                                        value="{{ config('app.backpack_admin_password') }}"
                                     @endif
                                 >
 

@@ -1,1 +1,144 @@
+
+$purple: #9370DB;
+
+@font-face {
+    font-family: 'Raleway';
+    src: url("../fonts/Raleway-VariableFont_wght.ttf");
+}
+
+.font-raleway {
+    font-family: 'Raleway';
+    font-weight: 800;
+}
+
+// dashboard
+
+// .backpack-display {
+    .backpack-display__img {
+        height: 8rem;
+        max-width: 100%;
+        border-radius: 9999px;
+        object-fit: contain;
+    }
+// }
+
+// .dashboard-card {
+    .card {
+        .card-link {
+            color: inherit;
+            transition: background-color 0.3s;
+            background-color: white !important;
+            &:hover {
+                background-color: lightgray !important;
+            }
+            .card-header {
+
+            }
+        }
+    }
+// }
+
 //
+.CodeMirror {
+    // height: 10vh !important;
+}
+.cke_contents {
+    min-height: 40vh !important;
+}
+
+.bg-ewiefairy-diary {
+    background-color: $purple;
+}
+
+.sidebar {
+    .nav-link {
+        transition: background-color 0.3s;
+        &:hover {
+            background-color: rgba($purple, 0.5);
+        }
+        .nav-icon {
+            transition: color 0.3s;
+            color: gray;
+        }
+    }
+    .active {
+        background-color: rgba($purple, 0.25) !important;
+        .nav-icon {
+            color: white !important;
+        }
+    }
+}
+
+.text-capitalize {
+    text-transform: none !important;
+}
+.app-header {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+}
+
+main {
+    margin-top: 4rem;
+    .container-fluid {
+        .text-capitalize {
+            text-transform: none !important;
+        }
+    }
+}
+
+footer {
+    z-index: 10;
+}
+
+@media screen and (min-width: 990px) {
+    .navbar-brand {
+        width: 15rem !important;
+    }
+    .sidebar {
+        position: fixed;
+        z-index: 9;
+        top: 3.4rem;
+        padding-bottom: 6.2rem;
+        overflow: auto;
+        min-height: 100%;
+        max-height: 100%;
+    }
+    main {
+        margin-left: 12rem;
+    }
+}
+
+#crudTable_info {
+    display: none;
+}
+
+// sidebar
+
+.nav-item,
+.nav-dropdown,
+.open {
+    .nav-dropdown-items {
+        padding-left: 1rem;
+    }
+}
+
+.header-logo {
+    width: 30px;
+    height: 30px;
+    border-radius: 9999px;
+}
+.header-title {
+    color: white;
+    margin-left: 0.5rem;
+    font-weight: bold;
+}
+.img-avatar {
+    color: #0971ce;
+}
+
+// misc
+
+.invisible-link {
+    text-decoration: none !important;
+}

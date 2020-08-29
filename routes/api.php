@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::group([
 
     Route::get('/users', 'ApiController@users')->name('users');
     Route::get('/login', 'ApiController@login')->name('login');
-    Route::get('/skills', 'ApiController@skills')->name('skills');
+    Route::get('/portfolio/skills', 'ApiController@skills')->name('skills');
     Route::get('/categories', 'ApiController@categories')->name('categories');
     Route::get('/projects', 'ApiController@projects')->name('projects');
     Route::get('/formations', 'ApiController@formations')->name('formations');

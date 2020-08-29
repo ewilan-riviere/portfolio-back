@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 
 use App\User;
+use Illuminate\Support\Facades\Hash;
 
 class UsersTableSeeder extends Seeder
 {
@@ -16,8 +17,8 @@ class UsersTableSeeder extends Seeder
         User::insert([
             [
                 'name' => 'Ewilan',
-                'email' => config('app.admin_mail'),
-                'password' => Hash::make(config('app.admin_password'))
+                'email' => config('app.backpack_admin_mail'),
+                'password' => Hash::make(config('app.backpack_admin_password'))
             ]
         ]);
     }

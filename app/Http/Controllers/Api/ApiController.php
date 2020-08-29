@@ -61,11 +61,20 @@ class ApiController extends Controller
     }
 
     /**
+     * @OA\Get(
+     *     path="/portfolio/skills",
+     *     tags={"portfolio"},
+     *     summary="Compétences",
+     *     description="Liste des compétences pour le portfolio",
+     *     @OA\Response(
+     *         response=200,
+     *         description="Successful operation"
+     *     )
+     * )
      *
-     *  Display categories with skills
+     * @param Request $request
      *
-     * @return JSON
-     *
+     * @return \Spatie\Fractal\Fractal
      */
     public function categories() {
         // $skills = Category::all();

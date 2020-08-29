@@ -1,0 +1,40 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Portfolio API",
+        "description": "Portfolio · Swagger",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/portfolio/skills": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Compétences",
+                "description": "Liste des compétences pour le portfolio",
+                "operationId": "App\\Http\\Controllers\\Api\\ApiController::categories",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "global",
+            "description": "Requêtes globales"
+        },
+        {
+            "name": "portfolio",
+            "description": "Portfolio"
+        }
+    ]
+}

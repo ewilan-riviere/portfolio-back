@@ -12,7 +12,6 @@
         'type'        => 'jumbotron',
         'heading'     => "
         <div>
-            <img src=".asset('css/logo.png')." alt='portfolio' />
             <span class='font-weight-bold'>Back-office</span>
         </div>
         ",
@@ -20,16 +19,16 @@
         'button_link' => backpack_url('logout'),
         'button_text' => trans('backpack::base.logout'),
     ];
-    $widgets['before_content'][] = 
+    $widgets['before_content'][] =
     [
         'type' => 'div',
         'class' => 'row',
-        'content' => 
+        'content' =>
         [
             [
                 'type' => 'card',
                 'content' => [
-                    'header' => 
+                    'header' =>
                         "<i class='fa fa-book mr-2'></i> <b>Documentation API</b>",
                     'link' => config('app.url')."/api/documentation",
                 ]
@@ -37,7 +36,7 @@
             [
                 'type' => 'card',
                 'content' => [
-                    'header' => 
+                    'header' =>
                         "<i class='fa fa-globe mr-2'></i> <b>Site Web</b>",
                     'link' => config('app.url'),
                 ]
@@ -45,7 +44,7 @@
             [
                 'type' => 'card',
                 'content' => [
-                    'header' => 
+                    'header' =>
                         "<i class='fa fa-envelope mr-2'></i> <b>Sarbacane</b>",
                     'link' => 'https://app.sarbacane.com/',
                 ]
@@ -67,7 +66,7 @@
             ],
         ]
     ];
-    
+
     $widgets['before_content'][] = [
         'type' => 'div',
         'class' => 'row',

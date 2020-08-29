@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Backpack\CRUD preferences
@@ -12,7 +11,6 @@ return [
     // Default operation settings
     // --------------------------
     'operations' => [
-
         /*
          * List Operation
          */
@@ -70,7 +68,7 @@ return [
         'create' => [
             // Define the size/looks of the content div for all CRUDs
             // To override per view use $this->crud->setCreateContentClass('class-string')
-            'contentClass' => 'col-md-8 bold-labels',
+            'contentClass' => 'col-xl-8 bold-labels',
 
             // When using tabbed forms (create & update), what kind of tabs would you like?
             'tabsType' => 'horizontal', //options: horizontal, vertical
@@ -106,7 +104,7 @@ return [
         'update' => [
             // Define the size/looks of the content div for all CRUDs
             // To override per view use $this->crud->setEditContentClass('class-string')
-            'contentClass'   => 'col-md-8 bold-labels',
+            'contentClass'   => 'col-xl-8 bold-labels',
 
             // When using tabbed forms (create & update), what kind of tabs would you like?
             'tabsType' => 'horizontal', //options: horizontal, vertical
@@ -153,7 +151,6 @@ return [
             // To override per Controller use $this->crud->setReorderContentClass('class-string')
             'contentClass'   => 'col-md-8 col-md-offset-2',
         ],
-
     ],
 
     /*
@@ -601,5 +598,4 @@ return [
         // "zu_ZA" => "Zulu (South Africa)",
         // "zu" => "Zulu"
     ],
-
 ];

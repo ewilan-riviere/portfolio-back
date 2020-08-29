@@ -14,7 +14,7 @@ return [
     */
 
     'name' => env('APP_NAME', 'Laravel'),
-    
+
     /*
     |--------------------------------------------------------------------------
     | Application login
@@ -24,8 +24,8 @@ return [
     |
     */
 
-    'admin_mail' => env('ADMIN_MAIL'),
-    'admin_password' => env('ADMIN_PASSWORD'),
+    'backpack_admin_mail' => env('BP_ADMIN_MAIL'),
+    'backpack_admin_password' => env('BP_ADMIN_PASSWORD'),
 
     /*
     |--------------------------------------------------------------------------

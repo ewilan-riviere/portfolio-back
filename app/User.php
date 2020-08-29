@@ -3,7 +3,6 @@
 namespace App;
 
 use Alert;
-use Spatie\Permission\Traits\HasRoles;
 use Illuminate\Notifications\Notifiable;
 use Backpack\CRUD\app\Models\Traits\CrudTrait;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -42,7 +41,6 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  */
 class User extends Authenticatable
 {
-    use HasRoles;
     use CrudTrait;
     use Notifiable;
 
