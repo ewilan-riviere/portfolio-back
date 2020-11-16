@@ -1,0 +1,124 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "API",
+        "description": "Swagger Front API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api"
+        }
+    ],
+    "paths": {
+        "/formations": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Liste des formations",
+                "description": "Les formations",
+                "operationId": "App\\Http\\Controllers\\Api\\FormationController::index",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/projects": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Liste des projets",
+                "description": "Les projets",
+                "operationId": "App\\Http\\Controllers\\Api\\ProjectController::index",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/skills": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Liste des compétences",
+                "description": "Les compétences",
+                "operationId": "App\\Http\\Controllers\\Api\\SkillController::index",
+                "parameters": [
+                    {
+                        "name": "categories",
+                        "in": "query",
+                        "description": "Slug ou nom de tags liés à l'article",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "type": "string"
+                            }
+                        }
+                    },
+                    {
+                        "name": "favorite",
+                        "in": "query",
+                        "description": "Nombre de résultats",
+                        "schema": {
+                            "type": "boolean"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/skills-by-categories": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Liste des compétences par catégories",
+                "description": "Les compétences par catégories",
+                "operationId": "App\\Http\\Controllers\\Api\\SkillController::byCategories",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        },
+        "/texts": {
+            "get": {
+                "tags": [
+                    "portfolio"
+                ],
+                "summary": "Liste des textes",
+                "description": "Les textes",
+                "operationId": "App\\Http\\Controllers\\Api\\TextController::index",
+                "responses": {
+                    "200": {
+                        "description": "Successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "global",
+            "description": "Requêtes globales"
+        },
+        {
+            "name": "portfolio",
+            "description": "Portfolio"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
