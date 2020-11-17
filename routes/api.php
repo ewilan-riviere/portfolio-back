@@ -3,6 +3,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\SkillController;
+use App\Http\Controllers\Api\FormationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,7 +22,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 // Route::get('agencies', 'AgencyController@index')->name('agencies.index');
 
-Route::get('/formations', 'FormationController@index')->name('formations.index');
+Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
 Route::get('/skills', [SkillController::class, 'index'])->name('formations.index');
 Route::get('/skills-by-categories', 'SkillController@byCategories')->name('formations.byCategories');
 Route::get('/projects', 'ProjectController@index')->name('formations.index');

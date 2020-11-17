@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -79,6 +80,7 @@ class Formation extends Model
     protected $guarded = ['id'];
     protected $fillable = [
         'title',
+        'slug',
         'certificate',
         'logo',
         'color',
@@ -104,6 +106,20 @@ class Formation extends Model
     ];
     // protected $hidden = [];
     // protected $dates = [];
+
+    public static function boot()
+    {
+        static::saving(function (Formation $formation) {
+            if (! empty($formation->slug)) {
+                return;
+            }
+            $formation->slug = Str::slug($formation->title, '-');
+
+            // TODO: page_title, page_meta
+        });
+
+        parent::boot();
+    }
 
     /*
     |--------------------------------------------------------------------------

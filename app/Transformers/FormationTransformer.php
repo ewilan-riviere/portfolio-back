@@ -34,7 +34,9 @@ class FormationTransformer extends TransformerAbstract
         }
 
         if (null != $formation->logo) {
-            $attributes['logo'] = file_get_contents(config('app.url').'/'.$formation->logo);
+            $url = public_path('/storage/formations/'.$formation->slug.'.svg');
+            $svg = file_get_contents($url);
+            $attributes['logo'] = $svg;
         }
 
         if (null != $formation->project_image) {

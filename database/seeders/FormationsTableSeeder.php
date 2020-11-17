@@ -15,7 +15,7 @@ class FormationsTableSeeder extends Seeder
      */
     public function run()
     {
-        Formation::insert([
+        $formations = [
             [
                 'title'            => 'Licence de Psychologie',
                 'certificate'      => null,
@@ -124,6 +124,9 @@ class FormationsTableSeeder extends Seeder
                 'project_file'    => null,
                 'finished'        => false,
             ],
-        ]);
+        ];
+        foreach ($formations as $key => $formation) {
+            Formation::create($formation);
+        }
     }
 }

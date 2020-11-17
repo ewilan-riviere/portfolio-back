@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        rrmdir(storage_path('app/public/*'));
         $this->directoryToStorage('documents');
         $this->directoryToStorage('projects');
         $this->directoryToStorage('icons');
