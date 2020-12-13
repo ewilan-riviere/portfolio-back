@@ -86,7 +86,7 @@ class ProjectsTableSeeder extends Seeder
                 'order'         => 2,
                 'image'         => 'storage/projects/play.it.png',
                 'image-title'   => null,
-                'resume'        => 'Refonte du sstorage/fonts/ite de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
+                'resume'        => 'Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
                 'github_link'   => 'https://forge.dotslashplay.it/play.it/website',
                 'try_it'        => 'https://dev.website.dotslashplay.it/',
                 'font'          => 'storage/fonts/source-code-pro-regular.ttf',

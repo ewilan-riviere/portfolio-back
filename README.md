@@ -31,6 +31,31 @@
 
 ---
 
+## Todo
+
+- storm flutter nuxtjs
+- pokedroid flutter
+- fanfic nuxtjs laravel flutter
+- guildwars2 nuxtjs
+- roazhonstarbus nuxtjs flutter
+- markdownthis nutjs laravel flutter
+- fontsbook nuxtjs laravel
+- markdowninterpreter nuxtjs
+- memorandum nuxtjs content
+
+plugins:
+
+- vue-tailwind-screens-helper
+
+pro:
+
+- imprimerie le gailliard nuxtjs laravel backpack
+- secob nuxtjs laravel backpack
+- naviso nuxtjs laravel backpack
+- captransactions vuejs laravel coreui flutter
+- laforet nuxtjs laravel coreui
+- useweb blog tech nuxtjs
+
 ## **I. Setup**
 
 Create new database into phpMyAdmin, call it `portfolio`. And create `.env` and fill it:
