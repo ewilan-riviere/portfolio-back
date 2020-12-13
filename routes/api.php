@@ -23,11 +23,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 // Route::get('agencies', 'AgencyController@index')->name('agencies.index');
 
 Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
-Route::get('/skills', [SkillController::class, 'index'])->name('formations.index');
-Route::get('/skills-by-categories', 'SkillController@byCategories')->name('formations.byCategories');
-Route::get('/projects', 'ProjectController@index')->name('formations.index');
+Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
+Route::get('/skills-by-categories', 'SkillController@byCategories')->name('skills.byCategories');
+Route::get('/projects', 'ProjectController@index')->name('projects.index');
 
-Route::get('/texts', 'TextController@index')->name('formations.index');
+Route::get('/texts', 'TextController@index')->name('texts.index');
 // Route::get('/users', 'ApiController@users')->name('users');
 // Route::get('/login', 'ApiController@login')->name('login');
 // Route::get('/skills', 'ApiController@skills')->name('skills');
