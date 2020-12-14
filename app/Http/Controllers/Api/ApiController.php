@@ -10,15 +10,11 @@ use Illuminate\Support\Facades\Route;
  * @OA\Info(
  *     version="1.0.0",
  *     title="API",
- *     description="Swagger Front API"
+ *     description="Portfolio of Ewilan Rivière portfolio"
  * ),
  * @OA\Tag(
  *     name="global",
- *     description="Requêtes globales"
- * ),
- * @OA\Tag(
- *     name="portfolio",
- *     description="Portfolio"
+ *     description="Global requests"
  * ),
  */
 class ApiController extends Controller

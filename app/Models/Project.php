@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -19,7 +20,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int                                                                  $is_collective
  * @property \Illuminate\Support\Carbon|null                                      $created_at
  * @property \Illuminate\Support\Carbon|null                                      $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectMember[] $projectsMembers
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Developer[] $developers
  * @property int|null                                                             $projects_members_count
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[]         $skills
  * @property int|null                                                             $skills_count
@@ -50,17 +51,20 @@ class Project extends Model
     */
 
     protected $table = 'projects';
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
     // public $timestamps = false;
-    protected $guarded = ['id'];
     protected $fillable = [
+        'slug',
         'title',
         'order',
-        'image',
         'resume',
-        'github_link',
-        'try_it',
+        'image',
+        'image_title',
         'font',
+        'link_github',
+        'link_project',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -70,6 +74,23 @@ class Project extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+    public static function boot()
+    {
+        static::saving(function (Project $project) {
+            if (! empty($project->slug)) {
+                return;
+            }
+            $project->slug = Str::slug($project->title, '-');
+
+            // if (! empty($project->page_title)) {
+            //     return;
+            // }
+            // $project->page_title = $project->title;
+        });
+
+        parent::boot();
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -82,9 +103,9 @@ class Project extends Model
         return $this->belongsToMany(Skill::class);
     }
 
-    public function projectsMembers()
+    public function developers()
     {
-        return $this->belongsToMany(ProjectMember::class);
+        return $this->belongsToMany(Developer::class);
     }
 
     /*

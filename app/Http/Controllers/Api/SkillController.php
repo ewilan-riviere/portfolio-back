@@ -3,18 +3,18 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Skill;
-use App\Models\Category;
+use App\Models\SkillCategory;
 use App\Http\Controllers\Controller;
 use App\Transformers\SkillTransformer;
-use App\Transformers\CategoryTransformer;
 use Symfony\Component\HttpFoundation\Request;
+use App\Transformers\SkillCategoryTransformer;
 
 class SkillController extends Controller
 {
     /**
      * @OA\Get(
      *     path="/skills",
-     *     tags={"portfolio"},
+     *     tags={"global"},
      *     summary="Liste des compétences",
      *     description="Les compétences",
      *      @OA\Parameter(
@@ -73,7 +73,7 @@ class SkillController extends Controller
         }
 
         return fractal($skills, new SkillTransformer())
-            ->includeCategory(['category']);
+            ->includeSkillCategory();
     }
 
     /**
@@ -88,14 +88,15 @@ class SkillController extends Controller
      *     )
      * )
      */
-    public function byCategories()
+    public function categories()
     {
-        $categories = Category::all();
+        $categories = SkillCategory::all();
+
         $categories->load(['skills' => function ($query) {
             $query->orderBy('title');
         }]);
 
-        return fractal($categories, new CategoryTransformer())
-            ->includeSkills(['skills']);
+        return fractal($categories, new SkillCategoryTransformer())
+            ->includeSkills();
     }
 }

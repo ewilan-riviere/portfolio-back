@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
         "title": "API",
-        "description": "Swagger Front API",
+        "description": "Portfolio of Ewilan Rivière portfolio",
         "version": "1.0.0"
     },
     "servers": [
@@ -14,7 +14,7 @@
         "/formations": {
             "get": {
                 "tags": [
-                    "portfolio"
+                    "global"
                 ],
                 "summary": "Liste des formations",
                 "description": "Les formations",
@@ -29,7 +29,7 @@
         "/projects": {
             "get": {
                 "tags": [
-                    "portfolio"
+                    "global"
                 ],
                 "summary": "Liste des projets",
                 "description": "Les projets",
@@ -44,7 +44,7 @@
         "/skills": {
             "get": {
                 "tags": [
-                    "portfolio"
+                    "global"
                 ],
                 "summary": "Liste des compétences",
                 "description": "Les compétences",
@@ -84,22 +84,7 @@
                 ],
                 "summary": "Liste des compétences par catégories",
                 "description": "Les compétences par catégories",
-                "operationId": "App\\Http\\Controllers\\Api\\SkillController::byCategories",
-                "responses": {
-                    "200": {
-                        "description": "Successful operation"
-                    }
-                }
-            }
-        },
-        "/texts": {
-            "get": {
-                "tags": [
-                    "portfolio"
-                ],
-                "summary": "Liste des textes",
-                "description": "Les textes",
-                "operationId": "App\\Http\\Controllers\\Api\\TextController::index",
+                "operationId": "App\\Http\\Controllers\\Api\\SkillController::categories",
                 "responses": {
                     "200": {
                         "description": "Successful operation"
@@ -111,11 +96,7 @@
     "tags": [
         {
             "name": "global",
-            "description": "Requêtes globales"
-        },
-        {
-            "name": "portfolio",
-            "description": "Portfolio"
+            "description": "Global requests"
         }
     ],
     "security": [

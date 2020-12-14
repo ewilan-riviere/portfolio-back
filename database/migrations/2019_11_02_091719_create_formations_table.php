@@ -14,9 +14,9 @@ class CreateFormationsTable extends Migration
     public function up()
     {
         Schema::create('formations', function (Blueprint $table) {
-            $table->increments('id');
+            // $table->id();
+            $table->string('slug')->nullable()->unique();
             $table->string('title')->nullable();
-            $table->string('slug')->nullable();
             $table->string('certificate')->nullable();
             $table->string('logo')->nullable();
             $table->string('color')->default('#000000');

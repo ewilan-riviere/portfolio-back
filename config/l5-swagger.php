@@ -5,7 +5,7 @@ return [
     'documentations' => [
         'default' => [
             'api' => [
-                'title' => 'Ewilan Rivière · Portfolio',
+                'title' => 'API Documentation for Ewilan Rivière · Portfolio',
             ],
 
             'routes' => [

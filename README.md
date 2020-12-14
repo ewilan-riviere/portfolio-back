@@ -56,30 +56,31 @@ pro:
 - laforet nuxtjs laravel coreui
 - useweb blog tech nuxtjs
 
+symfony
+
+- symfony serve
+- symfony new symfo-test
+
+laravel
+
+- php artisan config:clear
+- php artisan route:clear
+- php artisan l5-swagger:generate
+
 ## **I. Setup**
 
-Create new database into phpMyAdmin, call it `portfolio`. And create `.env` and fill it:
-
-``` bash
-cp .env.example .env
-```
-
-In your IDE, fill these informations:
-
-```js
-DB_DATABASE=  
-DB_USERNAME=  
-DB_PASSWORD=  
-```
-
----
+Create new database into phpMyAdmin, call it `portfolio`.
 
 ```bash
 composer install
-php artisan key:generate
-php artisan storage:link
-php artisan backpack:install
-php artisan migrate:fresh --seed
+```
+
+```bash
+php artisan setup:install portfolio
+```
+
+```bash
+php artisan l5-swagger:generate
 ```
 
 ## **II. .env tips**

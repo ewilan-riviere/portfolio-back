@@ -2,10 +2,10 @@
 
 namespace App\Transformers;
 
-use App\Models\Category;
+use App\Models\SkillCategory;
 use League\Fractal\TransformerAbstract;
 
-class CategoryTransformer extends TransformerAbstract
+class SkillCategoryTransformer extends TransformerAbstract
 {
     protected $availableIncludes = [
         'skills',
@@ -16,9 +16,9 @@ class CategoryTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform(Category $category)
+    public function transform(SkillCategory $skillCategory)
     {
-        $attributes = $category->toArray();
+        $attributes = $skillCategory->toArray();
 
         unset(
             $attributes['id'],
@@ -26,15 +26,11 @@ class CategoryTransformer extends TransformerAbstract
             $attributes['updated_at']
         );
 
-        // return [
-        //     'id' => $category->id,
-        // ];
-
         return $attributes;
     }
 
-    public function includeSkills(Category $category)
+    public function includeSkills(SkillCategory $skillCategory)
     {
-        return $this->collection($category->skills, new SkillTransformer());
+        return $this->collection($skillCategory->skills, new SkillTransformer());
     }
 }

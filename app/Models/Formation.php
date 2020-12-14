@@ -75,9 +75,10 @@ class Formation extends Model
     */
 
     protected $table = 'formations';
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
     // public $timestamps = false;
-    protected $guarded = ['id'];
     protected $fillable = [
         'title',
         'slug',
@@ -115,7 +116,10 @@ class Formation extends Model
             }
             $formation->slug = Str::slug($formation->title, '-');
 
-            // TODO: page_title, page_meta
+            // if (! empty($project->page_title)) {
+            //     return;
+            // }
+            // $project->page_title = $project->title;
         });
 
         parent::boot();
@@ -132,6 +136,11 @@ class Formation extends Model
     | RELATIONS
     |--------------------------------------------------------------------------
     */
+
+    public function projects()
+    {
+        return $this->hasMany(Project::class);
+    }
 
     /*
     |--------------------------------------------------------------------------

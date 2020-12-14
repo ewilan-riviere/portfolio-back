@@ -59,6 +59,6 @@ class SkillTransformer extends TransformerAbstract
 
     public function includeCategory(Skill $skill)
     {
-        return $this->item($skill->category, new CategoryTransformer());
+        return $this->item($skill->category, new SkillCategoryTransformer());
     }
 }

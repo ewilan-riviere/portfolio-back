@@ -2,10 +2,10 @@
 
 namespace Database\Seeders;
 
-use App\Models\ProjectMember;
+use App\Models\Developer;
 use Illuminate\Database\Seeder;
 
-class ProjectsMembersTableSeeder extends Seeder
+class DeveloperSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,7 +14,7 @@ class ProjectsMembersTableSeeder extends Seeder
      */
     public function run()
     {
-        ProjectMember::insert([
+        $developers = [
             [
                 'name'      => 'Nora Hennebert',
                 'github'    => '',
@@ -39,6 +39,10 @@ class ProjectsMembersTableSeeder extends Seeder
                 'portfolio' => '',
                 'linkedin'  => '',
             ],
-        ]);
+        ];
+
+        foreach ($developers as $key => $developer) {
+            Developer::create($developer);
+        }
     }
 }

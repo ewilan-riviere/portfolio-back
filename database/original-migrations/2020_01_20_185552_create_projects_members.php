@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsMembers extends Migration
+class CreateDevelopers extends Migration
 {
     /**
      * Run the migrations.
@@ -12,7 +12,7 @@ class CreateProjectsMembers extends Migration
      */
     public function up()
     {
-        Schema::create('projects_members', function (Blueprint $table) {
+        Schema::create('developers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->unique();
             $table->string('github');
@@ -29,6 +29,6 @@ class CreateProjectsMembers extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects_members');
+        Schema::dropIfExists('developers');
     }
 }

@@ -26,7 +26,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class Category extends Model
+class SkillCategory extends Model
 {
     /*
     |--------------------------------------------------------------------------
@@ -34,13 +34,14 @@ class Category extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'categories';
-    // protected $primaryKey = 'id';
+    protected $table = 'skills_categories';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
     // public $timestamps = false;
-    protected $guarded = ['id'];
     protected $fillable = [
         'slug',
-        'display',
+        'title',
     ];
     // protected $hidden = [];
     // protected $dates = [];
@@ -50,6 +51,23 @@ class Category extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+    public static function boot()
+    {
+        static::saving(function (SkillCategory $skillCategory) {
+            if (! empty($skillCategory->slug)) {
+                return;
+            }
+            $skillCategory->slug = Str::slug($skillCategory->title, '-');
+
+            // if (! empty($project->page_title)) {
+            //     return;
+            // }
+            // $project->page_title = $project->title;
+        });
+
+        parent::boot();
+    }
 
     /*
     |--------------------------------------------------------------------------

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTextsTable extends Migration
+class CreateDevelopersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTextsTable extends Migration
      */
     public function up()
     {
-        Schema::create('texts', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('slug');
-            $table->text('text');
+        Schema::create('developers', function (Blueprint $table) {
+            $table->string('slug')->nullable()->unique();
+            $table->string('name');
+            $table->string('github');
+            $table->string('portfolio');
+            $table->string('linkedin');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateTextsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('texts');
+        Schema::dropIfExists('developers');
     }
 }

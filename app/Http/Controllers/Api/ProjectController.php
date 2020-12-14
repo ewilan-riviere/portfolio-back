@@ -12,7 +12,7 @@ class ProjectController extends Controller
     /**
      * @OA\Get(
      *     path="/projects",
-     *     tags={"portfolio"},
+     *     tags={"global"},
      *     summary="Liste des projets",
      *     description="Les projets",
      *     @OA\Response(
@@ -34,6 +34,7 @@ class ProjectController extends Controller
         }
 
         return fractal($projects, new ProjectTransformer())
-            ->includeSkills(['skills']);
+            ->includeSkills()
+            ->includeDevelopers();
     }
 }

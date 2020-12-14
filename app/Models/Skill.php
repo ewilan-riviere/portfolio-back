@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -59,11 +60,13 @@ class Skill extends Model
     */
 
     protected $table = 'skills';
-    // protected $primaryKey = 'id';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
     // public $timestamps = false;
-    protected $guarded = ['id'];
     protected $fillable = [
         'title',
+        'slug',
         'version',
         'link',
         'is_free_app',
@@ -85,20 +88,37 @@ class Skill extends Model
     |--------------------------------------------------------------------------
     */
 
+    public static function boot()
+    {
+        static::saving(function (Skill $skill) {
+            if (! empty($skill->slug)) {
+                return;
+            }
+            $skill->slug = Str::slug($skill->title, '-');
+
+            // if (! empty($project->page_title)) {
+            //     return;
+            // }
+            // $project->page_title = $project->title;
+        });
+
+        parent::boot();
+    }
+
     /*
     |--------------------------------------------------------------------------
     | RELATIONS
     |--------------------------------------------------------------------------
     */
 
-    public function projects()
-    {
-        return $this->belongsToMany(Project::class);
-    }
+    // public function projects()
+    // {
+    //     return $this->belongsToMany(Project::class);
+    // }
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsTo(SkillCategory::class);
     }
 
     /*

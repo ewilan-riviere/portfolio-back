@@ -11,7 +11,7 @@ class FormationController extends Controller
     /**
      * @OA\Get(
      *     path="/formations",
-     *     tags={"portfolio"},
+     *     tags={"global"},
      *     summary="Liste des formations",
      *     description="Les formations",
      *     @OA\Response(
@@ -22,7 +22,7 @@ class FormationController extends Controller
      */
     public function index()
     {
-        $formations = Formation::orderBy('date_end', 'asc')->get();
+        $formations = Formation::with('projects')->orderBy('date_end', 'asc')->get();
 
         return fractal($formations, new FormationTransformer());
     }

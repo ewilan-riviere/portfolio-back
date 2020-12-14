@@ -25,7 +25,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
-Route::get('/skills-by-categories', 'SkillController@byCategories')->name('skills.byCategories');
+Route::get('/skills-by-categories', [SkillController::class, 'categories'])->name('skills.categories');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 
 Route::get('/texts', 'TextController@index')->name('texts.index');

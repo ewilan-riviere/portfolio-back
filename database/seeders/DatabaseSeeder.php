@@ -29,15 +29,13 @@ class DatabaseSeeder extends Seeder
         $this->directoryToStorage('fonts');
         $this->directoryToStorage('skills');
         // $this->call(UsersTableSeeder::class);
-        $this->call(CategoriesTableSeeder::class);
+        $this->call(SkillsCategoriesTableSeeder::class);
         $this->call(FormationsTableSeeder::class);
         $this->call(ProjectsTableSeeder::class);
         $this->call(SkillsTableSeeder::class);
-        $this->call(SocialsTableSeeder::class);
-        $this->call(TextsTableSeeder::class);
-        $this->call(MediasTableSeeder::class);
-        $this->call(PassionsTableSeeder::class);
-        $this->call(ProjectsMembersTableSeeder::class);
-        $this->call(ForeignKeysTableSeeder::class);
+        // $this->call(PassionsTableSeeder::class);
+        $this->call(DeveloperSeeder::class);
+        $this->call(ProjectDeveloperSeeder::class);
+        // $this->call(ForeignKeysTableSeeder::class);
     }
 }

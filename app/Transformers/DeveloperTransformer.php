@@ -2,9 +2,10 @@
 
 namespace App\Transformers;
 
+use App\Models\Developer;
 use League\Fractal\TransformerAbstract;
 
-class ProjectMemberTransformer extends TransformerAbstract
+class DeveloperTransformer extends TransformerAbstract
 {
     /**
      * List of resources to automatically include.
@@ -27,16 +28,10 @@ class ProjectMemberTransformer extends TransformerAbstract
      *
      * @return array
      */
-    public function transform()
+    public function transform(Developer $developer)
     {
-        $attributes = $project->toArray();
-
-        unset(
-            $attributes['id'],
-            $attributes['created_at'],
-            $attributes['updated_at']
-        );
-
-        return $attributes;
+        return [
+            'name' => $developer->name,
+        ];
     }
 }

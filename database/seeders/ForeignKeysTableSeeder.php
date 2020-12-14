@@ -125,10 +125,10 @@ class ForeignKeysTableSeeder extends Seeder
             ],
         ]);
 
-        DB::table('project_project_member')->insert([
+        DB::table('developer_project')->insert([
             [
                 'project_id'        => 6,
-                'project_member_id' => 2,
+                'developer_id' => 2,
             ],
         ]);
     }

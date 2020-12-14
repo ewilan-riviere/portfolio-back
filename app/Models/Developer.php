@@ -2,10 +2,11 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\ProjectMember.
+ * App\Models\Developer.
  *
  * @property int                                                            $id
  * @property string                                                         $name
@@ -17,19 +18,19 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
  *
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereGithub($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereLinkedin($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember wherePortfolio($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\ProjectMember whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer query()
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereGithub($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereLinkedin($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer wherePortfolio($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereUpdatedAt($value)
  * @mixin \Eloquent
  */
-class ProjectMember extends Model
+class Developer extends Model
 {
     /*
     |--------------------------------------------------------------------------
@@ -37,12 +38,15 @@ class ProjectMember extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'projects_members';
-    // protected $primaryKey = 'id';
+    protected $table = 'developers';
+    protected $primaryKey = 'slug';
+    public $incrementing = false;
+    protected $keyType = 'string';
     // public $timestamps = false;
     protected $guarded = ['id'];
     protected $fillable = [
         'name',
+        'slug',
         'github',
         'portfolio',
         'linkedin',
@@ -55,6 +59,23 @@ class ProjectMember extends Model
     | FUNCTIONS
     |--------------------------------------------------------------------------
     */
+
+    public static function boot()
+    {
+        static::saving(function (Developer $developer) {
+            if (! empty($developer->slug)) {
+                return;
+            }
+            $developer->slug = Str::slug($developer->name, '-');
+
+            // if (! empty($project->page_title)) {
+            //     return;
+            // }
+            // $project->page_title = $project->title;
+        });
+
+        parent::boot();
+    }
 
     /*
     |--------------------------------------------------------------------------
