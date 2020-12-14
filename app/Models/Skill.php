@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string                                                         $title
  * @property string|null                                                    $version
  * @property string|null                                                    $link
- * @property int                                                            $is_free_app
+ * @property int                                                            $is_free
  * @property string|null                                                    $color
  * @property int                                                            $color_text_dark
  * @property string|null                                                    $subtitle
@@ -72,7 +72,7 @@ class Skill extends Model
         'slug',
         'version',
         'link',
-        'is_free_app',
+        'is_free',
         'color',
         'subtitle',
         'details',

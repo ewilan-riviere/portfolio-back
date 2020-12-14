@@ -21,11 +21,13 @@ class DeveloperResource extends JsonResource
             'github'    => $this->github,
             'portfolio' => $this->portfolio,
             'linkedin'  => $this->linkedin,
+            'role'      => $this->pivot->role,
         ];
 
         if ($this->light) {
             $result = [
                 'name' => $this->name,
+                'role' => $this->pivot->role,
             ];
         }
 

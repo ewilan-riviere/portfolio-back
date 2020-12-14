@@ -18,6 +18,7 @@ class CreateDeveloperProjectPivot extends Migration
             $table->foreign('project_slug')->references('slug')->on('projects')->onDelete('cascade');
             $table->string('developer_slug');
             $table->foreign('developer_slug')->references('slug')->on('developers')->onDelete('cascade');
+            $table->string('role')->nullable();
         });
     }
 

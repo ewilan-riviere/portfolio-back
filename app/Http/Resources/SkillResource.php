@@ -20,15 +20,17 @@ class SkillResource extends JsonResource
             'slug'            => $this->slug,
             'version'         => $this->version,
             'link'            => $this->link,
-            'is_free_app'     => $this->is_free_app,
+            'isFree'          => $this->is_free,
             'color'           => $this->color,
             'subtitle'        => $this->subtitle,
             'details'         => $this->details,
-            'is_favorite'     => $this->is_favorite,
+            'isFavorite'      => $this->is_favorite,
             'rating'          => $this->rating,
             'image'           => getImage($this->image),
-            'blockquote_text' => $this->blockquote_text,
-            'blockquote_who'  => $this->blockquote_who,
+            'blockquote'      => [
+                'text'  => $this->blockquote_text,
+                'who'   => $this->blockquote_who,
+            ],
         ];
 
         if ($this->light) {

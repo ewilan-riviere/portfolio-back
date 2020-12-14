@@ -18,7 +18,7 @@ class CreateSkillsTable extends Migration
             $table->string('title');
             $table->string('version')->nullable();
             $table->string('link')->nullable();
-            $table->boolean('is_free_app')->default(0);
+            $table->boolean('is_free')->default(0);
             $table->string('color')->nullable();
             $table->boolean('color_text_dark')->default(0);
             $table->string('subtitle')->nullable();

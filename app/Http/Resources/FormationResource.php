@@ -27,11 +27,11 @@ class FormationResource extends JsonResource
             'logo'             => [
                 'image'             => $this->logo,
                 'color'             => $this->color,
-                'color_text_white'  => $this->color_text_white,
+                'haveTextWhite'     => $this->color_text_white,
             ],
             'place'            => [
-                'place'            => $this->place,
-                'place_link'       => $this->place_link,
+                'name'             => $this->place,
+                'link'             => $this->place_link,
             ],
             'vocational' => [
                 'name'       => $this->vocational,

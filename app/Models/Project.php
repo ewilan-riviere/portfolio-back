@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null                                                         $projects_members_count
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[]     $skills
  * @property int|null                                                         $skills_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project query()
@@ -41,21 +42,27 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereTryIt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @property string|null $slug
  * @property string|null $image_title
  * @property string|null $link_github
  * @property string|null $link_project
  * @property string|null $formation_slug
  * @property int|null    $developers_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkGithub($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkProject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereSlug($value)
+ *
  * @property mixed $is_draft
  * @property mixed $is_published
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project draft()
  * @method static \Illuminate\Database\Eloquent\Builder|Project published()
+ *
  * @property string $status
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereStatus($value)
  */
 class Project extends Model
@@ -124,7 +131,7 @@ class Project extends Model
 
     public function developers()
     {
-        return $this->belongsToMany(Developer::class);
+        return $this->belongsToMany(Developer::class)->withPivot('role');
     }
 
     /*

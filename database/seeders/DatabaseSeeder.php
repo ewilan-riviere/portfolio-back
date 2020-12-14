@@ -32,7 +32,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillsCategoriesTableSeeder::class);
         $this->call(FormationsTableSeeder::class);
         $this->call(ProjectSeeder::class);
-        $this->call(SkillsTableSeeder::class);
+        $this->call(SkillSeeder::class);
         // $this->call(PassionsTableSeeder::class);
         $this->call(DeveloperSeeder::class);
         $this->call(DeveloperProjectSeeder::class);

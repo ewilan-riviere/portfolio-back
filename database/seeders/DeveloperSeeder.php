@@ -16,6 +16,12 @@ class DeveloperSeeder extends Seeder
     {
         $developers = [
             [
+                'name'      => 'Ewilan Rivière',
+                'github'    => 'https://github.com/ewilan-riviere',
+                'portfolio' => 'https://ewilan-riviere.com',
+                'linkedin'  => 'https://www.linkedin.com/in/ewilan-riviere',
+            ],
+            [
                 'name'      => 'Nora Hennebert',
                 'github'    => '',
                 'portfolio' => '',
