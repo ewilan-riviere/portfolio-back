@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Formation;
 use App\Http\Controllers\Controller;
-use App\Transformers\FormationTransformer;
+use App\Http\Resources\FormationResource;
 
 class FormationController extends Controller
 {
@@ -24,6 +24,6 @@ class FormationController extends Controller
     {
         $formations = Formation::with('projects')->orderBy('date_end', 'asc')->get();
 
-        return fractal($formations, new FormationTransformer());
+        return FormationResource::collection($formations);
     }
 }

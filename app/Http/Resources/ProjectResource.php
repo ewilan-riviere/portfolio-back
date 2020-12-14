@@ -27,14 +27,16 @@ class ProjectResource extends JsonResource
             'order'                               => $this->order,
             'resume'                              => $this->resume,
             'assets'                              => [
-                'image'                               => getImage($this->image),
-                'imageTitle'                          => getImage($this->image_title),
-                'font'                                => getPath($this->font),
+                'image'                               => getImage($this->image, true),
+                'imageTitle'                          => getImage($this->image_title, true),
+                'font'                                => getPath($this->font, true),
             ],
             'links'                               => [
                 'github'                               => $this->link_github,
                 'project'                              => $this->link_project,
             ],
+            'status'     => $this->status,
+            'created_at' => $this->created_at,
             'skills'     => $skills,
             'developers' => $developers,
         ];

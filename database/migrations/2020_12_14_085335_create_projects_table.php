@@ -23,6 +23,7 @@ class CreateProjectsTable extends Migration
             $table->string('font')->nullable();
             $table->string('link_github')->nullable();
             $table->string('link_project')->nullable();
+            $table->string('status')->default('draft');
             $table->string('formation_slug')->nullable();
             $table->foreign('formation_slug')->references('slug')->on('formations')->onDelete('cascade');
             $table->timestamps();

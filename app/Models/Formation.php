@@ -64,9 +64,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocational($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocationalLink($value)
  * @mixin \Eloquent
- * @property string|null $slug
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
- * @property-read int|null $projects_count
+ * @property string|null                                                    $slug
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property int|null                                                       $projects_count
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereSlug($value)
  */
 class Formation extends Model
@@ -90,7 +90,6 @@ class Formation extends Model
         'color',
         'color_text_white',
         'resume',
-        'formation_type',
         'place',
         'place_link',
         'vocational',
@@ -100,12 +99,6 @@ class Formation extends Model
         'level',
         'date_begin',
         'date_end',
-        'project_title',
-        'project_resume',
-        'project_image',
-        'project_type',
-        'project_link',
-        'project_file',
         'status',
     ];
     // protected $hidden = [];

@@ -14,7 +14,6 @@ class CreateFormationsTable extends Migration
     public function up()
     {
         Schema::create('formations', function (Blueprint $table) {
-            // $table->id();
             $table->string('slug')->nullable()->unique();
             $table->string('title')->nullable();
             $table->string('certificate')->nullable();
@@ -32,12 +31,6 @@ class CreateFormationsTable extends Migration
             $table->string('level')->nullable();
             $table->date('date_begin')->nullable();
             $table->date('date_end')->nullable();
-            $table->string('project_title')->nullable();
-            $table->text('project_resume')->nullable();
-            $table->string('project_image')->nullable();
-            $table->string('project_type')->nullable();
-            $table->string('project_link')->nullable();
-            $table->string('project_file')->nullable();
             $table->boolean('finished')->default(true);
             $table->timestamps();
         });

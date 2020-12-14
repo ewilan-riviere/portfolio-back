@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use App\Models\Project;
 use Illuminate\Database\Seeder;
 
-class ProjectsTableSeeder extends Seeder
+class ProjectSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -26,7 +26,7 @@ class ProjectsTableSeeder extends Seeder
                 'link_project'        => null,
                 'font'                => 'storage/fonts/starcraft-normal.ttf',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2018-11-07',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -38,8 +38,9 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://github.com/ewilan-riviere/overwatch-memory',
                 'link_project'        => null,
                 'font'                => 'storage/fonts/big-noodle-titling.ttf',
+                'status'              => 'published',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2018-11-07',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -51,8 +52,9 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://github.com/ewilan-riviere/pomodoro',
                 'link_project'        => null,
                 'font'                => 'storage/fonts/permanent-marker-regular.ttf',
+                'status'              => 'published',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2018-11-28',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -64,8 +66,9 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://github.com/ewilan-riviere/quizz-pokemon',
                 'link_project'        => null,
                 'font'                => 'storage/fonts/pokemon-solid.ttf',
+                'status'              => 'published',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2018-12-06',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -78,7 +81,7 @@ class ProjectsTableSeeder extends Seeder
                 'link_project'        => null,
                 'font'                => 'storage/fonts/triforce.ttf',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2019-02-07',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -90,8 +93,9 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://forge.dotslashplay.it/play.it/website',
                 'link_project'        => 'https://dev.website.dotslashplay.it/',
                 'font'                => 'storage/fonts/source-code-pro-regular.ttf',
+                'status'              => 'published',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2019-04-01',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -103,8 +107,9 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3',
                 'link_project'        => 'http://promo03.code-academie.fr/',
                 'font'                => 'storage/fonts/kraftstoff-regular.otf',
+                'status'              => 'published',
                 'formation_slug'      => 'developpeuse-web-web-mobile',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2018-11-27',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -116,7 +121,8 @@ class ProjectsTableSeeder extends Seeder
                 'link_github'         => 'https://github.com/ewilan-riviere/ewilan-riviere-portfolio-front',
                 'link_project'        => 'https://portfolio.ewilan-riviere.com/',
                 'font'                => 'storage/fonts/morpheus.ttf',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'status'              => 'published',
+                'created_at'          => '2020-05-19',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
             [
@@ -125,9 +131,10 @@ class ProjectsTableSeeder extends Seeder
                 'image'               => 'storage/projects/portfolio.png',
                 'image_title'         => null,
                 'resume'              => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
-                'link_project'        => config('app.url').'/storage/documents/ter-la-cyberviolence.pdf',
+                'link_project'        => getPath('storage/documents/ter-la-cyberviolence.pdf'),
+                'status'              => 'published',
                 'formation_slug'      => 'licence-de-psychologie',
-                'created_at'          => Carbon::now()->format('Y-m-d H:i:s'),
+                'created_at'          => '2014-06-01',
                 'updated_at'          => Carbon::now()->format('Y-m-d H:i:s'),
             ],
         ];

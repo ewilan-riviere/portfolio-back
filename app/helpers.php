@@ -38,13 +38,13 @@ if (! function_exists('rrmdir')) {
 }
 
 if (! function_exists('getImage')) {
-    function getImage($path)
+    function getImage($path, bool $nullable = false)
     {
         $url = '';
         if (null !== $path) {
             $url = image_cache(str_replace('', '', $path), 'post');
         } else {
-            $url = config('app.url').'/images/no-image.png';
+            $url = $nullable ? null : config('app.url').'/images/no-image.png';
         }
 
         return $url;
@@ -54,7 +54,7 @@ if (! function_exists('getImage')) {
 if (! function_exists('getPath')) {
     function getPath($path)
     {
-        return config('app.url').'/'.$path;
+        return null !== $path ? config('app.url').'/'.$path : null;
     }
 }
 

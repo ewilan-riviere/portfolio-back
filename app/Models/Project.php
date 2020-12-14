@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use App\Models\Traits\Publishable;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -45,14 +46,22 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null $link_github
  * @property string|null $link_project
  * @property string|null $formation_slug
- * @property-read int|null $developers_count
+ * @property int|null    $developers_count
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkGithub($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkProject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereSlug($value)
+ * @property mixed $is_draft
+ * @property mixed $is_published
+ * @method static \Illuminate\Database\Eloquent\Builder|Project draft()
+ * @method static \Illuminate\Database\Eloquent\Builder|Project published()
+ * @property string $status
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereStatus($value)
  */
 class Project extends Model
 {
+    use Publishable;
+
     /*
     |--------------------------------------------------------------------------
     | GLOBAL VARIABLES
@@ -74,6 +83,7 @@ class Project extends Model
         'font',
         'link_github',
         'link_project',
+        'status',
     ];
     // protected $hidden = [];
     // protected $dates = [];

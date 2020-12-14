@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Api;
 use App\Models\Skill;
 use App\Models\SkillCategory;
 use App\Http\Controllers\Controller;
-use App\Transformers\SkillTransformer;
+use App\Http\Resources\SkillResource;
+use App\Http\Resources\SkillCategoryResource;
 use Symfony\Component\HttpFoundation\Request;
-use App\Transformers\SkillCategoryTransformer;
 
 class SkillController extends Controller
 {
@@ -72,8 +72,7 @@ class SkillController extends Controller
             $skills = array_slice($skills, 0, $request->limit);
         }
 
-        return fractal($skills, new SkillTransformer())
-            ->includeSkillCategory();
+        return SkillResource::collection($skills);
     }
 
     /**
@@ -96,7 +95,6 @@ class SkillController extends Controller
             $query->orderBy('title');
         }]);
 
-        return fractal($categories, new SkillCategoryTransformer())
-            ->includeSkills();
+        return SkillCategoryResource::collection($categories);
     }
 }
