@@ -21,20 +21,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::get('agencies', 'AgencyController@index')->name('agencies.index');
-
 Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
 Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
 Route::get('/skills-by-categories', [SkillController::class, 'categories'])->name('skills.categories');
 Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
-
-Route::get('/texts', 'TextController@index')->name('texts.index');
-// Route::get('/users', 'ApiController@users')->name('users');
-// Route::get('/login', 'ApiController@login')->name('login');
-// Route::get('/skills', 'ApiController@skills')->name('skills');
-// Route::get('/categories', 'ApiController@categories')->name('categories');
-// Route::get('/projects', 'ApiController@projects')->name('projects');
-// Route::get('/passions', 'ApiController@passions')->name('passions');
-// Route::get('/texts', 'ApiController@texts')->name('texts');
-// Route::get('/medias', 'ApiController@medias')->name('medias');
-// Route::get('/socials', 'ApiController@socials')->name('socials');

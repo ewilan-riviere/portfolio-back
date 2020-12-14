@@ -69,7 +69,9 @@ class ProjectTransformer extends TransformerAbstract
 
     public function includeSkills(Project $project)
     {
-        return $this->collection($project->skills, new SkillTransformer());
+        $skillTransformer = new SkillTransformer(true);
+
+        return $this->collection($project->skills, $skillTransformer);
     }
 
     public function includeDevelopers(Project $project)

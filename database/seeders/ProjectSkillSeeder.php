@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
-class ProjectDeveloperSeeder extends Seeder
+class ProjectSkillSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -14,19 +14,19 @@ class ProjectDeveloperSeeder extends Seeder
      */
     public function run()
     {
-        $developer_project = [
+        $project_skill = [
             [
                 'project_slug'        => 'site-web-de-playit',
-                'developer_slug' => 'antoine-le-gonidec',
+                'skill_slug'          => 'laravel',
             ],
             // [
             //     'project_slug'        => '',
-            //     'developer_slug' => '',
+            //     'skill_slug' => '',
             // ],
         ];
 
-        foreach ($developer_project as $key => $value) {
-            DB::table('developer_project')->insert($value);
+        foreach ($project_skill as $key => $value) {
+            DB::table('project_skill')->insert($value);
         }
     }
 }

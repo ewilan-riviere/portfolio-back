@@ -12,9 +12,8 @@
 
 **Links**  
 
-- 🌐 [**portfolio.ewilan-riviere.com**](https://portfolio.ewilan-riviere.com)  
-- 💻 [**Back-office**](https://portfolio.ewilan-riviere.com/admin/login)  
-- 📔 [**Documentation API**](https://portfolio.ewilan-riviere.com/api/documentation)  
+- 🌐 [**portfolio.ewilan-riviere.com**](https://ewilan-riviere.com)  
+- 📔 [**Documentation API**](https://ewilan-riviere.com/api/documentation)  
 
 >**Admin credentials** :  
 >

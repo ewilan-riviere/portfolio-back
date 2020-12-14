@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Models\Project;
 use App\Http\Controllers\Controller;
+use App\Http\Resources\ProjectResource;
 use App\Transformers\ProjectTransformer;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -23,7 +24,7 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $projects = Project::with('skills')->orderBy('order')->get();
+        $projects = Project::with('skills', 'developers')->orderBy('order')->get();
 
         if ($request->limit) {
             $limit = $request->limit;
@@ -33,8 +34,10 @@ class ProjectController extends Controller
             $projects = $projects->slice(0, $limit);
         }
 
-        return fractal($projects, new ProjectTransformer())
-            ->includeSkills()
-            ->includeDevelopers();
+        return ProjectResource::collection($projects);
+
+        // return fractal($projects, new ProjectTransformer())
+        //     ->includeSkills()
+        //     ->includeDevelopers();
     }
 }

@@ -7,27 +7,12 @@ use League\Fractal\TransformerAbstract;
 
 class SkillTransformer extends TransformerAbstract
 {
-    /**
-     * A Fractal transformer.
-     *
-     * @return array
-     */
-    // public function transform(Skill $skill)
-    // {
-    //     $attributes = $skill->toArray();
+    protected bool $light;
 
-    //     unset(
-    //         $attributes['id'],
-    //         $attributes['created_at'],
-    //         $attributes['updated_at']
-    //     );
-
-    //     if ($skill->image != null) {
-    //         $attributes['image'] = config('app.url').'/'.$skill->image;
-    //     }
-
-    //     return $attributes;
-    // }
+    public function __construct($light = false)
+    {
+        $this->light = $light;
+    }
 
     protected $availableIncludes = [
         'category',
@@ -40,21 +25,29 @@ class SkillTransformer extends TransformerAbstract
      */
     public function transform(Skill $skill)
     {
-        $attributes = $skill->toArray();
+        $skillApi = [
+            'title'           => $skill->title,
+            'slug'            => $skill->slug,
+            'version'         => $skill->version,
+            'link'            => $skill->link,
+            'is_free_app'     => $skill->is_free_app,
+            'color'           => $skill->color,
+            'subtitle'        => $skill->subtitle,
+            'details'         => $skill->details,
+            'is_favorite'     => $skill->is_favorite,
+            'rating'          => $skill->rating,
+            'image'           => getImage($skill->image),
+            'blockquote_text' => $skill->blockquote_text,
+            'blockquote_who'  => $skill->blockquote_who,
+        ];
 
-        unset(
-            $attributes['id'],
-            $attributes['created_at'],
-            $attributes['updated_at']
-        );
-
-        if (null != $skill->image) {
-            $attributes['image'] = config('app.url').'/'.$skill->image;
-        } else {
-            $attributes['image'] = config('app.url').'/storage/skills/default.png';
+        if ($this->light) {
+            $skillApi = [
+                'title'           => $skill->title,
+            ];
         }
 
-        return $attributes;
+        return $skillApi;
     }
 
     public function includeCategory(Skill $skill)

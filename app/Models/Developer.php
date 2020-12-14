@@ -17,7 +17,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null                                $updated_at
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer query()
@@ -29,6 +28,8 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer wherePortfolio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereUpdatedAt($value)
  * @mixin \Eloquent
+ * @property string|null $slug
+ * @method static \Illuminate\Database\Eloquent\Builder|Developer whereSlug($value)
  */
 class Developer extends Model
 {
@@ -43,7 +44,7 @@ class Developer extends Model
     public $incrementing = false;
     protected $keyType = 'string';
     // public $timestamps = false;
-    protected $guarded = ['id'];
+    // protected $guarded = ['id'];
     protected $fillable = [
         'name',
         'slug',
