@@ -15,46 +15,14 @@
 
 **Navigation**
 
+- [**I. Setup**](#i-setup)
+- [**II. VHost configuration**](#ii-vhost-configuration)
 - [Todo](#todo)
   - [Add projects](#add-projects)
   - [Add plugins](#add-plugins)
   - [Add profesionnal](#add-profesionnal)
-- [**I. Setup**](#i-setup)
-- [**II. VHost configuration**](#ii-vhost-configuration)
 
 ---
-
-## Todo
-
-### Add projects
-
-- [ ] storm flutter nuxtjs
-- [ ] pokedroid flutter
-- [ ] fanfic nuxtjs laravel flutter
-- [ ] guildwars2 nuxtjs
-- [ ] roazhonstarbus nuxtjs flutter
-- [ ] markdownthis nutjs laravel flutter
-- [ ] fontsbook nuxtjs laravel
-- [ ] markdowninterpreter nuxtjs
-- [ ] memorandum nuxtjs content
-
-### Add plugins
-
-- [ ] vue-tailwind-screens-helper
-
-### Add profesionnal
-
-- [ ] imprimerie le gailliard nuxtjs laravel backpack
-- [ ] secob nuxtjs laravel backpack
-- [ ] naviso nuxtjs laravel backpack
-- [ ] captransactions vuejs laravel coreui flutter
-- [ ] laforet nuxtjs laravel coreui
-- [ ] useweb blog tech nuxtjs
-
-symfony
-
-- symfony serve
-- symfony new symfo-test
 
 ## **I. Setup**
 
@@ -92,3 +60,30 @@ server {
 ```
 
 Stop and restart NGINX and the app will be available to [**http://portfolio.localhost**](http://portfolio.localhost)
+
+## Todo
+
+### Add projects
+
+- [ ] storm flutter nuxtjs
+- [ ] pokedroid flutter
+- [ ] fanfic nuxtjs laravel flutter
+- [ ] guildwars2 nuxtjs
+- [ ] roazhonstarbus nuxtjs flutter
+- [ ] markdownthis nutjs laravel flutter
+- [ ] fontsbook nuxtjs laravel
+- [ ] markdowninterpreter nuxtjs
+- [ ] memorandum nuxtjs content
+
+### Add plugins
+
+- [ ] vue-tailwind-screens-helper
+
+### Add profesionnal
+
+- [ ] imprimerie le gailliard nuxtjs laravel backpack
+- [ ] secob nuxtjs laravel backpack
+- [ ] naviso nuxtjs laravel backpack
+- [ ] captransactions vuejs laravel coreui flutter
+- [ ] laforet nuxtjs laravel coreui
+- [ ] useweb blog tech nuxtjs
