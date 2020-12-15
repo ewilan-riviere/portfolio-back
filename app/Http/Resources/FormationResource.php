@@ -25,7 +25,7 @@ class FormationResource extends JsonResource
             'level'            => $this->level,
             'resume'           => $this->resume,
             'logo'             => [
-                'image'             => $this->logo,
+                'image'             => getPath($this->logo),
                 'color'             => $this->color,
                 'haveTextWhite'     => $this->color_text_white,
             ],
