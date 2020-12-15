@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use App\Models\Formation;
 use Illuminate\Database\Seeder;
 
-class FormationsTableSeeder extends Seeder
+class FormationsSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -19,7 +19,7 @@ class FormationsTableSeeder extends Seeder
             [
                 'title'            => 'Licence de Psychologie',
                 'certificate'      => null,
-                'logo'             => 'storage/formations/psi.svg',
+                'logo'             => 'storage/formations/licence-de-psychologie.svg',
                 'color'            => '#000000',
                 'color_text_white' => true,
                 'resume'           => "Une formation en psychologie orientée vers le développement de l'enfant et de l'adolescent.",
@@ -38,7 +38,7 @@ class FormationsTableSeeder extends Seeder
             [
                 'title'            => 'Développeuse web, web mobile',
                 'certificate'      => null,
-                'logo'             => 'storage/formations/browser-web.svg',
+                'logo'             => 'storage/formations/developpeuse-web-web-mobile.svg',
                 'color'            => '#3e979b',
                 'color_text_white' => true,
                 'resume'           => "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web. Donne l'équivalent de bac +2 lors de l'obtention du titre, idéal dans le cas d'une réorientation professionn elle.
@@ -59,7 +59,7 @@ class FormationsTableSeeder extends Seeder
             [
                 'title'            => 'POEC Java',
                 'certificate'      => null,
-                'logo'             => 'storage/formations/java.svg',
+                'logo'             => 'storage/formations/poec-java.svg',
                 'color'            => '#004982',
                 'color_text_white' => true,
                 'resume'           => "Une préparation officielle à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs.",
@@ -78,7 +78,7 @@ class FormationsTableSeeder extends Seeder
             [
                 'title'            => 'Conceptrice Développeuse d\'Applications',
                 'certificate'      => null,
-                'logo'             => 'storage/formations/application.svg',
+                'logo'             => 'storage/formations/conceptrice-developpeuse-dapplications.svg',
                 'color'            => '#4981be',
                 'color_text_white' => true,
                 'resume'           => "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb.

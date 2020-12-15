@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
         $this->directoryToStorage('skills');
         // $this->call(UsersTableSeeder::class);
         $this->call(SkillsCategoriesTableSeeder::class);
-        $this->call(FormationsTableSeeder::class);
+        $this->call(FormationsSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(SkillSeeder::class);
         // $this->call(PassionsTableSeeder::class);
