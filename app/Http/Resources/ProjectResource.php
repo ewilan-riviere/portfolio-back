@@ -15,8 +15,6 @@ class ProjectResource extends JsonResource
      */
     public function toArray($request)
     {
-        $imageTitle = null !== $this->image_title ? getImage($this->image_title, true) : getImage($this->image, true);
-
         if ($this->light) {
             $resource = [
                 'slug'                                 => $this->slug,
@@ -25,7 +23,7 @@ class ProjectResource extends JsonResource
                 'extract'                              => $this->extract,
                 'assets'                               => [
                     'image'                               => getImage($this->image, true),
-                    'imageTitle'                          => $imageTitle,
+                    'imageTitle'                          => getImage($this->image_title, true),
                 ],
             ];
         } else {
@@ -43,7 +41,7 @@ class ProjectResource extends JsonResource
                 'description'                              => $this->description,
                 'assets'                                   => [
                     'image'                               => getImage($this->image, true),
-                    'imageTitle'                          => $imageTitle,
+                    'imageTitle'                          => getImage($this->image_title, true),
                     'font'                                => getPath($this->font, true),
                 ],
                 'links'                               => [
