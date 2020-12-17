@@ -136,7 +136,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'TER sur la cyberviolence',
                 'order'                => 1,
-                'image'                => 'storage/projects/portfolio.webp',
+                'image'                => 'storage/projects/ter-la-cyberviolence.webp',
                 'image_title'          => null,
                 'extract'              => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique",
                 'description'          => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
