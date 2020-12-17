@@ -4,7 +4,7 @@ if (! function_exists('recurseCopy')) {
     function recurseCopy($src, $dst)
     {
         $dir = opendir($src);
-        @mkdir($dst);
+        @mkdir($dst, 0775);
         while (false !== ($file = readdir($dir))) {
             if (('.' != $file) && ('..' != $file)) {
                 if (is_dir($src.'/'.$file)) {
