@@ -19,8 +19,8 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Zergling Evolution',
                 'order'                => 8,
-                'image'                => 'storage/projects/zergling-evolution.png',
-                'image_title'          => 'storage/projects/zergling-evolution-title.png',
+                'image'                => 'storage/projects/zergling-evolution.webp',
+                'image_title'          => 'storage/projects/zergling-evolution-title.webp',
                 'extract'              => 'Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !',
                 'description'          => null,
                 'link_github'          => 'https://github.com/ewilan-riviere/zergling-evolution',
@@ -33,8 +33,8 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Overwatch Memory',
                 'order'                => 4,
-                'image'                => 'storage/projects/overwatch-memory.png',
-                'image_title'          => 'storage/projects/overwatch-memory-title.png',
+                'image'                => 'storage/projects/overwatch-memory.webp',
+                'image_title'          => 'storage/projects/overwatch-memory-title.webp',
                 'extract'              => 'Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\'univers d\'Overwatch, battez des records pour retrouver toutes les cartes !',
                 'description'          => null,
                 'link_github'          => 'https://github.com/ewilan-riviere/overwatch-memory',
@@ -48,8 +48,8 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Pomodoro',
                 'order'                => 6,
-                'image'                => 'storage/projects/pomodoro.png',
-                'image_title'          => 'storage/projects/pomodoro-title.png',
+                'image'                => 'storage/projects/pomodoro.webp',
+                'image_title'          => 'storage/projects/pomodoro-title.webp',
                 'extract'              => 'Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur.',
                 'description'          => null,
                 'link_github'          => 'https://github.com/ewilan-riviere/pomodoro',
@@ -63,8 +63,8 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Quizz Pokémon',
                 'order'                => 5,
-                'image'                => 'storage/projects/quizz-pokemon.png',
-                'image_title'          => 'storage/projects/quizz-pokemon-title.png',
+                'image'                => 'storage/projects/quizz-pokemon.webp',
+                'image_title'          => 'storage/projects/quizz-pokemon-title.webp',
                 'extract'              => 'Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes.',
                 'description'          => null,
                 'link_github'          => 'https://github.com/ewilan-riviere/quizz-pokemon',
@@ -78,8 +78,8 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Fantasy Battle',
                 'order'                => 7,
-                'image'                => 'storage/projects/fantasy-battle.png',
-                'image_title'          => 'storage/projects/fantasy-battle-title.png',
+                'image'                => 'storage/projects/fantasy-battle.webp',
+                'image_title'          => 'storage/projects/fantasy-battle-title.webp',
                 'extract'              => 'Combattez avec les personnages tirés de célèbres licences de jeu vidéo.',
                 'description'          => null,
                 'link_github'          => 'https://github.com/ewilan-riviere/fantasy-battle',
@@ -92,7 +92,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Site web de ./play.it',
                 'order'                => 2,
-                'image'                => 'storage/projects/play.it.png',
+                'image'                => 'storage/projects/play.it.webp',
                 'image_title'          => null,
                 'extract'              => 'Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
                 'description'          => null,
@@ -107,7 +107,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Promo #03 · Code Académie',
                 'order'                => 3,
-                'image'                => 'storage/projects/code-academie.png',
+                'image'                => 'storage/projects/code-academie.webp',
                 'image_title'          => null,
                 'extract'              => 'Création du site de la promo #03 de la Code Académie avec une équipe de passionnés.',
                 'description'          => null,
@@ -122,7 +122,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'Portfolio',
                 'order'                => 1,
-                'image'                => 'storage/projects/portfolio.png',
+                'image'                => 'storage/projects/portfolio.webp',
                 'image_title'          => null,
                 'extract'              => 'Réalisation de mon portfolio.',
                 'description'          => null,
@@ -136,7 +136,7 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'TER sur la cyberviolence',
                 'order'                => 1,
-                'image'                => 'storage/projects/portfolio.png',
+                'image'                => 'storage/projects/portfolio.webp',
                 'image_title'          => null,
                 'extract'              => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique",
                 'description'          => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
