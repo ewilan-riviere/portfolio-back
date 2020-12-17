@@ -17,11 +17,11 @@ class ProjectResource extends JsonResource
     {
         if ($this->light) {
             $resource = [
-                'slug'                                => $this->slug,
-                'title'                               => $this->title,
-                'order'                               => $this->order,
-                'resume'                              => $this->resume,
-                'assets'                              => [
+                'slug'                                 => $this->slug,
+                'title'                                => $this->title,
+                'order'                                => $this->order,
+                'extract'                              => $this->extract,
+                'assets'                               => [
                     'image'                               => getImage($this->image, true),
                     'imageTitle'                          => getImage($this->image_title, true),
                 ],
@@ -34,11 +34,12 @@ class ProjectResource extends JsonResource
             $developers->map(function ($i) { $i->light = true; });
 
             $resource = [
-                'slug'                                => $this->slug,
-                'title'                               => $this->title,
-                'order'                               => $this->order,
-                'resume'                              => $this->resume,
-                'assets'                              => [
+                'slug'                                     => $this->slug,
+                'title'                                    => $this->title,
+                'order'                                    => $this->order,
+                'extract'                                  => $this->extract,
+                'description'                              => $this->description,
+                'assets'                                   => [
                     'image'                               => getImage($this->image, true),
                     'imageTitle'                          => getImage($this->image_title, true),
                     'font'                                => getPath($this->font, true),
