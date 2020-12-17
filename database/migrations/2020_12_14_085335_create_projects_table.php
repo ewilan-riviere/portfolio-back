@@ -17,7 +17,8 @@ class CreateProjectsTable extends Migration
             $table->string('slug')->nullable()->unique();
             $table->string('title');
             $table->integer('order');
-            $table->text('resume')->nullable();
+            $table->text('extract')->nullable();
+            $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->string('image_title')->nullable();
             $table->string('font')->nullable();
