@@ -64,6 +64,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $status
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereStatus($value)
+ *
+ * @property string|null $extract
+ * @property string|null $description
+ * @property string|null $link_repository
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereExtract($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkRepository($value)
  */
 class Project extends Model
 {
@@ -132,6 +140,11 @@ class Project extends Model
     public function developers()
     {
         return $this->belongsToMany(Developer::class)->withPivot('role');
+    }
+
+    public function formation()
+    {
+        return $this->belongsTo(Formation::class);
     }
 
     /*

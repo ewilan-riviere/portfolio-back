@@ -34,6 +34,7 @@ class FormationsSeeder extends Seeder
                 'date_begin'       => Carbon::parse('2011-09'),
                 'date_end'         => Carbon::parse('2014-06'),
                 'finished'         => true,
+                'display'          => true,
             ],
             [
                 'title'            => 'Développeuse web, web mobile',
@@ -55,6 +56,7 @@ class FormationsSeeder extends Seeder
                 'date_begin'      => Carbon::parse('2018-09'),
                 'date_end'        => Carbon::parse('2019-05'),
                 'finished'        => true,
+                'display'         => true,
             ],
             [
                 'title'            => 'POEC Java',
@@ -74,6 +76,7 @@ class FormationsSeeder extends Seeder
                 'date_begin'       => Carbon::parse('2019-06'),
                 'date_end'         => Carbon::parse('2019-09'),
                 'finished'         => true,
+                'display'          => true,
             ],
             [
                 'title'            => 'Conceptrice Développeuse d\'Applications',
@@ -97,6 +100,18 @@ class FormationsSeeder extends Seeder
                 'date_begin'      => Carbon::parse('2019-10'),
                 'date_end'        => Carbon::parse('2021-06'),
                 'finished'        => false,
+                'display'         => true,
+            ],
+            [
+                'title'           => 'Personnel',
+                'type'            => 'personal-time',
+                'display'         => false,
+            ],
+            [
+                'title'           => 'Useweb',
+                'type'            => 'enterprise',
+                'display'         => false,
+                'date_begin'      => Carbon::parse('2019-10'),
             ],
         ];
         foreach ($formations as $key => $formation) {

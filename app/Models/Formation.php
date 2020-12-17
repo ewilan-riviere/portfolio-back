@@ -34,7 +34,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property int                             $finished
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation query()
@@ -65,12 +64,12 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocational($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocationalLink($value)
  * @mixin \Eloquent
- *
  * @property string|null                                                    $slug
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereSlug($value)
+ * @property int $display
+ * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDisplay($value)
  */
 class Formation extends Model
 {

@@ -28,6 +28,12 @@ class FormationResource extends JsonResource
                     'svg'               => file_get_contents(public_path($this->logo)),
                 ],
             ];
+        }
+        if (isset($this->additional['forProject'])) {
+            $resource = [
+                'slug'             => $this->slug,
+                'title'            => $this->title,
+            ];
         } else {
             $resource = [
                 'slug'             => $this->slug,

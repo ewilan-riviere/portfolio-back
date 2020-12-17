@@ -63,6 +63,14 @@ class ProjectSkillSeeder extends Seeder
                 'project_slug'        => 'pomodoro',
                 'skill_slug'          => 'javascript',
             ],
+            [
+                'project_slug'        => 'storm',
+                'skill_slug'          => 'flutter',
+            ],
+            [
+                'project_slug'        => 'storm',
+                'skill_slug'          => 'nuxtjs',
+            ],
             // [
             //     'project_slug'        => '',
             //     'skill_slug''',

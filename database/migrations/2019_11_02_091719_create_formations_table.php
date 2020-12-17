@@ -32,6 +32,7 @@ class CreateFormationsTable extends Migration
             $table->date('date_begin')->nullable();
             $table->date('date_end')->nullable();
             $table->boolean('finished')->default(true);
+            $table->boolean('display')->default(false);
             $table->timestamps();
         });
     }

@@ -33,6 +33,8 @@ class ProjectResource extends JsonResource
             $developers = DeveloperResource::collection($this->developers);
             $developers->map(function ($i) { $i->light = true; });
 
+            $formation = (new FormationResource($this->formation))->additional(['forProject' => true]);
+
             $resource = [
                 'slug'                                     => $this->slug,
                 'title'                                    => $this->title,
@@ -48,10 +50,11 @@ class ProjectResource extends JsonResource
                     'repository'                               => $this->link_repository,
                     'project'                                  => $this->link_project,
                 ],
-                'status'     => $this->status,
-                'created_at' => $this->created_at,
-                'skills'     => $skills,
-                'developers' => $developers,
+                'status'      => $this->status,
+                'createdAt'   => $this->created_at,
+                'projectType' => $formation,
+                'skills'      => $skills,
+                'developers'  => $developers,
             ];
         }
 

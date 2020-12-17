@@ -53,6 +53,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $skill_category_slug
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSkillCategorySlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Skill whereIsFree($value)
  */
 class Skill extends Model
 {

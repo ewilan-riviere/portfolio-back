@@ -23,7 +23,7 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $projects = Project::published()->with('skills', 'developers')->orderBy('order')->get();
+        $projects = Project::published()->with('skills', 'developers', 'formation')->orderBy('created_at', 'desc')->get();
 
         if ($request->limit) {
             $limit = $request->limit;
