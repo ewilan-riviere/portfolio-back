@@ -45,8 +45,8 @@ class ProjectResource extends JsonResource
                     'font'                                => getPath($this->font, true),
                 ],
                 'links'                               => [
-                    'github'                               => $this->link_github,
-                    'project'                              => $this->link_project,
+                    'repository'                               => $this->link_repository,
+                    'project'                                  => $this->link_project,
                 ],
                 'status'     => $this->status,
                 'created_at' => $this->created_at,

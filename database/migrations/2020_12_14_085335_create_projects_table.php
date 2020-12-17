@@ -22,7 +22,7 @@ class CreateProjectsTable extends Migration
             $table->string('image')->nullable();
             $table->string('image_title')->nullable();
             $table->string('font')->nullable();
-            $table->string('link_github')->nullable();
+            $table->string('link_repository')->nullable();
             $table->string('link_project')->nullable();
             $table->string('status')->default('draft');
             $table->string('formation_slug')->nullable();
