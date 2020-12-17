@@ -65,8 +65,8 @@ Stop and restart NGINX and the app will be available to [**http://portfolio.loca
 
 ### Add projects
 
-- [ ] storm flutter nuxtjs
-- [ ] pokedroid flutter
+- [x] storm flutter nuxtjs
+- [x] pokedroid flutter
 - [ ] fanfic nuxtjs laravel flutter
 - [ ] guildwars2 nuxtjs
 - [ ] roazhonstarbus nuxtjs flutter
