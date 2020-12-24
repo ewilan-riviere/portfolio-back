@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null                              $updated_at
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[] $skills
  * @property int|null                                                     $skills_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category query()
@@ -24,7 +25,9 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Category whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @property string $title
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|SkillCategory whereTitle($value)
  */
 class SkillCategory extends Model
