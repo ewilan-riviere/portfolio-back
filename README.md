@@ -44,9 +44,12 @@ NGINX for production
 
 ```nginx
 server {
-    server_name ewilan-riviere.com;
+    server_name ewilan-riviere.com www.ewilan-riviere.com;
     root /home/ewilan/www/portfolio-back/public;
     index index.php;
+
+    error_log /var/log/nginx/ewilan-riviere-com.log warn;
+    access_log  /var/log/nginx/ewilan-riviere-com.log;
 
     location ~ ^/(admin|api|css|media|uploads|storage|docs|packages|cache) {
         try_files $uri $uri/ /index.php?$query_string;
