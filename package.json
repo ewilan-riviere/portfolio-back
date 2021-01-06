@@ -15,7 +15,7 @@
         "@tailwindcss/typography": "^0.3.1",
         "alpinejs": "^2.7.3",
         "autoprefixer": "^9.8.6",
-        "axios": "^0.21.0",
+        "axios": "^0.21.1",
         "cross-env": "^7.0.3",
         "eslint": "^7.16.0",
         "eslint-config-prettier": "^7.1.0",
