@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Skill;
+use App\Models\Project;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class ProjectSkillSeeder extends Seeder
 {
@@ -77,8 +78,12 @@ class ProjectSkillSeeder extends Seeder
             // ],
         ];
 
-        foreach ($project_skill as $key => $value) {
-            DB::table('project_skill')->insert($value);
+        foreach ($project_skill as $value) {
+            $project = Project::whereSlug($value['project_slug'])->first();
+            $skill = Skill::whereSlug($value['skill_slug'])->first();
+            if ($project && $skill) {
+                $project->skills()->save($skill);
+            }
         }
     }
 }

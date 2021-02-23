@@ -23,20 +23,29 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $projects = Project::published()->with('skills', 'developers', 'formation')->orderBy('created_at', 'desc')->get();
-
+        $byFavorite = false;
+        if ('true' === $request->favorite) {
+            $byFavorite = true;
+        }
+        $limit = null;
         if ($request->limit) {
             $limit = $request->limit;
-            if (sizeof($projects) < $limit) {
-                $limit = sizeof($projects);
-            }
-            $projects = $projects->slice(0, $limit);
         }
 
-        return ProjectResource::collection($projects);
+        $projects = Project::published()
+            ->with('skills', 'developers', 'formation');
 
-        // return fractal($projects, new ProjectTransformer())
-        //     ->includeSkills()
-        //     ->includeDevelopers();
+        if ($limit) {
+            if (! Project::count() < $limit) {
+                $projects = $projects->limit($limit);
+            }
+        }
+        if ($byFavorite) {
+            $projects = $projects->orderBy('is_favorite', 'desc');
+        }
+
+        $projects = $projects->orderBy('created_at', 'desc')->get();
+
+        return ProjectResource::collection($projects);
     }
 }

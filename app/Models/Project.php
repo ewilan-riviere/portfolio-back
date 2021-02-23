@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Str;
 use App\Models\Traits\Publishable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
  * App\Models\Project.
@@ -77,17 +78,10 @@ class Project extends Model
 {
     use Publishable;
 
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
     protected $table = 'projects';
     protected $primaryKey = 'slug';
     public $incrementing = false;
     protected $keyType = 'string';
-    // public $timestamps = false;
     protected $fillable = [
         'slug',
         'title',
@@ -95,19 +89,14 @@ class Project extends Model
         'resume',
         'image',
         'image_title',
+        'is_favorite',
         'font',
-        'link_github',
-        'link_project',
         'status',
     ];
-    // protected $hidden = [];
-    // protected $dates = [];
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
+    protected $casts = [
+        'is_favorite' => 'boolean',
+    ];
 
     public static function boot()
     {
@@ -116,21 +105,10 @@ class Project extends Model
                 return;
             }
             $project->slug = Str::slug($project->title, '-');
-
-            // if (! empty($project->page_title)) {
-            //     return;
-            // }
-            // $project->page_title = $project->title;
         });
 
         parent::boot();
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
 
     public function skills()
     {
@@ -147,21 +125,8 @@ class Project extends Model
         return $this->belongsTo(Formation::class);
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
+    public function projectLink(): HasOne
+    {
+        return $this->hasOne(ProjectLink::class);
+    }
 }

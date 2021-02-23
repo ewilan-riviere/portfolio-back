@@ -25,6 +25,7 @@ class ProjectResource extends JsonResource
                     'image'                               => getImage($this->image, true),
                     'imageTitle'                          => getImage($this->image_title, true),
                 ],
+                'isFavorite' => $this->is_favorite,
             ];
         } else {
             $skills = SkillResource::collection($this->skills);
@@ -46,15 +47,13 @@ class ProjectResource extends JsonResource
                     'imageTitle'                          => getImage($this->image_title, true),
                     'font'                                => getPath($this->font, true),
                 ],
-                'links'                               => [
-                    'repository'                               => $this->link_repository,
-                    'project'                                  => $this->link_project,
-                ],
-                'status'      => $this->status,
-                'createdAt'   => $this->created_at,
-                'projectType' => $formation,
-                'skills'      => $skills,
-                'developers'  => $developers,
+                'isFavorite'                          => $this->is_favorite,
+                'links'                               => ProjectLinkResource::make($this->projectLink),
+                'status'                              => $this->status,
+                'createdAt'                           => $this->created_at,
+                'projectType'                         => $formation,
+                'skills'                              => $skills,
+                'developers'                          => $developers,
             ];
         }
 

@@ -118,10 +118,10 @@ class Skill extends Model
     |--------------------------------------------------------------------------
     */
 
-    // public function projects()
-    // {
-    //     return $this->belongsToMany(Project::class);
-    // }
+    public function projects()
+    {
+        return $this->belongsToMany(Project::class);
+    }
 
     public function category()
     {
