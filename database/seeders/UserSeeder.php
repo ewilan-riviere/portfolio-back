@@ -1,10 +1,12 @@
 <?php
 
-use App\User;
-use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\Hash;
+namespace Database\Seeders;
 
-class UsersTableSeeder extends Seeder
+use Hash;
+use App\Models\User;
+use Illuminate\Database\Seeder;
+
+class UserSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -16,8 +18,8 @@ class UsersTableSeeder extends Seeder
         User::insert([
             [
                 'name'     => 'Ewilan',
-                'email'    => config('app.admin_mail'),
-                'password' => Hash::make(config('app.admin_password')),
+                'email'    => 'admin@mail.com',
+                'password' => Hash::make('password'),
             ],
         ]);
     }

@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use App\Models\Passion;
 use Illuminate\Database\Seeder;
 
-class PassionsTableSeeder extends Seeder
+class PassionSeeder extends Seeder
 {
     /**
      * Run the database seeds.

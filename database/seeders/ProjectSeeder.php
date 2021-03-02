@@ -2,8 +2,10 @@
 
 namespace Database\Seeders;
 
+use File;
 use Carbon\Carbon;
 use App\Models\Project;
+use App\Models\Formation;
 use App\Models\ProjectLink;
 use Illuminate\Database\Seeder;
 
@@ -20,13 +22,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Zergling Evolution',
                 'order'                    => 8,
-                'image'                    => 'storage/projects/zergling-evolution.webp',
-                'image_title'              => 'storage/projects/zergling-evolution-title.webp',
+                'image'                    => 'zergling-evolution.webp',
+                'image_title'              => 'zergling-evolution-title.webp',
                 'extract'                  => 'Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !',
                 'description'              => null,
                 // 'link_repository'          => 'https://github.com/ewilan-riviere/zergling-evolution',
                 // 'link_project'             => null,
-                'font'                     => 'storage/fonts/starcraft-normal.ttf',
+                'font'                     => 'media/fonts/starcraft-normal.ttf',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
                 'created_at'               => '2018-11-07',
                 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
@@ -34,13 +36,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Overwatch Memory',
                 'order'                    => 4,
-                'image'                    => 'storage/projects/overwatch-memory.webp',
-                'image_title'              => 'storage/projects/overwatch-memory-title.webp',
+                'image'                    => 'overwatch-memory.webp',
+                'image_title'              => 'overwatch-memory-title.webp',
                 'extract'                  => 'Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\'univers d\'Overwatch, battez des records pour retrouver toutes les cartes !',
                 'description'              => null,
                 // 'link_repository'          => 'https://github.com/ewilan-riviere/overwatch-memory',
                 // 'link_project'             => null,
-                'font'                     => 'storage/fonts/big-noodle-titling.ttf',
+                'font'                     => 'media/fonts/big-noodle-titling.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
@@ -50,13 +52,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Pomodoro',
                 'order'                    => 6,
-                'image'                    => 'storage/projects/pomodoro.webp',
-                'image_title'              => 'storage/projects/pomodoro-title.webp',
+                'image'                    => 'pomodoro.webp',
+                'image_title'              => 'pomodoro-title.webp',
                 'extract'                  => 'Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur.',
                 'description'              => null,
                 // 'link_repository'          => 'https://github.com/ewilan-riviere/pomodoro',
                 // 'link_project'             => null,
-                'font'                     => 'storage/fonts/permanent-marker-regular.ttf',
+                'font'                     => 'media/fonts/permanent-marker-regular.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
@@ -66,13 +68,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Quizz Pokémon',
                 'order'                    => 5,
-                'image'                    => 'storage/projects/quizz-pokemon.webp',
-                'image_title'              => 'storage/projects/quizz-pokemon-title.webp',
+                'image'                    => 'quizz-pokemon.webp',
+                'image_title'              => 'quizz-pokemon-title.webp',
                 'extract'                  => 'Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes.',
                 'description'              => null,
                 // 'link_repository'          => 'https://github.com/ewilan-riviere/quizz-pokemon',
                 // 'link_project'             => null,
-                'font'                     => 'storage/fonts/pokemon-solid.ttf',
+                'font'                     => 'media/fonts/pokemon-solid.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
@@ -82,13 +84,13 @@ class ProjectSeeder extends Seeder
             // [
             //     'title'                    => 'Fantasy Battle',
             //     'order'                    => 7,
-            //     'image'                    => 'storage/projects/fantasy-battle.webp',
-            //     'image_title'              => 'storage/projects/fantasy-battle-title.webp',
+            //     'image'                    => 'fantasy-battle.webp',
+            //     'image_title'              => 'fantasy-battle-title.webp',
             //     'extract'                  => 'Combattez avec les personnages tirés de célèbres licences de jeu vidéo.',
             //     'description'              => null,
             //     // 'link_repository'          => 'https://github.com/ewilan-riviere/fantasy-battle',
             //     // 'link_project'             => null,
-            //     'font'                     => 'storage/fonts/triforce.ttf',
+            //     'font'                     => 'media/fonts/triforce.ttf',
             //     'formation_slug'           => 'developpeuse-web-web-mobile',
             //     'created_at'               => '2019-02-07',
             //     'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
@@ -96,13 +98,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Site web de ./play.it',
                 'order'                    => 2,
-                'image'                    => 'storage/projects/play.it.webp',
+                'image'                    => 'play.it.webp',
                 'image_title'              => null,
                 'extract'                  => 'Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.',
                 'description'              => null,
                 // 'link_repository'          => 'https://forge.dotslashplay.it/play.it/website',
                 // 'link_project'             => 'https://dev.website.dotslashplay.it/',
-                'font'                     => 'storage/fonts/source-code-pro-regular.ttf',
+                'font'                     => 'media/fonts/source-code-pro-regular.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
@@ -112,13 +114,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Promo #03 · Code Académie',
                 'order'                    => 3,
-                'image'                    => 'storage/projects/code-academie.webp',
+                'image'                    => 'code-academie.webp',
                 'image_title'              => null,
                 'extract'                  => 'Création du site de la promo #03 de la Code Académie avec une équipe de passionnés.',
                 'description'              => null,
                 // 'link_repository'          => 'https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3',
                 // 'link_project'             => 'http://promo03.code-academie.fr/',
-                'font'                     => 'storage/fonts/kraftstoff-regular.otf',
+                'font'                     => 'media/fonts/kraftstoff-regular.otf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'developpeuse-web-web-mobile',
@@ -128,11 +130,11 @@ class ProjectSeeder extends Seeder
             [
                 'title'                => 'TER sur la cyberviolence',
                 'order'                => 1,
-                'image'                => 'storage/projects/ter-la-cyberviolence.webp',
+                'image'                => 'ter-la-cyberviolence.webp',
                 'image_title'          => null,
                 'extract'              => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique",
                 'description'          => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
-                // 'link_project'         => getPath('storage/documents/ter-la-cyberviolence.pdf'),
+                // 'link_project'         => getPath('media/documents/ter-la-cyberviolence.pdf'),
                 'is_favorite'          => false,
                 'status'               => 'published',
                 'formation_slug'       => 'licence-de-psychologie',
@@ -141,43 +143,40 @@ class ProjectSeeder extends Seeder
             ],
         ];
 
-        $personal_projects_links = [
-            'portfolio' => [
-                'back_repository'          => 'https://github.com/ewilan-riviere/portfolio-back',
-                'back_project'             => 'https://ewilan-riviere.com/api/documentation',
-                'front_repository'         => 'https://github.com/ewilan-riviere/portfolio-front',
-                'front_project'            => 'https://portfolio.ewilan-riviere.com',
-                'app_repository'           => null,
-                'app_project'              => null,
-                'project_slug'             => 'portfolio',
-            ],
-        ];
-
         $personal = [
             [
                 'title'                    => 'Portfolio',
                 'order'                    => 1,
-                'image'                    => 'storage/projects/portfolio.webp',
+                'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 'extract'                  => 'Réalisation de mon portfolio.',
                 'description'              => null,
-                'font'                     => 'storage/fonts/morpheus.ttf',
+                'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
                 'created_at'               => '2020-05-19',
                 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
+                'links'                    => [
+                    'back_repository'          => 'https://github.com/ewilan-riviere/portfolio-back',
+                    'back_project'             => 'https://ewilan-riviere.com/api/documentation',
+                    'front_repository'         => 'https://github.com/ewilan-riviere/portfolio-front',
+                    'front_project'            => 'https://portfolio.ewilan-riviere.com',
+                    'app_repository'           => null,
+                    'app_project'              => null,
+                    'project_slug'             => 'portfolio',
+                ],
             ],
             // [
             //     'title'                    => 'Storm',
             //     // 'order'                    => 1,
-            //     'image'                    => 'storage/projects/storm.webp',
+            //     'image'                    => 'storm.webp',
             //     'image_title'              => null,
             //     // 'extract'                  => '',
             //     'description'              => null,
             // 'link_repository'          => '',
             // 'link_project'             => '',
-            //     // 'font'                     => 'storage/fonts/morpheus.ttf',
+            //     // 'font'                     => 'media/fonts/morpheus.ttf',
             // 'is_favorite'              => false,
             // 'status'                   => 'published',
             //     'formation_slug'           => 'personnel',
@@ -187,13 +186,13 @@ class ProjectSeeder extends Seeder
             // [
             //     'title'                    => 'PokéDroid',
             //     // 'order'                    => 1,
-            //     'image'                    => 'storage/projects/pokedroid.webp',
+            //     'image'                    => 'pokedroid.webp',
             //     'image_title'              => null,
             //     // 'extract'                  => '',
             //     'description'              => null,
             // 'link_repository'          => '',
             // 'link_project'             => '',
-            //     // 'font'                     => 'storage/fonts/morpheus.ttf',
+            //     // 'font'                     => 'media/fonts/morpheus.ttf',
             // 'is_favorite'              => false,
             // 'status'                   => 'published',
             //     'formation_slug'           => 'personnel',
@@ -203,13 +202,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Fanfic',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'draft',
                 'formation_slug'           => 'personnel',
@@ -219,13 +218,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Skyscale',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/skyscale.webp',
+                'image'                    => 'skyscale.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -235,13 +234,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Roazhon Star',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/roazhon-star.webp',
+                'image'                    => 'roazhon-star.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -251,13 +250,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Bookshelves',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/bookshelves.webp',
+                'image'                    => 'bookshelves.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -267,13 +266,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'MarkdownThis',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/markdown-this.webp',
+                'image'                    => 'markdown-this.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -283,13 +282,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Fonts Book',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/fonts-book.webp',
+                'image'                    => 'fonts-book.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -299,13 +298,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Markdown Interpreter',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/md-interpreter.webp',
+                'image'                    => 'md-interpreter.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -315,13 +314,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Memorandum',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/memorandum.webp',
+                'image'                    => 'memorandum.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -331,13 +330,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Vue Tailwind Screen Helper',
                 // 'order'                    => 1,
-                'image'                    => 'storage/projects/vue-tailwind-screen-helper.webp',
+                'image'                    => 'vue-tailwind-screen-helper.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'published',
                 'formation_slug'           => 'personnel',
@@ -350,13 +349,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Imprimerie le Galliard',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -367,13 +366,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Secob',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -383,13 +382,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Naviso',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -399,13 +398,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'CAP Transactions',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -415,13 +414,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'CAP Transactions Flutter',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'draft',
                 'formation_slug'           => 'conceptrice-developpeuse-dapplications',
@@ -431,13 +430,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Laforet',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => false,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -447,13 +446,13 @@ class ProjectSeeder extends Seeder
             [
                 'title'                    => 'Useweb Blog Tech',
                 // 'order'                    => 1,
-                // 'image'                    => 'storage/projects/portfolio.webp',
+                // 'image'                    => 'portfolio.webp',
                 'image_title'              => null,
                 // 'extract'                  => '',
                 'description'              => null,
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
-                // 'font'                     => 'storage/fonts/morpheus.ttf',
+                // 'font'                     => 'media/fonts/morpheus.ttf',
                 'is_favorite'              => true,
                 'status'                   => 'draft',
                 'formation_slug'           => 'useweb',
@@ -462,20 +461,64 @@ class ProjectSeeder extends Seeder
             ],
         ];
 
-        foreach ($school as $key => $project) {
-            $projectCreated = Project::create($project);
-        }
+        $this->generate($school);
+        $this->generate($personal);
+        $this->generate($useweb);
+    }
 
-        foreach ($personal as $key => $project) {
-            $projectCreated = Project::create($project);
-            if (array_key_exists($projectCreated->slug, $personal_projects_links)) {
-                $projectLink = ProjectLink::create($personal_projects_links[$projectCreated->slug], );
+    public function generate(array $projects)
+    {
+        foreach ($projects as $key => $project) {
+            $projectCreated = Project::create([
+                'title'          => array_key_exists('title', $project) ? $project['title'] : null,
+                'order'          => array_key_exists('order', $project) ? $project['order'] : null,
+                // 'image'          => array_key_exists('image', $project) ? $project['image'] : null,
+                'image_title'    => array_key_exists('image_title', $project) ? $project['image_title'] : null,
+                'extract'        => array_key_exists('extract', $project) ? $project['extract'] : null,
+                'description'    => array_key_exists('description', $project) ? $project['description'] : null,
+                // 'font'           => array_key_exists('font', $project) ? $project['font'] : null,
+                'is_favorite'    => array_key_exists('is_favorite', $project) ? $project['is_favorite'] : false,
+                'status'         => array_key_exists('status', $project) ? $project['status'] : null,
+                'created_at'     => array_key_exists('created_at', $project) ? $project['created_at'] : null,
+                'updated_at'     => array_key_exists('updated_at', $project) ? $project['updated_at'] : null,
+            ]);
+            if (is_array($project) && array_key_exists('links', $project)) {
+                $project['links'];
+                $projectLink = ProjectLink::create([
+                    'back_repository'          => $project['links']['back_repository'],
+                    'back_project'             => $project['links']['back_project'],
+                    'front_repository'         => $project['links']['front_repository'],
+                    'front_project'            => $project['links']['front_project'],
+                    'app_repository'           => $project['links']['app_repository'],
+                    'app_project'              => $project['links']['app_project'],
+                ]);
                 $projectCreated->projectLink()->save($projectLink);
             }
-        }
+            $formation_slug = array_key_exists('formation_slug', $project) ? $project['formation_slug'] : null;
+            $formation = Formation::whereSlug($formation_slug)->first();
+            if ($formation) {
+                $projectCreated->formation()->associate($formation);
+            }
 
-        foreach ($useweb as $key => $project) {
-            $projectCreated = Project::create($project);
+            $image = array_key_exists('image', $project) ? $project['image'] : null;
+            $image_title = array_key_exists('image_title', $project) ? $project['image_title'] : null;
+            try {
+                $image = File::get(database_path("seeders/media/projects/$image"));
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+            if ($image) {
+                $projectCreated->addMediaFromString($image)
+                    ->setName($projectCreated->slug)
+                    ->setFileName($projectCreated->slug.'.webp')
+                    ->toMediaCollection('projects', 'projects');
+            }
+            if ($image_title) {
+                $projectCreated->addMediaFromString($image_title)
+                    ->setName($projectCreated->slug.'_title')
+                    ->setFileName($projectCreated->slug.'_title'.'.webp')
+                    ->toMediaCollection('projects_title', 'projects');
+            }
         }
     }
 }

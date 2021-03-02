@@ -14,6 +14,7 @@ class CreateProjectsTable extends Migration
     public function up()
     {
         Schema::create('projects', function (Blueprint $table) {
+            $table->id();
             $table->string('slug')->nullable()->unique();
             $table->string('title');
             $table->integer('order')->nullable();
@@ -24,8 +25,8 @@ class CreateProjectsTable extends Migration
             $table->string('font')->nullable();
             $table->string('status')->default('draft');
             $table->boolean('is_favorite')->default(0);
-            $table->string('formation_slug')->nullable();
-            $table->foreign('formation_slug')->references('slug')->on('formations')->onDelete('cascade');
+            $table->foreignId('formation_id')->nullable();
+            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevelopersTable extends Migration
+class CreatePassionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,11 @@ class CreateDevelopersTable extends Migration
      */
     public function up()
     {
-        Schema::create('developers', function (Blueprint $table) {
+        Schema::create('passions', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->nullable()->unique();
-            $table->string('name');
-            $table->string('github');
-            $table->string('portfolio');
-            $table->string('linkedin');
+            $table->string('name')->nullable();
+            $table->string('icon')->nullable();
+            $table->string('text')->nullable();
             $table->timestamps();
         });
     }
@@ -31,6 +29,6 @@ class CreateDevelopersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('developers');
+        Schema::dropIfExists('passions');
     }
 }

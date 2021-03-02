@@ -42,12 +42,6 @@ class Developer extends Model
     |--------------------------------------------------------------------------
     */
 
-    protected $table = 'developers';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    // public $timestamps = false;
-    // protected $guarded = ['id'];
     protected $fillable = [
         'name',
         'slug',
@@ -89,7 +83,7 @@ class Developer extends Model
 
     public function projects()
     {
-        return $this->belongsToMany(Project::class);
+        return $this->belongsToMany(Project::class)->withPivot('role');
     }
 
     /*

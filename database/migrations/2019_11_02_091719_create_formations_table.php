@@ -14,6 +14,7 @@ class CreateFormationsTable extends Migration
     public function up()
     {
         Schema::create('formations', function (Blueprint $table) {
+            $table->id();
             $table->string('slug')->nullable()->unique();
             $table->string('title')->nullable();
             $table->string('certificate')->nullable();

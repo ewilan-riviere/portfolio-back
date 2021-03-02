@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Utils\ManageStorage;
+use App\Models\Skill;
+use App\Models\Project;
+use App\Models\Formation;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -14,18 +16,45 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $clean = ManageStorage::generateStorageFiles();
-        $clean = $clean ? 'OK' : 'Error';
-        dump("generateStorageFiles: $clean");
-        // $this->call(UsersTableSeeder::class);
-        $this->call(SkillsCategoriesTableSeeder::class);
-        $this->call(FormationsSeeder::class);
-        $this->call(ProjectSeeder::class);
-        $this->call(SkillSeeder::class);
-        // $this->call(PassionsTableSeeder::class);
-        $this->call(DeveloperSeeder::class);
-        $this->call(DeveloperProjectSeeder::class);
-        $this->call(ProjectSkillSeeder::class);
-        // $this->call(ForeignKeysTableSeeder::class);
+        $this->clearAllMediaCollection();
+        // $this->call(UserSeeder::class);
+        // $this->call(CategorySkillSeeder::class);
+        // $this->call(FormationsSeeder::class);
+        // $this->call(ProjectSeeder::class);
+        // $this->call(SkillSeeder::class);
+        // $this->call(PassionSeeder::class);
+        // $this->call(DeveloperSeeder::class);
+        // $this->call(DeveloperProjectSeeder::class);
+        // $this->call(ProjectSkillSeeder::class);
+    }
+
+    /**
+     * Clear all media collection manage by spatie/laravel-medialibrary.
+     *
+     * @return bool
+     */
+    public function clearAllMediaCollection(): bool
+    {
+        $isSuccess = false;
+        try {
+            $projects = Project::all();
+            $skills = Skill::all();
+            $formations = Formation::all();
+            $projects->each(function ($query) {
+                $query->clearMediaCollection('projects');
+                $query->clearMediaCollection('projects_title');
+            });
+            $skills->each(function ($query) {
+                $query->clearMediaCollection('skills');
+            });
+            $formations->each(function ($query) {
+                $query->clearMediaCollection('formations');
+            });
+            $isSuccess = true;
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+
+        return $isSuccess;
     }
 }

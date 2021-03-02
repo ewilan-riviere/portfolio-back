@@ -3,7 +3,9 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
 
 /**
  * App\Models\Formation.
@@ -75,20 +77,14 @@ use Illuminate\Database\Eloquent\Model;
  * @property int $display
  *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDisplay($value)
+ *
+ * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property int|null                                                                                                                      $media_count
  */
-class Formation extends Model
+class Formation extends Model implements HasMedia
 {
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
+    use InteractsWithMedia;
 
-    protected $table = 'formations';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    // public $timestamps = false;
     protected $fillable = [
         'title',
         'slug',
@@ -128,38 +124,13 @@ class Formation extends Model
         parent::boot();
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
+    public function getImageAttribute()
+    {
+        return $this->getFirstMedia('formations')->getPath();
+    }
 
     public function projects()
     {
         return $this->hasMany(Project::class)->where('status', 'published');
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

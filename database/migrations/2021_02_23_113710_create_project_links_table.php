@@ -15,14 +15,15 @@ class CreateProjectLinksTable extends Migration
     {
         Schema::create('project_links', function (Blueprint $table) {
             $table->id();
-            $table->string('project_slug');
-            $table->foreign('project_slug')->references('slug')->on('projects')->onDelete('cascade');
             $table->string('back_repository')->nullable();
             $table->string('back_project')->nullable();
             $table->string('front_repository')->nullable();
             $table->string('front_project')->nullable();
             $table->string('app_repository')->nullable();
             $table->string('app_project')->nullable();
+
+            $table->foreignId('project_id')->nullable();
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
         });
     }
 

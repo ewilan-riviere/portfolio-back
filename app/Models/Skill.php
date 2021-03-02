@@ -3,7 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * App\Models\Skill.
@@ -24,7 +27,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null                                                    $blockquote_who
  * @property \Illuminate\Support\Carbon|null                                $created_at
  * @property \Illuminate\Support\Carbon|null                                $updated_at
- * @property int                                                            $category_id
  * @property \App\Models\Category                                           $category
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
@@ -57,20 +59,17 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSkillCategorySlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereIsFree($value)
+ *
+ * @property int|null                                                                                                                      $skill_category_id
+ * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property int|null                                                                                                                      $media_count
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSkillCategoryId($value)
  */
-class Skill extends Model
+class Skill extends Model implements HasMedia
 {
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
+    use InteractsWithMedia;
 
-    protected $table = 'skills';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    // public $timestamps = false;
     protected $fillable = [
         'title',
         'slug',
@@ -89,12 +88,6 @@ class Skill extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
-
     public static function boot()
     {
         static::saving(function (Skill $skill) {
@@ -112,37 +105,13 @@ class Skill extends Model
         parent::boot();
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
     public function projects()
     {
         return $this->belongsToMany(Project::class);
     }
 
-    public function category()
+    public function skillCategory(): BelongsTo
     {
-        return $this->belongsTo(SkillCategory::class);
+        return $this->belongsTo(SkillCategory::class, 'skill_category_id');
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

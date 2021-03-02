@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Category.
@@ -28,21 +29,11 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @property string $title
  *
- * @method static \Illuminate\Database\Eloquent\Builder|SkillCategory whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|CategorySkill whereTitle($value)
  */
 class SkillCategory extends Model
 {
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
-    protected $table = 'skills_categories';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    // public $timestamps = false;
+    protected $table = 'skill_categories';
     protected $fillable = [
         'slug',
         'title',
@@ -50,19 +41,13 @@ class SkillCategory extends Model
     // protected $hidden = [];
     // protected $dates = [];
 
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
-
     public static function boot()
     {
-        static::saving(function (SkillCategory $skillCategory) {
-            if (! empty($skillCategory->slug)) {
+        static::saving(function (SkillCategory $categorySkill) {
+            if (! empty($categorySkill->slug)) {
                 return;
             }
-            $skillCategory->slug = Str::slug($skillCategory->title, '-');
+            $categorySkill->slug = Str::slug($categorySkill->title, '-');
 
             // if (! empty($project->page_title)) {
             //     return;
@@ -73,34 +58,10 @@ class SkillCategory extends Model
         parent::boot();
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
-    public function skills()
+    public function skills(): HasMany
     {
-        return $this->hasMany(Skill::class);
+        return $this->hasMany(Skill::class, 'skill_category_id');
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESORS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 
     public function setDisplayAttribute($value)
     {

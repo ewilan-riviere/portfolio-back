@@ -14,7 +14,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property string|null                     $text
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Passion query()
@@ -28,18 +27,6 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Passion extends Model
 {
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
-
-    protected $table = 'passions';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
-    // public $timestamps = false;
-    protected $guarded = ['id'];
     protected $fillable = [
         'name',
         'icon',
@@ -47,12 +34,6 @@ class Passion extends Model
     ];
     // protected $hidden = [];
     // protected $dates = [];
-
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
 
     public static function boot()
     {
@@ -70,28 +51,4 @@ class Passion extends Model
 
         parent::boot();
     }
-
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESSORS
-    |--------------------------------------------------------------------------
-    */
-
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
 }

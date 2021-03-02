@@ -19,10 +19,10 @@ class CreateProjectSkillPivot extends Migration
         * @return void
         */
         Schema::create('project_skill', function (Blueprint $table) {
-            $table->string('project_slug');
-            $table->foreign('project_slug')->references('slug')->on('projects')->onDelete('cascade');
-            $table->string('skill_slug');
-            $table->foreign('skill_slug')->references('slug')->on('skills')->onDelete('cascade');
+            $table->foreignId('project_id');
+            $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
+            $table->foreignId('skill_id');
+            $table->foreign('skill_id')->references('id')->on('skills')->onDelete('cascade');
         });
     }
 

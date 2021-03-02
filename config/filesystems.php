@@ -46,6 +46,27 @@ return [
             'root'   => storage_path('app'),
         ],
 
+        'projects' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/public/media/projects'),
+            'url'        => env('APP_URL').'/storage/media/projects',
+            'visibility' => 'public',
+        ],
+
+        'skills' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/public/media/skills'),
+            'url'        => env('APP_URL').'/storage/media/skills',
+            'visibility' => 'public',
+        ],
+
+        'formations' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/public/media/formations'),
+            'url'        => env('APP_URL').'/storage/media/formations',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver'     => 'local',
             'root'       => storage_path('app/public'),

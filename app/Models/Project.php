@@ -3,8 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use App\Models\Traits\Publishable;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 /**
@@ -73,24 +75,33 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereExtract($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkRepository($value)
+ *
+ * @property bool                         $is_favorite
+ * @property \App\Models\Formation|null   $formation
+ * @property \App\Models\ProjectLink|null $projectLink
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsFavorite($value)
+ *
+ * @property int|null                                                                                                                      $formation_id
+ * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
+ * @property int|null                                                                                                                      $media_count
+ *
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationId($value)
  */
-class Project extends Model
+class Project extends Model implements HasMedia
 {
+    use InteractsWithMedia;
     use Publishable;
 
-    protected $table = 'projects';
-    protected $primaryKey = 'slug';
-    public $incrementing = false;
-    protected $keyType = 'string';
     protected $fillable = [
         'slug',
         'title',
         'order',
         'resume',
-        'image',
-        'image_title',
+        // 'image',
+        // 'image_title',
         'is_favorite',
-        'font',
+        // 'font',
         'status',
     ];
 
@@ -108,6 +119,20 @@ class Project extends Model
         });
 
         parent::boot();
+    }
+
+    public function getImageAttribute()
+    {
+        $media = $this->getFirstMedia('projects');
+
+        return $media ? $media->getFullUrl() : null;
+    }
+
+    public function getImageTitleAttribute()
+    {
+        $media = $this->getFirstMedia('projects_title');
+
+        return $media ? $media->getFullUrl() : null;
     }
 
     public function skills()

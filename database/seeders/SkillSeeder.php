@@ -2,7 +2,9 @@
 
 namespace Database\Seeders;
 
+use File;
 use App\Models\Skill;
+use App\Models\SkillCategory;
 use Illuminate\Database\Seeder;
 
 class SkillSeeder extends Seeder
@@ -745,12 +747,38 @@ class SkillSeeder extends Seeder
             ],
         ];
 
-        $skillLatest = '';
+        $skillCreated = '';
         foreach ($skills as $key => $skill) {
-            $skillLatest = Skill::create($skill);
-            if ($skillLatest->image) {
-                $skillLatest->image = "storage/skills/$skillLatest->image";
-                $skillLatest->save();
+            $skillCreated = Skill::create([
+                'title'           => $skill['title'],
+                'version'         => $skill['version'],
+                'link'            => $skill['link'],
+                'is_free'         => $skill['is_free'],
+                'color'           => $skill['color'],
+                'color_text_dark' => $skill['color_text_dark'],
+                'subtitle'        => $skill['subtitle'],
+                'details'         => $skill['details'],
+                'is_favorite'     => $skill['is_favorite'],
+                'rating'          => $skill['rating'],
+                // 'image'           => $skill['image'],
+                'blockquote_text' => $skill['blockquote_text'],
+                'blockquote_who'  => $skill['blockquote_who'],
+            ]);
+            $category = SkillCategory::whereSlug($skill['skill_category_slug'])->first();
+            $skillCreated->skillCategory()->associate($category);
+            $skillCreated->save();
+
+            $image = array_key_exists('image', $skill) ? $skill['image'] : null;
+            try {
+                $image = File::get(database_path("seeders/media/skills/$image"));
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+            if ($image) {
+                $skillCreated->addMediaFromString($image)
+                    ->setName($skillCreated->slug)
+                    ->setFileName($skillCreated->slug.'.webp')
+                    ->toMediaCollection('skills', 'skills');
             }
         }
     }

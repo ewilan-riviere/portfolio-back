@@ -13,15 +13,16 @@ class CreateSkillsCategoriesTable extends Migration
      */
     public function up()
     {
-        Schema::create('skills_categories', function (Blueprint $table) {
+        Schema::create('skill_categories', function (Blueprint $table) {
+            $table->id();
             $table->string('slug')->nullable()->unique();
             $table->string('title');
             $table->timestamps();
         });
 
         Schema::table('skills', function (Blueprint $table) {
-            $table->string('skill_category_slug')->after('blockquote_who');
-            $table->foreign('skill_category_slug')->references('slug')->on('skills_categories')->onDelete('cascade');
+            $table->foreignId('skill_category_id')->after('blockquote_who')->nullable();
+            $table->foreign('skill_category_id')->references('id')->on('skill_categories')->onDelete('cascade');
         });
     }
 
@@ -32,6 +33,6 @@ class CreateSkillsCategoriesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('skills_categories');
+        Schema::dropIfExists('skill_categories');
     }
 }

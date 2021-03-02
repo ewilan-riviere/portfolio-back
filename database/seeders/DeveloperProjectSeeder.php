@@ -2,8 +2,9 @@
 
 namespace Database\Seeders;
 
+use App\Models\Project;
+use App\Models\Developer;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
 
 class DeveloperProjectSeeder extends Seeder
 {
@@ -61,7 +62,11 @@ class DeveloperProjectSeeder extends Seeder
         ];
 
         foreach ($developer_project as $key => $value) {
-            DB::table('developer_project')->insert($value);
+            $project = Project::whereSlug($value['project_slug'])->first();
+            $developer = Developer::whereSlug($value['developer_slug'])->first();
+            if ($project && $developer) {
+                $project->developers()->attach($developer, ['role' => array_key_exists('role', $value) ? $value['role'] : null]);
+            }
         }
     }
 }
