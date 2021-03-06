@@ -15,22 +15,32 @@ class DeveloperResource extends JsonResource
      */
     public function toArray($request)
     {
-        $result = [
-            'name'      => $this->name,
-            'slug'      => $this->slug,
-            'github'    => $this->github,
-            'portfolio' => $this->portfolio,
-            'linkedin'  => $this->linkedin,
-            'role'      => $this->pivot->role,
-        ];
-
-        if ($this->light) {
-            $result = [
-                'name' => $this->name,
-                'role' => $this->pivot->role,
-            ];
+        $links = null;
+        if ($this->links) {
+            $links = [];
+            foreach ($this->links as $key => $link) {
+                $links[strtolower($link->type->value)] = $link->url;
+            }
         }
 
-        return $result;
+        $projects = null;
+        if ($this->projects) {
+            $projects = [];
+            foreach ($this->projects as $key => $project) {
+                array_push($projects, [
+                    'title' => $project->title,
+                    'slug'  => $project->slug,
+                    'role'  => $project->pivot->role,
+                ]);
+            }
+        }
+
+        return [
+            'name'      => $this->name,
+            'slug'      => $this->slug,
+            'image'     => $this->image,
+            'links'     => $links,
+            'projects'  => sizeof($projects) > 0 ? $projects : null,
+        ];
     }
 }

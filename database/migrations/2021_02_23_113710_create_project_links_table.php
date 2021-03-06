@@ -18,6 +18,7 @@ class CreateProjectLinksTable extends Migration
             $table->string('repository')->nullable();
             $table->string('project')->nullable();
             $table->string('type')->nullable();
+            $table->boolean('is_private')->default(false);
 
             $table->foreignId('project_id')->nullable();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');

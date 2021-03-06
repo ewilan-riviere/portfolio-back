@@ -3,7 +3,10 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
@@ -18,6 +21,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property \Illuminate\Support\Carbon|null                                $updated_at
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer query()
@@ -29,32 +33,21 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer wherePortfolio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @property string|null $slug
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Developer whereSlug($value)
  */
-class Developer extends Model
+class Developer extends Model implements HasMedia
 {
-    /*
-    |--------------------------------------------------------------------------
-    | GLOBAL VARIABLES
-    |--------------------------------------------------------------------------
-    */
+    use InteractsWithMedia;
 
     protected $fillable = [
         'name',
         'slug',
-        'github',
-        'portfolio',
-        'linkedin',
     ];
     // protected $hidden = [];
     // protected $dates = [];
-
-    /*
-    |--------------------------------------------------------------------------
-    | FUNCTIONS
-    |--------------------------------------------------------------------------
-    */
 
     public static function boot()
     {
@@ -63,42 +56,32 @@ class Developer extends Model
                 return;
             }
             $developer->slug = Str::slug($developer->name, '-');
-
-            // if (! empty($project->page_title)) {
-            //     return;
-            // }
-            // $project->page_title = $project->title;
         });
 
         parent::boot();
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | RELATIONS
-    |--------------------------------------------------------------------------
-    */
+    public function getImageAttribute()
+    {
+        $media = $this->getFirstMedia('developers');
+
+        return $media ? $media->getFullUrl() : null;
+    }
 
     public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class)->withPivot('role');
     }
 
-    /*
-    |--------------------------------------------------------------------------
-    | SCOPES
-    |--------------------------------------------------------------------------
-    */
+    public function links(): HasMany
+    {
+        return $this->hasMany(DeveloperLink::class);
+    }
 
-    /*
-    |--------------------------------------------------------------------------
-    | ACCESSORS
-    |--------------------------------------------------------------------------
-    */
+    public function primaryLink()
+    {
+        $link = $this->hasOne(DeveloperLink::class)->where('is_primary', '=', true);
 
-    /*
-    |--------------------------------------------------------------------------
-    | MUTATORS
-    |--------------------------------------------------------------------------
-    */
+        return $link;
+    }
 }

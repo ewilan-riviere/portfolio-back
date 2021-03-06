@@ -29,18 +29,6 @@ class ProjectSkillSeeder extends Seeder
                 'skill_slug'          => 'tailwind-css',
             ],
             [
-                'project_slug'        => 'portfolio',
-                'skill_slug'          => 'laravel',
-            ],
-            [
-                'project_slug'        => 'portfolio',
-                'skill_slug'          => 'nuxtjs',
-            ],
-            [
-                'project_slug'        => 'portfolio',
-                'skill_slug'          => 'tailwind-css',
-            ],
-            [
                 'project_slug'        => 'promo-03-code-academie',
                 'skill_slug'          => 'laravel',
             ],
@@ -72,9 +60,26 @@ class ProjectSkillSeeder extends Seeder
                 'project_slug'        => 'storm',
                 'skill_slug'          => 'nuxtjs',
             ],
+            // portfolio
+            [
+                'project_slug'        => 'portfolio',
+                'skill_slug'          => 'nuxtjs',
+            ],
+            [
+                'project_slug'        => 'portfolio',
+                'skill_slug'          => 'php',
+            ],
+            [
+                'project_slug'        => 'portfolio',
+                'skill_slug'          => 'laravel',
+            ],
+            [
+                'project_slug'        => 'portfolio',
+                'skill_slug'          => 'tailwind-css',
+            ],
             // [
             //     'project_slug'        => '',
-            //     'skill_slug''',
+            //     'skill_slug' => '',
             // ],
         ];
 

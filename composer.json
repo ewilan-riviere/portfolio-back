@@ -18,6 +18,7 @@
     "homepage": "https://github.com/ewilan-riviere/portfolio-back",
     "require": {
         "php": "^7.3|^8.0",
+        "biscolab/laravel-recaptcha": "^5.0",
         "darkaonline/l5-swagger": "^8.0",
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",

@@ -2,8 +2,11 @@
 
 namespace Database\Seeders;
 
+use File;
 use App\Models\Developer;
+use App\Models\DeveloperLink;
 use Illuminate\Database\Seeder;
+use App\Models\Enums\DeveloperLinkType;
 
 class DeveloperSeeder extends Seeder
 {
@@ -17,38 +20,93 @@ class DeveloperSeeder extends Seeder
         $developers = [
             [
                 'name'      => 'Ewilan Rivière',
-                'github'    => 'https://github.com/ewilan-riviere',
-                'portfolio' => 'https://ewilan-riviere.com',
-                'linkedin'  => 'https://www.linkedin.com/in/ewilan-riviere',
+                'links'     => [
+                    'github'    => [
+                        'https://github.com/ewilan-riviere',
+                        true,
+                    ],
+                    'portfolio' => 'https://ewilan-riviere.com',
+                    'linkedin'  => 'https://www.linkedin.com/in/ewilan-riviere',
+                    'gitlab'    => 'https://gitlab.com/ewilan-riviere',
+                    'bit'       => 'https://bit.dev/ewilan-riviere',
+                    'twitter'   => 'https://twitter.com/ewilanriviere',
+                    'mail'      => 'mailto:contact@ewilan-riviere.com',
+                ],
             ],
             [
                 'name'      => 'Nora Hennebert',
-                'github'    => '',
-                'portfolio' => '',
-                'linkedin'  => '',
+                'links'     => [
+                    'github'    => 'https://github.com/Norahenn',
+                    'linkedin'  => [
+                        'https://www.linkedin.com/in/nora-hennebert',
+                        true,
+                    ],
+                    'gitlab'    => 'https://gitlab.com/Norahenn',
+                ],
             ],
             [
                 'name'      => 'Antoine Le Gonidec',
-                'github'    => '',
-                'portfolio' => '',
-                'linkedin'  => '',
+                'links'     => [
+                    'github'    => 'https://github.com/vv221',
+                    'git'       => [
+                        'https://forge.dotslashplay.it/vv221',
+                        true,
+                    ],
+                ],
             ],
             [
                 'name'      => 'Hugo Schindelman',
-                'github'    => '',
-                'portfolio' => '',
-                'linkedin'  => '',
+                'links'     => [
+                    'linkedin'  => [
+                        'https://www.linkedin.com/in/hugo-schindelman',
+                        true,
+                    ],
+                    'gitlab'    => 'https://gitlab.com/Felonius',
+                ],
             ],
             [
                 'name'      => 'Delphine Brunetière',
-                'github'    => '',
-                'portfolio' => '',
-                'linkedin'  => '',
+                'links'     => [
+                    'portfolio' => 'https://delphinebrunetiere.com',
+                    'linkedin'  => [
+                        'https://www.linkedin.com/in/delphinebrunetiere',
+                        true,
+                    ],
+                    'gitlab'    => 'https://gitlab.com/dearflynn',
+                    'twitter'   => 'https://twitter.com/D_Brunetiere',
+                    'medium'    => 'https://delphinebrunetiere.medium.com',
+                ],
             ],
         ];
 
-        foreach ($developers as $key => $developer) {
-            Developer::create($developer);
+        foreach ($developers as $key => $developerRaw) {
+            $developer = Developer::create([
+                'name' => $developerRaw['name'],
+            ]);
+
+            foreach ($developerRaw['links'] as $key => $linkRaw) {
+                $linkRaw_url = is_array($linkRaw) ? $linkRaw[0] : $linkRaw;
+                $link = DeveloperLink::create([
+                    'type'       => DeveloperLinkType::make($key),
+                    'url'        => $linkRaw_url,
+                    'is_primary' => is_array($linkRaw),
+                ]);
+                $link->developer()->associate($developer);
+                $link->save();
+            }
+
+            $image = null;
+            try {
+                $image = File::get(database_path("seeders/media/developers/$developer->slug.webp"));
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+            if ($image) {
+                $developer->addMediaFromString($image)
+                    ->setName($developer->slug)
+                    ->setFileName($developer->slug.'.webp')
+                    ->toMediaCollection('developers', 'developers');
+            }
         }
     }
 }

@@ -48,4 +48,14 @@ class ProjectController extends Controller
 
         return ProjectResource::collection($projects);
     }
+
+    public function show(string $project)
+    {
+        $project = Project::whereIsDisplay(true)
+            ->whereSlug($project)
+            ->with('skills', 'developers', 'formation')
+            ->firstOrFail();
+
+        return ProjectResource::make($project);
+    }
 }

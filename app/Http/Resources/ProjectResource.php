@@ -15,41 +15,18 @@ class ProjectResource extends JsonResource
      */
     public function toArray($request)
     {
-        // if ($this->light) {
-        // } else {
-        //     $skills = SkillResource::collection($this->skills);
-        //     $skills->map(function ($i) { $i->light = true; });
-
-        //     $developers = DeveloperResource::collection($this->developers);
-        //     $developers->map(function ($i) { $i->light = true; });
-
-        //     $formation = (new FormationResource($this->formation))->additional(['forProject' => true]);
-
-        //     $resource = [
-        //         'slug'                                     => $this->slug,
-        //         'title'                                    => $this->title,
-        //         'order'                                    => $this->order,
-        //         'extract'                                  => $this->extract,
-        //         'description'                              => $this->description,
-        //         'assets'                                   => [
-        //             'image'                               => getImage($this->image, true),
-        //             'imageTitle'                          => getImage($this->image_title, true),
-        //             'font'                                => getPath($this->font, true),
-        //         ],
-        //         'isFavorite'                          => $this->is_favorite,
-        //         'links'                               => ProjectLinkResource::make($this->projectLink),
-        //         'status'                              => $this->status,
-
-        //     ];
-        // }
-
         $developers = null;
         if ($this->developers) {
             $developers = [];
             foreach ($this->developers as $key => $developer) {
                 array_push($developers, [
-                    'name' => $developer->name,
-                    'slug' => $developer->slug,
+                    'name'  => $developer->name,
+                    'slug'  => $developer->slug,
+                    'image' => $developer->image,
+                    'link'  => [
+                        'type' => $developer->primaryLink->type,
+                        'url'  => $developer->primaryLink->url,
+                    ],
                 ]);
             }
         }
@@ -71,12 +48,11 @@ class ProjectResource extends JsonResource
             $projectLinks = [];
             foreach ($this->projectLinks as $key => $link) {
                 $projectLinks[strtolower($link->type->value)] = [
-                    'repository' => $link->repository,
+                    'repository' => $link->is_private ? null : $link->repository,
                     'project'    => $link->project,
                 ];
             }
         }
-        // dump($projectLinks);
 
         return array_merge([
             'slug'                                     => $this->slug,

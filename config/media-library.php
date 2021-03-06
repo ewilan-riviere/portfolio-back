@@ -20,6 +20,10 @@ return [
             'driver' => 'local',
             'root'   => storage_path('formations'),
         ],
+        'developers' => [
+            'driver' => 'local',
+            'root'   => storage_path('developers'),
+        ],
     ],
 
     /*

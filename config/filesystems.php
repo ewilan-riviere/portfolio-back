@@ -67,6 +67,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'developers' => [
+            'driver'     => 'local',
+            'root'       => storage_path('app/public/media/developers'),
+            'url'        => env('APP_URL').'/storage/media/developers',
+            'visibility' => 'public',
+        ],
+
         'public' => [
             'driver'     => 'local',
             'root'       => storage_path('app/public'),

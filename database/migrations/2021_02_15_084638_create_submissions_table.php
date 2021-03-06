@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDevelopersTable extends Migration
+class CreateSubmissionsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateDevelopersTable extends Migration
      */
     public function up()
     {
-        Schema::create('developers', function (Blueprint $table) {
+        Schema::create('submissions', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->nullable()->unique();
-            $table->string('name');
+            $table->string('name')->nullable();
+            $table->string('email')->nullable();
+            $table->text('message')->nullable();
             $table->timestamps();
         });
     }
@@ -28,6 +29,6 @@ class CreateDevelopersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('developers');
+        Schema::dropIfExists('submissions');
     }
 }
