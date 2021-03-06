@@ -22,7 +22,10 @@ class FormationController extends Controller
      */
     public function index()
     {
-        $formations = Formation::whereDisplay(true)->with('projects')->orderBy('date_end', 'desc')->get();
+        $formations = Formation::whereIsDisplay(true)
+            ->with('projects')
+            ->orderBy('date_end', 'desc')
+            ->get();
 
         return FormationResource::collection($formations);
     }

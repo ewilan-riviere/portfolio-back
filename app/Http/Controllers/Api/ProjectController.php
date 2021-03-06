@@ -32,7 +32,7 @@ class ProjectController extends Controller
             $limit = $request->limit;
         }
 
-        $projects = Project::published()
+        $projects = Project::whereIsDisplay(true)
             ->with('skills', 'developers', 'formation');
 
         if ($limit) {

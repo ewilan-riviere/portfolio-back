@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Developer.
@@ -17,7 +18,6 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Illuminate\Support\Carbon|null                                $updated_at
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer query()
@@ -29,9 +29,7 @@ use Illuminate\Database\Eloquent\Model;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer wherePortfolio($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereUpdatedAt($value)
  * @mixin \Eloquent
- *
  * @property string|null $slug
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Developer whereSlug($value)
  */
 class Developer extends Model
@@ -81,7 +79,7 @@ class Developer extends Model
     |--------------------------------------------------------------------------
     */
 
-    public function projects()
+    public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class)->withPivot('role');
     }

@@ -4,8 +4,10 @@ namespace App\Models;
 
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
+use App\Models\Enums\FormationType;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * App\Models\Formation.
@@ -36,7 +38,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @property int                             $finished
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation query()
@@ -57,7 +58,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereProjectLink($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereProjectResume($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereProjectTitle($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereProjectType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereProjectLinkType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation wherePromo($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation wherePromoLink($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereResume($value)
@@ -67,19 +68,23 @@ use Spatie\MediaLibrary\InteractsWithMedia;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocational($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocationalLink($value)
  * @mixin \Eloquent
- *
  * @property string|null                                                    $slug
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereSlug($value)
- *
  * @property int $display
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDisplay($value)
- *
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property int|null                                                                                                                      $media_count
+ * @property bool                                                                                                                          $is_finished
+ * @property bool                                                                                                                          $is_display
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\FormationExtra[]                                                         $extra
+ * @property int|null                                                                                                                      $extra_count
+ * @property mixed                                                                                                                         $image
+ * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsDisplay($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsFinished($value)
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FormationExtra[] $extras
+ * @property-read int|null $extras_count
  */
 class Formation extends Model implements HasMedia
 {
@@ -93,19 +98,17 @@ class Formation extends Model implements HasMedia
         'color',
         'color_text_white',
         'resume',
-        'place',
-        'place_link',
-        'vocational',
-        'vocational_link',
-        'promo',
-        'promo_link',
         'level',
         'date_begin',
         'date_end',
-        'status',
+        'is_finished',
+        'is_display',
     ];
-    // protected $hidden = [];
-    // protected $dates = [];
+    protected $casts = [
+        'is_finished' => 'boolean',
+        'is_display'  => 'boolean',
+        'type'        => FormationType::class,
+    ];
 
     public static function boot()
     {
@@ -114,11 +117,6 @@ class Formation extends Model implements HasMedia
                 return;
             }
             $formation->slug = Str::slug($formation->title, '-');
-
-            // if (! empty($project->page_title)) {
-            //     return;
-            // }
-            // $project->page_title = $project->title;
         });
 
         parent::boot();
@@ -129,8 +127,13 @@ class Formation extends Model implements HasMedia
         return $this->getFirstMedia('formations')->getPath();
     }
 
-    public function projects()
+    public function extras(): HasMany
     {
-        return $this->hasMany(Project::class)->where('status', 'published');
+        return $this->hasMany(FormationExtra::class);
+    }
+
+    public function projects(): HasMany
+    {
+        return $this->hasMany(Project::class)->whereIsDisplay(true);
     }
 }

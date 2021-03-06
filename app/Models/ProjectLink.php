@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
+use App\Models\Enums\ProjectLinkType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
- * App\Models\ProjectLink
+ * App\Models\ProjectLink.
  *
- * @property int $id
- * @property string $project_slug
+ * @property int         $id
+ * @property string      $project_slug
  * @property string|null $back_repository
  * @property string|null $back_project
  * @property string|null $front_repository
@@ -31,6 +32,12 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @mixin \Eloquent
  * @property int|null $project_id
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProjectId($value)
+ * @property \App\Models\Project|null $project
+ * @property string|null $repository
+ * @property ProjectLinkType|null $type
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProject($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereRepository($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereType($value)
  */
 class ProjectLink extends Model
 {
@@ -38,16 +45,16 @@ class ProjectLink extends Model
 
     public $timestamps = false;
     protected $fillable = [
-        'back_repository',
-        'back_project',
-        'front_repository',
-        'front_project',
-        'app_repository',
-        'app_project',
+        'repository',
+        'project',
+        'type',
+    ];
+    protected $casts = [
+        'type'        => ProjectLinkType::class,
     ];
 
     public function project(): BelongsTo
     {
-        return $this->belongsTo(Game::class, 'game_name');
+        return $this->belongsTo(Project::class);
     }
 }

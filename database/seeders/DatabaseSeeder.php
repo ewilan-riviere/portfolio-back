@@ -17,15 +17,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->clearAllMediaCollection();
-        // $this->call(UserSeeder::class);
-        // $this->call(CategorySkillSeeder::class);
-        // $this->call(FormationsSeeder::class);
-        // $this->call(ProjectSeeder::class);
-        // $this->call(SkillSeeder::class);
-        // $this->call(PassionSeeder::class);
-        // $this->call(DeveloperSeeder::class);
-        // $this->call(DeveloperProjectSeeder::class);
-        // $this->call(ProjectSkillSeeder::class);
+        $this->call(UserSeeder::class);
+        $this->call(CategorySkillSeeder::class);
+        $this->call(FormationsSeeder::class);
+        $this->call(ProjectSeeder::class);
+        $this->call(SkillSeeder::class);
+        $this->call(PassionSeeder::class);
+        $this->call(DeveloperSeeder::class);
+        $this->call(DeveloperProjectSeeder::class);
+        $this->call(ProjectSkillSeeder::class);
     }
 
     /**

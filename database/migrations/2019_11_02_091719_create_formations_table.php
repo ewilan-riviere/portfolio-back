@@ -18,22 +18,15 @@ class CreateFormationsTable extends Migration
             $table->string('slug')->nullable()->unique();
             $table->string('title')->nullable();
             $table->string('certificate')->nullable();
-            $table->string('logo')->nullable();
             $table->string('color')->default('#000000');
             $table->boolean('color_text_white')->default(false);
             $table->text('resume')->nullable();
             $table->string('type')->nullable();
-            $table->string('place')->nullable();
-            $table->string('place_link')->nullable();
-            $table->string('vocational')->nullable();
-            $table->string('vocational_link')->nullable();
-            $table->string('promo')->nullable();
-            $table->string('promo_link')->nullable();
             $table->string('level')->nullable();
             $table->date('date_begin')->nullable();
             $table->date('date_end')->nullable();
-            $table->boolean('finished')->default(true);
-            $table->boolean('display')->default(false);
+            $table->boolean('is_finished')->default(true);
+            $table->boolean('is_display')->default(false);
             $table->timestamps();
         });
     }

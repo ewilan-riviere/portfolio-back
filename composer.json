@@ -25,6 +25,7 @@
         "laravel/framework": "^8.12",
         "laravel/tinker": "^2.5",
         "spatie/image": "^1.10",
+        "spatie/laravel-enum": "^2.4",
         "spatie/laravel-medialibrary": "^9.0.0"
     },
     "require-dev": {

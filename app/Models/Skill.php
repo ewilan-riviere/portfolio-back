@@ -7,6 +7,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 /**
  * App\Models\Skill.
@@ -30,7 +31,6 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property \App\Models\Category                                           $category
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill query()
@@ -52,19 +52,16 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereUpdatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Skill whereVersion($value)
  * @mixin \Eloquent
- *
  * @property string|null $slug
  * @property string      $skill_category_slug
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSkillCategorySlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereIsFree($value)
- *
  * @property int|null                                                                                                                      $skill_category_id
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property int|null                                                                                                                      $media_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Skill whereSkillCategoryId($value)
+ * @property-read \App\Models\SkillCategory|null $skillCategory
  */
 class Skill extends Model implements HasMedia
 {
@@ -105,7 +102,7 @@ class Skill extends Model implements HasMedia
         parent::boot();
     }
 
-    public function projects()
+    public function projects(): BelongsToMany
     {
         return $this->belongsToMany(Project::class);
     }

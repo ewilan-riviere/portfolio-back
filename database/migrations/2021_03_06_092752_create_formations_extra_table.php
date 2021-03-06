@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateProjectsTable extends Migration
+class CreateFormationsExtraTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,17 +13,15 @@ class CreateProjectsTable extends Migration
      */
     public function up()
     {
-        Schema::create('projects', function (Blueprint $table) {
+        Schema::create('formations_extra', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->nullable()->unique();
-            $table->string('title');
-            $table->integer('order')->nullable();
-            $table->text('description')->nullable();
-            $table->boolean('is_display')->default(false);
-            $table->boolean('is_favorite')->default(0);
+            $table->string('name')->nullable();
+            $table->string('link')->nullable();
+            $table->string('type')->nullable();
+            $table->timestamps();
+
             $table->foreignId('formation_id')->nullable();
             $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
-            $table->timestamps();
         });
     }
 
@@ -34,6 +32,6 @@ class CreateProjectsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('projects');
+        Schema::dropIfExists('formations_extra');
     }
 }
