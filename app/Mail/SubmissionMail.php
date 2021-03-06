@@ -29,7 +29,7 @@ class SubmissionMail extends Mailable
      */
     public function build()
     {
-        $subject = '[Bookshelves] Contact from '.$this->submission->name;
+        $subject = '[Portfolio] Contact from '.$this->submission->name;
         $to = 'contact@ewilan-riviere.com';
         $from = 'contact@ewilan-riviere.com';
 
