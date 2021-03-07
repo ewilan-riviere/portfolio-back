@@ -5,10 +5,11 @@ namespace Database\Seeders;
 use File;
 use Carbon\Carbon;
 use App\Models\Project;
+use App\Models\Developer;
 use App\Models\Formation;
 use App\Models\ProjectLink;
+use App\Enums\ProjectLinkType;
 use Illuminate\Database\Seeder;
-use App\Models\Enums\ProjectLinkType;
 
 class ProjectSeeder extends Seeder
 {
@@ -39,6 +40,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://gitlab.com/ewilan-riviere/zergling-evolution',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                        => 'Overwatch Memory',
@@ -58,6 +62,9 @@ class ProjectSeeder extends Seeder
                     'front' => [
                         'repository'          => 'https://gitlab.com/ewilan-riviere/challenge_05_memory',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             [
@@ -79,6 +86,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://gitlab.com/ewilan-riviere/challenge_08_pomodoro',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                        => 'Quizz Pokémon',
@@ -98,6 +108,9 @@ class ProjectSeeder extends Seeder
                     'front' => [
                         'repository'          => 'https://gitlab.com/ewilan-riviere/challenge_09_quizz',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             // [
@@ -138,6 +151,10 @@ class ProjectSeeder extends Seeder
                         'project'             => 'https://dev.website.dotslashplay.it',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                    ['antoine-le-gonidec', 'lead-developer'],
+                ],
             ],
             [
                 'title'                        => 'Promo #03 · Code Académie',
@@ -159,6 +176,9 @@ class ProjectSeeder extends Seeder
                         'project'             => 'http://promo03.code-academie.fr',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                => 'TER sur la cyberviolence',
@@ -172,6 +192,9 @@ class ProjectSeeder extends Seeder
                 'formation_slug'           => 'licence-de-psychologie',
                 'created_at'               => '2014-06-01',
                 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
+                'developers'               => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
         ];
 
@@ -197,6 +220,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://github.com/ewilan-riviere/portfolio-front',
                         'project'             => 'https://ewilan-riviere.com',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             // [
@@ -256,6 +282,9 @@ class ProjectSeeder extends Seeder
                 //         'project'             => '',
                 //     ],
                 // ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Skyscale',
@@ -277,6 +306,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://gitlab.com/ewilan-riviere/skyscale',
                         'project'             => 'https://skyscale.git-projects.xyz',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             [
@@ -308,6 +340,9 @@ class ProjectSeeder extends Seeder
                     //     'project'             => '',
                     // ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Bookshelves',
@@ -333,6 +368,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://gitlab.com/ewilan-riviere/bookshelves-front',
                         'project'             => 'https://bookshelves.ink',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             [
@@ -360,6 +398,9 @@ class ProjectSeeder extends Seeder
                         // 'project'             => '',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Fonts Book',
@@ -381,6 +422,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://gitlab.com/ewilan-riviere/fonts-book',
                         // 'project'             => '',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             [
@@ -404,6 +448,9 @@ class ProjectSeeder extends Seeder
                         'project'             => 'https://md-interpreter.git-projects.xyz',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Memorandum',
@@ -426,6 +473,9 @@ class ProjectSeeder extends Seeder
                         'project'             => 'https://memorandum.ewilan-riviere.com',
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Vue Tailwind Screen Helper',
@@ -447,6 +497,9 @@ class ProjectSeeder extends Seeder
                         'repository'          => 'https://github.com/ewilan-riviere/vue-tailwind-screens-helper',
                         'project'             => 'https://ewilan-riviere.github.io/plugins/vue-tailwind-screens-helper',
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
         ];
@@ -478,6 +531,9 @@ class ProjectSeeder extends Seeder
                         'is_private'          => true,
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
 
             [
@@ -506,6 +562,9 @@ class ProjectSeeder extends Seeder
                         'is_private'          => true,
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Naviso',
@@ -532,6 +591,9 @@ class ProjectSeeder extends Seeder
                         'project'             => 'https://naviso.useweb.net',
                         'is_private'          => true,
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
             [
@@ -566,6 +628,9 @@ class ProjectSeeder extends Seeder
                         'is_private'          => true,
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Laforet',
@@ -593,6 +658,9 @@ class ProjectSeeder extends Seeder
                         'is_private'          => true,
                     ],
                 ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
+                ],
             ],
             [
                 'title'                    => 'Useweb Blog Tech',
@@ -615,6 +683,9 @@ class ProjectSeeder extends Seeder
                         'project'             => 'https://blog.useweb.net',
                         'is_private'          => true,
                     ],
+                ],
+                'developers' => [
+                    ['ewilan-riviere', 'developer'],
                 ],
             ],
         ];
@@ -660,6 +731,13 @@ class ProjectSeeder extends Seeder
             $formation = Formation::whereSlug($formation_slug)->first();
             if ($formation) {
                 $projectCreated->formation()->associate($formation);
+                $projectCreated->save();
+            }
+
+            $developers = array_key_exists('developers', $project) ? $project['developers'] : null;
+            foreach ($project['developers'] as $key => $developer) {
+                $developer_entity = Developer::whereSlug($developer[0])->first();
+                $projectCreated->developers()->attach($developer_entity, ['role' => array_key_exists(1, $developer) ? $developer[1] : null]);
                 $projectCreated->save();
             }
 

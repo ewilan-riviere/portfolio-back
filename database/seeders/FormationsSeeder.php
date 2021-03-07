@@ -5,10 +5,10 @@ namespace Database\Seeders;
 use File;
 use Carbon\Carbon;
 use App\Models\Formation;
+use App\Enums\FormationType;
 use App\Models\FormationExtra;
 use Illuminate\Database\Seeder;
-use App\Models\Enums\FormationType;
-use App\Models\Enums\FormationExtraType;
+use App\Enums\FormationExtraType;
 
 class FormationsSeeder extends Seeder
 {

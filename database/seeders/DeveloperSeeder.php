@@ -6,7 +6,7 @@ use File;
 use App\Models\Developer;
 use App\Models\DeveloperLink;
 use Illuminate\Database\Seeder;
-use App\Models\Enums\DeveloperLinkType;
+use App\Enums\DeveloperLinkType;
 
 class DeveloperSeeder extends Seeder
 {
