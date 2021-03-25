@@ -8,8 +8,11 @@ use App\Models\Project;
 use App\Models\Developer;
 use App\Models\Formation;
 use App\Models\ProjectLink;
+use App\Enums\DeveloperRole;
+use App\Enums\ProjectStatus;
 use App\Enums\ProjectLinkType;
 use Illuminate\Database\Seeder;
+use App\Models\DeveloperProject;
 
 class ProjectSeeder extends Seeder
 {
@@ -33,6 +36,7 @@ class ProjectSeeder extends Seeder
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'is_favorite'                      => false,
                 'is_display'                       => true,
+                'status'                           => 'phase3',
                 'created_at'                       => '2018-11-07',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
@@ -55,6 +59,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/big-noodle-titling.ttf',
                 'is_favorite'                      => true,
                 'is_display'                       => true,
+                'status'                           => 'phase3',
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'created_at'                       => '2018-11-07',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -78,6 +83,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/permanent-marker-regular.ttf',
                 'is_favorite'                      => false,
                 'is_display'                       => true,
+                'status'                           => 'phase3',
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'created_at'                       => '2018-11-28',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -101,6 +107,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/pokemon-solid.ttf',
                 'is_favorite'                      => false,
                 'is_display'                       => true,
+                'status'                           => 'phase3',
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'created_at'                       => '2018-12-06',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -138,6 +145,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/source-code-pro-regular.ttf',
                 'is_favorite'                      => true,
                 'is_display'                       => true,
+                'status'                           => 'phase2',
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'created_at'                       => '2019-04-01',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -153,7 +161,7 @@ class ProjectSeeder extends Seeder
                 ],
                 'developers' => [
                     ['ewilan-riviere', 'developer'],
-                    ['antoine-le-gonidec', 'lead-developer'],
+                    ['antoine-le-gonidec', 'lead_developer'],
                 ],
             ],
             [
@@ -167,6 +175,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/kraftstoff-regular.otf',
                 'is_favorite'                      => true,
                 'is_display'                       => true,
+                'status'                           => 'phase4',
                 'formation_slug'                   => 'developpeuse-web-web-mobile',
                 'created_at'                       => '2018-11-27',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -187,12 +196,13 @@ class ProjectSeeder extends Seeder
                 'image_title'          => null,
                 'description'          => "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
                 // 'link_project'         => getPath('media/documents/ter-la-cyberviolence.pdf'),
-                'is_favorite'              => false,
-                'is_display'               => true,
-                'formation_slug'           => 'licence-de-psychologie',
-                'created_at'               => '2014-06-01',
-                'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
-                'developers'               => [
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase4',
+                'formation_slug'                   => 'licence-de-psychologie',
+                'created_at'                       => '2014-06-01',
+                'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
+                'developers'                       => [
                     ['ewilan-riviere', 'developer'],
                 ],
             ],
@@ -208,6 +218,7 @@ class ProjectSeeder extends Seeder
                 'font'                             => 'media/fonts/morpheus.ttf',
                 'is_favorite'                      => true,
                 'is_display'                       => true,
+                'status'                           => 'phase3',
                 'formation_slug'                   => 'personnel',
                 'created_at'                       => '2020-05-19',
                 'updated_at'                       => Carbon::now()->format('Y-m-d H:i:s'),
@@ -267,10 +278,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => false,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-11-20',
+                'is_favorite'                      => false,
+                'is_display'                       => false,
+                'status'                           => 'phase1',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-11-20',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 // 'links'                            => [
                 //     'back' => [
@@ -296,10 +308,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-10-30',
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-10-30',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -321,10 +334,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-10-24',
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase1',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-10-24',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     // 'back' => [
@@ -354,10 +368,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2021-01-03',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2021-01-03',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -383,10 +398,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-11-05',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase1',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-11-05',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -412,10 +428,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => false,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-09-19',
+                'is_favorite'                      => false,
+                'is_display'                       => false,
+                'status'                           => 'phase2',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-09-19',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -437,10 +454,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-06-20',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-06-20',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -462,10 +480,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-06-27',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-06-27',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -487,10 +506,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'personnel',
-                'created_at'                   => '2020-06-27',
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'personnel',
+                'created_at'                       => '2020-06-27',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -515,10 +535,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2019-10-01',
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase4',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2019-10-01',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -546,10 +567,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2020-01-03',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2020-01-03',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -576,10 +598,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2020-05-12',
+                'is_favorite'                      => false,
+                'is_display'                       => true,
+                'status'                           => 'phase3',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2020-05-12',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -606,10 +629,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2020-09-01', // original date for project 2018-10-23
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase2',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2020-09-01', // original date for project 2018-10-23
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -642,10 +666,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => false,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2019-04-01',
+                'is_favorite'                      => false,
+                'is_display'                       => false,
+                'status'                           => 'phase1',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2019-04-01',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'back' => [
@@ -672,10 +697,11 @@ class ProjectSeeder extends Seeder
                 // 'link_repository'          => '',
                 // 'link_project'             => '',
                 // 'font'                     => 'media/fonts/morpheus.ttf',
-                'is_favorite'                  => true,
-                'is_display'                   => true,
-                'formation_slug'               => 'useweb',
-                'created_at'                   => '2020-10-19',
+                'is_favorite'                      => true,
+                'is_display'                       => true,
+                'status'                           => 'phase2',
+                'formation_slug'                   => 'useweb',
+                'created_at'                       => '2020-10-19',
                 // 'updated_at'               => Carbon::now()->format('Y-m-d H:i:s'),
                 'links'                            => [
                     'front' => [
@@ -711,6 +737,7 @@ class ProjectSeeder extends Seeder
                 'description'        => array_key_exists('description', $project) ? $project['description'] : null,
                 'is_favorite'        => array_key_exists('is_favorite', $project) ? $project['is_favorite'] : false,
                 'is_display'         => array_key_exists('is_display', $project) ? $project['is_display'] : null,
+                'status'             => array_key_exists('status', $project) ? ProjectStatus::make(strtoupper($project['status'])) : ProjectStatus::make(strtoupper('phase1')),
                 'created_at'         => array_key_exists('created_at', $project) ? $project['created_at'] : null,
                 'updated_at'         => array_key_exists('updated_at', $project) ? $project['updated_at'] : null,
             ]);
@@ -737,8 +764,14 @@ class ProjectSeeder extends Seeder
             $developers = array_key_exists('developers', $project) ? $project['developers'] : null;
             foreach ($project['developers'] as $key => $developer) {
                 $developer_entity = Developer::whereSlug($developer[0])->first();
-                $projectCreated->developers()->attach($developer_entity, ['role' => array_key_exists(1, $developer) ? $developer[1] : null]);
-                $projectCreated->save();
+                $pivot = DeveloperProject::create([
+                    'role' => array_key_exists(1, $developer) ?
+                        DeveloperRole::make(strtoupper($developer[1]))
+                        : null,
+                ]);
+                $pivot->developer()->associate($developer_entity);
+                $pivot->project()->associate($projectCreated);
+                $pivot->save();
             }
 
             $image = array_key_exists('image', $project) ? $project['image'] : null;

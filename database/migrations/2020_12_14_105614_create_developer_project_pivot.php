@@ -14,9 +14,10 @@ class CreateDeveloperProjectPivot extends Migration
     public function up()
     {
         Schema::create('developer_project', function (Blueprint $table) {
-            $table->foreignId('project_id');
+            $table->id();
+            $table->foreignId('project_id')->nullable();
             $table->foreign('project_id')->references('id')->on('projects')->onDelete('cascade');
-            $table->foreignId('developer_id');
+            $table->foreignId('developer_id')->nullable();
             $table->foreign('developer_id')->references('id')->on('developers')->onDelete('cascade');
             $table->string('role')->nullable();
         });

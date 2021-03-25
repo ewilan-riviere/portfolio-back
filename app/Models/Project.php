@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use App\Enums\ProjectStatus;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
@@ -29,6 +30,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @property int|null                                                         $projects_members_count
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[]     $skills
  * @property int|null                                                         $skills_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project query()
@@ -45,40 +47,55 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereTryIt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Project whereUpdatedAt($value)
  * @mixin \Eloquent
+ *
  * @property string|null $slug
  * @property string|null $image_title
  * @property string|null $link_github
  * @property string|null $link_project
  * @property string|null $formation_slug
  * @property int|null    $developers_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkGithub($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkProject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereSlug($value)
+ *
  * @property mixed $is_draft
  * @property mixed $is_published
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project draft()
  * @method static \Illuminate\Database\Eloquent\Builder|Project published()
+ *
  * @property string $status
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereStatus($value)
+ *
  * @property string|null $extract
  * @property string|null $description
  * @property string|null $link_repository
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereExtract($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereLinkRepository($value)
+ *
  * @property bool                         $is_favorite
  * @property \App\Models\Formation|null   $formation
  * @property \App\Models\ProjectLink|null $projectLink
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsFavorite($value)
+ *
  * @property int|null                                                                                                                      $formation_id
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property int|null                                                                                                                      $media_count
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationId($value)
+ *
  * @property bool $is_display
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsDisplay($value)
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectLink[] $projectLinks
- * @property-read int|null $project_links_count
+ *
+ * @property \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectLink[] $projectLinks
+ * @property int|null                                                           $project_links_count
  */
 class Project extends Model implements HasMedia
 {
@@ -91,11 +108,13 @@ class Project extends Model implements HasMedia
         'description',
         'is_favorite',
         'is_display',
+        'status',
     ];
 
     protected $casts = [
         'is_display'  => 'boolean',
         'is_favorite' => 'boolean',
+        'status'      => ProjectStatus::class,
     ];
 
     public static function boot()

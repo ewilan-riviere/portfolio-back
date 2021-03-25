@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int|null                        $formation_id
  * @property \App\Models\Formation|null      $formation
- *
  * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra query()

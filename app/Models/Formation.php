@@ -38,7 +38,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property int                             $finished
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation query()
@@ -69,17 +68,12 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocational($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Formation whereVocationalLink($value)
  * @mixin \Eloquent
- *
  * @property string|null                                                    $slug
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property int|null                                                       $projects_count
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereSlug($value)
- *
  * @property int $display
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDisplay($value)
- *
  * @property \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property int|null                                                                                                                      $media_count
  * @property bool                                                                                                                          $is_finished
@@ -87,10 +81,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\FormationExtra[]                                                         $extra
  * @property int|null                                                                                                                      $extra_count
  * @property mixed                                                                                                                         $image
- *
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsDisplay($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsFinished($value)
- *
  * @property \Illuminate\Database\Eloquent\Collection|\App\Models\FormationExtra[] $extras
  * @property int|null                                                              $extras_count
  */

@@ -18,7 +18,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @property string|null $front_project
  * @property string|null $app_repository
  * @property string|null $app_project
- *
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink query()
@@ -31,18 +30,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProjectSlug($value)
  * @mixin \Eloquent
- *
  * @property int|null $project_id
- *
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProjectId($value)
- *
  * @property \App\Models\Project|null $project
  * @property string|null              $repository
  * @property ProjectLinkType|null     $type
- *
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereRepository($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereType($value)
+ * @property bool $is_private
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereIsPrivate($value)
  */
 class ProjectLink extends Model
 {

@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProjectResource extends JsonResource
+class ProjectCollection extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -17,19 +17,7 @@ class ProjectResource extends JsonResource
     {
         $developers = null;
         if ($this->developers) {
-            $developers = [];
-            foreach ($this->developers as $key => $developer) {
-                array_push($developers, [
-                    'name'  => $developer->name,
-                    'slug'  => $developer->slug,
-                    'image' => $developer->image,
-                    'role'  => $developer->pivot->role,
-                    'link'  => [
-                        'type' => $developer->primaryLink->type,
-                        'url'  => $developer->primaryLink->url,
-                    ],
-                ]);
-            }
+            $developers = $this->developers->count();
         }
 
         $skills = null;
@@ -54,27 +42,37 @@ class ProjectResource extends JsonResource
                 ];
             }
         }
+        $projectLinks['show'] = route('projects.show', ['project' => $this->slug]);
+
+        $formation = null;
+        if ($this->formation) {
+            $formation = [
+                'title' => $this->formation->title,
+                'slug'  => $this->formation->slug,
+            ];
+        }
 
         return array_merge([
-            'slug'                                     => $this->slug,
-            'title'                                    => $this->title,
-            'order'                                    => $this->order,
-            'description'                              => $this->description,
-            'createdAt'                                => $this->created_at,
-            'type'                                     => $this->formation ? [
+            'slug'                                       => $this->slug,
+            'title'                                      => $this->title,
+            'order'                                      => $this->order,
+            'description'                                => $this->description,
+            'createdAt'                                  => $this->created_at,
+            'type'                                       => $this->formation ? [
                 'title' => $this->formation->title,
                 'slug'  => $this->formation->slug,
             ] : null,
             'skills'                               => sizeof($skills) > 0 ? $skills : null,
-            'developers'                           => sizeof($developers) > 0 ? $developers : null,
+            'developers'                           => $developers,
             'assets'                               => [
                 'image'                               => $this->image,
                 'imageTitle'                          => $this->image_title,
             ],
+            'formation'  => $formation,
             'isFavorite' => $this->is_favorite,
-        ], [
-            'links'      => $projectLinks,
-            'show'       => route('projects.show', ['project' => $this->slug]),
-        ]);
+        ],
+            [
+                'links'      => $projectLinks,
+            ]);
     }
 }

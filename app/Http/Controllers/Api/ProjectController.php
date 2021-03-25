@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectResource;
+use App\Http\Resources\ProjectCollection;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProjectController extends Controller
@@ -46,7 +47,7 @@ class ProjectController extends Controller
 
         $projects = $projects->orderBy('created_at', 'desc')->get();
 
-        return ProjectResource::collection($projects);
+        return ProjectCollection::collection($projects);
     }
 
     public function show(string $project)

@@ -21,6 +21,7 @@ class CreateProjectsTable extends Migration
             $table->text('description')->nullable();
             $table->boolean('is_display')->default(false);
             $table->boolean('is_favorite')->default(0);
+            $table->string('status')->nullable();
             $table->foreignId('formation_id')->nullable();
             $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
             $table->timestamps();
