@@ -30,11 +30,13 @@ class SubmissionMail extends Mailable
     public function build()
     {
         $subject = '[Portfolio] Contact from '.$this->submission->name;
-        $to = 'contact@ewilan-riviere.com';
-        $from = 'contact@ewilan-riviere.com';
+        $from_address = config('mail.from.address');
+        $from_name = config('mail.from.name');
+        $to_address = config('mail.to.address');
+        $to_name = config('mail.to.name');
 
-        return $this->to($to)
-            ->from($from)
+        return $this->to($to_address, $to_name)
+            ->from($from_address, $from_name)
             ->subject($subject)
             ->markdown('emails.submission')
             ->with([
