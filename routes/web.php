@@ -19,9 +19,3 @@ Route::get('/cache/resolve/{size}/{path}', [ImageController::class, 'thumbnail']
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
-require __DIR__.'/auth.php';

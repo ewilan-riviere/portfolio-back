@@ -5,35 +5,9 @@ namespace App\Models;
 use App\Enums\FormationExtraType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-/**
- * App\Models\FormationExtra.
- *
- * @property int                             $id
- * @property string|null                     $name
- * @property string|null                     $link
- * @property FormationExtraType|null         $type
- * @property \Illuminate\Support\Carbon|null $created_at
- * @property \Illuminate\Support\Carbon|null $updated_at
- * @property int|null                        $formation_id
- * @property \App\Models\Formation|null      $formation
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra query()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereFormationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereLink($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereUpdatedAt($value)
- * @mixin \Eloquent
- */
 class FormationExtra extends Model
 {
-    use HasFactory;
-
     protected $table = 'formations_extra';
     protected $fillable = [
         'name',

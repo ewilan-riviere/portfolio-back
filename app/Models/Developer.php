@@ -9,38 +9,6 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
-/**
- * App\Models\Developer.
- *
- * @property int                                                            $id
- * @property string                                                         $name
- * @property string                                                         $github
- * @property string                                                         $portfolio
- * @property string                                                         $linkedin
- * @property \Illuminate\Support\Carbon|null                                $created_at
- * @property \Illuminate\Support\Carbon|null                                $updated_at
- * @property \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
- * @property int|null                                                       $projects_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereGithub($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereLinkedin($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer wherePortfolio($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Developer whereUpdatedAt($value)
- * @mixin \Eloquent
- * @property string|null $slug
- * @method static \Illuminate\Database\Eloquent\Builder|Developer whereSlug($value)
- * @property-read mixed $image
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\DeveloperLink[] $links
- * @property-read int|null $links_count
- * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
- * @property-read int|null $media_count
- * @property-read \App\Models\DeveloperLink|null $primaryLink
- */
 class Developer extends Model implements HasMedia
 {
     use InteractsWithMedia;
