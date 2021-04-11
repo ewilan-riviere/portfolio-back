@@ -16,7 +16,6 @@ class SubmissionController extends Controller
             'name'                  => 'required|string',
             'email'                 => 'required|email:rfc,strict,dns,filter',
             'message'               => 'required|string|min:250',
-            'g-recaptcha-response'  => 'required|recaptcha',
         ]);
 
         // Create model
