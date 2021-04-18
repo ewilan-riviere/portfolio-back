@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use Illuminate\Support\Str;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Question\Question;
@@ -14,7 +13,7 @@ class SetupCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'setup:install {name}';
+    protected $signature = 'setup';
 
     /**
      * The console command description.
@@ -128,7 +127,7 @@ class SetupCommand extends Command
      */
     protected function welcome()
     {
-        $this->info('>> Welcome to '.$this->argument('name').' autosetup <<');
+        $this->info('>> Welcome <<');
     }
 
     /**
@@ -160,12 +159,12 @@ class SetupCommand extends Command
     protected function requestDatabaseCredentials()
     {
         return [
-            'APP_NAME'                => $this->ask('App name', '"'.$this->argument('name').'"'),
-            'DB_DATABASE'             => $this->ask('Database name', strtolower(Str::slug($this->argument('name'), '-'))),
+            'APP_NAME'                => $this->ask('App name', 'Portfolio'),
+            'DB_DATABASE'             => $this->ask('Database name', 'portfolio'),
             'DB_PORT'                 => $this->ask('Database port', 3306),
             'DB_USERNAME'             => $this->ask('Database user', 'root'),
             'DB_PASSWORD'             => $this->askHiddenWithDefault('Database password (leave blank for no password)'),
-            'APP_URL'                 => $this->ask('Application URL', 'http://api.'.strtolower(Str::slug($this->argument('name'), '-')).'.test'),
+            'APP_URL'                 => $this->ask('Application URL', 'http://localhost:8000'),
         ];
     }
 
