@@ -26,7 +26,7 @@ class SkillResource extends JsonResource
             'details'         => $this->details,
             'isFavorite'      => $this->is_favorite,
             'rating'          => $this->rating,
-            'image'           => getImage($this->image),
+            'image'           => $this->image,
             'blockquote'      => [
                 'text'  => $this->blockquote_text,
                 'who'   => $this->blockquote_who,

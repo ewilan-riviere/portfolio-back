@@ -24,7 +24,6 @@ class Skill extends Model implements HasMedia
         'details',
         'is_favorite',
         'rating',
-        'image',
         'blockquote_text',
         'blockquote_who',
     ];
@@ -46,6 +45,16 @@ class Skill extends Model implements HasMedia
         });
 
         parent::boot();
+    }
+
+    public function getImageAttribute(): string | null
+    {
+        $path = $this->getFirstMediaPath('skills');
+        if ($path) {
+            return file_get_contents($path);
+        }
+
+        return null;
     }
 
     public function projects(): BelongsToMany

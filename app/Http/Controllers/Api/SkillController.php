@@ -44,7 +44,7 @@ class SkillController extends Controller
      */
     public function index(Request $request)
     {
-        $skills = Skill::with('category')->orderBy('title')->get();
+        $skills = Skill::with('skillCategory')->orderBy('title')->get();
 
         if ($request->favorite) {
             $skills = $skills->filter(function ($skill) {
