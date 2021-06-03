@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use File;
 use App\Models\Passion;
 use Illuminate\Database\Seeder;
 
@@ -14,47 +15,14 @@ class PassionSeeder extends Seeder
      */
     public function run()
     {
-        Passion::insert([
-            // [
-            //     'name' => '',
-            //     'icon' => '',
-            //     'text' => ''
-            // ]
-            [
-                'name' => 'Lecture',
-                'icon' => '',
-                'text' => 'La lecture',
-            ],
-            [
-                'name' => 'Les jeux vidéo et leurs mods',
-                'icon' => '',
-                'text' => 'Modder les jeux vidéo',
-            ],
-            [
-                'name' => 'Développer',
-                'icon' => '',
-                'text' => 'Des projets personnels ou avec des ami·es',
-            ],
-            [
-                'name' => 'Des séries',
-                'icon' => '',
-                'text' => 'Chiller au coin du feu avec un chat, du thé et une bonne série',
-            ],
-            [
-                'name' => 'Les warhammers',
-                'icon' => '',
-                'text' => '',
-            ],
-            [
-                'name' => 'Les jeux de rôles',
-                'icon' => '',
-                'text' => '',
-            ],
-            [
-                'name' => 'Les podcasts & sagas mp3',
-                'icon' => '',
-                'text' => '',
-            ],
-        ]);
+        $passions = json_decode(File::get(database_path('seeders/data/passions.json')));
+
+        foreach ($passions as $key => $passion) {
+            Passion::create([
+                'name'  => $passion->name ?? null,
+                'icon'  => $passion->icon ?? null,
+                'text'  => $passion->text ?? null,
+            ]);
+        }
     }
 }

@@ -1,0 +1,143 @@
+[
+    {
+        "title": "Imprimerie le Galliard",
+        "image": "le-galliard.webp",
+        "image_title": null,
+        "description": "Projet de refonte de l'imprimerie Le Galliard située à Cesson-Sévigné.",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase4",
+        "formation_slug": "useweb",
+        "created_at": "2019-10-01",
+        "links": {
+            "back": {
+                "repository": "https://bitbucket.org/useweb/le-galliard-back/src/master",
+                "is_private": true
+            },
+            "front": {
+                "repository": "https://bitbucket.org/useweb/le-galliard-front/src/master",
+                "project": "http://www.imprimerie-bretagne.fr",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+
+    {
+        "title": "Secob",
+        "image": "secob.webp",
+        "image_title": null,
+        "description": "Refonte du site de la Secob, une entreprise de comptabilité située à Cesson-Sévigné.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "useweb",
+        "created_at": "2020-01-03",
+        "links": {
+            "back": {
+                "repository": "https://bitbucket.org/useweb/secob-backend/src/master",
+                "is_private": true
+            },
+            "front": {
+                "repository": "https://bitbucket.org/useweb/secob-frontend/src/master",
+                "project": "https://secob-v2.useweb.net",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Naviso",
+        "image": "naviso.webp",
+        "image_title": null,
+        "description": "Refonte du site de Naviso, entreprise de gestion située à Cesson-Sévigné.",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "useweb",
+        "created_at": "2020-05-12",
+        "links": {
+            "back": {
+                "repository": "https://bitbucket.org/useweb/naviso-back/src/master",
+                "is_private": true
+            },
+            "front": {
+                "repository": "https://bitbucket.org/useweb/naviso-front/src/master",
+                "project": "https://naviso.useweb.net",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Foncière AALTO",
+        "image": "fonciere-aalto.webp",
+        "image_title": null,
+        "description": "Extranet et application mobile pour Foncière AALTO, entreprise de gestion de fonds située à Cesson-Sévigné.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase2",
+        "formation_slug": "useweb",
+        "created_at": "2020-09-01",
+        "links": {
+            "front": {
+                "repository": "https://bitbucket.org/useweb/cap-transactions/src/master",
+                "project": "https://client.fonciere-aalto.com",
+                "is_private": true
+            },
+            "app_android": {
+                "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+                "project": "https://play.google.com/store/apps/details?id=com.useweb.fonciere.aalto",
+                "is_private": true
+            },
+            "app_ios": {
+                "repository": "https://bitbucket.org/useweb/cap-transactions-flutter/src/master",
+                "project": "https://apps.apple.com/fr/app/fonci%C3%A8re-aalto-espace-client/id1549849593",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Laforet",
+        "image": "laforet.webp",
+        "image_title": null,
+        "description": "Refonte du site de l'agence immobilière présente sur toute la France.",
+        "is_favorite": false,
+        "is_display": false,
+        "status": "phase1",
+        "formation_slug": "useweb",
+        "created_at": "2019-04-01",
+        "links": {
+            "back": {
+                "repository": "https://bitbucket.org/useweb/laforet-back/src/master",
+                "is_private": true
+            },
+            "front": {
+                "repository": "https://bitbucket.org/useweb/laforet-front/src/master",
+                "project": "https://www.laforet.com",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Useweb Blog Tech",
+        "image": "useweb-blog-tech.webp",
+        "image_title": null,
+        "description": "Blog de Useweb pour présenter les aspects techniques de nos réalisations.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase2",
+        "formation_slug": "useweb",
+        "created_at": "2020-10-19",
+        "links": {
+            "front": {
+                "repository": "https://bitbucket.org/useweb/blog-tech-nuxt/src/master",
+                "project": "https://blog.useweb.net",
+                "is_private": true
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    }
+]

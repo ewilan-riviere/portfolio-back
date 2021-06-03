@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use File;
 use App\Models\SkillCategory;
 use Illuminate\Database\Seeder;
 
@@ -14,23 +15,12 @@ class CategorySkillSeeder extends Seeder
      */
     public function run()
     {
-        $skillsCategories = [
-            [
-                'title'   => 'Langages de développement',
-            ],
-            [
-                'title'   => 'Frameworks & librairies',
-            ],
-            [
-                'title'   => 'Technologies & logiciels',
-            ],
-            [
-                'title'   => 'Langues',
-            ],
-        ];
+        $skillsCategories = json_decode(File::get(database_path('seeders/data/skill_categories.json')));
 
         foreach ($skillsCategories as $key => $skillCategory) {
-            SkillCategory::create($skillCategory);
+            SkillCategory::create([
+                'title' => $skillCategory->title,
+            ]);
         }
     }
 }

@@ -17,79 +17,19 @@ class DeveloperSeeder extends Seeder
      */
     public function run()
     {
-        $developers = [
-            [
-                'name'      => 'Ewilan Rivière',
-                'links'     => [
-                    'github'    => [
-                        'https://github.com/ewilan-riviere',
-                        true,
-                    ],
-                    'portfolio' => 'https://ewilan-riviere.com',
-                    'linkedin'  => 'https://www.linkedin.com/in/ewilan-riviere',
-                    'gitlab'    => 'https://gitlab.com/ewilan-riviere',
-                    'bit'       => 'https://bit.dev/ewilan-riviere',
-                    'twitter'   => 'https://twitter.com/ewilanriviere',
-                    'mail'      => 'mailto:contact@ewilan-riviere.com',
-                ],
-            ],
-            [
-                'name'      => 'Nora Hennebert',
-                'links'     => [
-                    'github'    => 'https://github.com/Norahenn',
-                    'linkedin'  => [
-                        'https://www.linkedin.com/in/nora-hennebert',
-                        true,
-                    ],
-                    'gitlab'    => 'https://gitlab.com/Norahenn',
-                ],
-            ],
-            [
-                'name'      => 'Antoine Le Gonidec',
-                'links'     => [
-                    'github'    => 'https://github.com/vv221',
-                    'git'       => [
-                        'https://forge.dotslashplay.it/vv221',
-                        true,
-                    ],
-                ],
-            ],
-            [
-                'name'      => 'Hugo Schindelman',
-                'links'     => [
-                    'linkedin'  => [
-                        'https://www.linkedin.com/in/hugo-schindelman',
-                        true,
-                    ],
-                    'gitlab'    => 'https://gitlab.com/Felonius',
-                ],
-            ],
-            [
-                'name'      => 'Delphine Brunetière',
-                'links'     => [
-                    'portfolio' => 'https://delphinebrunetiere.com',
-                    'linkedin'  => [
-                        'https://www.linkedin.com/in/delphinebrunetiere',
-                        true,
-                    ],
-                    'gitlab'    => 'https://gitlab.com/dearflynn',
-                    'twitter'   => 'https://twitter.com/D_Brunetiere',
-                    'medium'    => 'https://delphinebrunetiere.medium.com',
-                ],
-            ],
-        ];
+        $developers = json_decode(File::get(database_path('seeders/data/developers.json')));
 
         foreach ($developers as $key => $developerRaw) {
             $developer = Developer::create([
-                'name' => $developerRaw['name'],
+                'name' => $developerRaw->name,
             ]);
 
-            foreach ($developerRaw['links'] as $key => $linkRaw) {
-                $linkRaw_url = is_array($linkRaw) ? $linkRaw[0] : $linkRaw;
+            foreach ($developerRaw->links as $key => $linkRaw) {
+                $linkRaw_url = is_string($linkRaw) ? $linkRaw : $linkRaw->url;
                 $link = DeveloperLink::create([
                     'type'       => DeveloperLinkType::make($key),
                     'url'        => $linkRaw_url,
-                    'is_primary' => is_array($linkRaw),
+                    'is_primary' => $linkRaw->is_primary ?? false,
                 ]);
                 $link->developer()->associate($developer);
                 $link->save();

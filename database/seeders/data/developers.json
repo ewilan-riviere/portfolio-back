@@ -1,0 +1,61 @@
+[
+    {
+        "name": "Ewilan Rivière",
+        "links": {
+            "github": {
+                "url": "https://github.com/ewilan-riviere",
+                "is_primary": true
+            },
+            "portfolio": "https://ewilan-riviere.com",
+            "linkedin": "https://www.linkedin.com/in/ewilan-riviere",
+            "gitlab": "https://gitlab.com/ewilan-riviere",
+            "bit": "https://bit.dev/ewilan-riviere",
+            "twitter": "https://twitter.com/ewilanriviere",
+            "mail": "mailto:contact@ewilan-riviere.com"
+        }
+    },
+    {
+        "name": "Nora Hennebert",
+        "links": {
+            "github": "https://github.com/Norahenn",
+            "linkedin": {
+                "url": "https://www.linkedin.com/in/nora-hennebert",
+                "is_primary": true
+            },
+            "gitlab": "https://gitlab.com/Norahenn"
+        }
+    },
+    {
+        "name": "Antoine Le Gonidec",
+        "links": {
+            "github": "https://github.com/vv221",
+            "git": {
+                "url": "https://forge.dotslashplay.it/vv221",
+                "is_primary": true
+            }
+        }
+    },
+    {
+        "name": "Hugo Schindelman",
+        "links": {
+            "linkedin": {
+                "url": "https://www.linkedin.com/in/hugo-schindelman",
+                "is_primary": true
+            },
+            "gitlab": "https://gitlab.com/Felonius"
+        }
+    },
+    {
+        "name": "Delphine Brunetière",
+        "links": {
+            "portfolio": "https://delphinebrunetiere.com",
+            "linkedin": {
+                "url": "https://www.linkedin.com/in/delphinebrunetiere",
+                "is_primary": true
+            },
+            "gitlab": "https://gitlab.com/dearflynn",
+            "twitter": "https://twitter.com/D_Brunetiere",
+            "medium": "https://delphinebrunetiere.medium.com"
+        }
+    }
+]

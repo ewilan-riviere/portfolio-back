@@ -1,0 +1,187 @@
+[
+    {
+        "title": "Portfolio",
+        "order": 1,
+        "image": "portfolio.webp",
+        "image_title": null,
+        "description": "Réalisation de mon portfolio pour présenter mes projets personnels et professionnels et les technos que j'apprécie.",
+        "font": "media/fonts/morpheus.ttf",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2020-05-19",
+        "links": {
+            "back": {
+                "repository": "https://github.com/ewilan-riviere/portfolio-back",
+                "project": "https://ewilan-riviere.com/api/documentation"
+            },
+            "front": {
+                "repository": "https://github.com/ewilan-riviere/portfolio-front",
+                "project": "https://ewilan-riviere.com"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
+    },
+    {
+        "title": "Fanfic",
+        "image_title": null,
+        "description": null,
+        "is_favorite": false,
+        "is_display": false,
+        "status": "phase1",
+        "formation_slug": "personnel",
+        "created_at": "2020-11-20",
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Skyscale",
+        "image": "skyscale.webp",
+        "image_title": null,
+        "description": "Une petite application connectée à l'API du MMO Guild Wars 2 pour présenter des informations sur les compte de mon équipe.",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2020-10-30",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/skyscale",
+                "project": "https://skyscale.git-projects.xyz"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Roazhon Star",
+        "image": "roazhon-star.webp",
+        "image_title": null,
+        "description": "Project d'application web et mobile pour récupérer les horaires de bus du STAR de Rennes.",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase1",
+        "formation_slug": "personnel",
+        "created_at": "2020-10-24",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/roazhon-star-bus",
+                "project": "http://roazhon-star-bus.git-projects.xyz"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Bookshelves",
+        "image": "bookshelves.webp",
+        "image_title": null,
+        "description": "Projet d'application web et mobile pour présenter des eBooks en récupérant leurs metadata directement depuis les fichiers EPUB.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2021-01-03",
+        "links": {
+            "back": {
+                "repository": "https://gitlab.com/ewilan-riviere/bookshelves-back",
+                "project": "https://bookshelves.ink/api/documentation"
+            },
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/bookshelves-front",
+                "project": "https://bookshelves.ink"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "MarkdownThis",
+        "image": "markdown-this.webp",
+        "image_title": null,
+        "description": "Projet de prise de note semblable à Keep mais en Markdown pour facilement sauvegarder du code ou faire une mise en forme simple.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase1",
+        "formation_slug": "personnel",
+        "created_at": "2020-11-05",
+        "links": {
+            "back": {
+                "repository": "https://gitlab.com/ewilan-riviere/markdown-this-back"
+            },
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/markdown-this-front"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Fonts Book",
+        "image": "fonts-book.webp",
+        "image_title": null,
+        "description": null,
+        "is_favorite": false,
+        "is_display": false,
+        "status": "phase2",
+        "formation_slug": "personnel",
+        "created_at": "2020-09-19",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/fonts-book"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Markdown Interpreter",
+        "image": "md-interpreter.webp",
+        "image_title": null,
+        "description": "Petit projet pour facilement convertir du Markdown vers de l'HTML ou l'inverse.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2020-06-20",
+        "links": {
+            "front": {
+                "repository": "https://github.com/ewilan-riviere/markdown-interpreter",
+                "project": "https://md-interpreter.git-projects.xyz"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Memorandum",
+        "image": "memorandum.webp",
+        "image_title": null,
+        "description": "Documentation personnelle sur mes projets et les technos que j'apprécie.",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2020-06-27",
+        "links": {
+            "front": {
+                "repository": "https://github.com/ewilan-riviere/memorandum",
+                "project": "https://memorandum.ewilan-riviere.com"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    },
+    {
+        "title": "Vue Tailwind Screen Helper",
+        "image": "vue-tailwind-screen-helper.webp",
+        "image_title": null,
+        "description": "Plugin réalisé pour Tailwind CSS afin d'afficher dans quel breakpoint on se trouve.",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "personnel",
+        "created_at": "2020-06-27",
+        "links": {
+            "front": {
+                "repository": "https://github.com/ewilan-riviere/vue-tailwind-screens-helper",
+                "project": "https://ewilan-riviere.github.io/plugins/vue-tailwind-screens-helper"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    }
+]

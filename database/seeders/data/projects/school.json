@@ -1,0 +1,160 @@
+[
+    {
+        "title": "Zergling Evolution",
+        "order": 8,
+        "image": "zergling-evolution.webp",
+        "image_title": "zergling-evolution.webp",
+        "description": "Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !",
+        "link_repository": "https://github.com/ewilan-riviere/zergling-evolution",
+        "link_project": null,
+        "font": "media/fonts/starcraft-normal.ttf",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "created_at": "2018-11-07",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/zergling-evolution"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["javascript"]
+    },
+    {
+        "title": "Overwatch Memory",
+        "order": 4,
+        "image": "overwatch-memory.webp",
+        "image_title": "overwatch-memory.webp",
+        "description": "Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\"univers d\"Overwatch, battez des records pour retrouver toutes les cartes !",
+        "link_repository": "https://github.com/ewilan-riviere/overwatch-memory",
+        "link_project": null,
+        "font": "media/fonts/big-noodle-titling.ttf",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "created_at": "2018-11-07",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/challenge_05_memory"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["javascript"]
+    },
+    {
+        "title": "Pomodoro",
+        "order": 6,
+        "image": "pomodoro.webp",
+        "image_title": "pomodoro.webp",
+        "description": "Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur.",
+        "link_repository": "https://github.com/ewilan-riviere/pomodoro",
+        "link_project": null,
+        "font": "media/fonts/permanent-marker-regular.ttf",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "created_at": "2018-11-28",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/challenge_08_pomodoro"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["javascript"]
+    },
+    {
+        "title": "Quizz Pokémon",
+        "order": 5,
+        "image": "quizz-pokemon.webp",
+        "image_title": "quizz-pokemon.webp",
+        "description": "Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes.",
+        "link_repository": "https://github.com/ewilan-riviere/quizz-pokemon",
+        "link_project": null,
+        "font": "media/fonts/pokemon-solid.ttf",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase3",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "created_at": "2018-12-06",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/ewilan-riviere/challenge_09_quizz"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["javascript"]
+    },
+    {
+        "title": "Site web de ./play.it",
+        "order": 2,
+        "image": "play-it.webp",
+        "image_title": null,
+        "description": "Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux.",
+        "link_repository": "https://forge.dotslashplay.it/play.it/website",
+        "link_project": "https://dev.website.dotslashplay.it/",
+        "font": "media/fonts/source-code-pro-regular.ttf",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase2",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "created_at": "2019-04-01",
+        "links": {
+            "back": {
+                "repository": "https://forge.dotslashplay.it/play.it/api",
+                "project": "https://api.dotslashplay.it/games/list"
+            },
+            "front": {
+                "repository": "https://forge.dotslashplay.it/play.it/website",
+                "project": "https://dev.website.dotslashplay.it"
+            }
+        },
+        "developers": [
+            { "slug": "ewilan-riviere", "role": "developer" },
+            {
+                "slug": "antoine-le-gonidec",
+                "role": "lead_developer"
+            }
+        ],
+        "skills": ["laravel", "blade", "tailwind-css"]
+    },
+    {
+        "title": "Promo #03 · Code Académie",
+        "order": 3,
+        "image": "code-academie.webp",
+        "image_title": null,
+        "description": "Création du site de la promo #03 de la Code Académie avec une équipe de passionnés.",
+        "link_repository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
+        "link_project": "http://promo03.code-academie.fr/",
+        "font": "media/fonts/kraftstoff-regular.otf",
+        "is_favorite": true,
+        "is_display": true,
+        "status": "phase4",
+        "formation_slug": "developpeuse-web-web-mobile",
+        "created_at": "2018-11-27",
+        "links": {
+            "front": {
+                "repository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
+                "project": "http://promo03.code-academie.fr"
+            }
+        },
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }],
+        "skills": ["laravel", "javascript", "bootstrap"]
+    },
+    {
+        "title": "TER sur la cyberviolence",
+        "order": 1,
+        "image": "ter-la-cyberviolence.webp",
+        "image_title": null,
+        "description": "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante.",
+        "link_project": "media/documents/ter-la-cyberviolence.pdf",
+        "is_favorite": false,
+        "is_display": true,
+        "status": "phase4",
+        "formation_slug": "licence-de-psychologie",
+        "created_at": "2014-06-01",
+        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+    }
+]

@@ -9,6 +9,7 @@ class Passion extends Model
 {
     protected $fillable = [
         'name',
+        'slug',
         'icon',
         'text',
     ];
@@ -21,7 +22,7 @@ class Passion extends Model
             if (! empty($passion->slug)) {
                 return;
             }
-            $passion->slug = Str::slug($passion->title, '-');
+            $passion->slug = Str::slug($passion->name, '-');
 
             // if (! empty($project->page_title)) {
             //     return;
