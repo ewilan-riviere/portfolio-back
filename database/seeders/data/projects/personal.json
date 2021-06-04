@@ -9,7 +9,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-05-19",
         "links": {
             "back": {
@@ -31,7 +32,8 @@
         "is_favorite": false,
         "is_display": false,
         "status": "phase1",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-11-20",
         "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
     },
@@ -43,7 +45,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-10-30",
         "links": {
             "front": {
@@ -61,7 +64,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase1",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-10-24",
         "links": {
             "front": {
@@ -79,7 +83,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2021-01-03",
         "links": {
             "back": {
@@ -101,7 +106,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase1",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-11-05",
         "links": {
             "back": {
@@ -121,7 +127,8 @@
         "is_favorite": false,
         "is_display": false,
         "status": "phase2",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-09-19",
         "links": {
             "front": {
@@ -138,7 +145,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-06-20",
         "links": {
             "front": {
@@ -156,7 +164,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-06-27",
         "links": {
             "front": {
@@ -174,7 +183,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "personnel",
+        "formation": null,
+        "experience_type": "personnel",
         "created_at": "2020-06-27",
         "links": {
             "front": {

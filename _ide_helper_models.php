@@ -166,6 +166,7 @@ namespace App\Models{
  *
  * @property int $id
  * @property string|null $name
+ * @property string|null $slug
  * @property string|null $icon
  * @property string|null $text
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -177,6 +178,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Passion whereIcon($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Passion whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Passion whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Passion whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Passion whereText($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Passion whereUpdatedAt($value)
  */
@@ -272,6 +274,7 @@ namespace App\Models{
  * @property int|null $skill_category_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read string|null $image_path
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects

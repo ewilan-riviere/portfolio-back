@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources;
 
+use App\Providers\SvgProvider;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class SkillResource extends JsonResource
@@ -26,7 +27,7 @@ class SkillResource extends JsonResource
             'details'         => $this->details,
             'isFavorite'      => $this->is_favorite,
             'rating'          => $this->rating,
-            'image'           => $this->image,
+            'image'           => $this->image ? SvgProvider::icon($request, $this->resource) : null,
             'blockquote'      => [
                 'text'  => $this->blockquote_text,
                 'who'   => $this->blockquote_who,

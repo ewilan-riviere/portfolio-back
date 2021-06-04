@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormationsExtraTable extends Migration
+class CreateExperiencesTypesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class CreateFormationsExtraTable extends Migration
      */
     public function up()
     {
-        Schema::create('formations_extra', function (Blueprint $table) {
+        Schema::create('experience_types', function (Blueprint $table) {
             $table->id();
-            $table->string('name')->nullable();
-            $table->string('link')->nullable();
+            $table->string('title');
+            $table->string('slug')->nullable();
             $table->timestamps();
-
-            $table->foreignId('formation_id')->nullable();
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
         });
     }
 
@@ -31,6 +28,6 @@ class CreateFormationsExtraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formations_extra');
+        Schema::dropIfExists('experience_types');
     }
 }

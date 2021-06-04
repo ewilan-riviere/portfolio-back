@@ -52,14 +52,15 @@ class SkillSeeder extends Seeder
             $image = $skill->image;
             try {
                 $image = File::get(database_path("seeders/media/skills/$image"));
+
+                if ($image) {
+                    $skillCreated->addMediaFromString($image)
+                        ->setName($skillCreated->slug)
+                        ->setFileName($skillCreated->slug.'.svg')
+                        ->toMediaCollection('skills', 'skills');
+                }
             } catch (\Throwable $th) {
                 //throw $th;
-            }
-            if ($image) {
-                $skillCreated->addMediaFromString($image)
-                    ->setName($skillCreated->slug)
-                    ->setFileName($skillCreated->slug.'.svg')
-                    ->toMediaCollection('skills', 'skills');
             }
         }
     }

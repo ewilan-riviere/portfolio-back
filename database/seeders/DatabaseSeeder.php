@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         $this->clearAllMediaCollection();
         $this->call(UserSeeder::class);
         $this->call(CategorySkillSeeder::class);
+        $this->call(ExperienceTypeSeeder::class);
         $this->call(FormationsSeeder::class);
         $this->call(DeveloperSeeder::class);
         $this->call(SkillSeeder::class);

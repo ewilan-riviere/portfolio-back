@@ -49,12 +49,12 @@ class Skill extends Model implements HasMedia
 
     public function getImageAttribute(): string | null
     {
-        $path = $this->getFirstMediaPath('skills');
-        if ($path) {
-            return file_get_contents($path);
-        }
+        return $this->getFirstMediaUrl('skills') ?? null;
+    }
 
-        return null;
+    public function getImagePathAttribute(): string | null
+    {
+        return $this->getFirstMediaPath('skills') ?? null;
     }
 
     public function projects(): BelongsToMany

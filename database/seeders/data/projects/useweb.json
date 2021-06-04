@@ -7,7 +7,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase4",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2019-10-01",
         "links": {
             "back": {
@@ -31,7 +32,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2020-01-03",
         "links": {
             "back": {
@@ -54,7 +56,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2020-05-12",
         "links": {
             "back": {
@@ -77,7 +80,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase2",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2020-09-01",
         "links": {
             "front": {
@@ -106,7 +110,8 @@
         "is_favorite": false,
         "is_display": false,
         "status": "phase1",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2019-04-01",
         "links": {
             "back": {
@@ -129,7 +134,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase2",
-        "formation_slug": "useweb",
+        "formation": "useweb",
+        "experience_type": "entreprise",
         "created_at": "2020-10-19",
         "links": {
             "front": {

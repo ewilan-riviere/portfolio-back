@@ -72,7 +72,7 @@
         "color_text_dark": false,
         "subtitle": "Librairie CSS",
         "details": "Une librairie utilitaire pour écrire le CSS presque entièrement en ligne",
-        "is_favorite": false,
+        "is_favorite": true,
         "rating": 3,
         "image": null,
         "blockquote_text": null,

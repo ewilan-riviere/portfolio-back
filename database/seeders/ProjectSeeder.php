@@ -10,6 +10,7 @@ use App\Models\Formation;
 use App\Models\ProjectLink;
 use App\Enums\ProjectStatus;
 use App\Enums\ProjectLinkType;
+use App\Models\ExperienceType;
 use Illuminate\Database\Seeder;
 use App\Models\DeveloperProject;
 
@@ -26,19 +27,19 @@ class ProjectSeeder extends Seeder
         $personal = json_decode(File::get(database_path('seeders/data/projects/personal.json')));
         $useweb = json_decode(File::get(database_path('seeders/data/projects/useweb.json')));
 
-        $school_formation = Formation::whereSlug('licence-de-psychologie')->first();
-        $dev_web_formation = Formation::whereSlug('developpeuse-web-web-mobile')->first();
-        $poec_formation = Formation::whereSlug('poec-java')->first();
-        $cda_formation = Formation::whereSlug('conceptrice-developpeuse-dapplications')->first();
-        $personnel_formation = Formation::whereSlug('personnel')->first();
-        $useweb_formation = Formation::whereSlug('useweb')->first();
+        // $school_formation = Formation::whereSlug('licence-de-psychologie')->first();
+        // $dev_web_formation = Formation::whereSlug('developpeuse-web-web-mobile')->first();
+        // $poec_formation = Formation::whereSlug('poec-java')->first();
+        // $cda_formation = Formation::whereSlug('conceptrice-developpeuse-dapplications')->first();
+        // $personnel_formation = Formation::whereSlug('personnel')->first();
+        // $useweb_formation = Formation::whereSlug('useweb')->first();
 
-        $this->generate($school, $school_formation);
-        $this->generate($personal, $personnel_formation);
-        $this->generate($useweb, $useweb_formation);
+        $this->generate($school);
+        $this->generate($personal);
+        $this->generate($useweb);
     }
 
-    public function generate(array $projects, Formation $formation)
+    public function generate(array $projects)
     {
         foreach ($projects as $key => $project) {
             $projectCreated = Project::create([
@@ -63,10 +64,18 @@ class ProjectSeeder extends Seeder
                     $projectLink->save();
                 }
             }
-            $formation_slug = $project->formation_slug;
+
+            $formation_slug = $project->formation;
             $formation = Formation::whereSlug($formation_slug)->first();
             if ($formation) {
                 $projectCreated->formation()->associate($formation);
+                $projectCreated->save();
+            }
+
+            $experience_type_slug = $project->experience_type;
+            $experience_type = ExperienceType::whereSlug($experience_type_slug)->first();
+            if ($experience_type) {
+                $projectCreated->experienceType()->associate($experience_type);
                 $projectCreated->save();
             }
 

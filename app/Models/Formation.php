@@ -3,11 +3,11 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
-use App\Enums\FormationType;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Formation extends Model implements HasMedia
 {
@@ -30,7 +30,6 @@ class Formation extends Model implements HasMedia
     protected $casts = [
         'is_finished' => 'boolean',
         'is_display'  => 'boolean',
-        'type'        => FormationType::class,
     ];
 
     public static function boot()
@@ -58,5 +57,10 @@ class Formation extends Model implements HasMedia
     public function projects(): HasMany
     {
         return $this->hasMany(Project::class)->whereIsDisplay(true);
+    }
+
+    public function experienceType(): BelongsTo
+    {
+        return $this->belongsTo(ExperienceType::class);
     }
 }

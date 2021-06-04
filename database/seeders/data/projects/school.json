@@ -8,7 +8,8 @@
         "link_repository": "https://github.com/ewilan-riviere/zergling-evolution",
         "link_project": null,
         "font": "media/fonts/starcraft-normal.ttf",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
@@ -33,7 +34,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "created_at": "2018-11-07",
         "links": {
             "front": {
@@ -55,7 +57,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "created_at": "2018-11-28",
         "links": {
             "front": {
@@ -77,7 +80,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "created_at": "2018-12-06",
         "links": {
             "front": {
@@ -99,7 +103,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase2",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "created_at": "2019-04-01",
         "links": {
             "back": {
@@ -132,7 +137,8 @@
         "is_favorite": true,
         "is_display": true,
         "status": "phase4",
-        "formation_slug": "developpeuse-web-web-mobile",
+        "formation": "developpeuse-web-web-mobile",
+        "experience_type": "ecole",
         "created_at": "2018-11-27",
         "links": {
             "front": {
@@ -153,7 +159,8 @@
         "is_favorite": false,
         "is_display": true,
         "status": "phase4",
-        "formation_slug": "licence-de-psychologie",
+        "formation": "licence-de-psychologie",
+        "experience_type": "ecole",
         "created_at": "2014-06-01",
         "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
     }

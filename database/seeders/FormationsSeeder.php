@@ -4,10 +4,8 @@ namespace Database\Seeders;
 
 use File;
 use App\Models\Formation;
-use App\Enums\FormationType;
 use App\Models\FormationExtra;
 use Illuminate\Database\Seeder;
-use App\Enums\FormationExtraType;
 
 class FormationsSeeder extends Seeder
 {
@@ -27,7 +25,6 @@ class FormationsSeeder extends Seeder
                 'color'                    => $formationData->color ?? '#000000',
                 'color_text_white'         => $formationData->color_text_white ?? false,
                 'resume'                   => $formationData->resume ?? null,
-                'type'                     => $formationData->type ?? null, // $formationData) ? FormationType::make($formationData['type']) : null,
                 'level'                    => $formationData->level ?? null,
                 'date_begin'               => $formationData->date_begin ?? null,
                 'date_end'                 => $formationData->date_end ?? null,
@@ -38,21 +35,18 @@ class FormationsSeeder extends Seeder
             $extra = FormationExtra::firstOrcreate([
                 'name'             => $formationData->place ?? null,
                 'link'             => $formationData->place_link ?? null,
-                'type'             => FormationExtraType::PLACE(),
             ]);
             $extra->formation()->associate($formation);
             $extra->save();
             $extra = FormationExtra::firstOrcreate([
                 'name'             => $formationData->vocational ?? null,
                 'link'             => $formationData->vocational_link ?? null,
-                'type'             => FormationExtraType::VOCATIONAL(),
             ]);
             $extra->formation()->associate($formation);
             $extra->save();
             $extra = FormationExtra::firstOrcreate([
                 'name'             => $formationData->promo ?? null,
                 'link'             => $formationData->promo_link ?? null,
-                'type'             => FormationExtraType::PROMO(),
             ]);
             $extra->formation()->associate($formation);
             $extra->save();

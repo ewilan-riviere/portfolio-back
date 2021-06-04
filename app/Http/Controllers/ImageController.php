@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Spatie\Image\Image;
 use Spatie\Image\Manipulations;
 use Spatie\Image\Exceptions\InvalidManipulation;
+use Intervention\Image\Exception\NotReadableException;
 
 class ImageController extends Controller
 {
@@ -16,26 +17,43 @@ class ImageController extends Controller
      *
      * @return mixed
      */
-    public static function thumbnail($size, $path, $crop = true)
+    public static function thumbnail($method, $size, $path)
     {
+        switch ($method) {
+            case 'crop':
+                $method = Manipulations::FIT_CROP;
+                break;
+
+            default:
+                $method = Manipulations::FIT_CROP;
+                break;
+        }
+
         $dimensions = config("image.thumbnails.$size");
 
         if (! $dimensions) {
             return abort(404);
         }
 
-        $thumbnail = get_thumbnail($path, $size);
-        if (! $thumbnail['resolved']) {
-            if ($crop) {
-                Image::load("$path")
-                    ->fit(Manipulations::FIT_MAX, $dimensions['width'], $dimensions['height'])
-                    ->save($thumbnail['filepath']);
-            } else {
-                Image::load("$path")
-                    ->save($thumbnail['filepath']);
+        $filename = md5("$size/$path").'.'.pathinfo($path, PATHINFO_EXTENSION);
+        $thumbnail = "storage/cache/$filename";
+
+        if (! file_exists($thumbnail)) {
+            try {
+                Image::load("storage/$path")
+                    ->useImageDriver(config('image.driver'))
+                    ->fit($method, $dimensions['width'],
+                        $dimensions['height'])
+                    ->optimize()
+                    ->save($thumbnail);
+            } catch (NotReadableException $e) {
+                return abort(404);
             }
         }
 
-        return response()->file($thumbnail['filepath']);
+        return response()
+            ->file($thumbnail)
+            ->setMaxAge(31536000)
+            ->setExpires(date_create()->modify('+1 years'));
     }
 }

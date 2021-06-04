@@ -21,6 +21,13 @@ if (! function_exists('getPath')) {
     }
 }
 
+if (! function_exists('generate_image')) {
+    function generate_image($value, $size = 'medium', $method = 'crop')
+    {
+        return $value ? image_cache($value, $size, $method) : null;
+    }
+}
+
 if (! function_exists('image_cache')) {
     /**
      * Resolve image url.
@@ -30,7 +37,7 @@ if (! function_exists('image_cache')) {
      *
      * @return string
      */
-    function image_cache($path, $size, $crop = true)
+    function image_cache($path, $size, $method = 'crop')
     {
         if (false !== strpos($path, 'http')) {
             return $path;
@@ -39,7 +46,7 @@ if (! function_exists('image_cache')) {
         $thumbnail = get_thumbnail($path, $size);
 
         if (! $thumbnail['resolved']) {
-            return asset("cache/resolve/$size/$path");
+            return asset("cache/resolve/$method/$size/$path");
         }
 
         return asset($thumbnail['filepath']);

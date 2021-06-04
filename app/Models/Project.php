@@ -76,4 +76,9 @@ class Project extends Model implements HasMedia
     {
         return $this->hasMany(ProjectLink::class);
     }
+
+    public function experienceType(): BelongsTo
+    {
+        return $this->belongsTo(ExperienceType::class);
+    }
 }

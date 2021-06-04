@@ -27,6 +27,10 @@ class CreateFormationsTable extends Migration
             $table->date('date_end')->nullable();
             $table->boolean('is_finished')->default(true);
             $table->boolean('is_display')->default(false);
+
+            $table->foreignId('experience_type_id')->nullable();
+            $table->foreign('experience_type_id')->references('id')->on('experience_types')->onDelete('cascade');
+
             $table->timestamps();
         });
     }
