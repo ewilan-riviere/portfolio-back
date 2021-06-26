@@ -14,6 +14,6 @@ yarn-error.log
 # public/css/app.css
 # public/js/app.js
 # public/js/app.js.LICENSE.txt
-.php_cs.cache
+.php-cs-fixer.cache
 public/css/*
 public/js/*

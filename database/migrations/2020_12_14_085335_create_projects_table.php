@@ -18,7 +18,7 @@ class CreateProjectsTable extends Migration
             $table->string('slug')->nullable()->unique();
             $table->string('title');
             $table->integer('order')->nullable();
-            $table->text('description')->nullable();
+            $table->json('description')->nullable();
             $table->boolean('is_display')->default(false);
             $table->boolean('is_favorite')->default(0);
             $table->string('status')->nullable();

@@ -29,4 +29,11 @@ class FormationController extends Controller
 
         return FormationResource::collection($formations);
     }
+
+    public function show(string $formation_slug)
+    {
+        $formation = Formation::whereSlug($formation_slug)->firstOrFail();
+
+        return FormationResource::make($formation);
+    }
 }

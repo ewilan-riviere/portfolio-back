@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFormationsExtraTable extends Migration
+class CreateFormationsLinksTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,11 @@ class CreateFormationsExtraTable extends Migration
      */
     public function up()
     {
-        Schema::create('formations_extra', function (Blueprint $table) {
+        Schema::create('formations_links', function (Blueprint $table) {
             $table->id();
             $table->string('name')->nullable();
             $table->string('link')->nullable();
+            $table->string('type')->nullable();
             $table->timestamps();
 
             $table->foreignId('formation_id')->nullable();
@@ -31,6 +32,6 @@ class CreateFormationsExtraTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formations_extra');
+        Schema::dropIfExists('formations_links');
     }
 }

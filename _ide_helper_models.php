@@ -88,6 +88,32 @@ namespace App\Models{
 
 namespace App\Models{
 /**
+ * App\Models\ExperienceType
+ *
+ * @property int $id
+ * @property string $title
+ * @property string|null $slug
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Formation[] $formations
+ * @property-read int|null $formations_count
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property-read int|null $projects_count
+ * @method static \Database\Factories\ExperienceTypeFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ExperienceType whereUpdatedAt($value)
+ */
+	class ExperienceType extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
  * App\Models\Formation
  *
  * @property int $id
@@ -97,15 +123,17 @@ namespace App\Models{
  * @property string $color
  * @property int $color_text_white
  * @property string|null $resume
- * @property \App\Enums\FormationType|null $type
+ * @property string|null $type
  * @property string|null $level
  * @property string|null $date_begin
  * @property string|null $date_end
  * @property bool $is_finished
  * @property bool $is_display
+ * @property int|null $experience_type_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FormationExtra[] $extras
+ * @property-read \App\Models\ExperienceType|null $experienceType
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FormationLink[] $extras
  * @property-read int|null $extras_count
  * @property-read mixed $image
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
@@ -121,6 +149,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDateBegin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDateEnd($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Formation whereExperienceTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsDisplay($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsFinished($value)
@@ -136,28 +165,26 @@ namespace App\Models{
 
 namespace App\Models{
 /**
- * App\Models\FormationExtra
+ * App\Models\FormationLink
  *
  * @property int $id
  * @property string|null $name
  * @property string|null $link
- * @property \App\Enums\FormationExtraType|null $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int|null $formation_id
  * @property-read \App\Models\Formation|null $formation
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra query()
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereFormationId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereLink($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|FormationExtra whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink query()
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereFormationId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereLink($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereUpdatedAt($value)
  */
-	class FormationExtra extends \Eloquent {}
+	class FormationLink extends \Eloquent {}
 }
 
 namespace App\Models{
@@ -193,18 +220,21 @@ namespace App\Models{
  * @property string|null $slug
  * @property string $title
  * @property int|null $order
- * @property string|null $description
+ * @property array|null $description
  * @property bool $is_display
  * @property bool $is_favorite
  * @property \App\Enums\ProjectStatus|null $status
+ * @property int|null $experience_type_id
  * @property int|null $formation_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Developer[] $developers
  * @property-read int|null $developers_count
+ * @property-read \App\Models\ExperienceType|null $experienceType
  * @property-read \App\Models\Formation|null $formation
  * @property-read mixed $image
  * @property-read mixed $image_title
+ * @property-read array $translations
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectLink[] $projectLinks
@@ -216,6 +246,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Project query()
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereExperienceTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereFormationId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsDisplay($value)

@@ -4,8 +4,10 @@
         "order": 1,
         "image": "portfolio.webp",
         "image_title": null,
-        "description": "Réalisation de mon portfolio pour présenter mes projets personnels et professionnels et les technos que j'apprécie.",
-        "font": "media/fonts/morpheus.ttf",
+        "description": {
+            "en": "English translation!",
+            "fr": "Réalisation de mon portfolio pour présenter mes projets personnels et professionnels et les technos que j'apprécie."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
@@ -28,7 +30,10 @@
     {
         "title": "Fanfic",
         "image_title": null,
-        "description": null,
+        "description": {
+            "en": "",
+            "fr": null
+        },
         "is_favorite": false,
         "is_display": false,
         "status": "phase1",
@@ -41,7 +46,10 @@
         "title": "Skyscale",
         "image": "skyscale.webp",
         "image_title": null,
-        "description": "Une petite application connectée à l'API du MMO Guild Wars 2 pour présenter des informations sur les compte de mon équipe.",
+        "description": {
+            "en": "",
+            "fr": "Une petite application connectée à l'API du MMO Guild Wars 2 pour présenter des informations sur les compte de mon équipe."
+        },
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
@@ -60,7 +68,10 @@
         "title": "Roazhon Star",
         "image": "roazhon-star.webp",
         "image_title": null,
-        "description": "Project d'application web et mobile pour récupérer les horaires de bus du STAR de Rennes.",
+        "description": {
+            "en": "",
+            "fr": "Project d'application web et mobile pour récupérer les horaires de bus du STAR de Rennes."
+        },
         "is_favorite": false,
         "is_display": true,
         "status": "phase1",
@@ -79,7 +90,10 @@
         "title": "Bookshelves",
         "image": "bookshelves.webp",
         "image_title": null,
-        "description": "Projet d'application web et mobile pour présenter des eBooks en récupérant leurs metadata directement depuis les fichiers EPUB.",
+        "description": {
+            "en": "",
+            "fr": "Projet d'application web et mobile pour présenter des eBooks en récupérant leurs metadata directement depuis les fichiers EPUB."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
@@ -102,7 +116,10 @@
         "title": "MarkdownThis",
         "image": "markdown-this.webp",
         "image_title": null,
-        "description": "Projet de prise de note semblable à Keep mais en Markdown pour facilement sauvegarder du code ou faire une mise en forme simple.",
+        "description": {
+            "en": "",
+            "fr": "Projet de prise de note semblable à Keep mais en Markdown pour facilement sauvegarder du code ou faire une mise en forme simple."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase1",
@@ -123,7 +140,10 @@
         "title": "Fonts Book",
         "image": "fonts-book.webp",
         "image_title": null,
-        "description": null,
+        "description": {
+            "en": "",
+            "fr": null
+        },
         "is_favorite": false,
         "is_display": false,
         "status": "phase2",
@@ -141,7 +161,10 @@
         "title": "Markdown Interpreter",
         "image": "md-interpreter.webp",
         "image_title": null,
-        "description": "Petit projet pour facilement convertir du Markdown vers de l'HTML ou l'inverse.",
+        "description": {
+            "en": "",
+            "fr": "Petit projet pour facilement convertir du Markdown vers de l'HTML ou l'inverse."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
@@ -160,7 +183,10 @@
         "title": "Memorandum",
         "image": "memorandum.webp",
         "image_title": null,
-        "description": "Documentation personnelle sur mes projets et les technos que j'apprécie.",
+        "description": {
+            "en": "",
+            "fr": "Documentation personnelle sur mes projets et les technos que j'apprécie."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
@@ -179,7 +205,10 @@
         "title": "Vue Tailwind Screen Helper",
         "image": "vue-tailwind-screen-helper.webp",
         "image_title": null,
-        "description": "Plugin réalisé pour Tailwind CSS afin d'afficher dans quel breakpoint on se trouve.",
+        "description": {
+            "en": "",
+            "fr": "Plugin réalisé pour Tailwind CSS afin d'afficher dans quel breakpoint on se trouve."
+        },
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",

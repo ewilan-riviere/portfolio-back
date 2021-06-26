@@ -16,11 +16,12 @@ class CreateFormationsTable extends Migration
         Schema::create('formations', function (Blueprint $table) {
             $table->id();
             $table->string('slug')->nullable()->unique();
-            $table->string('title')->nullable();
+            $table->json('title')->nullable();
             $table->string('certificate')->nullable();
             $table->string('color')->default('#000000');
             $table->boolean('color_text_white')->default(false);
-            $table->text('resume')->nullable();
+            $table->json('resume')->nullable();
+            $table->json('description')->nullable();
             $table->string('type')->nullable();
             $table->string('level')->nullable();
             $table->date('date_begin')->nullable();

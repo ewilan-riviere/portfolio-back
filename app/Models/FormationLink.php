@@ -2,20 +2,20 @@
 
 namespace App\Models;
 
-use App\Enums\FormationExtraType;
+use App\Enums\FormationLinkType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class FormationExtra extends Model
+class FormationLink extends Model
 {
-    protected $table = 'formations_extra';
+    protected $table = 'formations_links';
     protected $fillable = [
         'name',
         'link',
         'type',
     ];
     protected $casts = [
-        'type' => FormationExtraType::class,
+        'type' => FormationLinkType::class,
     ];
 
     public function formation(): BelongsTo

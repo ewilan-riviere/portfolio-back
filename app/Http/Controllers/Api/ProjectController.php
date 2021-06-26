@@ -3,10 +3,10 @@
 namespace App\Http\Controllers\Api;
 
 use App\Models\Project;
+use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Resources\ProjectResource;
 use App\Http\Resources\ProjectCollection;
-use Symfony\Component\HttpFoundation\Request;
 
 class ProjectController extends Controller
 {
@@ -58,5 +58,10 @@ class ProjectController extends Controller
             ->firstOrFail();
 
         return ProjectResource::make($project);
+    }
+
+    public function count()
+    {
+        return Project::count();
     }
 }

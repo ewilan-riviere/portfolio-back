@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -12,6 +13,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class Formation extends Model implements HasMedia
 {
     use InteractsWithMedia;
+    use HasTranslations;
+
+    public $translatable = ['title', 'resume', 'description'];
 
     protected $fillable = [
         'title',
@@ -21,6 +25,7 @@ class Formation extends Model implements HasMedia
         'color',
         'color_text_white',
         'resume',
+        'description',
         'level',
         'date_begin',
         'date_end',
@@ -44,14 +49,19 @@ class Formation extends Model implements HasMedia
         parent::boot();
     }
 
-    public function getImageAttribute()
+    public function getLogoAttribute()
     {
-        return $this->getFirstMedia('formations')->getPath();
+        return $this->getFirstMedia('logos')?->getPath();
     }
 
-    public function extras(): HasMany
+    public function getImageAttribute()
     {
-        return $this->hasMany(FormationExtra::class);
+        return $this->getFirstMedia('banners')?->getFullUrl();
+    }
+
+    public function links(): HasMany
+    {
+        return $this->hasMany(FormationLink::class);
     }
 
     public function projects(): HasMany

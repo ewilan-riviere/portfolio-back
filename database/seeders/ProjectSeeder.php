@@ -45,13 +45,19 @@ class ProjectSeeder extends Seeder
             $projectCreated = Project::create([
                 'title'              => $project->title ?? null,
                 'order'              => $project->order ?? null,
-                'description'        => $project->description ?? null,
                 'is_favorite'        => $project->is_favorite ?? null,
                 'is_display'         => $project->is_display ?? null,
                 'status'             => $project->status ?? null, // ProjectStatus::make(strtoupper($project['status'])) / ProjectStatus::make(strtoupper('phase1'))
                 'created_at'         => $project->created_at ?? null,
                 'updated_at'         => $project->updated_at ?? null,
             ]);
+            if (property_exists($project, 'description')) {
+                $projectCreated->description = [
+                    'fr' => $project->description?->fr ?? null,
+                    'en' => $project->description?->en ?? null,
+                ];
+                $projectCreated->save();
+            }
             if (property_exists($project, 'links')) {
                 foreach ($project->links as $key => $link) {
                     $projectLink = ProjectLink::create([

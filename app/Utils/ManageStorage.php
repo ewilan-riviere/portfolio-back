@@ -6,7 +6,7 @@ use File;
 
 class ManageStorage
 {
-    const DIRECTORIES = [
+    public const DIRECTORIES = [
         'documents',
         'projects',
         'icons',

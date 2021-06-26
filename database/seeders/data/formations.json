@@ -1,86 +1,136 @@
 [
     {
-        "title": "Licence de Psychologie",
+        "title": {
+            "en": "Psychology bachelor",
+            "fr": "Licence de Psychologie"
+        },
+        "slug": "licence-de-psychologie",
+        "image": "rennes-2.webp",
         "certificate": null,
-        "image": "licence-de-psychologie.svg",
         "color": "#000000",
         "color_text_white": true,
-        "resume": "Une formation en psychologie orientée vers le développement de l'enfant et de l'adolescent.",
+        "resume": {
+            "en": "A background in psychology with a focus on child and adolescent development.",
+            "fr": "Une formation en psychologie orientée vers le développement de l'enfant et de l'adolescent."
+        },
+        "description": {
+            "en": "A background in psychology with a focus on child and adolescent development.",
+            "fr": "Une formation en psychologie orientée vers le développement de l'enfant et de l'adolescent."
+        },
         "experience_type_id": "ecole",
-        "place": "Université de Rennes 2",
-        "place_link": "https://www.univ-rennes2.fr/",
-        "vocational": null,
-        "vocational_link": null,
-        "promo": "Promo 2011",
-        "promo_link": null,
         "level": "Bac +3",
         "date_begin": "2011-09-01",
         "date_end": "2014-06-01",
         "is_finished": true,
-        "is_display": true
+        "is_display": true,
+        "extra": {
+            "place": {
+                "name": "Université de Rennes 2",
+                "link": "https://www.univ-rennes2.fr"
+            }
+        }
     },
     {
-        "title": "Développeuse web, web mobile",
+        "title": {
+            "en": "Web & mobile developer",
+            "fr": "Développeuse web, web mobile"
+        },
+        "slug": "developpeuse-web-web-mobile",
+        "image": "code-academie.webp",
         "certificate": null,
-        "image": "developpeuse-web-web-mobile.svg",
         "color": "#3e979b",
         "color_text_white": true,
-        "resume": "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web. Donne l'équivalent de bac +2 lors de l'obtention du titre, idéal dans le cas d'une réorientation professionn elle. Basée sur l'apprentissage en auto-didacte mais guidée par des formateurs compétents qui donnent les clés pour savoir quoi rechercher pour trouver nos propres solutions. L'aspect du travail en équipe et de l'entraide est un des points les plus importants durant cette formation.",
+        "resume": {
+            "en": "A high quality training, launched within the framework of the “grande école du numérique”, which allows to train in 8 months to the basics and to some advanced notions of web development.",
+            "fr": "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web."
+        },
+        "description": {
+            "en": "A high quality training, launched within the framework of the “grande école du numérique”, which allows to train in 8 months to the basics and to some advanced notions of web development. Gives the equivalent of bac +2 when obtaining the title, ideal in the case of a reorientation professionn it. Based on self-taught learning but guided by competent trainers who give the keys to know what to look for to find our own solutions. The aspect of teamwork and mutual aid is one of the most important points during this training.",
+            "fr": "Une formation de grande qualité, lancée dans le cadre de la grande école du numérique, qui permet de se former en 8 mois aux bases et à certaines notions avancées du développement web. Donne l'équivalent de bac +2 lors de l'obtention du titre, idéal dans le cas d'une réorientation professionn elle. Basée sur l'apprentissage en auto-didacte mais guidée par des formateurs compétents qui donnent les clés pour savoir quoi rechercher pour trouver nos propres solutions. L'aspect du travail en équipe et de l'entraide est un des points les plus importants durant cette formation."
+        },
         "experience_type_id": "ecole",
-        "place": "Code Académie",
-        "place_link": "http://code-academie.fr/",
-        "vocational": null,
-        "vocational_link": null,
-        "promo": "Promo 3",
-        "promo_link": "http://promo03.code-academie.fr/",
         "level": "Bac +2",
         "date_begin": "2018-09-01",
         "date_end": "2019-05-01",
         "is_finished": true,
-        "is_display": true
+        "is_display": true,
+        "extra": {
+            "place": {
+                "name": "Code Académie",
+                "link": "http://code-academie.fr"
+            },
+            "promo": {
+                "name": "Promo 3",
+                "link": "http://promo03.code-academie.fr"
+            }
+        }
     },
     {
         "title": "POEC Java",
+        "slug": "poec-java",
+        "image": "eni-ecole.webp",
         "certificate": null,
-        "image": "poec-java.svg",
         "color": "#004982",
         "color_text_white": true,
-        "resume": "Une préparation officielle à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs.",
+        "resume": {
+            "en": "An official preparation to the collective job allowing to learn how to develop in Java 8, starting from the historical bases and the OOP, going to Spring, passing by the development in layers. Three intense but instructive months.",
+            "fr": "Une préparation officielle à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs."
+        },
+        "description": {
+            "en": "An official preparation to the collective job allowing to learn how to develop in Java 8, starting from the historical bases and the OOP, going to Spring, passing by the development in layers. Three intense but instructive months.",
+            "fr": "Une préparation officielle à l'emploi collective permettant d'apprendre à développer en Java 8, partant des bases historiques et de la POO en allant jusqu'à Spring, en passant par le développement en couches. Trois mois intenses mais instructifs."
+        },
         "experience_type_id": "ecole",
-        "place": "ENI Ecole Informatique",
-        "place_link": "https://www.eni-ecole.fr/",
-        "vocational": null,
-        "vocational_link": null,
-        "promo": null,
-        "promo_link": null,
-        "level": "Préparation opérationnelle à l\"emploi en Java",
+        "level": "3 mois",
         "date_begin": "2019-06-01",
         "date_end": "2019-09-01",
         "is_finished": true,
-        "is_display": true
+        "is_display": true,
+        "extra": {
+            "place": {
+                "name": "ENI Ecole Informatique",
+                "link": "https://www.eni-ecole.fr/"
+            }
+        }
     },
     {
-        "title": "Conceptrice Développeuse d\"Applications",
+        "title": {
+            "en": "Developer Designer of Applications",
+            "fr": "Conceptrice Développeuse d'Applications"
+        },
+        "slug": "conceptrice-developpeuse-dapplications",
+        "image": "useweb.webp",
         "certificate": null,
-        "image": "conceptrice-developpeuse-dapplications.svg",
         "color": "#4981be",
         "color_text_white": true,
-        "resume": "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb. Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS (VueJS) et un back-end en Laravel. Mon rôle est généralement de travailler sur la partie front-end mais il m'arrive de devoir travailler également sur le back-end, ou de réaliser une application entièrement. Le plus souvent je travaille en équipe restreinte de trois personnes, je suis suivie par mon équipe pour les questions techniques et le manager pour les questions d'entreprise. L'école me forme sur plusieurs technologies : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android. Des évaluations sont faites sur mes compétences pour obtenir le titre de conceptrice développeuse d'applications (bac+4).",
+        "resume": {
+            "en": "A vocational course for the CDA title. 25% of the time per month at the ENI school and 75% of the time at UseWeb. This company creates websites for clients, with a front-end in NuxtJS and a back-end in Laravel. At school, I studied: project management, web server management, Java EE, ASP.net, cross-platform, analysis and design, Symfony, Android.",
+            "fr": "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb. Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS et un back-end en Laravel. À l'école, j'ai pu étudier : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android."
+        },
+        "description": {
+            "en": "A vocational training for the CDA title. 25% of the time per month at the ENI school and 75% of the time at UseWeb. This company creates websites for clients, with a front-end in NuxtJS (VueJS) and a back-end in Laravel. My role is usually to work on the front-end but sometimes I have to work on the back-end as well, or to build an entire application. Most of the time I work in a small team of three people, I am followed by my team for the technical questions and the manager for the business questions. The school trains me on several technologies: project management, managing a web server, Java EE, ASP.net, cross-platform, analysis and design, Symfony, Android. My skills are evaluated to obtain the title of application developer (bac+4).",
+            "fr": "Une formation en alternance pour le titre de CDA. 25% de temps par mois à l'école ENI et 75% de temps à l'entreprise UseWeb. Cette entreprise réalise des sites web pour des clients, avec un front-end en NuxtJS (VueJS) et un back-end en Laravel. Mon rôle est généralement de travailler sur la partie front-end mais il m'arrive de devoir travailler également sur le back-end, ou de réaliser une application entièrement. Le plus souvent je travaille en équipe restreinte de trois personnes, je suis suivie par mon équipe pour les questions techniques et le manager pour les questions d'entreprise. L'école me forme sur plusieurs technologies : gestion de projet, gérer un serveur web, Java EE, ASP.net, cross-platform, analyse et conception, Symfony, Android. Des évaluations sont faites sur mes compétences pour obtenir le titre de conceptrice développeuse d'applications (bac+4)."
+        },
         "experience_type_id": "alternance",
-        "place": "Useweb",
-        "place_link": "https://www.useweb.fr/",
-        "vocational": "ENI Ecole Informatique",
-        "vocational_link": "https://www.eni-ecole.fr/",
-        "promo": null,
-        "promo_link": null,
         "level": "Bac +4",
         "date_begin": "2019-10-01",
         "date_end": "2021-06-01",
-        "is_finished": false,
-        "is_display": true
+        "is_finished": true,
+        "is_display": true,
+        "extra": {
+            "place": {
+                "name": "Useweb",
+                "link": "https://www.useweb.fr"
+            },
+            "vocational": {
+                "name": "ENI Ecole Informatique",
+                "link": "https://www.eni-ecole.fr"
+            }
+        }
     },
     {
         "title": "Useweb",
+        "slug": "useweb",
         "experience_type_id": "entreprise",
         "is_display": false,
         "date_begin": "2019-10-01"

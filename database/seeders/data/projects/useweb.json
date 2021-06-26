@@ -3,7 +3,10 @@
         "title": "Imprimerie le Galliard",
         "image": "le-galliard.webp",
         "image_title": null,
-        "description": "Projet de refonte de l'imprimerie Le Galliard située à Cesson-Sévigné.",
+        "description": {
+            "en": "",
+            "fr": "Projet de refonte de l'imprimerie Le Galliard située à Cesson-Sévigné."
+        },
         "is_favorite": false,
         "is_display": true,
         "status": "phase4",
@@ -28,7 +31,10 @@
         "title": "Secob",
         "image": "secob.webp",
         "image_title": null,
-        "description": "Refonte du site de la Secob, une entreprise de comptabilité située à Cesson-Sévigné.",
+        "description": {
+            "en": "",
+            "fr": "Refonte du site de la Secob, une entreprise de comptabilité située à Cesson-Sévigné."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase3",
@@ -52,7 +58,10 @@
         "title": "Naviso",
         "image": "naviso.webp",
         "image_title": null,
-        "description": "Refonte du site de Naviso, entreprise de gestion située à Cesson-Sévigné.",
+        "description": {
+            "en": "",
+            "fr": "Refonte du site de Naviso, entreprise de gestion située à Cesson-Sévigné."
+        },
         "is_favorite": false,
         "is_display": true,
         "status": "phase3",
@@ -76,7 +85,10 @@
         "title": "Foncière AALTO",
         "image": "fonciere-aalto.webp",
         "image_title": null,
-        "description": "Extranet et application mobile pour Foncière AALTO, entreprise de gestion de fonds située à Cesson-Sévigné.",
+        "description": {
+            "en": "",
+            "fr": "Extranet et application mobile pour Foncière AALTO, entreprise de gestion de fonds située à Cesson-Sévigné."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase2",
@@ -106,7 +118,10 @@
         "title": "Laforet",
         "image": "laforet.webp",
         "image_title": null,
-        "description": "Refonte du site de l'agence immobilière présente sur toute la France.",
+        "description": {
+            "en": "",
+            "fr": "Refonte du site de l'agence immobilière présente sur toute la France."
+        },
         "is_favorite": false,
         "is_display": false,
         "status": "phase1",
@@ -130,7 +145,10 @@
         "title": "Useweb Blog Tech",
         "image": "useweb-blog-tech.webp",
         "image_title": null,
-        "description": "Blog de Useweb pour présenter les aspects techniques de nos réalisations.",
+        "description": {
+            "en": "",
+            "fr": "Blog de Useweb pour présenter les aspects techniques de nos réalisations."
+        },
         "is_favorite": true,
         "is_display": true,
         "status": "phase2",

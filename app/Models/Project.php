@@ -6,6 +6,7 @@ use Illuminate\Support\Str;
 use App\Enums\ProjectStatus;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
+use Spatie\Translatable\HasTranslations;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
@@ -14,6 +15,9 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Project extends Model implements HasMedia
 {
     use InteractsWithMedia;
+    use HasTranslations;
+
+    public $translatable = ['description'];
 
     protected $fillable = [
         'slug',

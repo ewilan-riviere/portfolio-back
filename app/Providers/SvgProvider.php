@@ -40,4 +40,33 @@ class SvgProvider
 
         return $path_url;
     }
+
+    public static function getIcon(
+        Request $request,
+        string $slug,
+        string $originalPath
+    ): string {
+        $color = $request->color ?? '#000000';
+        if ($request->color) {
+            $color = '#'.$color;
+        }
+
+        $hexa = str_replace('#', '', $color);
+        $path = '/storage/cache/'.$slug.'-'.$hexa.'.svg';
+        $path_to_save = public_path($path);
+        $path_url = config('app.url').$path;
+        if (! File::exists($path_to_save)) {
+            $icons = Collection::fromPath(pathinfo($originalPath)['dirname']);
+            $icons->addTransformer(new Cleaner());
+
+            $requestedIcon = $icons->get($slug);
+            $requestedIcon = $requestedIcon->withAttributes([
+                'style'  => 'fill: '.$color,
+            ]);
+
+            File::put($path_to_save, $requestedIcon);
+        }
+
+        return $path_url;
+    }
 }

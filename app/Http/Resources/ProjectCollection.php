@@ -15,6 +15,8 @@ class ProjectCollection extends JsonResource
      */
     public function toArray($request)
     {
+        $lang = $request->lang ?? 'en';
+
         $developers = null;
         if ($this->developers) {
             $developers = $this->developers->count();
@@ -56,7 +58,7 @@ class ProjectCollection extends JsonResource
             'slug'                                       => $this->slug,
             'title'                                      => $this->title,
             'order'                                      => $this->order,
-            'description'                                => $this->description,
+            'description'                                => $this->getTranslation('description', $lang),
             'createdAt'                                  => $this->created_at,
             'type'                                       => $this->formation ? [
                 'title' => $this->formation->title,
