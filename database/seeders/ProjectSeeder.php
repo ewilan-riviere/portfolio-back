@@ -120,7 +120,7 @@ class ProjectSeeder extends Seeder
             try {
                 $path = database_path("seeders/media/projects/$projectCreated->slug.webp");
                 $convert = DatabaseSeeder::convertImage($path, 'webp');
-                $picture_logo = File::get($convert);
+                $picture_logo = File::get($path);
 
                 $projectCreated->addMediaFromString($picture_logo)
                     ->setName($projectCreated->slug.'_logo')

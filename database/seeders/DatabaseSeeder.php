@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->clearAllMediaCollection();
+        // $this->clearAllMediaCollection();
         $this->call(UserSeeder::class);
         $this->call(CategorySkillSeeder::class);
         $this->call(ExperienceTypeSeeder::class);
@@ -40,22 +40,22 @@ class DatabaseSeeder extends Seeder
     {
         $isSuccess = false;
         try {
-            // $projects = Project::all();
-            // $skills = Skill::all();
-            // $formations = Formation::all();
-            // $projects->each(function ($query) {
-            //     $query->clearMediaCollection('projects');
-            //     $query->clearMediaCollection('projects_title');
-            // });
-            // $skills->each(function ($query) {
-            //     $query->clearMediaCollection('skills');
-            // });
-            // $formations->each(function ($query) {
-            //     $query->clearMediaCollection('formations');
-            // });
-            // $isSuccess = true;
-            // $this->clearDirectory('media');
-            // $this->clearDirectory('temporary');
+            $projects = Project::all();
+            $skills = Skill::all();
+            $formations = Formation::all();
+            $projects->each(function ($query) {
+                $query->clearMediaCollection('projects');
+                $query->clearMediaCollection('projects_title');
+            });
+            $skills->each(function ($query) {
+                $query->clearMediaCollection('skills');
+            });
+            $formations->each(function ($query) {
+                $query->clearMediaCollection('formations');
+            });
+            $isSuccess = true;
+            $this->clearDirectory('media');
+            $this->clearDirectory('temporary');
         } catch (\Throwable $th) {
             //throw $th;
         }
