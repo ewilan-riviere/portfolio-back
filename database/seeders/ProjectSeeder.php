@@ -128,7 +128,7 @@ class ProjectSeeder extends Seeder
                     ->toMediaCollection('projects_logo', 'projects');
             } catch (\Throwable $th) {
                 //throw $th;
-                echo $th;
+                echo $th->getMessage().', title:'.$project->title;
             }
             try {
                 $path = database_path("seeders/media/projects/title/$projectCreated->slug.webp");
