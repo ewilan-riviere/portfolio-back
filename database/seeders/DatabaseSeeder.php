@@ -18,7 +18,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->clearAllMediaCollection();
+        $this->clearAllMediaCollection();
         $this->call(UserSeeder::class);
         $this->call(CategorySkillSeeder::class);
         $this->call(ExperienceTypeSeeder::class);
@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(PassionSeeder::class);
-        // $this->clearDirectory('temporary');
+        $this->clearDirectory('temporary');
     }
 
     /**

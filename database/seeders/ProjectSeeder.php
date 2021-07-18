@@ -120,7 +120,7 @@ class ProjectSeeder extends Seeder
             try {
                 $path = database_path("seeders/media/projects/$projectCreated->slug.webp");
                 $convert = DatabaseSeeder::convertImage($path, 'webp');
-                $picture_logo = File::get($path);
+                $picture_logo = File::get($convert);
 
                 $projectCreated->addMediaFromString($picture_logo)
                     ->setName($projectCreated->slug.'_logo')
@@ -128,7 +128,6 @@ class ProjectSeeder extends Seeder
                     ->toMediaCollection('projects_logo', 'projects');
             } catch (\Throwable $th) {
                 //throw $th;
-                echo $th->getMessage().', title:'.$project->title;
             }
             try {
                 $path = database_path("seeders/media/projects/title/$projectCreated->slug.webp");
