@@ -95,7 +95,7 @@ class SetupCommand extends Command
 
         $this->info('Database migration...');
         if ($this->confirm('Do you want to migrate fresh database? /* THIS WILL ERASE ALL DATA */', false)) {
-            Artisan::call('migrate:fresh --force', [], $this->getOutput());
+            Artisan::call('migrate:fresh --seed --force', [], $this->getOutput());
 
             $this->newLine();
             $this->line('~ Database successfully migrated.');
