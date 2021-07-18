@@ -117,54 +117,43 @@ class ProjectSeeder extends Seeder
                 $pivot->save();
             }
 
-            try {
-                $path = database_path("seeders/media/projects/$projectCreated->slug.webp");
-                $convert = DatabaseSeeder::convertImage($path, 'webp');
-                $picture_logo = File::get($convert);
-
-                $projectCreated->addMediaFromString($picture_logo)
-                    ->setName($projectCreated->slug.'_logo')
-                    ->setFileName($projectCreated->slug.'_logo.webp')
-                    ->toMediaCollection('projects_logo', 'projects');
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
-            try {
-                $path = database_path("seeders/media/projects/title/$projectCreated->slug.webp");
-                $convert = DatabaseSeeder::convertImage($path, 'webp');
-                $picture_title = File::get($convert);
-
-                $projectCreated->addMediaFromString($picture_title)
-                    ->setName($projectCreated->slug.'_title')
-                    ->setFileName($projectCreated->slug.'_title'.'.webp')
-                    ->toMediaCollection('projects_title', 'projects');
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
-            try {
-                $path = database_path("seeders/media/projects/banner/$projectCreated->slug.webp");
-                $convert = DatabaseSeeder::convertImage($path, 'webp');
-                $picture_banner = File::get($convert);
-
-                $projectCreated->addMediaFromString($picture_banner)
-                    ->setName($projectCreated->slug.'_banner')
-                    ->setFileName($projectCreated->slug.'_banner'.'.webp')
-                    ->toMediaCollection('projects_banner', 'projects');
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
+            $disk = 'projects';
+            $slug = $projectCreated->slug;
+            DatabaseSeeder::addMedia(
+                database_path("seeders/media/projects/$projectCreated->slug.webp"),
+                $projectCreated,
+                $slug.'_logo',
+                'webp',
+                'projects_logo',
+                $disk,
+            );
+            DatabaseSeeder::addMedia(
+                database_path("seeders/media/projects/title/$projectCreated->slug.webp"),
+                $projectCreated,
+                $slug.'_title',
+                'webp',
+                'projects_title',
+                $disk,
+            );
+            DatabaseSeeder::addMedia(
+                database_path("seeders/media/projects/banner/$projectCreated->slug.webp"),
+                $projectCreated,
+                $slug.'_banner',
+                'webp',
+                'projects_banner',
+                $disk,
+            );
             try {
                 $gallery = File::allFiles(database_path("seeders/media/projects/gallery/$projectCreated->slug/"));
-
                 foreach ($gallery as $key => $picture) {
-                    $path = $picture;
-                    $convert = DatabaseSeeder::convertImage($path, 'webp');
-                    $picture = File::get($convert);
-
-                    $projectCreated->addMediaFromString($picture)
-                        ->setName($projectCreated->slug.'-'.$key.'_gallery')
-                        ->setFileName($projectCreated->slug.'-'.$key.'_gallery'.'.webp')
-                        ->toMediaCollection('projects_gallery', 'projects');
+                    DatabaseSeeder::addMedia(
+                        $picture,
+                        $projectCreated,
+                        $slug.'_gallery',
+                        'webp',
+                        'projects_gallery',
+                        $disk,
+                    );
                 }
             } catch (\Throwable $th) {
                 //throw $th;

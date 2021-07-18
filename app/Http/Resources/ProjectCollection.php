@@ -49,8 +49,9 @@ class ProjectCollection extends JsonResource
             'createdAt'                                       => $this->created_at,
             'formation'                                       => $this->formation ? $formation : null,
             'picture'                                         => [
-                'logo'                                  => $this->picture_logo,
-                'title'                                 => $this->picture_title,
+                'logo'                                   => $this->picture_logo,
+                'color'                                  => $this->color,
+                'title'                                  => $this->picture_title,
             ],
             'isFavorite'    => $this->is_favorite,
             'discover'      => $discover,

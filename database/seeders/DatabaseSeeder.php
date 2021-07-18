@@ -7,6 +7,7 @@ use App\Models\Project;
 use Spatie\Image\Image;
 use App\Models\Formation;
 use Illuminate\Database\Seeder;
+use App\Providers\ImageProvider;
 use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
@@ -72,6 +73,35 @@ class DatabaseSeeder extends Seeder
             if (! in_array(basename($file), $leave_files)) {
                 unlink($file);
             }
+        }
+    }
+
+    public static function addMedia(string $path, object $entity, string $name, string $extension, string $media_collection, string $disk)
+    {
+        try {
+            $convert = DatabaseSeeder::convertImage($path, $extension);
+            $picture_logo = File::get($convert);
+
+            $entity->addMediaFromString($picture_logo)
+                ->setName($name)
+                ->setFileName($name.'.'.$extension)
+                ->toMediaCollection($media_collection, $disk);
+            self::extractColor($entity, $media_collection);
+        } catch (\Throwable $th) {
+            //throw $th;
+        }
+    }
+
+    public static function extractColor(object $entity, string $media_collection)
+    {
+        try {
+            $image = $entity->getFirstMediaPath($media_collection);
+            $color = ImageProvider::simple_color_thief($image);
+            $media = $entity->getFirstMedia($media_collection);
+            $media->setCustomProperty('color', $color);
+            $media->save();
+        } catch (\Throwable $th) {
+            //throw $th;
         }
     }
 

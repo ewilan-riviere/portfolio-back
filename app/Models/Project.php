@@ -55,6 +55,13 @@ class Project extends Model implements HasMedia
         return $media ? $media->getFullUrl() : null;
     }
 
+    public function getColorAttribute()
+    {
+        $media = $this->getFirstMedia('projects_logo');
+
+        return $media ? $media->getCustomProperty('color') : null;
+    }
+
     public function getPictureTitleAttribute()
     {
         $media = $this->getFirstMedia('projects_title');

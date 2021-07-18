@@ -90,10 +90,11 @@ class ProjectResource extends JsonResource
             'skills'                                 => sizeof($skills) > 0 ? $skills : null,
             'developers'                             => sizeof($developers) > 0 ? $developers : null,
             'picture'                                => [
-                'logo'                                  => $this->picture_logo,
-                'title'                                 => $this->picture_title,
-                'banner'                                => $this->picture_banner,
-                'gallery'                               => $this->gallery,
+                'logo'                                   => $this->picture_logo,
+                'color'                                  => $this->color,
+                'title'                                  => $this->picture_title,
+                'banner'                                 => $this->picture_banner,
+                'gallery'                                => $this->gallery,
             ],
             'isFavorite' => $this->is_favorite,
         ], [
