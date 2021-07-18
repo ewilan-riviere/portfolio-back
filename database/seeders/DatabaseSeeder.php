@@ -78,8 +78,13 @@ class DatabaseSeeder extends Seeder
     {
         $temporary_path = 'public/storage/temporary/';
         $name = $temporary_path.md5($original_path).'.'.$extension;
-        Image::load($original_path)
-            ->save($name);
+        try {
+            Image::load($original_path)
+                ->save($name);
+        } catch (\Throwable $th) {
+            //throw $th;
+            echo $th;
+        }
 
         return $name;
     }
