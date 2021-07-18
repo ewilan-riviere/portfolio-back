@@ -28,6 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(PassionSeeder::class);
+        $this->clearTemporary();
     }
 
     /**
@@ -54,20 +55,24 @@ class DatabaseSeeder extends Seeder
             });
             $isSuccess = true;
             File::deleteDirectory('public/storage/media');
-
-            $dir = 'public/storage/temporary/';
-            $leave_files = ['.gitignore'];
-
-            foreach (glob("$dir/*") as $file) {
-                if (! in_array(basename($file), $leave_files)) {
-                    unlink($file);
-                }
-            }
+            $this->clearTemporary();
         } catch (\Throwable $th) {
             //throw $th;
         }
 
         return $isSuccess;
+    }
+
+    public function clearTemporary()
+    {
+        $dir = 'public/storage/temporary/';
+        $leave_files = ['.gitignore'];
+
+        foreach (glob("$dir/*") as $file) {
+            if (! in_array(basename($file), $leave_files)) {
+                unlink($file);
+            }
+        }
     }
 
     public static function convertImage(string $original_path, string $extension): string
