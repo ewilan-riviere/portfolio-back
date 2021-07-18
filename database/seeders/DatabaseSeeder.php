@@ -7,6 +7,7 @@ use App\Models\Project;
 use Spatie\Image\Image;
 use App\Models\Formation;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -74,18 +75,25 @@ class DatabaseSeeder extends Seeder
         }
     }
 
-    public static function convertImage(string $original_path, string $extension): string
+    public static function convertImage(string $original_path, string $extension): string | false
     {
         $temporary_path = 'public/storage/temporary/';
         $name = $temporary_path.md5($original_path).'.'.$extension;
-        try {
-            Image::load($original_path)
-                ->save($name);
-        } catch (\Throwable $th) {
-            //throw $th;
-            echo "error with $original_path";
+        $file_exist = File::exists($original_path);
+
+        if ($file_exist) {
+            try {
+                Image::load($original_path)
+                    ->save($name);
+            } catch (\Throwable $th) {
+                //throw $th;
+                $original_path = basename($original_path);
+                echo "Can't save $original_path\n";
+            }
+
+            return $name;
         }
 
-        return $name;
+        return false;
     }
 }
