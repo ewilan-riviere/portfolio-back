@@ -54,8 +54,8 @@ class DatabaseSeeder extends Seeder
                 $query->clearMediaCollection('formations');
             });
             $isSuccess = true;
-            File::deleteDirectory('public/storage/media');
-            $this->clearTemporary();
+            $this->clearDirectory('media');
+            $this->clearDirectory('temporary');
         } catch (\Throwable $th) {
             //throw $th;
         }
@@ -63,9 +63,9 @@ class DatabaseSeeder extends Seeder
         return $isSuccess;
     }
 
-    public function clearTemporary()
+    public function clearDirectory(string $path)
     {
-        $dir = 'public/storage/temporary/';
+        $dir = "public/storage/$path/";
         $leave_files = ['.gitignore'];
 
         foreach (glob("$dir/*") as $file) {
