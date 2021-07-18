@@ -22,9 +22,9 @@ class ProjectResource extends JsonResource
         $lang = $request->lang ?? 'en';
 
         $developers = null;
-        if ($this->developers) {
+        if ($this->resource->developers) {
             $developers = [];
-            foreach ($this->developers as $key => $developer) {
+            foreach ($this->resource->developers as $key => $developer) {
                 array_push($developers, [
                     'name'  => $developer->name,
                     'slug'  => $developer->slug,
@@ -39,9 +39,9 @@ class ProjectResource extends JsonResource
         }
 
         $skills = null;
-        if ($this->skills) {
+        if ($this->resource->skills) {
             $skills = [];
-            foreach ($this->skills as $key => $skill) {
+            foreach ($this->resource->skills as $key => $skill) {
                 array_push($skills, [
                     'title' => $skill->title,
                     'slug'  => $skill->slug,
@@ -51,11 +51,11 @@ class ProjectResource extends JsonResource
         }
 
         $links = null;
-        if ($this->links) {
+        if ($this->resource->links) {
             $links = [];
-            foreach ($this->links as $key => $link) {
+            foreach ($this->resource->links as $key => $link) {
                 $links[strtolower($link->type->value)] = [
-                    'repository' => $this->is_private ? null : $link->repository,
+                    'repository' => $this->resource->is_private ? null : $link->repository,
                     'project'    => $link->project,
                     'type'       => ProjectLinkType::getTranslation($lang, strtolower($link->type)),
                 ];
@@ -64,39 +64,40 @@ class ProjectResource extends JsonResource
         ksort($links);
 
         $status = null;
-        if ($this->status) {
+        if ($this->resource->status) {
             $status = [
-                'name'  => $this->status->getTranslation('name', $lang),
-                'order' => $this->status->order,
+                'name'  => $this->resource->status->getTranslation('name', $lang),
+                'order' => $this->resource->status->order,
             ];
         }
 
         return array_merge([
             'meta' => [
-                'slug'                                       => $this->slug,
+                'slug'                                       => $this->resource->slug,
             ],
-            'title'                                              => $this->title,
-            'subtitle'                                           => $this->getTranslation('subtitle', $lang),
-            'order'                                              => $this->order,
-            'abstract'                                           => $this->getTranslation('abstract', $lang),
-            'description'                                        => $this->getTranslation('description', $lang),
+            'title'                                              => $this->resource->title,
+            'subtitle'                                           => $this->resource->getTranslation('subtitle', $lang),
+            'order'                                              => $this->resource->order,
+            'abstract'                                           => $this->resource->getTranslation('abstract', $lang),
+            'description'                                        => $this->resource->getTranslation('description', $lang),
             'status'                                             => $status,
-            'experience'                                         => $this->experience->getTranslation('title', $lang) ?? null,
-            'date'                                               => $this->created_at,
-            'formation'                                          => $this->formation ? [
-                'title' => $this->formation->title,
-                'slug'  => $this->formation->slug,
+            'experience'                                         => $this->resource->experience->getTranslation('title', $lang) ?? null,
+            'date'                                               => $this->resource->created_at,
+            'formation'                                          => $this->resource->formation ? [
+                'title' => $this->resource->formation->title,
+                'slug'  => $this->resource->formation->slug,
             ] : null,
             'skills'                                 => sizeof($skills) > 0 ? $skills : null,
             'developers'                             => sizeof($developers) > 0 ? $developers : null,
             'picture'                                => [
-                'logo'                                   => $this->picture_logo,
-                'color'                                  => $this->color,
-                'title'                                  => $this->picture_title,
-                'banner'                                 => $this->picture_banner,
-                'gallery'                                => $this->gallery,
+                'logo'                                   => $this->resource->picture_logo,
+                'color'                                  => $this->resource->color,
+                'title'                                  => $this->resource->picture_title,
+                'banner'                                 => $this->resource->picture_banner,
+                'gallery'                                => $this->resource->gallery,
             ],
-            'isFavorite' => $this->is_favorite,
+            'isFavorite' => $this->resource->is_favorite,
+            'isPrivate'  => $this->resource->is_private,
         ], [
             'links'      => $links,
         ]);
