@@ -83,7 +83,7 @@ class DatabaseSeeder extends Seeder
                 ->save($name);
         } catch (\Throwable $th) {
             //throw $th;
-            echo $th;
+            echo "error with $original_path";
         }
 
         return $name;
