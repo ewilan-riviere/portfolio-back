@@ -2,17 +2,27 @@
     {
         "title": "Portfolio",
         "order": 1,
-        "image": "portfolio.webp",
-        "image_title": null,
+        "picture_logo": "portfolio.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Mon portfolio pour présenter mes projets"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Réalisation de mon portfolio pour présenter mes projets personnels et professionnels et les technos que j'apprécie."
+        },
         "description": {
             "en": "English translation!",
             "fr": "Réalisation de mon portfolio pour présenter mes projets personnels et professionnels et les technos que j'apprécie."
         },
         "is_favorite": true,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-05-19",
         "links": {
             "back": {
@@ -28,33 +38,53 @@
         "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
     },
     {
-        "title": "Fanfic",
-        "image_title": null,
+        "picture_logo": "Fanfic",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": ""
+        },
         "description": {
             "en": "",
             "fr": null
         },
         "is_favorite": false,
         "is_display": false,
-        "status": "phase1",
+        "is_private": false,
+        "status": "1",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-11-20",
         "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
     },
     {
         "title": "Skyscale",
-        "image": "skyscale.webp",
-        "image_title": null,
+        "picture_logo": "skyscale.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Utilisation de l'API de Guild Wars 2"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Une petite application connectée à l'API du MMO Guild Wars 2 pour présenter des informations sur les compte de mon équipe."
+        },
         "description": {
             "en": "",
             "fr": "Une petite application connectée à l'API du MMO Guild Wars 2 pour présenter des informations sur les compte de mon équipe."
         },
         "is_favorite": false,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-10-30",
         "links": {
             "front": {
@@ -66,17 +96,27 @@
     },
     {
         "title": "Roazhon Star",
-        "image": "roazhon-star.webp",
-        "image_title": null,
+        "picture_logo": "roazhon-star.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Pour gérer les horaires de bus à Rennes"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Project d'application web et mobile pour récupérer les horaires de bus du STAR de Rennes."
+        },
         "description": {
             "en": "",
             "fr": "Project d'application web et mobile pour récupérer les horaires de bus du STAR de Rennes."
         },
         "is_favorite": false,
         "is_display": true,
-        "status": "phase1",
+        "is_private": false,
+        "status": "1",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-10-24",
         "links": {
             "front": {
@@ -88,17 +128,27 @@
     },
     {
         "title": "Bookshelves",
-        "image": "bookshelves.webp",
-        "image_title": null,
+        "picture_logo": "bookshelves.webp",
+        "picture_title": null,
+        "picture_banner": "bookshelves_banner.webp",
+        "subtitle": {
+            "en": "Online library",
+            "fr": "Une bibliothèque en ligne"
+        },
+        "abstract": {
+            "en": "To build a database and an interface from a list of EPUB.",
+            "fr": "Pour construire une base de données et une interface depuis une liste d'EPUB."
+        },
         "description": {
-            "en": "",
-            "fr": "Projet d'application web et mobile pour présenter des eBooks en récupérant leurs metadata directement depuis les fichiers EPUB."
+            "en": "Web and mobile application project where the back-end can create a database from a list of EPUB files by extracting the metadata of each EPUB to create authors, series and books while managing the relationships between each model, without leaving out information such as tags, publisher, ISBN, language and description. Information that cannot be retrieved from the EPUB file metadata is retrieved from external APIs such as Wikipedia or Google Books. All this allows to manage a complete database presenting all the books presented on the front of the application that allows to consult each entity with its relations and to download the books.<br/><br/>- It is possible to search by entity in order to find a book more easily<br/>- Detailed guides allow to better understand how to use a e-reader to read EPUB files<br/>- A commenting and bookmarking system is also available for registered users<br/>- A contact form allows to send messages to the team.<br/>- Embeds OPDS (Open Publication Distribution System) to offer books to applications that offer this feed but also Catalog which offers a simplified interface to browse Bookshelves from the e-reader's web browser if it does not support OPDS<br/>- Available in dark mode<br/>- Offers API documentation with **scribe**",
+            "fr": "Projet d'application web et mobile où le back-end peut créer une base de données depuis une liste de fichiers EPUB en extrayant les métadonnées de chaque EPUB afin de créer les auteurs, les séries et les livres tout en gérant les relations entre chaque modèle, sans laisser de côté les informations telles que les tags, l'éditeur, l'ISBN, le language et la description. Les informations qui ne peuvent pas être récupérées depuis les métadonnées du fichier EPUB sont récupérées depuis des API externes telles que Wikipédia ou Google Books. Tout cela permet de gérer une base de donnée complète présentant tous les livres présentés sur le front de l'application qui permet de consulter chaque entité avec ses relations et de télécharger les livres.<br/><br/>- Il est possible de faire une recherche par entité afin de trouver plus facilement un livre<br/>- Des guides détaillés permettent de mieux comprendre comment utiliser une liseuse pour lire les fichiers EPUB<br/>- Un système de commentaires et de favoris est ausis disponible pour les utilisateurs enregistrés<br/>- Un formulaire de contact permet d'envoyer des messages à l'équipe.<br/>- Embarque le système OPDS (Open Publication Distribution System) pour offrir les livres aux applications qui proposent ce flux mais aussi Catalog qui propose une interface simplifiée afin de pouvoir naviguer sur Bookshelves depuis le navigateur web de la liseuse si celle-ci ne gère pas OPDS<br/>- Disponible en dark mode<br/>- Propose une documentation API avec **scribe**"
         },
         "is_favorite": true,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2021-01-03",
         "links": {
             "back": {
@@ -110,21 +160,35 @@
                 "project": "https://bookshelves.ink"
             }
         },
-        "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
+        "developers": [
+            { "slug": "ewilan-riviere", "role": "developer" },
+            { "slug": "mopi", "role": "concept" }
+        ],
+        "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
     },
     {
         "title": "MarkdownThis",
-        "image": "markdown-this.webp",
-        "image_title": null,
+        "picture_logo": "markdown-this.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Une prise de note efficace"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Projet de prise de note semblable à Keep mais en Markdown pour facilement sauvegarder du code ou faire une mise en forme simple."
+        },
         "description": {
             "en": "",
             "fr": "Projet de prise de note semblable à Keep mais en Markdown pour facilement sauvegarder du code ou faire une mise en forme simple."
         },
         "is_favorite": true,
         "is_display": true,
-        "status": "phase1",
+        "is_private": false,
+        "status": "1",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-11-05",
         "links": {
             "back": {
@@ -138,17 +202,27 @@
     },
     {
         "title": "Fonts Book",
-        "image": "fonts-book.webp",
-        "image_title": null,
+        "picture_logo": "fonts-book.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": ""
+        },
         "description": {
             "en": "",
             "fr": null
         },
         "is_favorite": false,
         "is_display": false,
-        "status": "phase2",
+        "is_private": false,
+        "status": "2",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-09-19",
         "links": {
             "front": {
@@ -159,17 +233,27 @@
     },
     {
         "title": "Markdown Interpreter",
-        "image": "md-interpreter.webp",
-        "image_title": null,
+        "picture_logo": "md-interpreter.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Un convertisseur simple mais utile"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Petit projet pour facilement convertir du Markdown vers de l'HTML ou l'inverse."
+        },
         "description": {
             "en": "",
             "fr": "Petit projet pour facilement convertir du Markdown vers de l'HTML ou l'inverse."
         },
         "is_favorite": true,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-06-20",
         "links": {
             "front": {
@@ -181,17 +265,27 @@
     },
     {
         "title": "Memorandum",
-        "image": "memorandum.webp",
-        "image_title": null,
+        "picture_logo": "memorandum.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": "Une documentation en markdown : que demander de plus ?"
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Documentation personnelle sur mes projets et les technos que j'apprécie."
+        },
         "description": {
             "en": "",
             "fr": "Documentation personnelle sur mes projets et les technos que j'apprécie."
         },
         "is_favorite": true,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-06-27",
         "links": {
             "front": {
@@ -203,17 +297,27 @@
     },
     {
         "title": "Vue Tailwind Screen Helper",
-        "image": "vue-tailwind-screen-helper.webp",
-        "image_title": null,
+        "picture_logo": "vue-tailwind-screen-helper.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Plugin réalisé pour Tailwind CSS afin d'afficher dans quel breakpoint on se trouve."
+        },
         "description": {
             "en": "",
             "fr": "Plugin réalisé pour Tailwind CSS afin d'afficher dans quel breakpoint on se trouve."
         },
         "is_favorite": false,
-        "is_display": true,
-        "status": "phase3",
+        "is_display": false,
+        "is_private": false,
+        "status": "3",
         "formation": null,
-        "experience_type": "personnel",
+        "experience_type": "personal",
         "created_at": "2020-06-27",
         "links": {
             "front": {

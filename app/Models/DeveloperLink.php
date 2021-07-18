@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\DeveloperLinkType;
+use App\Models\Enums\DeveloperLinkType;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 

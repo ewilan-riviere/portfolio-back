@@ -4,6 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @property \App\Models\Project $resource
+ */
 class ProjectCollection extends JsonResource
 {
     /**
@@ -17,34 +20,14 @@ class ProjectCollection extends JsonResource
     {
         $lang = $request->lang ?? 'en';
 
-        $developers = null;
-        if ($this->developers) {
-            $developers = $this->developers->count();
-        }
-
-        $skills = null;
-        if ($this->skills) {
-            $skills = [];
-            foreach ($this->skills as $key => $skill) {
-                array_push($skills, [
-                    'title' => $skill->title,
-                    'slug'  => $skill->slug,
-                    'color' => $skill->color,
-                ]);
+        $discover = null;
+        if ($this->links) {
+            foreach ($this->links as $key => $link) {
+                if ('FRONT' === $link->type->value || 'FRONT_BACK' === $link->type->value) {
+                    $discover = $link->project;
+                }
             }
         }
-
-        $projectLinks = null;
-        if ($this->projectLinks) {
-            $projectLinks = [];
-            foreach ($this->projectLinks as $key => $link) {
-                $projectLinks[strtolower($link->type->value)] = [
-                    'repository' => $link->is_private ? null : $link->repository,
-                    'project'    => $link->project,
-                ];
-            }
-        }
-        $projectLinks['show'] = route('projects.show', ['project' => $this->slug]);
 
         $formation = null;
         if ($this->formation) {
@@ -54,27 +37,23 @@ class ProjectCollection extends JsonResource
             ];
         }
 
-        return array_merge([
-            'slug'                                       => $this->slug,
-            'title'                                      => $this->title,
-            'order'                                      => $this->order,
-            'description'                                => $this->getTranslation('description', $lang),
-            'createdAt'                                  => $this->created_at,
-            'type'                                       => $this->formation ? [
-                'title' => $this->formation->title,
-                'slug'  => $this->formation->slug,
-            ] : null,
-            'skills'                               => sizeof($skills) > 0 ? $skills : null,
-            'developers'                           => $developers,
-            'assets'                               => [
-                'image'                               => $this->image,
-                'imageTitle'                          => $this->image_title,
+        return [
+            'meta' => [
+                'slug'                                       => $this->slug,
+                'show'                                       => $this->show_link,
             ],
-            'formation'  => $formation,
-            'isFavorite' => $this->is_favorite,
-        ],
-            [
-                'links'      => $projectLinks,
-            ]);
+            'title'                                           => $this->title,
+            'subtitle'                                        => $this->getTranslation('subtitle', $lang),
+            'order'                                           => $this->order,
+            'abstract'                                        => $this->getTranslation('abstract', $lang),
+            'createdAt'                                       => $this->created_at,
+            'formation'                                       => $this->formation ? $formation : null,
+            'picture'                                         => [
+                'logo'                                  => $this->picture_logo,
+                'title'                                 => $this->picture_title,
+            ],
+            'isFavorite'    => $this->is_favorite,
+            'discover'      => $discover,
+        ];
     }
 }

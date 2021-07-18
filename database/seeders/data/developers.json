@@ -9,7 +9,6 @@
             "portfolio": "https://ewilan-riviere.com",
             "linkedin": "https://www.linkedin.com/in/ewilan-riviere",
             "gitlab": "https://gitlab.com/ewilan-riviere",
-            "bit": "https://bit.dev/ewilan-riviere",
             "twitter": "https://twitter.com/ewilanriviere",
             "mail": "mailto:contact@ewilan-riviere.com"
         }
@@ -56,6 +55,15 @@
             "gitlab": "https://gitlab.com/dearflynn",
             "twitter": "https://twitter.com/D_Brunetiere",
             "medium": "https://delphinebrunetiere.medium.com"
+        }
+    },
+    {
+        "name": "Mopi",
+        "links": {
+            "git": {
+                "url": "https://forge.dotslashplay.it/mopi",
+                "is_primary": true
+            }
         }
     }
 ]

@@ -17,3 +17,7 @@ yarn-error.log
 .php-cs-fixer.cache
 public/css/*
 public/js/*
+.scribe
+public/docs/collection.json
+public/docs/index.html
+public/docs/openapi.yaml

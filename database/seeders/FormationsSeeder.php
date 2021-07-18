@@ -6,7 +6,7 @@ use File;
 use App\Models\Formation;
 use App\Models\FormationLink;
 use Illuminate\Database\Seeder;
-use App\Enums\FormationLinkType;
+use App\Models\Enums\FormationLinkType;
 
 class FormationsSeeder extends Seeder
 {

@@ -8,6 +8,9 @@ use Illuminate\Http\Resources\Json\JsonResource;
 /**
  * @property \App\Models\Formation $resource
  */
+/**
+ * @property \App\Models\Formation $resource
+ */
 class FormationResource extends JsonResource
 {
     /**
@@ -52,11 +55,11 @@ class FormationResource extends JsonResource
             'slug'               => $this->slug,
             'image'              => $this->image,
             // 'certificate'       => $this->certificate,
-            'logo'             => $this->logo ? SvgProvider::getIcon($request, $this->slug, $this->logo) : null,
-            'resume'            => $this->getTranslation('resume', $lang),
+            'logo'                   => $this->logo ? SvgProvider::getIcon($request, $this->slug, $this->logo) : null,
+            'resume'                 => $this->getTranslation('resume', $lang),
             'description'            => $this->getTranslation('description', $lang),
-            'level'             => $this->level,
-            'date'              => [
+            'level'                  => $this->level,
+            'date'                   => [
                 'begin'       => $this->date_begin,
                 'end'         => $this->date_end,
             ],

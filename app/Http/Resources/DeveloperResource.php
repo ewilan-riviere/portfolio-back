@@ -4,6 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @property \App\Models\Developer $resource
+ */
 class DeveloperResource extends JsonResource
 {
     /**

@@ -8,11 +8,12 @@ use App\Models\Project;
 use App\Models\Developer;
 use App\Models\Formation;
 use App\Models\ProjectLink;
-use App\Enums\ProjectStatus;
-use App\Enums\ProjectLinkType;
+use Illuminate\Support\Str;
+use App\Models\ProjectStatus;
 use App\Models\ExperienceType;
 use Illuminate\Database\Seeder;
 use App\Models\DeveloperProject;
+use App\Models\Enums\ProjectLinkType;
 
 class ProjectSeeder extends Seeder
 {
@@ -43,18 +44,32 @@ class ProjectSeeder extends Seeder
     {
         foreach ($projects as $key => $project) {
             $projectCreated = Project::create([
-                'title'              => $project->title ?? null,
+                'title'              => $project->title ?? '',
                 'order'              => $project->order ?? null,
-                'is_favorite'        => $project->is_favorite ?? null,
-                'is_display'         => $project->is_display ?? null,
-                'status'             => $project->status ?? null, // ProjectStatus::make(strtoupper($project['status'])) / ProjectStatus::make(strtoupper('phase1'))
+                'is_favorite'        => $project->is_favorite ?? false,
+                'is_display'         => $project->is_display ?? false,
+                'is_private'         => $project->is_private ?? false,
                 'created_at'         => $project->created_at ?? null,
                 'updated_at'         => $project->updated_at ?? null,
             ]);
+            if (property_exists($project, 'subtitle')) {
+                $projectCreated->subtitle = [
+                    'fr' => $project->subtitle?->fr ?? '',
+                    'en' => $project->subtitle?->en ?? '',
+                ];
+                $projectCreated->save();
+            }
+            if (property_exists($project, 'abstract')) {
+                $projectCreated->abstract = [
+                    'fr' => $project->abstract?->fr ?? '',
+                    'en' => $project->abstract?->en ?? '',
+                ];
+                $projectCreated->save();
+            }
             if (property_exists($project, 'description')) {
                 $projectCreated->description = [
-                    'fr' => $project->description?->fr ?? null,
-                    'en' => $project->description?->en ?? null,
+                    'fr' => Str::markdown($project->description?->fr ?? ''),
+                    'en' => Str::markdown($project->description?->en ?? ''),
                 ];
                 $projectCreated->save();
             }
@@ -64,11 +79,17 @@ class ProjectSeeder extends Seeder
                         'repository'             => $link->repository ?? null,
                         'project'                => $link->project ?? null,
                         'type'                   => ProjectLinkType::make($key) ?? null,
-                        'is_private'             => $link->is_private ?? true,
                     ]);
                     $projectLink->project()->associate($projectCreated);
                     $projectLink->save();
                 }
+            }
+
+            $status_order = $project->status;
+            $status = ProjectStatus::whereOrder($status_order)->first();
+            if ($status) {
+                $projectCreated->status()->associate($status);
+                $projectCreated->save();
             }
 
             $formation_slug = $project->formation;
@@ -81,7 +102,7 @@ class ProjectSeeder extends Seeder
             $experience_type_slug = $project->experience_type;
             $experience_type = ExperienceType::whereSlug($experience_type_slug)->first();
             if ($experience_type) {
-                $projectCreated->experienceType()->associate($experience_type);
+                $projectCreated->experience()->associate($experience_type);
                 $projectCreated->save();
             }
 
@@ -96,25 +117,33 @@ class ProjectSeeder extends Seeder
                 $pivot->save();
             }
 
-            $image = $project->image ?? null;
-            $image_title = $project->image_title ?? null;
+            $picture_logo = $project->picture_logo ?? null;
+            $picture_title = $project->picture_title ?? null;
+            $picture_banner = $project->picture_banner ?? null;
             try {
-                $image = File::get(database_path("seeders/media/projects/$image"));
-                $image_title = File::get(database_path("seeders/media/projects/title/$image_title"));
+                $picture_logo = File::get(database_path("seeders/media/projects/$picture_logo"));
+                $picture_title = File::get(database_path("seeders/media/projects/title/$picture_title"));
+                $picture_title = File::get(database_path("seeders/media/projects/banner/$picture_banner"));
             } catch (\Throwable $th) {
                 //throw $th;
             }
-            if ($image) {
-                $projectCreated->addMediaFromString($image)
-                    ->setName($projectCreated->slug)
-                    ->setFileName($projectCreated->slug.'.webp')
-                    ->toMediaCollection('projects', 'projects');
+            if ($picture_logo) {
+                $projectCreated->addMediaFromString($picture_logo)
+                    ->setName($projectCreated->slug.'_logo')
+                    ->setFileName($projectCreated->slug.'_logo.webp')
+                    ->toMediaCollection('projects_logo', 'projects');
             }
-            if ($image_title) {
-                $projectCreated->addMediaFromString($image_title)
+            if ($picture_title) {
+                $projectCreated->addMediaFromString($picture_title)
                     ->setName($projectCreated->slug.'_title')
                     ->setFileName($projectCreated->slug.'_title'.'.webp')
                     ->toMediaCollection('projects_title', 'projects');
+            }
+            if ($picture_banner) {
+                $projectCreated->addMediaFromString($picture_banner)
+                    ->setName($projectCreated->slug.'_banner')
+                    ->setFileName($projectCreated->slug.'_banner'.'.webp')
+                    ->toMediaCollection('projects_banner', 'projects');
             }
 
             if (property_exists($project, 'skills')) {

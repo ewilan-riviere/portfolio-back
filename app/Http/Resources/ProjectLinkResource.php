@@ -4,6 +4,9 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @property \App\Models\ProjectLink $resource
+ */
 class ProjectLinkResource extends JsonResource
 {
     /**

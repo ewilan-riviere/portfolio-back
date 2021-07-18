@@ -2,8 +2,17 @@
     {
         "title": "Zergling Evolution",
         "order": 8,
-        "image": "zergling-evolution.webp",
-        "image_title": "zergling-evolution.webp",
+        "picture_logo": "zergling-evolution.webp",
+        "picture_title": "zergling-evolution.webp",
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !"
+        },
         "description": {
             "en": "",
             "fr": "Aidez Ling, le Zergling, à manger de vilains Terrans pour gagner des points dans ce jeu adapté du célèbre Cookie Clicker ! Collectionnez les bonus organiques proposés par Abathur !"
@@ -11,10 +20,11 @@
         "link_repository": "https://github.com/ewilan-riviere/zergling-evolution",
         "link_project": null,
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "is_favorite": false,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "created_at": "2018-11-07",
         "links": {
             "front": {
@@ -27,8 +37,17 @@
     {
         "title": "Overwatch Memory",
         "order": 4,
-        "image": "overwatch-memory.webp",
-        "image_title": "overwatch-memory.webp",
+        "picture_logo": "overwatch-memory.webp",
+        "picture_title": "overwatch-memory.webp",
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\"univers d\"Overwatch, battez des records pour retrouver toutes les cartes !"
+        },
         "description": {
             "en": "",
             "fr": "Retrouvez vos héros favoris dans ce jeu de Memory basé sur l\"univers d\"Overwatch, battez des records pour retrouver toutes les cartes !"
@@ -37,9 +56,10 @@
         "link_project": null,
         "is_favorite": true,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2018-11-07",
         "links": {
             "front": {
@@ -52,8 +72,17 @@
     {
         "title": "Pomodoro",
         "order": 6,
-        "image": "pomodoro.webp",
-        "image_title": "pomodoro.webp",
+        "picture_logo": "pomodoro.webp",
+        "picture_title": "pomodoro.webp",
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur."
+        },
         "description": {
             "en": "",
             "fr": "Travaillez en toute sérénité en prenant soin de vous reposer de façon régulière grâce à ce mignon petit minuteur qui vous aidera à maîtriser votre temps en douceur."
@@ -62,9 +91,10 @@
         "link_project": null,
         "is_favorite": false,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2018-11-28",
         "links": {
             "front": {
@@ -77,8 +107,17 @@
     {
         "title": "Quizz Pokémon",
         "order": 5,
-        "image": "quizz-pokemon.webp",
-        "image_title": "quizz-pokemon.webp",
+        "picture_logo": "quizz-pokemon.webp",
+        "picture_title": "quizz-pokemon.webp",
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes."
+        },
         "description": {
             "en": "",
             "fr": "Traversez les épreuves de ce quiz pokémon qui vous interrogera sur les subtilités de cette licence vidéoludique, autant sur les jeu que les animes."
@@ -87,9 +126,10 @@
         "link_project": null,
         "is_favorite": false,
         "is_display": true,
-        "status": "phase3",
+        "is_private": false,
+        "status": "3",
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2018-12-06",
         "links": {
             "front": {
@@ -102,8 +142,17 @@
     {
         "title": "Site web de ./play.it",
         "order": 2,
-        "image": "play-it.webp",
-        "image_title": null,
+        "picture_logo": "play-it.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux."
+        },
         "description": {
             "en": "",
             "fr": "Refonte du site de ./play.it, projet permettant de jouer facilement aux jeux vidéo sous Linux."
@@ -112,9 +161,10 @@
         "link_project": "https://dev.website.dotslashplay.it/",
         "is_favorite": true,
         "is_display": true,
-        "status": "phase2",
+        "is_private": false,
+        "status": "2",
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2019-04-01",
         "links": {
             "back": {
@@ -138,8 +188,17 @@
     {
         "title": "Promo #03 · Code Académie",
         "order": 3,
-        "image": "code-academie.webp",
-        "image_title": null,
+        "picture_logo": "code-academie.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Création du site de la promo #03 de la Code Académie avec une équipe de passionnés."
+        },
         "description": {
             "en": "",
             "fr": "Création du site de la promo #03 de la Code Académie avec une équipe de passionnés."
@@ -148,12 +207,13 @@
         "link_project": "http://promo03.code-academie.fr/",
         "is_favorite": true,
         "is_display": true,
-        "status": "phase4",
+        "is_private": false,
+        "status": "4",
         "formation": "developpeuse-web-web-mobile",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2018-11-27",
         "links": {
-            "front": {
+            "front_back": {
                 "repository": "https://gitlab.com/code-academie/promo-03/apprenants/site-promo-3",
                 "project": "http://promo03.code-academie.fr"
             }
@@ -164,8 +224,17 @@
     {
         "title": "TER sur la cyberviolence",
         "order": 1,
-        "image": "ter-la-cyberviolence.webp",
-        "image_title": null,
+        "picture_logo": "ter-la-cyberviolence.webp",
+        "picture_title": null,
+        "picture_banner": null,
+        "subtitle": {
+            "en": "",
+            "fr": ""
+        },
+        "abstract": {
+            "en": "",
+            "fr": "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante."
+        },
         "description": {
             "en": "",
             "fr": "Ce travail avait pour but de retracer les violences qui peuvent survenir dans le domaine numérique, les formes différentes qu'elles peuvent prendre par rapport aux violences du monde physique. L'accent a été mis sur la cyberviolence subie en milieu scolaire et la manière dont elle prend le relais sur la violence classique.<br/>Ce sujet m'intéressait parce que la violence en milieu scolaire est un sujet qui a une grande importance pour moi et je souhaitais étudier la manière dont les nouvelles technologies avaient affecté ce problème, en bien comme en mal. La conclusion de ce travail d'étude et de recherche a été éclairante et enrichissante."
@@ -173,9 +242,10 @@
         "link_project": "media/documents/ter-la-cyberviolence.pdf",
         "is_favorite": false,
         "is_display": true,
-        "status": "phase4",
+        "is_private": false,
+        "status": "4",
         "formation": "licence-de-psychologie",
-        "experience_type": "ecole",
+        "experience_type": "school",
         "created_at": "2014-06-01",
         "developers": [{ "slug": "ewilan-riviere", "role": "developer" }]
     }

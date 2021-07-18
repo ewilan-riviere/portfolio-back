@@ -5,6 +5,9 @@ namespace App\Http\Resources;
 use App\Providers\SvgProvider;
 use Illuminate\Http\Resources\Json\JsonResource;
 
+/**
+ * @property \App\Models\Skill $resource
+ */
 class SkillResource extends JsonResource
 {
     /**

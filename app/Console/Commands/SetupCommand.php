@@ -71,6 +71,7 @@ class SetupCommand extends Command
         } else {
             exec('yarn dev');
         }
+        Artisan::call('config:cache');
         // migration
         $this->info('Database migration...');
         if ($this->confirm('Do you want to migrate database?', true)) {

@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use App\Enums\DeveloperRole;
+use App\Models\Enums\DeveloperRole;
 use Illuminate\Database\Eloquent\Relations\Pivot;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 

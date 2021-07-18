@@ -23,15 +23,15 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/formations', [FormationController::class, 'index'])->name('formations.index');
-Route::get('/formations/{formation}', [FormationController::class, 'show'])->name('formations.show');
-Route::get('/skills', [SkillController::class, 'index'])->name('skills.index');
-Route::get('/skills-by-categories', [SkillController::class, 'categories'])->name('skills.categories');
-Route::get('/developers', [DeveloperController::class, 'index'])->name('developers.index');
-Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
+Route::get('/formations', [FormationController::class, 'index'])->name('api.formations.index');
+Route::get('/formations/{formation}', [FormationController::class, 'show'])->name('api.formations.show');
+Route::get('/skills', [SkillController::class, 'index'])->name('api.skills.index');
+Route::get('/skills-by-categories', [SkillController::class, 'categories'])->name('api.skills.categories');
+Route::get('/developers', [DeveloperController::class, 'index'])->name('api.developers.index');
+Route::get('/projects', [ProjectController::class, 'index'])->name('api.projects.index');
 
-Route::get('/projects/count', [ProjectController::class, 'count'])->name('projects.count');
-Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('projects.show');
+Route::get('/projects/count', [ProjectController::class, 'count'])->name('api.projects.count');
+Route::get('/projects/{project}', [ProjectController::class, 'show'])->name('api.projects.show');
 
 /*
  * Submissions routes

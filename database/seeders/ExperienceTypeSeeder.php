@@ -19,7 +19,10 @@ class ExperienceTypeSeeder extends Seeder
 
         foreach ($experience_types as $key => $experience_type) {
             ExperienceType::create([
-                'title' => $experience_type->title,
+                'title' => [
+                    'fr' => $experience_type->title?->fr ?? '',
+                    'en' => $experience_type->title?->en ?? '',
+                ],
             ]);
         }
     }

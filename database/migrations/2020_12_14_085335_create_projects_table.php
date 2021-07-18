@@ -15,19 +15,24 @@ class CreateProjectsTable extends Migration
     {
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
-            $table->string('slug')->nullable()->unique();
             $table->string('title');
+            $table->string('slug')->nullable()->unique();
+            $table->json('subtitle')->nullable();
             $table->integer('order')->nullable();
+            $table->json('abstract')->nullable();
             $table->json('description')->nullable();
-            $table->boolean('is_display')->default(false);
+            $table->boolean('is_display')->default(0);
             $table->boolean('is_favorite')->default(0);
-            $table->string('status')->nullable();
+            $table->boolean('is_private')->default(0);
 
             $table->foreignId('experience_type_id')->nullable();
-            $table->foreign('experience_type_id')->references('id')->on('experience_types')->onDelete('cascade');
+            $table->foreign('experience_type_id')->references('id')->on('experience_types');
+
+            $table->foreignId('project_status_id')->nullable();
+            $table->foreign('project_status_id')->references('id')->on('project_status');
 
             $table->foreignId('formation_id')->nullable();
-            $table->foreign('formation_id')->references('id')->on('formations')->onDelete('cascade');
+            $table->foreign('formation_id')->references('id')->on('formations');
 
             $table->timestamps();
         });

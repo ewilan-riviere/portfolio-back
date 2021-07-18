@@ -1,14 +1,26 @@
 [
     {
-        "title": "École"
+        "title": {
+            "fr": "École",
+            "en": "School"
+        }
     },
     {
-        "title": "Alternance"
+        "title": {
+            "fr": "Alternance",
+            "en": "Vocational"
+        }
     },
     {
-        "title": "Personnel"
+        "title": {
+            "fr": "Personnel",
+            "en": "Personal"
+        }
     },
     {
-        "title": "Entreprise"
+        "title": {
+            "fr": "Entreprise",
+            "en": "Enterprise"
+        }
     }
 ]

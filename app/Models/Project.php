@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
-use App\Enums\ProjectStatus;
 use Spatie\MediaLibrary\HasMedia;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
@@ -17,22 +16,24 @@ class Project extends Model implements HasMedia
     use InteractsWithMedia;
     use HasTranslations;
 
-    public $translatable = ['description'];
+    public $translatable = ['subtitle', 'abstract', 'description'];
 
     protected $fillable = [
         'slug',
         'title',
+        'subtitle',
         'order',
+        'abstract',
         'description',
         'is_favorite',
         'is_display',
-        'status',
+        'is_private',
     ];
 
     protected $casts = [
         'is_display'  => 'boolean',
         'is_favorite' => 'boolean',
-        'status'      => ProjectStatus::class,
+        'is_private'  => 'boolean',
     ];
 
     public static function boot()
@@ -47,18 +48,32 @@ class Project extends Model implements HasMedia
         parent::boot();
     }
 
-    public function getImageAttribute()
+    public function getPictureLogoAttribute()
     {
-        $media = $this->getFirstMedia('projects');
+        $media = $this->getFirstMedia('projects_logo');
 
         return $media ? $media->getFullUrl() : null;
     }
 
-    public function getImageTitleAttribute()
+    public function getPictureTitleAttribute()
     {
         $media = $this->getFirstMedia('projects_title');
 
         return $media ? $media->getFullUrl() : null;
+    }
+
+    public function getPictureBannerAttribute()
+    {
+        $media = $this->getFirstMedia('projects_banner');
+
+        return $media ? $media->getFullUrl() : null;
+    }
+
+    public function getShowLinkAttribute()
+    {
+        return route('api.projects.show', [
+            'project' => $this->slug,
+        ]);
     }
 
     public function skills(): BelongsToMany
@@ -76,13 +91,18 @@ class Project extends Model implements HasMedia
         return $this->belongsTo(Formation::class);
     }
 
-    public function projectLinks(): HasMany
+    public function links(): HasMany
     {
         return $this->hasMany(ProjectLink::class);
     }
 
-    public function experienceType(): BelongsTo
+    public function experience(): BelongsTo
     {
-        return $this->belongsTo(ExperienceType::class);
+        return $this->belongsTo(ExperienceType::class, 'experience_type_id');
+    }
+
+    public function status(): BelongsTo
+    {
+        return $this->belongsTo(ProjectStatus::class, 'project_status_id');
     }
 }

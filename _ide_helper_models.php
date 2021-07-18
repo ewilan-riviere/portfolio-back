@@ -44,7 +44,7 @@ namespace App\Models{
  * App\Models\DeveloperLink
  *
  * @property int $id
- * @property \App\Enums\DeveloperLinkType|null $type
+ * @property \App\Models\Enums\DeveloperLinkType|null $type
  * @property string|null $url
  * @property bool $is_primary
  * @property \Illuminate\Support\Carbon|null $created_at
@@ -72,7 +72,7 @@ namespace App\Models{
  * @property int $id
  * @property int|null $project_id
  * @property int|null $developer_id
- * @property \App\Enums\DeveloperRole|null $role
+ * @property \App\Models\Enums\DeveloperRole|null $role
  * @property-read \App\Models\Developer|null $developer
  * @property-read \App\Models\Project|null $project
  * @method static \Illuminate\Database\Eloquent\Builder|DeveloperProject newModelQuery()
@@ -91,12 +91,13 @@ namespace App\Models{
  * App\Models\ExperienceType
  *
  * @property int $id
- * @property string $title
+ * @property array $title
  * @property string|null $slug
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Formation[] $formations
  * @property-read int|null $formations_count
+ * @property-read array $translations
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
  * @property-read int|null $projects_count
  * @method static \Database\Factories\ExperienceTypeFactory factory(...$parameters)
@@ -118,11 +119,12 @@ namespace App\Models{
  *
  * @property int $id
  * @property string|null $slug
- * @property string|null $title
+ * @property array|null $title
  * @property string|null $certificate
  * @property string $color
  * @property int $color_text_white
- * @property string|null $resume
+ * @property array|null $resume
+ * @property array|null $description
  * @property string|null $type
  * @property string|null $level
  * @property string|null $date_begin
@@ -133,9 +135,11 @@ namespace App\Models{
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \App\Models\ExperienceType|null $experienceType
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FormationLink[] $extras
- * @property-read int|null $extras_count
  * @property-read mixed $image
+ * @property-read mixed $logo
+ * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\FormationLink[] $links
+ * @property-read int|null $links_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
@@ -149,6 +153,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDateBegin($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDateEnd($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Formation whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereExperienceTypeId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Formation whereIsDisplay($value)
@@ -170,6 +175,7 @@ namespace App\Models{
  * @property int $id
  * @property string|null $name
  * @property string|null $link
+ * @property \App\Models\Enums\FormationLinkType|null $type
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property int|null $formation_id
@@ -182,6 +188,7 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereLink($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereType($value)
  * @method static \Illuminate\Database\Eloquent\Builder|FormationLink whereUpdatedAt($value)
  */
 	class FormationLink extends \Eloquent {}
@@ -219,31 +226,38 @@ namespace App\Models{
  * @property int $id
  * @property string|null $slug
  * @property string $title
+ * @property array|null $subtitle
  * @property int|null $order
+ * @property array|null $abstract
  * @property array|null $description
  * @property bool $is_display
  * @property bool $is_favorite
- * @property \App\Enums\ProjectStatus|null $status
+ * @property bool $is_private
+ * @property \App\Models\ProjectStatus|null $status
  * @property int|null $experience_type_id
+ * @property int|null $project_status_id
  * @property int|null $formation_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Developer[] $developers
  * @property-read int|null $developers_count
- * @property-read \App\Models\ExperienceType|null $experienceType
+ * @property-read \App\Models\ExperienceType|null $experience
  * @property-read \App\Models\Formation|null $formation
- * @property-read mixed $image
- * @property-read mixed $image_title
+ * @property-read mixed $picture_banner
+ * @property-read mixed $picture_logo
+ * @property-read mixed $picture_title
+ * @property-read mixed $show_link
  * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectLink[] $links
+ * @property-read int|null $links_count
  * @property-read \Spatie\MediaLibrary\MediaCollections\Models\Collections\MediaCollection|\Spatie\MediaLibrary\MediaCollections\Models\Media[] $media
  * @property-read int|null $media_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ProjectLink[] $projectLinks
- * @property-read int|null $project_links_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Skill[] $skills
  * @property-read int|null $skills_count
  * @method static \Illuminate\Database\Eloquent\Builder|Project newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Project newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|Project query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereAbstract($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereDescription($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereExperienceTypeId($value)
@@ -251,9 +265,12 @@ namespace App\Models{
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsDisplay($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsFavorite($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereIsPrivate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereProjectStatusId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereSlug($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereStatus($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Project whereSubtitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereTitle($value)
  * @method static \Illuminate\Database\Eloquent\Builder|Project whereUpdatedAt($value)
  */
@@ -267,20 +284,45 @@ namespace App\Models{
  * @property int $id
  * @property string|null $repository
  * @property \App\Models\Project|null $project
- * @property \App\Enums\ProjectLinkType|null $type
- * @property bool $is_private
+ * @property \App\Models\Enums\ProjectLinkType|null $type
  * @property int|null $project_id
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink newModelQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink newQuery()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink query()
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereIsPrivate($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProject($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereProjectId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereRepository($value)
  * @method static \Illuminate\Database\Eloquent\Builder|ProjectLink whereType($value)
  */
 	class ProjectLink extends \Eloquent {}
+}
+
+namespace App\Models{
+/**
+ * App\Models\ProjectStatus
+ *
+ * @property int $id
+ * @property array $name
+ * @property string|null $slug
+ * @property int|null $order
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read array $translations
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Project[] $projects
+ * @property-read int|null $projects_count
+ * @method static \Database\Factories\ProjectStatusFactory factory(...$parameters)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus query()
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereOrder($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|ProjectStatus whereUpdatedAt($value)
+ */
+	class ProjectStatus extends \Eloquent {}
 }
 
 namespace App\Models{
