@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(PassionSeeder::class);
-        $this->clearDirectory('temporary');
+        // $this->clearDirectory('temporary');
     }
 
     /**
