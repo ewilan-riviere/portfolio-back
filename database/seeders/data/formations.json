@@ -129,6 +129,41 @@
         }
     },
     {
+        "title": {
+            "en": "Manager of Digital and Data Solutions",
+            "fr": "Manager de Solutions Digitales et Data"
+        },
+        "slug": "manager-de-solutions-digitales-et-data",
+        "image": "useweb.webp",
+        "certificate": null,
+        "color": "#4981be",
+        "color_text_white": true,
+        "resume": {
+            "en": "Organize an information system, acquire the fundamental technological and methodological notions allowing the management of an information system, manage a team (management, conducting meetings, recruitment), manage an IT project.",
+            "fr": "Organiser un système d’information, acquérir les notions fondamentales technologiques et méthodologiques permettant la gestion d’un système d’information, gérer une équipe (management, conduite de réunion, recrutement), gérer un projet informatique."
+        },
+        "description": {
+            "en": "Organize an information system, acquire the fundamental technological and methodological notions allowing the management of an information system, manage a team (management, conducting meetings, recruitment), manage an IT project.",
+            "fr": "Organiser un système d’information, acquérir les notions fondamentales technologiques et méthodologiques permettant la gestion d’un système d’information, gérer une équipe (management, conduite de réunion, recrutement), gérer un projet informatique."
+        },
+        "experience_type_id": "alternance",
+        "level": "Bac +5",
+        "date_begin": "2021-09-01",
+        "date_end": "2022-12-01",
+        "is_finished": false,
+        "is_display": true,
+        "extra": {
+            "place": {
+                "name": "Useweb",
+                "link": "https://www.useweb.fr"
+            },
+            "vocational": {
+                "name": "ENI Ecole Informatique",
+                "link": "https://www.eni-ecole.fr/formations/developpement/niveau-7-bac5-manager-de-solutions-digitales-et-data"
+            }
+        }
+    },
+    {
         "title": "Useweb",
         "slug": "useweb",
         "experience_type_id": "entreprise",
