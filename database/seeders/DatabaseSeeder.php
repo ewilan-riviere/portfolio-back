@@ -55,7 +55,7 @@ class DatabaseSeeder extends Seeder
             });
             $isSuccess = true;
             $this->clearDirectory('media');
-            $this->clearDirectory('temporary');
+            // $this->clearDirectory('temporary');
         } catch (\Throwable $th) {
             //throw $th;
         }
