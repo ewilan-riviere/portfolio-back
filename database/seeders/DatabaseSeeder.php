@@ -4,8 +4,10 @@ namespace Database\Seeders;
 
 use App\Models\Skill;
 use App\Models\Project;
+use Spatie\Image\Image;
 use App\Models\Formation;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -51,10 +53,30 @@ class DatabaseSeeder extends Seeder
                 $query->clearMediaCollection('formations');
             });
             $isSuccess = true;
+            File::deleteDirectory('public/storage/media');
+
+            $dir = 'public/storage/temporary/';
+            $leave_files = ['.gitignore'];
+
+            foreach (glob("$dir/*") as $file) {
+                if (! in_array(basename($file), $leave_files)) {
+                    unlink($file);
+                }
+            }
         } catch (\Throwable $th) {
             //throw $th;
         }
 
         return $isSuccess;
+    }
+
+    public static function convertImage(string $original_path, string $extension): string
+    {
+        $temporary_path = 'public/storage/temporary/';
+        $name = $temporary_path.md5($original_path).'.'.$extension;
+        Image::load($original_path)
+            ->save($name);
+
+        return $name;
     }
 }

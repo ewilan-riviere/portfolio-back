@@ -93,6 +93,7 @@ class ProjectResource extends JsonResource
                 'logo'                                  => $this->picture_logo,
                 'title'                                 => $this->picture_title,
                 'banner'                                => $this->picture_banner,
+                'gallery'                               => $this->gallery,
             ],
             'isFavorite' => $this->is_favorite,
         ], [

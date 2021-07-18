@@ -120,30 +120,59 @@ class ProjectSeeder extends Seeder
             $picture_logo = $project->picture_logo ?? null;
             $picture_title = $project->picture_title ?? null;
             $picture_banner = $project->picture_banner ?? null;
+            $gallery = null;
+
             try {
-                $picture_logo = File::get(database_path("seeders/media/projects/$picture_logo"));
-                $picture_title = File::get(database_path("seeders/media/projects/title/$picture_title"));
-                $picture_title = File::get(database_path("seeders/media/projects/banner/$picture_banner"));
-            } catch (\Throwable $th) {
-                //throw $th;
-            }
-            if ($picture_logo) {
+                $path = database_path("seeders/media/projects/$picture_logo");
+                $convert = DatabaseSeeder::convertImage($path, 'webp');
+                $picture_logo = File::get($convert);
+
                 $projectCreated->addMediaFromString($picture_logo)
                     ->setName($projectCreated->slug.'_logo')
                     ->setFileName($projectCreated->slug.'_logo.webp')
                     ->toMediaCollection('projects_logo', 'projects');
+            } catch (\Throwable $th) {
+                //throw $th;
             }
-            if ($picture_title) {
+            try {
+                $path = database_path("seeders/media/projects/title/$picture_title");
+                $convert = DatabaseSeeder::convertImage($path, 'webp');
+                $picture_title = File::get($convert);
+
                 $projectCreated->addMediaFromString($picture_title)
                     ->setName($projectCreated->slug.'_title')
                     ->setFileName($projectCreated->slug.'_title'.'.webp')
                     ->toMediaCollection('projects_title', 'projects');
+            } catch (\Throwable $th) {
+                //throw $th;
             }
-            if ($picture_banner) {
+            try {
+                $path = database_path("seeders/media/projects/banner/$picture_banner");
+                $convert = DatabaseSeeder::convertImage($path, 'webp');
+                $picture_banner = File::get($convert);
+
                 $projectCreated->addMediaFromString($picture_banner)
                     ->setName($projectCreated->slug.'_banner')
                     ->setFileName($projectCreated->slug.'_banner'.'.webp')
                     ->toMediaCollection('projects_banner', 'projects');
+            } catch (\Throwable $th) {
+                //throw $th;
+            }
+            try {
+                $gallery = File::allFiles(database_path("seeders/media/projects/gallery/$projectCreated->slug/"));
+
+                foreach ($gallery as $key => $picture) {
+                    $path = $picture;
+                    $convert = DatabaseSeeder::convertImage($path, 'webp');
+                    $picture = File::get($convert);
+
+                    $projectCreated->addMediaFromString($picture)
+                        ->setName($projectCreated->slug.'-'.$key.'_gallery')
+                        ->setFileName($projectCreated->slug.'-'.$key.'_gallery'.'.webp')
+                        ->toMediaCollection('projects_gallery', 'projects');
+                }
+            } catch (\Throwable $th) {
+                //throw $th;
             }
 
             if (property_exists($project, 'skills')) {

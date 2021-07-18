@@ -69,6 +69,20 @@ class Project extends Model implements HasMedia
         return $media ? $media->getFullUrl() : null;
     }
 
+    public function getGalleryAttribute()
+    {
+        $media = $this->getMedia('projects_gallery');
+        $gallery = [];
+        foreach ($media as $key => $picture) {
+            array_push($gallery, [
+                'url'  => $picture->getFullUrl(),
+                'name' => $picture->name,
+            ]);
+        }
+
+        return $gallery;
+    }
+
     public function getShowLinkAttribute()
     {
         return route('api.projects.show', [
