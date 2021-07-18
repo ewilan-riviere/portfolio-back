@@ -2,7 +2,10 @@
 
 namespace App\Console\Commands;
 
+use File;
+use Illuminate\Support\Str;
 use Illuminate\Console\Command;
+use Symfony\Component\Process\Process;
 use Illuminate\Support\Facades\Artisan;
 use Symfony\Component\Console\Question\Question;
 
@@ -14,13 +17,17 @@ class SetupCommand extends Command
      * @var string
      */
     protected $signature = 'setup';
+    protected $appName = 'Portfolio';
+    protected $appNameSlug = '';
+    protected $urlLocal = 'http://localhost:8000';
+    protected $urlProd = 'https://ewilan-riviere.com';
 
     /**
      * The console command description.
      *
      * @var string
      */
-    protected $description = 'Installation setup with one command. Need to have app name in parameter';
+    protected $description = 'Installation setup with one command.';
 
     /**
      * Create a new command instance.
@@ -29,6 +36,7 @@ class SetupCommand extends Command
      */
     public function __construct()
     {
+        $this->appNameSlug = Str::slug($this->appName, '_');
         parent::__construct();
     }
 
@@ -41,18 +49,18 @@ class SetupCommand extends Command
     {
         $this->welcome();
 
-        $this->warn("\n".'Choose mode:');
+        $this->newLine();
         $prod = false;
 
-        // .env file
         $this->info('Config .env...');
         $requestCreateEnv = $this->createEnvFile();
         if ($requestCreateEnv) {
             $credentials = $this->requestDatabaseCredentials();
             $this->updateEnvironmentFile($credentials);
-            $this->cleaning();
-            $this->warn('~ Secret key properly generated.');
+            Artisan::call('key:generate', [], $this->getOutput());
+            $this->cleaningDev();
         }
+
         if ($this->confirm('Do you want setup this app in production?', false)) {
             $prod = true;
 
@@ -60,67 +68,83 @@ class SetupCommand extends Command
             $production = $this->allowProduction();
             $this->updateEnvironmentFile($production);
         } else {
+            $local = $this->setupLocal();
+            $this->updateEnvironmentFile($local);
             $this->warn('~ Development enabled.'."\n");
         }
         $this->call('storage:link');
-        // npm install
+
         $this->info('Node.js dependencies installation...');
-        exec('yarn');
+        $process = new Process(['yarn', '--colors=always']);
+        $process->setTimeout(0);
+        $process->start();
+        $iterator = $process->getIterator($process::ITER_SKIP_ERR | $process::ITER_KEEP_OUTPUT);
+        foreach ($iterator as $data) {
+            echo $data;
+        }
+        $this->info('Laravel mix, wait a minute...');
+        exec('yarn prod');
+
+        $this->info('Cleaning...');
         if ($prod) {
-            exec('yarn prod');
+            $this->cleaningProd();
         } else {
-            exec('yarn dev');
+            $this->cleaningDev();
         }
         Artisan::call('config:cache');
-        // migration
+
         $this->info('Database migration...');
-        if ($this->confirm('Do you want to migrate database?', true)) {
-            Artisan::call('migrate --force');
+        if ($this->confirm('Do you want to migrate fresh database? /* THIS WILL ERASE ALL DATA */', false)) {
+            Artisan::call('migrate:fresh --force', [], $this->getOutput());
 
+            $this->newLine();
             $this->line('~ Database successfully migrated.');
-
-            if ($this->confirm('Do you want to migrate fresh database with seeds?', false)) {
-                Artisan::call('migrate:fresh --seed --force');
-
-                $this->line('~ Database successfully migrated with seeds.');
-            }
         }
-        // clean
-        Artisan::call('key:generate');
-        $this->info('Cleaning...');
-        $this->cleaning();
+
+        $this->newLine();
         $this->info('Application is ready!');
 
-        $this->info("\n");
         $this->goodbye();
     }
 
     /**
      * Update the .env file from an array of $key => $value pairs.
      *
-     * @param array $updatedValues
-     *
      * @return void
      */
     protected function updateEnvironmentFile(array $updatedValues)
     {
-        $envFile = $this->laravel->environmentFilePath();
+        $envFile = base_path('.env');
 
         foreach ($updatedValues as $key => $value) {
-            file_put_contents($envFile, preg_replace(
-                "/{$key}=(.*)/",
-                "{$key}={$value}",
-                file_get_contents($envFile)
-            ));
+            if (strpos($value, ' ')) {
+                file_put_contents($envFile, preg_replace(
+                    "/{$key}=(.*)/",
+                    "{$key}='{$value}'",
+                    file_get_contents($envFile)
+                ));
+            } else {
+                file_put_contents($envFile, preg_replace(
+                    "/{$key}=(.*)/",
+                    "{$key}={$value}",
+                    file_get_contents($envFile)
+                ));
+            }
         }
     }
 
-    protected function cleaning()
+    protected function cleaningDev()
     {
+        Artisan::call('cache:clear');
+        Artisan::call('config:clear');
+        Artisan::call('route:clear');
+    }
+
+    protected function cleaningProd()
+    {
+        Artisan::call('config:cache');
         Artisan::call('route:cache');
         Artisan::call('view:cache');
-        Artisan::call('cache:clear');
-        Artisan::call('config:cache');
     }
 
     /**
@@ -128,7 +152,7 @@ class SetupCommand extends Command
      */
     protected function welcome()
     {
-        $this->info('>> Welcome <<');
+        $this->info('>> Welcome to '.$this->appName.' autosetup <<');
     }
 
     /**
@@ -147,8 +171,18 @@ class SetupCommand extends Command
     protected function allowProduction()
     {
         return [
-            'APP_ENV'   => $this->ask('Environnement', 'production'),
-            'APP_DEBUG' => $this->ask('Debug', 'false'),
+            'APP_ENV'                  => $this->ask('Environnement', 'production'),
+            'APP_DEBUG'                => $this->ask('Debug', 'false'),
+            'APP_URL'                  => $this->ask('Application URL', $this->urlProd),
+            'SANCTUM_STATEFUL_DOMAINS' => $this->ask('Sanctum stateful domains', 'ewilan-riviere.com'),
+            'SESSION_DOMAIN'           => $this->ask('Session domain', '.ewilan-riviere.com'),
+        ];
+    }
+
+    protected function setupLocal()
+    {
+        return [
+            'APP_URL'                    => $this->ask('Application URL', $this->urlLocal),
         ];
     }
 
@@ -160,12 +194,14 @@ class SetupCommand extends Command
     protected function requestDatabaseCredentials()
     {
         return [
-            'APP_NAME'                => $this->ask('App name', 'Portfolio'),
-            'DB_DATABASE'             => $this->ask('Database name', 'portfolio'),
-            'DB_PORT'                 => $this->ask('Database port', 3306),
-            'DB_USERNAME'             => $this->ask('Database user', 'root'),
-            'DB_PASSWORD'             => $this->askHiddenWithDefault('Database password (leave blank for no password)'),
-            'APP_URL'                 => $this->ask('Application URL', 'http://localhost:8000'),
+            'APP_NAME'          => $this->ask('App name', $this->appName),
+            'DB_DATABASE'       => $this->ask('Database name', "$this->appNameSlug"),
+            'DB_PORT'           => $this->ask('Database port', '3306'),
+            'DB_USERNAME'       => $this->ask('Database user', 'root'),
+            'DB_PASSWORD'       => $this->askHiddenWithDefault('Database password (leave blank for no password)'),
+            'MAIL_HOST'         => $this->ask('Mail host', 'smtp.mailtrap.io'),
+            'MAIL_USERNAME'     => $this->ask('Mail user', ''),
+            'MAIL_PASSWORD'     => $this->ask('Mail password', ''),
         ];
     }
 
