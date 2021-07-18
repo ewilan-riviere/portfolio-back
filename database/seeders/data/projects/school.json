@@ -2,9 +2,6 @@
     {
         "title": "Zergling Evolution",
         "order": 8,
-        "picture_logo": "zergling-evolution.webp",
-        "picture_title": "zergling-evolution.webp",
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -37,9 +34,6 @@
     {
         "title": "Overwatch Memory",
         "order": 4,
-        "picture_logo": "overwatch-memory.webp",
-        "picture_title": "overwatch-memory.webp",
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -72,9 +66,6 @@
     {
         "title": "Pomodoro",
         "order": 6,
-        "picture_logo": "pomodoro.webp",
-        "picture_title": "pomodoro.webp",
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -107,9 +98,6 @@
     {
         "title": "Quizz Pokémon",
         "order": 5,
-        "picture_logo": "quizz-pokemon.webp",
-        "picture_title": "quizz-pokemon.webp",
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -142,9 +130,6 @@
     {
         "title": "Site web de ./play.it",
         "order": 2,
-        "picture_logo": "play-it.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -188,9 +173,6 @@
     {
         "title": "Promo #03 · Code Académie",
         "order": 3,
-        "picture_logo": "code-academie.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -224,9 +206,6 @@
     {
         "title": "TER sur la cyberviolence",
         "order": 1,
-        "picture_logo": "ter-la-cyberviolence.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""

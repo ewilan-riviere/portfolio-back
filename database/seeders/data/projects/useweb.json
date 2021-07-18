@@ -1,9 +1,6 @@
 [
     {
         "title": "Imprimerie le Galliard",
-        "picture_logo": "le-galliard.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -39,9 +36,6 @@
 
     {
         "title": "Secob",
-        "picture_logo": "secob.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -76,9 +70,6 @@
     },
     {
         "title": "Naviso",
-        "picture_logo": "naviso.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -113,9 +104,6 @@
     },
     {
         "title": "Foncière AALTO",
-        "picture_logo": "fonciere-aalto.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -156,9 +144,6 @@
     },
     {
         "title": "Laforet",
-        "picture_logo": "laforet.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -193,9 +178,6 @@
     },
     {
         "title": "Useweb Blog Tech",
-        "picture_logo": "useweb-blog-tech.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""

@@ -2,9 +2,6 @@
     {
         "title": "Portfolio",
         "order": 1,
-        "picture_logo": "portfolio.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Mon portfolio pour présenter mes projets"
@@ -38,9 +35,6 @@
         "skills": ["nuxtjs", "php", "laravel", "tailwind-css"]
     },
     {
-        "picture_logo": "Fanfic",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -64,9 +58,6 @@
     },
     {
         "title": "Skyscale",
-        "picture_logo": "skyscale.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Utilisation de l'API de Guild Wars 2"
@@ -96,9 +87,6 @@
     },
     {
         "title": "Roazhon Star",
-        "picture_logo": "roazhon-star.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Pour gérer les horaires de bus à Rennes"
@@ -128,9 +116,6 @@
     },
     {
         "title": "Bookshelves",
-        "picture_logo": "bookshelves.webp",
-        "picture_title": null,
-        "picture_banner": "bookshelves_banner.webp",
         "subtitle": {
             "en": "Online library",
             "fr": "Une bibliothèque en ligne"
@@ -168,9 +153,6 @@
     },
     {
         "title": "MarkdownThis",
-        "picture_logo": "markdown-this.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Une prise de note efficace"
@@ -202,9 +184,6 @@
     },
     {
         "title": "Fonts Book",
-        "picture_logo": "fonts-book.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""
@@ -233,9 +212,6 @@
     },
     {
         "title": "Markdown Interpreter",
-        "picture_logo": "md-interpreter.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Un convertisseur simple mais utile"
@@ -265,9 +241,6 @@
     },
     {
         "title": "Memorandum",
-        "picture_logo": "memorandum.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": "Une documentation en markdown : que demander de plus ?"
@@ -297,9 +270,6 @@
     },
     {
         "title": "Vue Tailwind Screen Helper",
-        "picture_logo": "vue-tailwind-screen-helper.webp",
-        "picture_title": null,
-        "picture_banner": null,
         "subtitle": {
             "en": "",
             "fr": ""

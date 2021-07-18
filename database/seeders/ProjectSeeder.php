@@ -117,13 +117,8 @@ class ProjectSeeder extends Seeder
                 $pivot->save();
             }
 
-            $picture_logo = $project->picture_logo ?? null;
-            $picture_title = $project->picture_title ?? null;
-            $picture_banner = $project->picture_banner ?? null;
-            $gallery = null;
-
             try {
-                $path = database_path("seeders/media/projects/$picture_logo");
+                $path = database_path("seeders/media/projects/$projectCreated->slug.webp");
                 $convert = DatabaseSeeder::convertImage($path, 'webp');
                 $picture_logo = File::get($convert);
 
@@ -135,7 +130,7 @@ class ProjectSeeder extends Seeder
                 //throw $th;
             }
             try {
-                $path = database_path("seeders/media/projects/title/$picture_title");
+                $path = database_path("seeders/media/projects/title/$projectCreated->slug.webp");
                 $convert = DatabaseSeeder::convertImage($path, 'webp');
                 $picture_title = File::get($convert);
 
@@ -147,7 +142,7 @@ class ProjectSeeder extends Seeder
                 //throw $th;
             }
             try {
-                $path = database_path("seeders/media/projects/banner/$picture_banner");
+                $path = database_path("seeders/media/projects/banner/$projectCreated->slug.webp");
                 $convert = DatabaseSeeder::convertImage($path, 'webp');
                 $picture_banner = File::get($convert);
 
