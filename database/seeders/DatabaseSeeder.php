@@ -7,7 +7,6 @@ use App\Models\Project;
 use Spatie\Image\Image;
 use App\Models\Formation;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\File;
 
 class DatabaseSeeder extends Seeder
 {
@@ -28,7 +27,7 @@ class DatabaseSeeder extends Seeder
         $this->call(SkillSeeder::class);
         $this->call(ProjectSeeder::class);
         $this->call(PassionSeeder::class);
-        $this->clearTemporary();
+        $this->clearDirectory('temporary');
     }
 
     /**
