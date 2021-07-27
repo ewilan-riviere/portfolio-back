@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ImageController;
+use App\Http\Controllers\NavigationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,6 +17,4 @@ use App\Http\Controllers\ImageController;
 
 Route::get('cache/resolve/{method}/{size}/{path}', [ImageController::class, 'thumbnail'])->where('path', '.*');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [NavigationController::class, 'welcome'])->name('welcome');
