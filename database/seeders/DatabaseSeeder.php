@@ -98,8 +98,13 @@ class DatabaseSeeder extends Seeder
             $image = $entity->getFirstMediaPath($media_collection);
             $color = ImageProvider::simple_color_thief($image);
             $media = $entity->getFirstMedia($media_collection);
-            $media->setCustomProperty('color', $color);
-            $media->save();
+            try {
+                $media->setCustomProperty('color', $color);
+                $media->save();
+            } catch (\Throwable $th) {
+                //throw $th;
+                echo 'No media';
+            }
         } catch (\Throwable $th) {
             throw $th;
         }
