@@ -88,7 +88,8 @@ class DatabaseSeeder extends Seeder
                 ->toMediaCollection($media_collection, $disk);
             self::extractColor($entity, $media_collection);
         } catch (\Throwable $th) {
-            throw $th;
+            // throw $th;
+            echo 'File to add not exist';
         }
     }
 
