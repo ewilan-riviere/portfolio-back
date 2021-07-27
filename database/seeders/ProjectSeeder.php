@@ -120,7 +120,7 @@ class ProjectSeeder extends Seeder
             $disk = 'projects';
             $slug = $projectCreated->slug;
             DatabaseSeeder::addMedia(
-                database_path("seeders/media/projects/$projectCreated->slug.webp"),
+                database_path("seeders/media/projects/$projectCreated->slug.png"),
                 $projectCreated,
                 $slug.'_logo',
                 'webp',
