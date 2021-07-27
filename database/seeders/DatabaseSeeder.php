@@ -41,24 +41,24 @@ class DatabaseSeeder extends Seeder
     {
         $isSuccess = false;
         try {
-            $projects = Project::all();
-            $skills = Skill::all();
-            $formations = Formation::all();
-            $projects->each(function ($query) {
-                $query->clearMediaCollection('projects');
-                $query->clearMediaCollection('projects_title');
-            });
-            $skills->each(function ($query) {
-                $query->clearMediaCollection('skills');
-            });
-            $formations->each(function ($query) {
-                $query->clearMediaCollection('formations');
-            });
-            $isSuccess = true;
+            // $projects = Project::all();
+            // $skills = Skill::all();
+            // $formations = Formation::all();
+            // $projects->each(function ($query) {
+            //     $query->clearMediaCollection('projects');
+            //     $query->clearMediaCollection('projects_title');
+            // });
+            // $skills->each(function ($query) {
+            //     $query->clearMediaCollection('skills');
+            // });
+            // $formations->each(function ($query) {
+            //     $query->clearMediaCollection('formations');
+            // });
+            // $isSuccess = true;
             $this->clearDirectory('media');
             $this->clearDirectory('temporary');
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
 
         return $isSuccess;
@@ -88,7 +88,7 @@ class DatabaseSeeder extends Seeder
                 ->toMediaCollection($media_collection, $disk);
             self::extractColor($entity, $media_collection);
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 
@@ -101,7 +101,7 @@ class DatabaseSeeder extends Seeder
             $media->setCustomProperty('color', $color);
             $media->save();
         } catch (\Throwable $th) {
-            //throw $th;
+            throw $th;
         }
     }
 
