@@ -110,6 +110,7 @@ class DatabaseSeeder extends Seeder
         $temporary_path = 'public/storage/temporary/';
         $name = $temporary_path.md5($original_path).'.'.$extension;
         $file_exist = File::exists($original_path);
+        echo $original_path;
 
         if ($file_exist) {
             try {
