@@ -123,6 +123,7 @@ class DatabaseSeeder extends Seeder
 
             return $name;
         }
+        echo 'File not exist for convert';
 
         return false;
     }
