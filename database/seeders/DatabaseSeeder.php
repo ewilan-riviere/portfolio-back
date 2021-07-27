@@ -116,7 +116,7 @@ class DatabaseSeeder extends Seeder
                 Image::load($original_path)
                     ->save($name);
             } catch (\Throwable $th) {
-                //throw $th;
+                throw $th;
                 $original_path = basename($original_path);
                 echo "Can't save $original_path\n";
             }
