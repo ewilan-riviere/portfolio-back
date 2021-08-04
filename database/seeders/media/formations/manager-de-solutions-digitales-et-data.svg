@@ -1,15 +1,14 @@
 <svg
     xmlns="http://www.w3.org/2000/svg"
-    fill="currentColor"
-    stroke="none"
-    width="24"
-    height="24"
+    class="h-6 w-6"
+    fill="none"
     viewBox="0 0 24 24"
+    stroke="currentColor"
 >
     <path
-        d="M20 6c0-2.168-3.663-4-8-4S4 3.832 4 6v2c0 2.168 3.663 4 8 4s8-1.832 8-4V6zM12 19c-4.337 0-8-1.832-8-4v3c0 2.168 3.663 4 8 4s8-1.832 8-4v-3C20 17.168 16.337 19 12 19z"
-    ></path>
-    <path
-        d="M20,10c0,2.168-3.663,4-8,4s-8-1.832-8-4v3c0,2.168,3.663,4,8,4s8-1.832,8-4V10z"
-    ></path>
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+    />
 </svg>
